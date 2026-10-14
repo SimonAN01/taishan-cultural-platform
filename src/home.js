@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { places, routes, summitPaths, source } from './home-data.js';
 import { getGuideGreeting, getGuideQuestions } from './guide-data.js';
 import './home.css';
+import {images as artImages, imageById, artUrl, openArtGallery} from './art-gallery.js';
 import { requestApi, askApi, recordVisit, apiSpotId, unavailableSpots, fullSite } from './integration.js';
 const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let catalog = null;
@@ -14,7 +15,7 @@ if (catalog) for (const [id, place] of Object.entries(places)) {
 }
 
 
-const asset = id => `${import.meta.env.BASE_URL}home-assets/${id}.webp`;
+const asset = id => artUrl(id === 'H-BG-01' ? 'map-cover' : id) || `${import.meta.env.BASE_URL}home-assets/${id}.webp`;
 const icon = name => ({ motion: '◌', fullscreen: '⛶', sun: '☼', back: '↶' }[name]);
 const app = document.querySelector('#app');
 document.body.classList.add('welcome-open');
@@ -35,7 +36,7 @@ app.innerHTML = `
   </div></div>
   <div class="paper-shade" aria-hidden="true"></div>
   <header class="topbar"><div class="brand-cluster"><a href="#journey" class="tiny-brand" aria-label="回到泰山全景"><span class="seal">岱</span>山河未改 · 来者不同</a><button class="welcome-return" id="welcome-return" type="button" title="返回欢迎页"><span aria-hidden="true">↶</span>返回卷首</button></div>
-   <nav aria-label="探索内容"><button data-explore="overview" class="current">山</button><span>／</span><button data-explore="culture">史</button><span>／</span><button data-explore="poem">诗</button><span>／</span><button data-explore="travel">路</button><span>／</span><button data-explore="guide">人</button></nav>
+   <nav aria-label="探索内容"><button data-explore="overview" class="current">山</button><span>／</span><button data-explore="culture">史</button><span>／</span><button data-explore="poem">诗</button><span>／</span><button data-explore="travel">路</button><span>／</span><button data-explore="guide">人</button><span>／</span><button data-explore="art">画</button></nav>
    <div class="tools"><a class="full-system-link" href="/">完整导览 ↗</a><button id="motion" aria-pressed="false" title="简化动效">${icon('motion')}<span>动效</span></button><button id="fullscreen" title="切换全屏">${icon('fullscreen')}<span>全屏</span></button></div>
   </header>
   <div class="side-script" aria-hidden="true">五岳之首 · 中华泰山<span class="small-seal">山河</span></div>
@@ -197,6 +198,21 @@ const visitProfiles = {
   taoyuan: { kind: 'station', en: 'THE CABLEWAY IN THE VALLEY', subtitle: '在山谷换乘，向云中继续上行。', panelTitle: '抵达桃花源', intro: '西线山水在此与索道相接，瀑布、花木和站房共同展开。', historyTitle: '桃花峪线的换乘节点', storyTitle: '从溪谷到云端', story: '沿溪谷抵达桃花源，索道把旅程从山水之间送向更高处。轿厢离开站台后，瀑布与花木渐渐缩成山谷中的一笔。', background: 'H-ND-13-bg', primaryInScene: false, accent: 'H-TR-01-cablecar', bg: '61% 48%', artNote: '桃花源艺术化场景合成 · 交通关系为示意', inside: { enterLabel: '查看换乘平台', exitLabel: '返回索道站全景', title: '换乘平台', subtitle: '停在栏杆旁，远望群峰与云海。', panelTitle: '桃花源换乘平台', intro: '在继续登顶之前，从平台回望一路经过的西线山谷。', background: 'H-ND-13-platform', bg: '64% 48%' } },
   dongyu: { kind: 'gateway', en: 'THE EASTERN ANCIENT PATH', subtitle: '松石夹道，古径向上。', panelTitle: '从东御道入山', intro: '由东侧进入泰山，沿较安静的古道向中天门一带行进。', historyTitle: '东侧古道的入口', storyTitle: '另一面泰山', story: '山门之后，石路在松林与岩壁间展开。离开热闹的主线，脚步更容易听见风穿过树冠的声音。', support: 'H-NT-04', bg: '78% 62%' },
 };
+// Supplied complete scenes are used as complete backgrounds, not doubled with their own buildings.
+Object.assign(visitProfiles.nantianmen,{background:'nantian-front',primaryInScene:false,support:null,platform:null,bg:'50% 50%',artNote:'南天门门前画境 · 艺术化演绎'});
+Object.assign(visitProfiles.nantianmen.inside,{background:'nantian-inside',bg:'50% 50%',spotId:'tianjie'});
+Object.assign(visitProfiles.riguan,{background:'riguan-landscape',primaryInScene:false,support:null,bg:'50% 50%'});
+Object.assign(visitProfiles.tianwai,{background:'tianwai-landscape',primaryInScene:false,support:null,bg:'50% 50%'});
+Object.assign(visitProfiles.taohua,{background:'taohua-landscape',primaryInScene:false,support:null,bg:'50% 50%'});
+Object.assign(visitProfiles.stone,{background:'stone-landscape',primaryInScene:false,support:null,bg:'50% 50%'});
+Object.assign(visitProfiles.dongyu,{background:'H-BG-14',bg:'50% 50%'});
+Object.assign(visitProfiles.tianjie,{platform:null,bg:'50% 50%'});
+Object.assign(visitProfiles.tianjie.inside,{bg:'58% 50%'});
+Object.assign(visitProfiles.taoyuan,{bg:'50% 50%'});
+Object.assign(visitProfiles.taoyuan.inside,{bg:'50% 50%'});
+visitProfiles.dongtian={kind:'gateway',en:'THE EASTERN GATE',subtitle:'门阙与古道，留在山水之间。',panelTitle:'走近东天门画境',intro:'从门前看古道与远山，继续展开一段艺术化的山中想象。',historyTitle:'东侧古道节点',storyTitle:'古道松风',story:'门阙在松石之间显现，石阶把来路留在身后。此处文字为画卷情境演绎。',background:'dongtian-landscape',primaryInScene:false,bg:'50% 50%',artNote:'东天门概念画境 · 非实地测绘',inside:{enterLabel:'走近古道',exitLabel:'返回门前画境',title:'古道入口',subtitle:'在石阶与松石之间读画。',panelTitle:'东天门古道画境',intro:'建筑与石阶在眼前展开，山势留在远处。',background:'H-BG-14',bg:'50% 50%',primary:'dongtian-path'}};
+
+const visitPlaceId=()=>visitScene.dataset.depth==='inside' ? visitProfiles[activeVisitId]?.inside?.spotId||activeVisitId : activeVisitId;
 const screenPoint = p => [p[0] * 10, p[1] * 5.625];
 
 function curve(points) {
@@ -318,6 +334,7 @@ function showDialog(html, variant = '') {
     dialog.showModal();
   }
   dialog.classList.toggle('poetry-library-dialog', variant === 'poetry');
+  dialog.classList.toggle('is-art', variant === 'art');
   content.innerHTML = html;
   dialog.scrollTop = 0;
   dialog.querySelector('.close').focus();
@@ -461,6 +478,22 @@ visitEnter.addEventListener('click', () => {
   document.querySelector('.visit-intro').textContent = inside ? profile.intro : profile.inside.intro;
   document.querySelector('.visit-title h2').textContent = inside ? p.name : profile.inside.title;
   document.querySelector('.visit-title p').textContent = inside ? profile.subtitle : profile.inside.subtitle;
+  const contextId=visitPlaceId();
+  const contextName=places[contextId]?.name||p.name;
+  visitScene.setAttribute('aria-label',contextName+'近景');
+  visitScene.querySelector('.visit-tabs').setAttribute('aria-label',contextName+'介绍');
+  document.querySelector('.visit-art-note').textContent=(inside?p.name:profile.inside.title)+'画境 · 艺术化演绎';
+  document.querySelector('.visit-title small').textContent=inside?profile.en:(visitProfiles[contextId]?.en||profile.en);
+  const contextSource=catalog?.spots.find(spot=>spot.id===apiSpotId(contextId))?.sources?.[0];
+  const contextLink=visitScene.querySelector('.visit-source a');
+  contextLink.href=contextSource?.url||profile.source||source.routeGuide;
+  contextLink.textContent=contextSource?contextSource.publisher+' ↗':'泰山官方游览资料 ↗';
+
+  visitCopy=buildVisitCopy(contextId,visitProfiles[contextId]||profile);
+  setVisitTab(visitScene.querySelector('[data-visit-tab][aria-selected="true"]').dataset.visitTab);
+  if(!inside&&profile.inside.spotId)recordVisit(contextId).catch(()=>status('足迹未保存，请稍后重试。'));
+  const primary=visitScene.querySelector('.visit-gate');
+  if(profile.inside.primary){primary.hidden=inside&&profile.primaryInScene===false;primary.src=asset(inside?p.asset:profile.inside.primary);primary.alt=(inside?p.name:profile.inside.title)+'概念近景'}
 });
 
 function ensureCablewayExperience() {
@@ -770,6 +803,7 @@ function openHistory() {
 document.querySelectorAll('[data-explore]').forEach(b => b.onclick = () => {
   const action = b.dataset.explore;
   if (action === 'overview') reset();
+  if (action === 'art') openArtGallery(showDialog,focusPlace);
   if (action === 'poem') openPoem();
   if (action === 'travel') openModeConfirm('travel');
   if (action === 'culture') openHistory();
@@ -995,7 +1029,7 @@ function closeGuide() {
 }
 
 document.querySelector('#guide-orb').addEventListener('click', () => openGuide());
-document.querySelector('#visit-guide').addEventListener('click', () => openGuide(activeVisitId));
+document.querySelector('#visit-guide').addEventListener('click', () => openGuide(visitPlaceId()));
 document.querySelector('#guide-close').addEventListener('click', closeGuide);
 document.querySelector('#guide-form').addEventListener('submit', event => {
   event.preventDefault();
@@ -1233,7 +1267,7 @@ try {
   addLayer('H-NT-04', { z: -18, x: 96, y: 107, width: 22, anchor: 'ground', opacity: .35, group: 'decor' });
   fogLayer = addLayer('H-BG-06', { z: 20, x: 50, y: 106, width: 125, opacity: .34, drift: .14, group: 'fog' });
 
-  fetch(import.meta.env.BASE_URL + 'home-assets/manifest.json').then(r => { if (!r.ok) throw Error(); return r.json(); }).then(data => { manifest = data; placeLayers(); }).catch(() => {});
+  fetch(import.meta.env.BASE_URL + 'home-assets/manifest.json').then(r => { if (!r.ok) throw Error(); return r.json(); }).then(data => { manifest = {...data,...Object.fromEntries(artImages.map(image=>[image.id,image]))}; if(imageById.has('map-cover'))manifest['H-BG-01']=imageById.get('map-cover'); placeLayers(); }).catch(() => {});
   resize();
 
   function frame(now) {

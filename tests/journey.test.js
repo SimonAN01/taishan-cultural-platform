@@ -22,7 +22,7 @@ test('summit branches connect South Gate to the two summit destinations', () => 
 test('every landmark with close-up artwork opens an immersive scene', () => {
   const illustratedPlaces = Object.values(places).filter(place => place.asset);
 
-  assert.equal(illustratedPlaces.length, 13);
+  assert.equal(illustratedPlaces.length, 14);
   for (const place of illustratedPlaces) {
     assert.equal(place.immersive, true, `${place.name} should open an immersive close-up`);
   }
@@ -38,5 +38,5 @@ test('Tianjie and Taohuayuan expose the new two-level scenic journeys', () => {
 test('Tianjie, Taohuayuan and East Gate expose panorama landmark icons', () => {
   assert.equal(places.tianjie.mapIcon.asset, 'H-ND-05-gate');
   assert.equal(places.taoyuan.mapIcon.asset, 'H-ND-13-station');
-  assert.equal(places.dongtian.mapIcon.asset, 'H-ND-12');
+  assert.equal(places.dongtian.mapIcon.asset, 'H-ND-14');
 });

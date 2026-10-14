@@ -72,7 +72,7 @@ export const places = {
     scene: { width: 8.5, z: -43, opacity: .65 }, focus: { zoom: 1.5, duration: 1.1 }, immersive: true,
     tag: '东麓 · 古道慢行', text: '从东御道入山，沿东侧山脊经过东天门一带，向日观峰、五岳独尊与岱顶方向前行。原型按实景导览图重绘主要节点关系。', poem: '循一条古道，遇见另一面泰山。',
   },
-  dongtian: { name: '东天门', x: 86.6, y: 48.7, level: 'travel', labelSide: 'left', mapIcon: { asset: 'H-ND-12', width: 62 }, tag: '东侧 · 古道节点', text: '东御道沿线的重要节点之一，继续向上可沿东侧山脊前往日观峰与岱顶区域。图中的连接线表达游览关系，不提供定位导航。', poem: '山路有回转，风景各不同。' },
+  dongtian: { asset:'dongtian-gate', immersive:true, focus:{zoom:1.6,duration:1.2}, scene:{width:7.2,z:-40,opacity:.78}, name: '东天门', x: 86.6, y: 48.7, level: 'travel', labelSide: 'left', mapIcon: { asset: 'H-ND-14', width: 62 }, tag: '东侧 · 古道节点', text: '东御道沿线的重要节点之一，继续向上可沿东侧山脊前往日观峰与岱顶区域。图中的连接线表达游览关系，不提供定位导航。', poem: '山路有回转，风景各不同。' },
 };
 
 const summit = ['nantianmen', 'tianjie', 'bixia', 'stone', 'yuhuang', 'riguan'];

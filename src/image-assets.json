@@ -1,0 +1,1541 @@
+[
+  {
+    "id": "H-BG-01",
+    "label": "首页泰山全景主底图",
+    "category": "山水",
+    "source": "H-BG-01 首页泰山全景主底图.png",
+    "source_sha256": "a0b06caf8cf17c76ac03854370facb2d8f6f0fe5d671a5202369f2c813476a0e",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "cropBox": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "width": 1672,
+    "height": 941,
+    "transparent": false,
+    "centroidXNormalized": 0.49970095693779903,
+    "groundYNormalized": 1,
+    "bytes": 371370,
+    "spot_id": null,
+    "url": "image-assets/H-BG-01.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-BG-03",
+    "label": "远山天际线",
+    "category": "山水",
+    "source": "H-BG-03 远山天际线.png",
+    "source_sha256": "865304bea25e158ee7369e76269fccfa358201d677c9a19c2667ad0956f0e7d8",
+    "originalSize": [
+      2172,
+      724
+    ],
+    "cropBox": [
+      0,
+      0,
+      2172,
+      724
+    ],
+    "width": 1800,
+    "height": 600,
+    "transparent": true,
+    "centroidXNormalized": 0.5053543448675047,
+    "groundYNormalized": 1,
+    "bytes": 65094,
+    "spot_id": null,
+    "url": "image-assets/H-BG-03.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-BG-04",
+    "label": "中景云海层",
+    "category": "山水",
+    "source": "H-BG-04 中景云海层 A.png",
+    "source_sha256": "8fa563b8869837a07e21f77e06886213d6c0341b7551267dbbbcacf7e1b31d59",
+    "originalSize": [
+      2172,
+      724
+    ],
+    "cropBox": [
+      0,
+      0,
+      2172,
+      724
+    ],
+    "width": 1800,
+    "height": 600,
+    "transparent": true,
+    "centroidXNormalized": 0.5333285572170583,
+    "groundYNormalized": 1,
+    "bytes": 171778,
+    "spot_id": null,
+    "url": "image-assets/H-BG-04.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-BG-06",
+    "label": "前景淡雾层",
+    "category": "山水",
+    "source": "H-BG-06 前景淡雾层 A.png",
+    "source_sha256": "b20318faf7607abdd0f351d126d84f95ce2632a960ca1f35f4f08d69e993e7e1",
+    "originalSize": [
+      2172,
+      724
+    ],
+    "cropBox": [
+      0,
+      0,
+      2172,
+      724
+    ],
+    "width": 1800,
+    "height": 600,
+    "transparent": true,
+    "centroidXNormalized": 0.5001147327856392,
+    "groundYNormalized": 1,
+    "bytes": 187834,
+    "spot_id": null,
+    "url": "image-assets/H-BG-06.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-02",
+    "label": "中天门主体建筑",
+    "category": "建筑",
+    "source": "H-BG-07中天门主体建筑.png",
+    "source_sha256": "62208eb9e9ec5c48c7163ed89467605a644fe0310affd51b687c5bcafdff0303",
+    "originalSize": [
+      1448,
+      1086
+    ],
+    "cropBox": [
+      44,
+      17,
+      1406,
+      1056
+    ],
+    "width": 1362,
+    "height": 1039,
+    "transparent": true,
+    "centroidXNormalized": 0.49904114889031426,
+    "groundYNormalized": 1,
+    "bytes": 308544,
+    "spot_id": "zhongtian",
+    "url": "image-assets/H-ND-02.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-BG-09",
+    "label": "中央主山体区",
+    "category": "山水",
+    "source": "H-BG-09 中央主山体区.png",
+    "source_sha256": "8921e3a9db15697fa45daf98da2cebd9c90bfbef13dd1cb3965229e21efadd1a",
+    "originalSize": [
+      1677,
+      938
+    ],
+    "cropBox": [
+      0,
+      17,
+      1677,
+      938
+    ],
+    "width": 1677,
+    "height": 921,
+    "transparent": true,
+    "centroidXNormalized": 0.5050311087656573,
+    "groundYNormalized": 1,
+    "bytes": 397372,
+    "spot_id": null,
+    "url": "image-assets/H-BG-09.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-BG-11",
+    "label": "山顶核心平台区",
+    "category": "山水",
+    "source": "H-BG-11 山顶核心平台区.png",
+    "source_sha256": "2d30618a1f29e204a206ab9773e31aa8064793864cf416cf23e44e74f545caac",
+    "originalSize": [
+      1774,
+      887
+    ],
+    "cropBox": [
+      28,
+      37,
+      1760,
+      857
+    ],
+    "width": 1732,
+    "height": 820,
+    "transparent": true,
+    "centroidXNormalized": 0.4878041179086247,
+    "groundYNormalized": 1,
+    "bytes": 385658,
+    "spot_id": null,
+    "url": "image-assets/H-BG-11.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-BG-14",
+    "label": "东御道—天烛峰一线环境全景",
+    "category": "山水",
+    "source": "H-BG-14｜东御道—天烛峰一线环境全景.png",
+    "source_sha256": "ee320e944a02dfeb7ff23c5966d6c1532435f1d3c76dd2273e3923dfbdbb8492",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "cropBox": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "width": 1672,
+    "height": 941,
+    "transparent": false,
+    "centroidXNormalized": 0.49970095693779903,
+    "groundYNormalized": 1,
+    "bytes": 369344,
+    "spot_id": null,
+    "url": "image-assets/H-BG-14.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-BG-15",
+    "label": "亭台点景",
+    "category": "建筑",
+    "source": "H-BG-15｜岱庙环境全景.png",
+    "source_sha256": "88d7be452264f8d024fa2d9a842da9fa8fdbb94c92a9a8e7736879ac830e3295",
+    "originalSize": [
+      1448,
+      1086
+    ],
+    "cropBox": [
+      0,
+      9,
+      1448,
+      1086
+    ],
+    "width": 1448,
+    "height": 1077,
+    "transparent": true,
+    "centroidXNormalized": 0.5051755025234177,
+    "groundYNormalized": 1,
+    "bytes": 451922,
+    "spot_id": null,
+    "url": "image-assets/H-BG-15.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-BG-17",
+    "label": "彩石溪环境全景",
+    "category": "山水",
+    "source": "H-BG-17｜彩石溪环境全景.png",
+    "source_sha256": "165b5d498da2179a7a07ff5915ebe0bb7a563cb0763123667bf68e487d6fd809",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "cropBox": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "width": 1672,
+    "height": 941,
+    "transparent": false,
+    "centroidXNormalized": 0.49970095693779903,
+    "groundYNormalized": 1,
+    "bytes": 552158,
+    "spot_id": null,
+    "url": "image-assets/H-BG-17.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-01",
+    "label": "红门",
+    "category": "建筑",
+    "source": "H-ND-01 红门主节点.png",
+    "source_sha256": "e8ce371144648e14eb298a31507f3cc215168272c7b2aab5f8d3fb0c8f1e84fd",
+    "originalSize": [
+      1448,
+      1086
+    ],
+    "cropBox": [
+      0,
+      48,
+      1448,
+      1086
+    ],
+    "width": 1448,
+    "height": 1038,
+    "transparent": true,
+    "centroidXNormalized": 0.4950507892870212,
+    "groundYNormalized": 1,
+    "bytes": 412738,
+    "spot_id": "hongmen",
+    "url": "image-assets/H-ND-01.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-03",
+    "label": "十八盘石阶节点",
+    "category": "建筑",
+    "source": "H-ND-03 十八盘石阶节点.png",
+    "source_sha256": "a9ee2d4b001e5d921c9b4df83027d711cf47186c6eaaa37e13581e41bdf99d85",
+    "originalSize": [
+      1448,
+      1086
+    ],
+    "cropBox": [
+      0,
+      0,
+      1329,
+      1086
+    ],
+    "width": 1329,
+    "height": 1086,
+    "transparent": true,
+    "centroidXNormalized": 0.593867426447393,
+    "groundYNormalized": 1,
+    "bytes": 394400,
+    "spot_id": "shibapan",
+    "url": "image-assets/H-ND-03.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-04",
+    "label": "南天门",
+    "category": "建筑",
+    "source": "H-ND-04 南天门主节点.png",
+    "source_sha256": "116345dee4e902fd12e1fbdbfbf135c2e289c3196189e68e680ec5d5256c1800",
+    "originalSize": [
+      1536,
+      1024
+    ],
+    "cropBox": [
+      0,
+      37,
+      1522,
+      1000
+    ],
+    "width": 1522,
+    "height": 963,
+    "transparent": true,
+    "centroidXNormalized": 0.5059530442404395,
+    "groundYNormalized": 1,
+    "bytes": 348518,
+    "spot_id": "nantianmen",
+    "url": "image-assets/H-ND-04.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-06",
+    "label": "碧霞祠",
+    "category": "建筑",
+    "source": "H-ND-06 碧霞祠主节点.png",
+    "source_sha256": "a717e059b8138193e0ea7b996a510380a532c5cb3d6f42829a6b8532d9b4b0d4",
+    "originalSize": [
+      1448,
+      1086
+    ],
+    "cropBox": [
+      0,
+      0,
+      1447,
+      1086
+    ],
+    "width": 1447,
+    "height": 1086,
+    "transparent": true,
+    "centroidXNormalized": 0.5009326460270402,
+    "groundYNormalized": 1,
+    "bytes": 391730,
+    "spot_id": "bixia",
+    "url": "image-assets/H-ND-06.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-07",
+    "label": "玉皇顶",
+    "category": "建筑",
+    "source": "H-ND-07 玉皇顶.png",
+    "source_sha256": "58f0a9a06501d69ebaf7e148c19b4938e14033807b8b0a34dfaf2fe093ab1cb3",
+    "originalSize": [
+      1536,
+      1024
+    ],
+    "cropBox": [
+      0,
+      0,
+      1504,
+      1024
+    ],
+    "width": 1504,
+    "height": 1024,
+    "transparent": true,
+    "centroidXNormalized": 0.5104246321247772,
+    "groundYNormalized": 1,
+    "bytes": 430952,
+    "spot_id": "yuhuang",
+    "url": "image-assets/H-ND-07.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-08",
+    "label": "五岳独尊石刻节点",
+    "category": "建筑",
+    "source": "H-ND-08 五岳独尊石刻节点.png",
+    "source_sha256": "216cb261734e3bb67849b63614de93e009d327c6a4ccc2a1096952dcdf462456",
+    "originalSize": [
+      1024,
+      1536
+    ],
+    "cropBox": [
+      21,
+      51,
+      999,
+      1520
+    ],
+    "width": 978,
+    "height": 1469,
+    "transparent": true,
+    "centroidXNormalized": 0.5189243419533075,
+    "groundYNormalized": 1,
+    "bytes": 556760,
+    "spot_id": "stone",
+    "url": "image-assets/H-ND-08.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-09",
+    "label": "日观峰节点",
+    "category": "建筑",
+    "source": "H-ND-09 日观峰节点.png",
+    "source_sha256": "bfdb9a5f3de1598aaebf090d3ef3b399a697496f66f67274af481d1b79c9c270",
+    "originalSize": [
+      1448,
+      1086
+    ],
+    "cropBox": [
+      0,
+      19,
+      1433,
+      1086
+    ],
+    "width": 1433,
+    "height": 1067,
+    "transparent": true,
+    "centroidXNormalized": 0.5633521004410628,
+    "groundYNormalized": 1,
+    "bytes": 417682,
+    "spot_id": "riguan",
+    "url": "image-assets/H-ND-09.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-10",
+    "label": "天外村入口",
+    "category": "建筑",
+    "source": "H-ND-10 天外村入口节点.png",
+    "source_sha256": "1ec67c05be06c11bd1beba6e718db89458dd0912de0236cf9522e8d423be5d4a",
+    "originalSize": [
+      1448,
+      1086
+    ],
+    "cropBox": [
+      0,
+      13,
+      1448,
+      1086
+    ],
+    "width": 1448,
+    "height": 1073,
+    "transparent": true,
+    "centroidXNormalized": 0.4915512686648449,
+    "groundYNormalized": 1,
+    "bytes": 377794,
+    "spot_id": "tianwai",
+    "url": "image-assets/H-ND-10.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-11",
+    "label": "桃花峪入口",
+    "category": "建筑",
+    "source": "H-ND-11 桃花峪入口节点.png",
+    "source_sha256": "ecc97ebbfef07ce692f85dd1c973628dd22a176d65143c7901ddad86bb6443c0",
+    "originalSize": [
+      1536,
+      1024
+    ],
+    "cropBox": [
+      0,
+      9,
+      1523,
+      1024
+    ],
+    "width": 1523,
+    "height": 1015,
+    "transparent": true,
+    "centroidXNormalized": 0.5252597125186482,
+    "groundYNormalized": 1,
+    "bytes": 556336,
+    "spot_id": "taohua",
+    "url": "image-assets/H-ND-11.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-12",
+    "label": "东御道入口",
+    "category": "建筑",
+    "source": "H-ND-12 东御道入口节点.png",
+    "source_sha256": "b271a89d7d6d0dc2fcf3f9a4f6f22dee4061f64115862face6bad896a5f0d132",
+    "originalSize": [
+      1536,
+      1024
+    ],
+    "cropBox": [
+      0,
+      15,
+      1536,
+      1024
+    ],
+    "width": 1536,
+    "height": 1009,
+    "transparent": true,
+    "centroidXNormalized": 0.5274286775191258,
+    "groundYNormalized": 1,
+    "bytes": 460756,
+    "spot_id": "dongyu",
+    "url": "image-assets/H-ND-12.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-14",
+    "label": "东天门",
+    "category": "建筑",
+    "source": "H-ND-14｜东天门透明主体图.png",
+    "source_sha256": "43e4b1cbe0cf4eafb2d7c4d9cf34f05737a1e7ea7fe146f3d61b5f4c39289846",
+    "originalSize": [
+      1448,
+      1086
+    ],
+    "cropBox": [
+      0,
+      0,
+      1438,
+      1086
+    ],
+    "width": 1438,
+    "height": 1086,
+    "transparent": true,
+    "centroidXNormalized": 0.5033846095152864,
+    "groundYNormalized": 1,
+    "bytes": 434202,
+    "spot_id": "dongtian",
+    "url": "image-assets/H-ND-14.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-15A",
+    "label": "岱庙",
+    "category": "建筑",
+    "source": "H-ND-15A｜岱庙透明主体.png",
+    "source_sha256": "aa2eedade18237f605e7b621c4efe035b95b7a222d98d8d9e6dfdba620d3a22f",
+    "originalSize": [
+      1448,
+      1086
+    ],
+    "cropBox": [
+      0,
+      21,
+      1447,
+      1086
+    ],
+    "width": 1447,
+    "height": 1065,
+    "transparent": true,
+    "centroidXNormalized": 0.5005046207025751,
+    "groundYNormalized": 1,
+    "bytes": 419658,
+    "spot_id": null,
+    "url": "image-assets/H-ND-15A.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-16",
+    "label": "望河亭",
+    "category": "山水",
+    "source": "H-ND-16｜望河亭透明主体.png",
+    "source_sha256": "33cbb5b3a00de2977cd8d43bfd45c5d73802e78a9daa504b7591aa76109c3636",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "cropBox": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "width": 1672,
+    "height": 941,
+    "transparent": false,
+    "centroidXNormalized": 0.49970095693779903,
+    "groundYNormalized": 1,
+    "bytes": 373824,
+    "spot_id": null,
+    "url": "image-assets/H-ND-16.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-18-bg",
+    "label": "北天门山口环境图",
+    "category": "山水",
+    "source": "H-ND-18｜北天门山口环境图.png",
+    "source_sha256": "7265635eebc78e9d8cb0b3fb6b6151edd2f0d0f74f5b2b9c15f9d8b78b2f5c8e",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "cropBox": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "width": 1672,
+    "height": 941,
+    "transparent": false,
+    "centroidXNormalized": 0.49970095693779903,
+    "groundYNormalized": 1,
+    "bytes": 429946,
+    "spot_id": null,
+    "url": "image-assets/H-ND-18-bg.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-18",
+    "label": "北天门",
+    "category": "建筑",
+    "source": "H-ND-18｜北天门透明主体.png",
+    "source_sha256": "c3162723012e9e9e3db8f5310173b5b8f8f312bedec779a81727c791efaa7c21",
+    "originalSize": [
+      1536,
+      1024
+    ],
+    "cropBox": [
+      0,
+      19,
+      1516,
+      993
+    ],
+    "width": 1516,
+    "height": 974,
+    "transparent": true,
+    "centroidXNormalized": 0.5087977297297465,
+    "groundYNormalized": 1,
+    "bytes": 354086,
+    "spot_id": null,
+    "url": "image-assets/H-ND-18.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-19",
+    "label": "瞻鲁台环境全景",
+    "category": "山水",
+    "source": "H-ND-19｜瞻鲁台环境全景.png",
+    "source_sha256": "d011dd5630ef5b6a93f0795d3df01e115e763c46ad29ed15b52458e2adf38239",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "cropBox": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "width": 1672,
+    "height": 941,
+    "transparent": false,
+    "centroidXNormalized": 0.49970095693779903,
+    "groundYNormalized": 1,
+    "bytes": 398554,
+    "spot_id": null,
+    "url": "image-assets/H-ND-19.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-20",
+    "label": "拱北石",
+    "category": "建筑",
+    "source": "H-ND-20｜拱北石透明主体.png",
+    "source_sha256": "6275675b71e32fca17ba9941577474e5544545223e30cb24b2c912f0b9eaded7",
+    "originalSize": [
+      1448,
+      1086
+    ],
+    "cropBox": [
+      0,
+      9,
+      1424,
+      1052
+    ],
+    "width": 1424,
+    "height": 1043,
+    "transparent": true,
+    "centroidXNormalized": 0.5173736715419853,
+    "groundYNormalized": 1,
+    "bytes": 477276,
+    "spot_id": null,
+    "url": "image-assets/H-ND-20.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-21-bg",
+    "label": "后石坞环境全景",
+    "category": "山水",
+    "source": "H-ND-21｜后石坞环境全景.png",
+    "source_sha256": "deafa1d0eb80bdefcb2967e8d061a65556fda49d37927f6d27470253dae7b260",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "cropBox": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "width": 1672,
+    "height": 941,
+    "transparent": false,
+    "centroidXNormalized": 0.49970095693779903,
+    "groundYNormalized": 1,
+    "bytes": 455298,
+    "spot_id": null,
+    "url": "image-assets/H-ND-21-bg.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-21",
+    "label": "后石坞",
+    "category": "建筑",
+    "source": "H-ND-21｜后石坞节点透明主体.png",
+    "source_sha256": "d3ba462a7d5edc9a1e7b6e38541c012264f95a3ec35bb2c6a84c16ded47dc959",
+    "originalSize": [
+      1448,
+      1086
+    ],
+    "cropBox": [
+      0,
+      8,
+      1448,
+      1086
+    ],
+    "width": 1448,
+    "height": 1078,
+    "transparent": true,
+    "centroidXNormalized": 0.5284594309269904,
+    "groundYNormalized": 1,
+    "bytes": 466136,
+    "spot_id": null,
+    "url": "image-assets/H-ND-21.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-22",
+    "label": "天烛峰景区环境全景",
+    "category": "山水",
+    "source": "H-ND-22｜天烛峰景区环境全景.png",
+    "source_sha256": "5ed58eea82fcddbf8a229da37fabafbf2fdd1d17b85e0076141a6861c58de8e5",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "cropBox": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "width": 1672,
+    "height": 941,
+    "transparent": false,
+    "centroidXNormalized": 0.49970095693779903,
+    "groundYNormalized": 1,
+    "bytes": 354002,
+    "spot_id": null,
+    "url": "image-assets/H-ND-22.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-NT-01",
+    "label": "中型古松",
+    "category": "点景",
+    "source": "H-NT-01 中型古松.png",
+    "source_sha256": "76baf61cdcac99b43ecafa2a97f208d020220e7686e5be155f30d03c5dd7dcdb",
+    "originalSize": [
+      1122,
+      1402
+    ],
+    "cropBox": [
+      0,
+      19,
+      1122,
+      1402
+    ],
+    "width": 1122,
+    "height": 1383,
+    "transparent": true,
+    "centroidXNormalized": 0.42875055831633774,
+    "groundYNormalized": 1,
+    "bytes": 553086,
+    "spot_id": null,
+    "url": "image-assets/H-NT-01.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-NT-04",
+    "label": "中型花岗岩山石",
+    "category": "点景",
+    "source": "H-NT-04 中型花岗岩山石.png",
+    "source_sha256": "d6f7dd9c3e550fd20815d9ba1df4caf39963022e6bf3fd7e944712be5b1b97b6",
+    "originalSize": [
+      1774,
+      887
+    ],
+    "cropBox": [
+      0,
+      47,
+      1774,
+      863
+    ],
+    "width": 1774,
+    "height": 816,
+    "transparent": true,
+    "centroidXNormalized": 0.5022567814790752,
+    "groundYNormalized": 1,
+    "bytes": 399978,
+    "spot_id": null,
+    "url": "image-assets/H-NT-04.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-NT-07",
+    "label": "溪流山涧点景",
+    "category": "点景",
+    "source": "H-NT-07溪流山涧点景.png",
+    "source_sha256": "bc25e5ef91d05908ac4e5a9c7b50a6d4f8f77a3f2f523c3443f51723d4741fa3",
+    "originalSize": [
+      1536,
+      1024
+    ],
+    "cropBox": [
+      49,
+      21,
+      1522,
+      1024
+    ],
+    "width": 1473,
+    "height": 1003,
+    "transparent": true,
+    "centroidXNormalized": 0.4873755321366282,
+    "groundYNormalized": 1,
+    "bytes": 323616,
+    "spot_id": null,
+    "url": "image-assets/H-NT-07.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-NT-08",
+    "label": "彩石溪瀑布点景",
+    "category": "点景",
+    "source": "H-NT-08｜彩石溪瀑布透明点景.png",
+    "source_sha256": "d36bc85538c04ce4456301e302481970432fb679943213868b0cb516bb0c3268",
+    "originalSize": [
+      1448,
+      1086
+    ],
+    "cropBox": [
+      0,
+      0,
+      1436,
+      1086
+    ],
+    "width": 1436,
+    "height": 1086,
+    "transparent": true,
+    "centroidXNormalized": 0.47881149702671644,
+    "groundYNormalized": 1,
+    "bytes": 519084,
+    "spot_id": null,
+    "url": "image-assets/H-NT-08.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "dongtian-path",
+    "label": "东天门古道入口局部",
+    "category": "建筑",
+    "source": "东天门古道入口局部透明图.png",
+    "source_sha256": "ff20555a51b1a989a10beb8e916f6a647f9657ad326293c6fccf74091f522dbc",
+    "originalSize": [
+      1774,
+      887
+    ],
+    "cropBox": [
+      0,
+      19,
+      1774,
+      887
+    ],
+    "width": 1774,
+    "height": 868,
+    "transparent": true,
+    "centroidXNormalized": 0.5802706995841951,
+    "groundYNormalized": 1,
+    "bytes": 557950,
+    "spot_id": null,
+    "url": "image-assets/dongtian-path.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "dongtian-landscape",
+    "label": "东天门周边古道山景全景图",
+    "category": "山水",
+    "source": "东天门周边古道山景全景图.png",
+    "source_sha256": "2357e4fe9f54820575db4df59f373d8fca465e4f33616852a968e9a8d11d7276",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "cropBox": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "width": 1672,
+    "height": 941,
+    "transparent": false,
+    "centroidXNormalized": 0.49970095693779903,
+    "groundYNormalized": 1,
+    "bytes": 333866,
+    "spot_id": null,
+    "url": "image-assets/dongtian-landscape.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "dongtian-gate",
+    "label": "东天门建筑完整",
+    "category": "建筑",
+    "source": "东天门建筑完整透明图.png",
+    "source_sha256": "f91ac66a85946f99dd55ff81ae515b7c148e0cbbbb53dfc6320b5bc1dcbc55f0",
+    "originalSize": [
+      1536,
+      1024
+    ],
+    "cropBox": [
+      0,
+      31,
+      1536,
+      999
+    ],
+    "width": 1536,
+    "height": 968,
+    "transparent": true,
+    "centroidXNormalized": 0.4996444888984497,
+    "groundYNormalized": 1,
+    "bytes": 334994,
+    "spot_id": null,
+    "url": "image-assets/dongtian-gate.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "stone-landscape",
+    "label": "五岳独尊石刻周边环境全景",
+    "category": "山水",
+    "source": "五岳独尊石刻周边环境全景.png",
+    "source_sha256": "7aee800c752b1af01b5202ff7d52cd03a21795bd63f5f76e063fb3f924cc6207",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "cropBox": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "width": 1672,
+    "height": 941,
+    "transparent": false,
+    "centroidXNormalized": 0.49970095693779903,
+    "groundYNormalized": 1,
+    "bytes": 477236,
+    "spot_id": null,
+    "url": "image-assets/stone-landscape.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "nantian-front",
+    "label": "南天门门前",
+    "category": "山水",
+    "source": "南天门门前.png",
+    "source_sha256": "4db657d645ee24d919b1d217ab218ebeba10a306b5615254f8fe0cffad325ac5",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "cropBox": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "width": 1672,
+    "height": 941,
+    "transparent": false,
+    "centroidXNormalized": 0.49970095693779903,
+    "groundYNormalized": 1,
+    "bytes": 473588,
+    "spot_id": null,
+    "url": "image-assets/nantian-front.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "nantian-inside",
+    "label": "南天门门后、天街方向",
+    "category": "山水",
+    "source": "南天门门后、天街方向.png",
+    "source_sha256": "01a2e0c9a4bcd5b0f9c4aa7c2a90b694721bc1a02c487389aa40692e2926d66d",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "cropBox": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "width": 1672,
+    "height": 941,
+    "transparent": false,
+    "centroidXNormalized": 0.49970095693779903,
+    "groundYNormalized": 1,
+    "bytes": 453670,
+    "spot_id": null,
+    "url": "image-assets/nantian-inside.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "tianwai-landscape",
+    "label": "天外村入口环境全景",
+    "category": "山水",
+    "source": "天外村入口环境全景.png",
+    "source_sha256": "aeaa80fd6e14fd19cc64655299c16277cd774884c2d966b353b7ecf36eda7cdf",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "cropBox": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "width": 1672,
+    "height": 941,
+    "transparent": false,
+    "centroidXNormalized": 0.49970095693779903,
+    "groundYNormalized": 1,
+    "bytes": 476246,
+    "spot_id": null,
+    "url": "image-assets/tianwai-landscape.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-05-bg",
+    "label": "天街全景图",
+    "category": "山水",
+    "source": "天街全景图.png",
+    "source_sha256": "0dd34424ac6a2a3a95c8ea239c956fe39fb5cca3b6e05a97dbc544901f3cb027",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "cropBox": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "width": 1672,
+    "height": 941,
+    "transparent": false,
+    "centroidXNormalized": 0.49970095693779903,
+    "groundYNormalized": 1,
+    "bytes": 320924,
+    "spot_id": null,
+    "url": "image-assets/H-ND-05-bg.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-05-gate",
+    "label": "天街牌坊街道入口",
+    "category": "建筑",
+    "source": "天街牌坊街道入口透明图.png",
+    "source_sha256": "ef8540256f0c08cf23ebc75b4d4eeed9b4f8299f09f5ad739962fe073785a532",
+    "originalSize": [
+      1448,
+      1086
+    ],
+    "cropBox": [
+      0,
+      21,
+      1448,
+      1058
+    ],
+    "width": 1448,
+    "height": 1037,
+    "transparent": true,
+    "centroidXNormalized": 0.5001413551145777,
+    "groundYNormalized": 1,
+    "bytes": 375890,
+    "spot_id": "tianjie",
+    "url": "image-assets/H-ND-05-gate.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-05-street",
+    "label": "天街街道局部",
+    "category": "建筑",
+    "source": "天街街道局部透明图.png",
+    "source_sha256": "2d087993972e95be605493eae7c7a76a09d179c2a1e847e5e552bbd7441da9ab",
+    "originalSize": [
+      1536,
+      1024
+    ],
+    "cropBox": [
+      0,
+      0,
+      1536,
+      1024
+    ],
+    "width": 1536,
+    "height": 1024,
+    "transparent": true,
+    "centroidXNormalized": 0.5542896598796432,
+    "groundYNormalized": 1,
+    "bytes": 443588,
+    "spot_id": null,
+    "url": "image-assets/H-ND-05-street.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "riguan-landscape",
+    "label": "日观峰观日平台环境全景",
+    "category": "山水",
+    "source": "日观峰观日平台环境全景.png",
+    "source_sha256": "2c6e176c6461678fd0b59015f8ef36cbb3ab5422b9bca7201f6f9ed315c60939",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "cropBox": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "width": 1672,
+    "height": 941,
+    "transparent": false,
+    "centroidXNormalized": 0.49970095693779903,
+    "groundYNormalized": 1,
+    "bytes": 414390,
+    "spot_id": null,
+    "url": "image-assets/riguan-landscape.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "taohua-landscape",
+    "label": "桃花峪游客入口环境全景",
+    "category": "山水",
+    "source": "桃花峪游客入口环境全景.png",
+    "source_sha256": "da0811beb0df8997176f8d6de58f34e272cd3b456d18410dd0ea11c0793746e6",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "cropBox": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "width": 1672,
+    "height": 941,
+    "transparent": false,
+    "centroidXNormalized": 0.49970095693779903,
+    "groundYNormalized": 1,
+    "bytes": 536672,
+    "spot_id": null,
+    "url": "image-assets/taohua-landscape.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-13-platform",
+    "label": "桃花源换乘平台局部图",
+    "category": "山水",
+    "source": "桃花源换乘平台局部图.png",
+    "source_sha256": "35236c96894a89b4cfe883782584896d8f29b2359c7ab2948b23c804369fe306",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "cropBox": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "width": 1672,
+    "height": 941,
+    "transparent": false,
+    "centroidXNormalized": 0.49970095693779903,
+    "groundYNormalized": 1,
+    "bytes": 343582,
+    "spot_id": null,
+    "url": "image-assets/H-ND-13-platform.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-13-bg",
+    "label": "桃花源索道站全景图",
+    "category": "山水",
+    "source": "桃花源索道站全景图.png",
+    "source_sha256": "f09c0dfa1969cbaed1bad609ba346f39eafb2f8bd71ea084b1a86ada87954cd7",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "cropBox": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "width": 1672,
+    "height": 941,
+    "transparent": false,
+    "centroidXNormalized": 0.49970095693779903,
+    "groundYNormalized": 1,
+    "bytes": 435212,
+    "spot_id": null,
+    "url": "image-assets/H-ND-13-bg.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-ND-13-station",
+    "label": "桃花源索道站",
+    "category": "建筑",
+    "source": "桃花源索道站透明图.png",
+    "source_sha256": "35c12d44a9023243b931e1c36717a4b8385b0492775962b2a616158d8a896943",
+    "originalSize": [
+      1774,
+      887
+    ],
+    "cropBox": [
+      0,
+      56,
+      1745,
+      887
+    ],
+    "width": 1745,
+    "height": 831,
+    "transparent": true,
+    "centroidXNormalized": 0.54332181651536,
+    "groundYNormalized": 1,
+    "bytes": 375812,
+    "spot_id": "taoyuan",
+    "url": "image-assets/H-ND-13-station.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "legacy-1",
+    "label": "远山意境",
+    "category": "点景",
+    "source": "素材1.png",
+    "source_sha256": "33338dfc908900e701e839dd95f8a4d33611d66342a557bc76f0c267517c870b",
+    "originalSize": [
+      1727,
+      911
+    ],
+    "cropBox": [
+      0,
+      19,
+      1727,
+      911
+    ],
+    "width": 1727,
+    "height": 892,
+    "transparent": true,
+    "centroidXNormalized": 0.5142136560917984,
+    "groundYNormalized": 1,
+    "bytes": 210520,
+    "spot_id": null,
+    "url": "image-assets/legacy-1.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "legacy-2",
+    "label": "青绿群峰",
+    "category": "点景",
+    "source": "素材2.png",
+    "source_sha256": "bbde5c2d2da92d69e234ea1edcb7cb6675b639f8d556996c16d49d5a5ef14c3e",
+    "originalSize": [
+      1727,
+      911
+    ],
+    "cropBox": [
+      0,
+      21,
+      1727,
+      911
+    ],
+    "width": 1727,
+    "height": 890,
+    "transparent": true,
+    "centroidXNormalized": 0.484004965800687,
+    "groundYNormalized": 1,
+    "bytes": 435998,
+    "spot_id": null,
+    "url": "image-assets/legacy-2.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "legacy-3",
+    "label": "山门登阶",
+    "category": "点景",
+    "source": "素材3.png",
+    "source_sha256": "25058a5dc49bfa66e3f9cafd94923bdf79468d93cd75b5465559f2ac2ffdeb19",
+    "originalSize": [
+      1727,
+      911
+    ],
+    "cropBox": [
+      0,
+      0,
+      1713,
+      911
+    ],
+    "width": 1713,
+    "height": 911,
+    "transparent": true,
+    "centroidXNormalized": 0.5187078740108726,
+    "groundYNormalized": 1,
+    "bytes": 611320,
+    "spot_id": null,
+    "url": "image-assets/legacy-3.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "legacy-4",
+    "label": "山巅殿宇",
+    "category": "点景",
+    "source": "素材4.png",
+    "source_sha256": "2fcde7820553f97d7a87b1bd4d1db2e916985e3dd5e5cbbc7ca836fbde684b49",
+    "originalSize": [
+      1727,
+      911
+    ],
+    "cropBox": [
+      0,
+      16,
+      1707,
+      911
+    ],
+    "width": 1707,
+    "height": 895,
+    "transparent": true,
+    "centroidXNormalized": 0.533742974317139,
+    "groundYNormalized": 1,
+    "bytes": 538154,
+    "spot_id": null,
+    "url": "image-assets/legacy-4.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "legacy-5",
+    "label": "石刻意境",
+    "category": "点景",
+    "source": "素材5.png",
+    "source_sha256": "940b8c9981bd42cfd4c72602e94f328639bc530361da6547e0b7aebd04dfb339",
+    "originalSize": [
+      1727,
+      911
+    ],
+    "cropBox": [
+      27,
+      11,
+      1650,
+      911
+    ],
+    "width": 1623,
+    "height": 900,
+    "transparent": true,
+    "centroidXNormalized": 0.542504272552821,
+    "groundYNormalized": 1,
+    "bytes": 535108,
+    "spot_id": null,
+    "url": "image-assets/legacy-5.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "legacy-6",
+    "label": "牌坊意境",
+    "category": "点景",
+    "source": "素材6.png",
+    "source_sha256": "0db2df618960e4427d1a04760fa4be325673240d180293148134fec7c164dd9c",
+    "originalSize": [
+      1727,
+      911
+    ],
+    "cropBox": [
+      0,
+      0,
+      1716,
+      911
+    ],
+    "width": 1716,
+    "height": 911,
+    "transparent": true,
+    "centroidXNormalized": 0.5055222335751401,
+    "groundYNormalized": 1,
+    "bytes": 480548,
+    "spot_id": null,
+    "url": "image-assets/legacy-6.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "H-TR-01-cablecar",
+    "label": "索道轿厢",
+    "category": "建筑",
+    "source": "索道轿厢透明图.png",
+    "source_sha256": "79bc5b2f1de5a8a2c6e491e0d4e64a32efa210f895d89c0dd6c25818b3d75278",
+    "originalSize": [
+      1305,
+      1205
+    ],
+    "cropBox": [
+      57,
+      0,
+      1305,
+      1155
+    ],
+    "width": 1248,
+    "height": 1155,
+    "transparent": true,
+    "centroidXNormalized": 0.4886658288830522,
+    "groundYNormalized": 1,
+    "bytes": 235056,
+    "spot_id": null,
+    "url": "image-assets/H-TR-01-cablecar.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  },
+  {
+    "id": "map-cover",
+    "label": "首页全景图",
+    "category": "山水",
+    "source": "首页全景图.png",
+    "source_sha256": "2b6f3ef80f2de4ca5ec51cada5e3d8d41a8fff2d9f08437676b79d844f11a0f4",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "cropBox": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "width": 1672,
+    "height": 941,
+    "transparent": false,
+    "centroidXNormalized": 0.49970095693779903,
+    "groundYNormalized": 1,
+    "bytes": 484110,
+    "spot_id": null,
+    "url": "image-assets/map-cover.webp",
+    "kind": "concept_art",
+    "source_archive": "图片资产.zip"
+  }
+]
