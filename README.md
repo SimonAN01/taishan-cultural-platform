@@ -44,7 +44,7 @@ cd taishan
 
 ## 服务器融合部署
 
-现有服务器仍运行 1.2.0，本分支尚未替换公网部署。需要发布时，先在本机 `npm ci && npm run build`，将 `dist/` 上传到 `/opt/taishan/immersive/`，将本分支 `taishan/` 中的代码上传到原应用目录，保留服务器的 `.env`、`runtime/`、`models/`、`.venv/`。在服务器 `.env` 添加：
+2026-10-14已将提交 `6e4a8fa` 发布到服务器，主站与 `/experience/` 均可通过8037端口访问。详见 [服务器发布记录](docs/integration/服务器融合发布记录.md)。后续重新发布时，先在本机 `npm ci && npm run build`，将 `dist/` 上传到 `/opt/taishan/immersive/`，将本分支 `taishan/` 中的代码上传到原应用目录，保留服务器的 `.env`、`runtime/`、`models/`、`.venv/`。在服务器 `.env` 添加：
 
 ```sh
 IMMERSIVE_FRONTEND_DIR=/opt/taishan/immersive

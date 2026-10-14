@@ -1,0 +1,136 @@
+{
+  "commit": "6e4a8fa",
+  "verified_files": 173,
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 7990
+    },
+    {
+      "path": "/experience/",
+      "status": 200,
+      "bytes": 1546
+    },
+    {
+      "path": "/experience/image-assets/map-cover.webp",
+      "status": 200,
+      "bytes": 484110
+    },
+    {
+      "path": "/experience/models/princess-agent.glb",
+      "status": 200,
+      "bytes": 10677568
+    },
+    {
+      "path": "/experience/models/taohuayuan-cable-car.glb",
+      "status": 200,
+      "bytes": 11214408
+    }
+  ],
+  "health": {
+    "status": "ok",
+    "version": "1.2.1",
+    "immersive_available": true,
+    "knowledge_documents": 25,
+    "agent_mode": "rag_llm",
+    "llm_configured": true,
+    "generation_service": {
+      "state": "verified",
+      "checked_at": 1791991247
+    },
+    "vision_available": true,
+    "vision_mode": "cloud_visual",
+    "vision_service": {
+      "state": "verified",
+      "checked_at": 1791991210
+    },
+    "trained_landmark_model": false,
+    "retrieval_mode": "bge_hybrid",
+    "language_model": "deepseek-v4.1-flash"
+  },
+  "chat": {
+    "seconds": 2.289,
+    "answer": "封禅是古代帝王祭祀天地的典礼，“封”主要祭天，“禅”主要祭地[1]。秦始皇、汉武帝都有在泰山封禅的历史记载[1]。至于远古帝王封禅，多属传说，不宜当作已证实的史实[1]。",
+    "sources": [
+      {
+        "id": "feng",
+        "title": "秦皇汉武 双圣封禅",
+        "publisher": "泰安汶河新区",
+        "url": "https://clswhjq.taian.gov.cn/art/2020/6/22/art_159071_9227599.html",
+        "verified_at": "2026-10-14",
+        "verification": "已核对页面；原典需进一步考证"
+      }
+    ],
+    "citations": [
+      {
+        "number": 1,
+        "title": "封禅是什么",
+        "sources": [
+          {
+            "id": "feng",
+            "title": "秦皇汉武 双圣封禅",
+            "publisher": "泰安汶河新区",
+            "url": "https://clswhjq.taian.gov.cn/art/2020/6/22/art_159071_9227599.html",
+            "verified_at": "2026-10-14",
+            "verification": "已核对页面；原典需进一步考证"
+          }
+        ]
+      }
+    ],
+    "mode": "rag_llm",
+    "model": "deepseek-v4.1-flash",
+    "tool_calls": [],
+    "refused": false,
+    "retrieved": [
+      {
+        "id": "k-feng",
+        "title": "封禅是什么",
+        "relevance": 1.275
+      }
+    ],
+    "suggested_questions": [
+      "封禅是什么？",
+      "为什么说会当凌绝顶？",
+      "红门线怎么走？"
+    ]
+  },
+  "vision": {
+    "seconds": 6.345,
+    "model_version": "deepseek-v4.1-flash · 云端图像理解",
+    "method": "cloud_visual",
+    "status": "needs_confirmation",
+    "confidence": null,
+    "score_type": "visual_evidence",
+    "candidates": [
+      {
+        "spot_id": "jingshi",
+        "name": "经石峪",
+        "reason": "大面积倾斜石坪上可见密集的摩崖刻字，符合经石峪大字《金刚经》摩崖石刻的典型特征"
+      }
+    ],
+    "message": "云端模型已给出可能的景点，请对照实景图与画面依据人工确认。候选不代表识别准确率。",
+    "request_id": "6ca5bbd40d5c4c09bd82b2964f3aae80"
+  },
+  "verified_health": {
+    "status": "ok",
+    "version": "1.2.1",
+    "immersive_available": true,
+    "knowledge_documents": 25,
+    "agent_mode": "rag_llm",
+    "llm_configured": true,
+    "generation_service": {
+      "state": "verified",
+      "checked_at": 1791991451
+    },
+    "vision_available": true,
+    "vision_mode": "cloud_visual",
+    "vision_service": {
+      "state": "verified",
+      "checked_at": 1791991458
+    },
+    "trained_landmark_model": false,
+    "retrieval_mode": "bge_hybrid",
+    "language_model": "deepseek-v4.1-flash"
+  }
+}
