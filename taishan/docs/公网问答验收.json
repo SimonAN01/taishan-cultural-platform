@@ -1,0 +1,68 @@
+[
+  {
+    "question": "你是谁",
+    "http_status": 200,
+    "seconds": 3.19,
+    "answer": "我是碧霞仙子，这个泰山文化体验平台的艺术化导览角色，不是历史人物或宗教权威[1]。我可以为你介绍泰山景点与路线、讲解历史文化、解读诗词，也能协助查看照片识景候选结果[1]。你想先了解泰山的哪一处景点或哪条路线呢？",
+    "mode": "rag_llm",
+    "model": "deepseek-v4.1-flash",
+    "citations": []
+  },
+  {
+    "question": "纪泰山铭在哪里？",
+    "http_status": 200,
+    "seconds": 4.6,
+    "answer": "《纪泰山铭》刻于岱顶大观峰崖壁[1]。大观峰与玉皇顶是不同景点，地图位置仅为艺术化示意[1]。",
+    "mode": "rag_llm",
+    "model": "deepseek-v4.1-flash",
+    "citations": [
+      {
+        "number": 1,
+        "title": "大观峰与纪泰山铭",
+        "sources": [
+          {
+            "id": "stone",
+            "title": "石阙、碑碣、摩崖碑",
+            "publisher": "泰山风景名胜区管理委员会",
+            "url": "https://tsgw.taian.gov.cn/art/2021/6/16/art_162237_10286435.html",
+            "verified_at": "2026-10-14",
+            "verification": "本次核对官方公开摘要；位置与石刻类型已核对，详细释读待专家复核"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "question": "天外村可以坐索道吗？",
+    "http_status": 200,
+    "seconds": 2.49,
+    "answer": "天外村不能直接坐索道。天外村线是先乘景区交通至中天门，再从中天门换乘索道至岱顶，之后步行游览南天门[1]。",
+    "mode": "rag_llm",
+    "model": "deepseek-v4.1-flash",
+    "citations": [
+      {
+        "number": 1,
+        "title": "天外村线",
+        "sources": [
+          {
+            "id": "routes",
+            "title": "第一次来泰山 可以推荐一下游览线路吗",
+            "publisher": "泰安市文化和旅游局",
+            "url": "https://whlyj.taian.gov.cn/art/2026/4/13/art_366342_10312047.html",
+            "verified_at": "2026-10-14",
+            "verification": "官方检索摘要核对；不沿用实时票价和开放状态"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "question": "你是谁（引用编号修复后）",
+    "http_status": 200,
+    "seconds": 3.23,
+    "answer": "我是碧霞仙子，这个泰山文化体验平台的艺术化导览角色。我可以为你介绍泰山景点与路线、讲解历史文化、解读诗词，也能协助查看照片识景候选结果。我并非历史人物或宗教权威。",
+    "mode": "rag_llm",
+    "model": "deepseek-v4.1-flash",
+    "citations": []
+  }
+]

@@ -1,0 +1,162 @@
+import {$,esc,api,post,notice,sources,heading,speak,stopSpeech} from './ui.js';
+import {createMap} from './map.js';
+import {createAssistant} from './assistant.js';
+let catalog,health,map,assistant,journey={visited:[],favorites:[]};let selected=null,routeId='hongmen',currentView='map',photoURL=null,photoBusy=false,showRoute=false,variantId='walk',selectedTab='历史',spotFilter='全部',historyEra='全部',poemId='wangyue',chapterId=null,storyTrail=false,journeyGeneration=0;const saving=new Set();
+const byId=id=>catalog.spots.find(s=>s.id===id),route=()=>{const r=catalog.routes.find(r=>r.id===routeId);const v=r.variants?.find(v=>v.id===variantId)??r.variants?.[0];return v?{...r,...v,id:r.id,name:r.name,variant_name:v.name}:r};
+const saved=(kind,id)=>journey.favorites.some(f=>f.kind===kind&&f.item_id===id);
+const linked=ids=>`<div class="linked-spots">${ids.map(id=>`<button data-spot="${id}">${esc(byId(id)?.name)} ↗</button>`).join('')}</div>`;
+function photoFigure(p,enlarge=true){return `<figure class="real-photo">${enlarge?`<button class="photo-enlarge" data-enlarge-photo="${esc(p.id)}" aria-label="放大${esc(p.caption)}">`:""}<img src="${esc(p.url)}" alt="${esc(p.caption)}" width="${p.width}" height="${p.height}" loading="lazy">${enlarge?"</button>":""}<figcaption>${esc(p.caption)}<small>摄影：${esc(p.author)} · <a href="${esc(p.source_page)}" target="_blank" rel="noopener noreferrer">原始来源 ↗</a> · ${p.license_url?`<a href="${esc(p.license_url)}" target="_blank" rel="noopener noreferrer">${esc(p.license)}</a>`:esc(p.license)}<br>${esc(p.change_note)}</small></figcaption></figure>`}
+function gallery(s){return `<div class="spot-gallery"><h3>实景图集</h3>${s.photos?.length?s.photos.map(p=>photoFigure(p)).join(''):'<p class="source-note">这处景点暂未收录经核对的实景照片。概念画面不作为景点实物照片。</p>'}</div>`}
+function changeView(name){
+ if(!catalog)return;if(!['map','routes','history','poems','journey','spots','museum','spot-full','story'].includes(name))name='map';if(currentView!==name)stopSpeech();currentView=name;
+ document.querySelectorAll('.view').forEach(v=>v.hidden=v.id!==`view-${name}`);document.querySelectorAll('nav [data-nav]').forEach(b=>{if(b.dataset.nav===name)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
+ if(name==='spots')renderSpots();if(name==='museum')renderMuseum();if(name==='spot-full')renderSpotFull();if(name==='routes')renderRoutes();if(name==='history')renderHistory();if(name==='poems')renderPoems();if(name==='journey')renderJourney();if(name==='story')renderStory();
+ window.scrollTo({top:0,behavior:'instant'});syncLocation();
+}
+function syncLocation(){
+ const params=new URLSearchParams();if(currentView==='poems')params.set('poem',poemId);if(chapterId&&(currentView==='story'||storyTrail))params.set('chapter',chapterId);if(selected)params.set('spot',selected.id);
+ if(routeId!=='hongmen'||showRoute)params.set('route',routeId);if(variantId!=='walk')params.set('variant',variantId);if(showRoute&&!selected)params.set('panel','route');if(currentView==='spot-full'&&selectedTab!=='历史')params.set('tab',selectedTab);
+ if(currentView==='spots'&&spotFilter!=='全部')params.set('filter',spotFilter);if(currentView==='history'&&historyEra!=='全部')params.set('era',historyEra);
+ const hash=currentView+(params.size?'?'+params:'');if(location.hash.slice(1)!==hash)history.pushState(null,'','#'+hash);
+}
+function restoreLocation(){
+ const [view,query]=location.hash.slice(1).split('?');const params=new URLSearchParams(query);const id=params.get('spot');selected=id?byId(id)??null:null;
+ routeId=catalog.routes.some(r=>r.id===params.get('route'))?params.get('route'):'hongmen';variantId=catalog.routes.find(r=>r.id===routeId).variants?.some(v=>v.id===params.get('variant'))?params.get('variant'):'walk';showRoute=params.get('panel')==='route';selectedTab=['历史','故事','诗词'].includes(params.get('tab'))?params.get('tab'):'历史';
+ spotFilter=['全部','自然','古建','石刻','入口'].includes(params.get('filter'))?params.get('filter'):'全部';historyEra=['全部','秦汉','唐宋',...catalog.history.map(h=>h.era)].includes(params.get('era'))?params.get('era'):'全部';
+ poemId=catalog.poems.some(p=>p.id===params.get('poem'))?params.get('poem'):'wangyue';chapterId=catalog.story.chapters.some(ch=>ch.id===params.get('chapter'))?params.get('chapter'):null;storyTrail=Boolean(chapterId&&view!=='story');changeView(view||'map');renderDetail();
+}
+function renderDetail(){
+ const target=$('#detail'),r=route();target.hidden=!selected&&!showRoute;$('.map-shell').classList.toggle('has-detail',!target.hidden);$('.map-shell').classList.toggle('spot-open',Boolean(selected));$('#spot-count').textContent=catalog.spots.length;$('#route-count').textContent=catalog.routes.length;$('#knowledge-count').textContent=health.knowledge_documents;$('#route-summary').textContent=`${r.name} · ${r.variant_name??r.type} · ${r.node_sequence.length} 个主线节点`;map.route(r,selected?.id);
+ target.classList.toggle('route-overview',!selected);
+ if(!selected){target.innerHTML=`<div class="detail-top"><p class="eyebrow">今日游山 · 择一条路</p><button data-action="close-detail" aria-label="关闭路线详情">×</button></div><h2>${esc(r.name)}</h2><p class="subtitle">${esc(r.tagline)}</p><p class="route-description">${esc(r.description)}</p>${r.variants?`<div class="route-variants" role="group" aria-label="选择上山方式">${r.variants.map(v=>`<button data-variant="${v.id}" aria-pressed="${v.id===variantId}">${esc(v.name)}</button>`).join('')}</div>`:''}${r.transport?.length?`<ul class="transport-notes">${r.transport.map(t=>`<li>${esc(t.label)}</li>`).join('')}</ul>`:''}<ol class="route-list">${r.node_sequence.map((id,i)=>`<li><button data-spot="${id}">${esc(byId(id).name)}<span>${i+1===r.node_sequence.length?'文化终点':r.transport?.find(t=>t.from===id)?.mode==='vehicle'?'乘车':r.transport?.find(t=>t.from===id)?.mode==='cable'?'索道':r.transport?.find(t=>t.from===id)?'交通接驳':'步行'}</span></button></li>`).join('')}</ol><p class="detours">文化支线 ${r.detours.map(id=>`<button data-spot="${id}">${esc(byId(id).name)}</button>`).join('')}</p><p class="source-note">路线仅作文化游览参考，通行以景区公告为准。</p>${sources(r.sources)}`;return}
+ const s=selected,index=r.node_sequence.indexOf(s.id),previous=r.node_sequence[index-1],next=index>=0?r.node_sequence[index+1]:null;
+ target.innerHTML=`<div class="detail-top"><button class="text-link" data-action="back-route">← ${esc(r.name)}</button><button data-action="close-detail" aria-label="关闭景点详情" data-close="true">×</button></div><p class="eyebrow" style="margin-top:15px">${esc(s.category)} · 泰山文化节点</p><h2>${esc(s.name)}</h2><p class="subtitle">${esc(s.subtitle)}</p>${s.photos?.length?photoFigure(s.photos[0]):'<p class="source-note">实景照片暂未收录，可对照资料继续阅读。</p>'}<p class="spot-copy">${esc(s.intro)}</p><div class="spot-reading"><h3>读山小记</h3><p class="spot-copy">${esc(s.interpretation)}</p></div><div class="action-row"><button class="primary" data-ask="${esc(s.name)}有什么文化故事？">问问仙子 →</button><button class="secondary-button" data-save-kind="spot" data-save-id="${s.id}" aria-pressed="${saved('spot',s.id)}">${saved('spot',s.id)?'已收藏':'收藏景点'}</button></div>${storyTrail?'<button class="story-return" data-nav="story">← 回到本章 · 继续文化游历</button>':''}<button class="text-link" data-action="spot-full">展开景点详情 →</button><br><button class="text-link" data-speak="spot">听讲解</button><button class="text-link" data-action="stop-speech" style="margin-left:16px">停止朗读</button>${sources(s.sources)}<div class="spot-step">${previous?`<button data-spot="${previous}">← ${esc(byId(previous).name)}</button>`:'<span>继续探索山水</span>'}${next?`<button data-spot="${next}">${esc(byId(next).name)} →</button>`:'<button data-action="back-route">返回路线 →</button>'}</div>`;
+}
+async function selectSpot(id){
+ const s=byId(id);if(!s)return;const generation=journeyGeneration;selected=s;selectedTab='历史';if(!route().node_sequence.includes(id)&&!route().detours.includes(id)){routeId=catalog.routes.find(r=>r.node_sequence.includes(id)||r.detours.includes(id))?.id??routeId;variantId='walk'}changeView('map');renderDetail();
+ if(window.innerWidth<=760)$('#detail').scrollIntoView({behavior:'instant',block:'start'});
+ try{await post('journey/visit',{spot_id:id});const fresh=await api('journey');if(generation!==journeyGeneration)return;journey=fresh;if(currentView==='story')renderStory();if(currentView==='journey')renderJourney()}catch(e){notice('景点已打开，游览记录暂未保存：'+e.message)}
+}
+function selectRoute(id){if(!catalog.routes.some(r=>r.id===id))return;routeId=id;variantId='walk';selected=null;showRoute=true;map.reset();changeView('map');renderDetail()}
+function renderRoutes(){
+ $('#view-routes').innerHTML=heading('四条路径 · 四种山意','择路入山','同一座山，可以有不同的读法。沿古道拾级，或借车与索道抵达云端，再慢慢探索岱顶。')+`<div class="route-grid">${catalog.routes.map(r=>`<article class="route-card"><div class="route-art route-art-${r.id}" role="img" aria-label="${esc(r.name)}山水插画"></div><div class="route-card-body"><h2>${esc(r.name)}</h2><p class="tagline">${esc(r.tagline)}</p><p class="desc">${esc(r.description)}</p><p class="route-meta">${esc(r.type)}<br>${r.node_sequence.length} 个文化节点 · ${esc(r.effort)}</p><button class="primary" data-route="${r.id}">沿此路探索 →</button></div></article>`).join('')}</div><p class="reading-note">${esc(catalog.routes[0].notes)}</p>${sources(catalog.routes[0].sources)}`;
+}
+function renderHistory(era=historyEra){
+ historyEra=era;
+ const eras=['全部',...catalog.history.map(h=>h.era)];
+ $('#view-history').innerHTML=heading('以史为脉 · 读山千年','千年史脉','从帝王祭祀、碑铭题刻到遗产保护，泰山的故事不只属于一个朝代。点击相关景点，探索与这段历史相关的文化节点。')+`<div class="history-gallery">${['先秦','秦汉','唐宋','明清','近现代'].map((e,i)=>`<button data-era-group="${e}" class="era-card"><strong>${e}</strong><span>${['山岳信仰','礼制与封禅','诗文与碑铭','古道与民俗','文化传承保护'][i]}</span><div class="era-landscape era-${i}" aria-hidden="true"></div><i aria-hidden="true"></i></button>`).join('')}</div><div class="era-filters" role="group" aria-label="按时代筛选">${eras.map(e=>`<button data-era="${e}" aria-pressed="${era===e}">${esc(e)}</button>`).join('')}</div><div class="history-list">${catalog.history.filter(h=>era==='全部'||h.era===era||(era==='秦汉'&&['秦','汉'].includes(h.era))||(era==='唐宋'&&['唐','宋'].includes(h.era))).map(h=>`<article class="history-item"><div class="history-year">${esc(h.era)}<small>${esc(h.year)}</small></div><div><h2>${esc(h.title)}</h2><p class="body">${esc(h.content)}</p>${linked(h.spot_ids)}${sources(h.sources)}</div></article>`).join('')}</div>`;
+}
+function renderPoems(){
+ const p=catalog.poems.find(p=>p.id===poemId)??catalog.poems[0];poemId=p.id;
+ $('#view-poems').innerHTML=heading('以诗为魂 · 望见山外山','诗意泰山','从杜甫的登临志向，到李白的游仙想象。读原文、看释读，再把诗中的山岳意象放回长卷。')+`<div class="poem-picker" role="group" aria-label="选择诗词">${catalog.poems.map(item=>`<button data-poem="${item.id}" aria-pressed="${p.id===item.id}"><strong>${esc(item.title)}</strong><span>${esc(item.author)} · ${esc(item.era)}</span></button>`).join('')}</div><article class="poetry-page ${p.original_text.split('\n').length>8?'long-poem':''}"><div class="poetry-art"><div class="poetry-verses">${p.original_text.split('\n').map(line=>esc(line)+'<br>').join('')}</div></div><div class="poetry-reading">${storyTrail?'<button class="story-return" data-nav="story">← 返回文化游历章节</button>':''}<p class="eyebrow">诗词长卷</p><h2>${esc(p.title)}</h2><p class="author">${esc(p.era)} · ${esc(p.author)}</p><h3>${esc(p.reading_title)}</h3><p class="interpretation">${esc(p.interpretation)}</p><details class="poem-annotations"><summary>逐句释读 · ${p.annotations.length} 组</summary>${p.annotations.map(a=>`<div><strong>${esc(a.line)}</strong><p>${esc(a.meaning)}</p></div>`).join('')}</details><p class="source-note">${esc(p.note)}</p>${linked(p.spot_ids)}<div class="action-row"><button class="primary" data-speak="poem">朗读这首诗</button><button class="secondary-button" data-save-kind="poem" data-save-id="${p.id}" aria-pressed="${saved('poem',p.id)}">${saved('poem',p.id)?'已收藏':'收藏诗词'}</button></div><button class="text-link" data-action="stop-speech">停止朗读</button><button class="text-link" data-ask="${esc(p.question)}">与仙子聊聊这首诗 →</button>${sources(p.sources)}</div></article>`;
+}
+function renderStory(){
+ const story=catalog.story,progress=journey.story_progress,done=new Set(progress.completed.map(r=>r.chapter_id));
+ const unlocked=ch=>done.has(ch.id)||progress.next_chapter===ch.id;
+ let ch=story.chapters.find(ch=>ch.id===chapterId);if(!ch||!unlocked(ch))ch=story.chapters.find(ch=>ch.id===progress.next_chapter)??story.chapters.at(-1);chapterId=ch.id;
+ const spot=byId(ch.spot_id),visited=journey.visited.some(v=>v.spot_id===ch.spot_id),complete=done.has(ch.id),next=story.chapters[story.chapters.indexOf(ch)+1];
+ $('#view-story').innerHTML=heading('五章读山 · 一段文化游历',story.title,story.description)+`<div class="story-progress"><div><strong>${done.size} / ${progress.total}</strong><span>章已完成</span></div><progress max="${progress.total}" value="${done.size}" aria-label="文化游历完成进度"></progress><p>${progress.next_chapter?'浏览景点，读一段资料，再留下一份理解。':'五章已完成。你读过了山路、石刻、史料、诗词与保护；还可以回看各章，继续追问。'}</p></div><div class="story-layout"><nav class="chapter-rail" aria-label="文化游历章节">${story.chapters.map((c,i)=>`<button data-chapter="${c.id}" ${unlocked(c)?'':'disabled'} aria-current="${c.id===ch.id?'step':'false'}"><span>${done.has(c.id)?'✓':String(i+1).padStart(2,'0')}</span><div><strong>${esc(c.title)}</strong><small>${esc(byId(c.spot_id).name)} · ${done.has(c.id)?'已完成':unlocked(c)?'可继续':'完成前章后开启'}</small></div></button>`).join('')}</nav><article class="chapter-reading"><p class="eyebrow">${esc(ch.theme)} · 第 ${story.chapters.indexOf(ch)+1} 章</p><h2>${esc(ch.title)}</h2><p class="chapter-intro">${esc(ch.intro)}</p>${spot.photos?.length?photoFigure(spot.photos[0]):'<p class="source-note">本章景点实景暂未收录，可以先对照公开资料阅读。</p>'}<h3>资料中的泰山</h3><p>${esc(ch.facts)}</p><p class="chapter-reflection">${esc(ch.reflection)}</p><div class="action-row"><button class="primary" data-story-spot="${ch.spot_id}">${visited?'重看':'打开'}${esc(spot.name)} →</button><button class="text-link" data-speak="chapter">听本章导读</button><button class="text-link" data-action="stop-speech">停止朗读</button></div>${ch.poem_id?`<button class="text-link" data-poem="${ch.poem_id}">读《${esc(catalog.poems.find(p=>p.id===ch.poem_id).title)}》与逐句释读 →</button>`:''}<button class="guide-wide" data-ask="${esc(ch.guide_question)}"><img src="assets/fairy-v2.webp" alt=""><span>带着本章问题，问问仙子<small>结合资料继续理解</small></span><span>→</span></button>${sources(ch.sources)}<form id="story-form" class="chapter-question" data-chapter-id="${ch.id}"><fieldset ${complete?'disabled':''}><legend>留下一份理解</legend><p>${esc(ch.question)}</p>${ch.choices.map((choice,i)=>`<label><input type="radio" name="choice" value="${i}" required><span>${esc(choice)}</span></label>`).join('')}<button class="primary" type="submit" ${complete||!visited?'disabled':''}>${complete?'本章已完成':visited?'确认我的理解 →':'先打开本章景点'}</button></fieldset><p id="story-feedback" role="status" aria-live="polite">${complete?'本章进度已保存，可以回看资料。':visited?'浏览记录已保存，选择答案后提交。':'先打开相关景点，再回本章回答。浏览网页不代表实地到访。'}</p></form>${complete&&next?`<button class="story-next primary" data-chapter="${next.id}">继续下一章 · ${esc(next.title)} →</button>`:''}${complete&&!next?'<button class="story-next primary" data-nav="journey">查看我的文化足迹 →</button>':''}</article></div>`;
+}
+function renderJourney(){
+ $('#view-journey').innerHTML=heading('留一份山中记忆','我的游历','收藏一处景点，记住一句诗。记录通过当前浏览器的匿名会话保存；你可以随时清除。')+`<div class="journey-summary"><div><strong>${journey.visited.length}</strong><span>/ ${catalog.spots.length} 处景点已探索</span></div><div><strong>${journey.favorites.length}</strong><span>项收藏</span></div></div><div class="journey-columns"><div><h2>走过的山水</h2>${journey.visited.length?journey.visited.map(v=>`<div class="journey-item"><button data-spot="${v.spot_id}">${esc(byId(v.spot_id)?.name)}<small>${esc(byId(v.spot_id)?.subtitle)}</small></button><button class="text-link" data-spot="${v.spot_id}">重游 →</button></div>`).join(''):'<p class="empty">长卷还未留下足迹。<br>从红门开始，去读第一处景点。</p><button class="primary" data-action="start">从红门启程 →</button>'}</div><div><h2>藏在心里的故事</h2>${journey.favorites.length?journey.favorites.map(f=>`<div class="journey-item"><button ${f.kind==='spot'?`data-spot="${f.item_id}"`:`data-poem="${f.item_id}"`}>${esc(f.kind==='spot'?byId(f.item_id)?.name:catalog.poems.find(p=>p.id===f.item_id)?.title)}<small>${f.kind==='spot'?'景点收藏':'诗词收藏'}</small></button><button class="text-link" data-save-kind="${f.kind}" data-save-id="${f.item_id}">取消收藏</button></div>`).join(''):'<p class="empty">喜欢的景点与诗句，可以在详情中收藏。</p>'}</div></div><div class="journey-story"><h2>文化游历 · ${journey.story_progress.completed.length} / ${journey.story_progress.total} 章</h2><p>把景点读成故事，继续五章主题游历。</p><button class="primary" data-nav="story">${journey.story_progress.next_chapter?'继续读山':'回看文化游历'} →</button></div><h2>照片识景 · 人工确认</h2>${journey.confirmed_predictions?.length?journey.confirmed_predictions.map(p=>`<div class="journey-item"><button data-spot="${p.confirmed_spot}">${esc(byId(p.confirmed_spot)?.name)}<small>由你确认，非模型自动判定</small></button></div>`).join(''):'<p class="empty">尚未确认照片识景候选。</p>'}<button class="clear-journey" data-action="clear-journey">清除我的记录与对话</button>`;
+}
+function renderSpots(category=spotFilter){
+ spotFilter=category;
+ const items=catalog.spots.filter(s=>category==='全部'||(category==='自然'?['自然','山景'].includes(s.category):category==='古建'?['古建','信仰'].includes(s.category):s.category===category));
+ $('#view-spots').innerHTML=heading('一山千年 · 景点图鉴','山中一景','从门阙到石刻，从山路到云海。每一个景点，都是读懂泰山的一页。')+`<div class="era-filters">${['全部','自然','古建','石刻','入口'].map(c=>`<button data-filter="${c}" aria-pressed="${category===c}">${c}</button>`).join('')}</div><div class="spot-grid">${items.map(s=>`<button class="spot-tile" data-spot="${s.id}">${s.photos?.length?`<img class="spot-tile-photo" src="${esc(s.photos[0].url)}" alt="${esc(s.photos[0].caption)}" loading="lazy"><small>实景照片 · 查看详情与来源</small>`:'<div class="spot-tile-art" aria-hidden="true"></div><small>艺术山景 · 暂无实景照片</small>'}<span class="eyebrow">${esc(s.category)}</span><h2>${esc(s.name)}</h2><p>${esc(s.subtitle)}</p><span class="text-link">读此景 →</span></button>`).join('')}</div>`;
+}
+function renderMuseum(){
+ const artifacts=catalog.artifacts;
+ $('#view-museum').innerHTML=heading('一字一山河 · 一刻一千年','泰山石刻 · 数字文博','从山石上的文字，到山路间的建筑。对照原始资料，读懂这些留在泰山的文化痕迹。')+`<div class="museum-grid">${artifacts.map((a,i)=>`<article class="artifact">${photoFigure(catalog.spots.flatMap(s=>s.photos??[]).find(p=>p.id===a.photo_id))}<div class="artifact-copy"><h2>${esc(a.name)}</h2><p class="eyebrow">${esc(a.subtitle)}</p><p>${esc(a.content)}</p><button class="text-link" data-spot="${a.spot_id}">回到相关景点 →</button>${sources(a.sources)}</div></article>`).join('')}</div>`;
+}
+function renderSpotFull(tab=selectedTab){
+ selectedTab=tab;
+ if(!selected){changeView('map');return}const s=selected;
+ const events=catalog.history.filter(h=>h.spot_ids.includes(s.id));const poems=catalog.poems.filter(p=>p.spot_ids.includes(s.id));
+ const section=tab==='历史'?(events.length?events.map(h=>`<article><h3>${esc(h.title)} · ${esc(h.year)}</h3><p>${esc(h.content)}</p>${sources(h.sources)}</article>`).join(''):'<p>这处景点暂未收录独立历史事件。可对照景点资料继续了解。</p>'):tab==='故事'?`<h3>读山小记 · 文化释读</h3><p>${esc(s.interpretation)}</p>`:poems.length?poems.map(p=>`<article><h3>${esc(p.title)} · ${esc(p.author)}</h3><p>${esc(p.original_text).replaceAll('\n','<br>')}</p><p>${esc(p.interpretation)}</p><small>文学意象关联，不代表诗人的实际游览位置。</small>${sources(p.sources)}</article>`).join(''):'<p>这处景点暂未收录相关诗词。</p><button class="text-link" data-nav="poems">前往诗词长卷 →</button>';
+ $('#view-spot-full').innerHTML=`<div class="spot-full"><div class="spot-full-art"><div class="spot-full-title"><p class="eyebrow">一山千年 · 山中一处</p><h1>${esc(s.name)}</h1><p>${esc(s.subtitle)}</p></div>${s.id==='zhongtian'?'<img class="gate-large" src="assets/zhongtianmen.webp" alt="中天门建筑概念插画">':''}<small class="scene-caption">山水与建筑概念画面 · 非实景测绘</small></div><div class="spot-full-reading"><button class="secondary-button" data-action="back-map">← 返回泰山全景</button>${storyTrail?'<button class="story-return" data-nav="story">← 回到本章 · 继续文化游历</button>':''}<p class="eyebrow">一山千年 · 景点小志</p><h2>${esc(s.subtitle)}</h2><p class="lead">${esc(s.intro)}</p>${gallery(s)}<div class="spot-tabs" role="group" aria-label="景点文化内容">${['历史','故事','诗词'].map(t=>`<button data-spot-tab="${t}" aria-pressed="${t===tab}">${t}</button>`).join('')}</div><div class="spot-section">${section}</div><button class="guide-wide" data-ask="${esc(s.name)}有什么文化故事？"><img src="assets/fairy-v2.webp" alt=""><span>请仙子讲解此处<small>带着当前景点，进入文化问答</small></span><span>→</span></button><div class="action-row"><button class="text-link" data-speak="spot">听一段景点讲解</button><button class="text-link" data-action="stop-speech">停止朗读</button><button class="secondary-button" data-save-kind="spot" data-save-id="${s.id}" aria-pressed="${saved('spot',s.id)}">${saved('spot',s.id)?'已收藏':'收藏景点'}</button></div>${sources(s.sources)}</div></div>`;
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-spot-tab]');if(b){renderSpotFull(b.dataset.spotTab);syncLocation()}});
+
+function openModal(html){$('#modal-content').innerHTML=html;if(!$('#modal').open)$('#modal').showModal()}
+function intro(){if(!$('#welcome-dialog').open)$('#welcome-dialog').showModal()}
+function about(){openModal(`<h2>资料与使用说明</h2><p>本平台提供泰山文化探索体验。地图和角色为艺术化表达，不提供精确导航；实时天气、票价、开放时间和交通运行请查阅景区官方公告。</p><h3>文化资料</h3><p>现有内容为依据公开资料编写的简要释读，仍需领域专家继续复核。历史记载、诗词解释和宗教民俗应分别理解。</p>${catalog.sources.map(s=>`<p><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)} ↗</a><br>${esc(s.publisher)} · 核验日期 ${esc(s.verified_at)}<br>${esc(s.verification)}</p>`).join('')}<h3>问答与识景</h3><p>${health.llm_configured?'问答已配置语言模型服务；每条回答会标明实际使用模型生成还是直接引用资料。':'问答当前采用本地文化资料检索，未配置生成式语言模型。'}${health.vision_mode==='cloud_visual'?'照片识景使用云端图像理解，不在本服务器训练或运行视觉模型。上传图片会发送至当前配置的大模型服务，本平台不保存原图。':'照片识景采用通用 CLIP 零样本模型。'}尚未以泰山独立测试集验证，候选需人工确认。</p><p>文博配图已收录有署名和许可的实景照片，没有接入文物实物扫描或三维展品。</p><h3>你的记录</h3><p>匿名会话保存游览、文化章节进度、收藏、对话与识别结果，上传照片用于推理，服务不保存原图。会话Cookie有效期30天，并随访问续期；超过30天未访问的会话数据在服务启动时清理。可在“我的游历”清除。角色图片为艺术素材，并非已接入的3D数字人。</p>`)}
+function photo(){
+ if(photoBusy){notice('照片识别仍在进行，请稍后查看结果');return}
+ if(photoURL){URL.revokeObjectURL(photoURL);photoURL=null}
+ openModal(`<p class="eyebrow">以照片为引 · 重逢山中一景</p><h2>拍照识景</h2><p>上传一张包含完整地标的照片，查找可能的泰山景点。识别结果需要你对照确认。${health.vision_mode==='cloud_visual'?'<strong>云端分析：图片会发送至当前配置的大模型服务，本平台不保存原图。</strong>':''}</p><label class="upload-label" for="photo-file"><strong id="upload-title">选择一张山中照片</strong><img id="photo-preview" alt="待识别照片预览" hidden><small>JPG / PNG / WebP · 最大 8 MB</small><input type="file" id="photo-file" accept="image/jpeg,image/png,image/webp"></label><div class="photo-actions"><button class="primary" id="recognize-button" disabled>开始识景 →</button><button class="secondary-button" data-action="close-modal">先浏览地图</button></div><div id="photo-result" class="photo-result" role="status" aria-live="polite"></div><p class="source-note">${health.vision_mode==='cloud_visual'?'云端图像理解，无需本服务器训练或运行视觉模型。':'照片仅用于本次推理，服务不保存原图。'}候选结果需人工确认。</p>`);
+ $('#photo-file').onchange=()=>{const file=$('#photo-file').files[0];$('#photo-result').replaceChildren();$('#recognize-button').disabled=true;if(!file)return;if(file.size>8*1024*1024){$('#photo-result').textContent='图片超过 8 MB，请压缩后重试。';return}if(!['image/jpeg','image/png','image/webp'].includes(file.type)){ $('#photo-result').textContent='请使用 JPG、PNG 或 WebP 图片。';return }if(photoURL)URL.revokeObjectURL(photoURL);photoURL=URL.createObjectURL(file);$('#photo-preview').src=photoURL;$('#photo-preview').hidden=false;$('#upload-title').hidden=true;$('#recognize-button').disabled=false};
+ $('#recognize-button').onclick=async()=>{
+  if(photoBusy)return;const file=$('#photo-file').files[0];if(!file)return;photoBusy=true;$('#recognize-button').disabled=true;$('#photo-file').disabled=true;$('#photo-result').textContent=health.vision_mode==='cloud_visual'?'正在云端对照地标，通常需要数秒…':'正在对照山中地标，首次识别可能需要片刻…';const data=new FormData();data.append('file',file);
+  try{const result=await api('vision/recognize',{method:'POST',body:data});if($('#photo-result'))$('#photo-result').innerHTML=`<h3>${result.status==='unknown'?'还不能确认这处景点':'请确认你看到的景点'}</h3><p>${esc(result.message)}</p>${result.candidates.map(c=>`<button class="candidate" data-confirm-spot="${c.spot_id}" data-prediction="${result.request_id}"><span>${esc(c.name)}<small>${c.reason?esc(c.reason):'视觉相似度 '+Number(c.similarity).toFixed(3)}</small></span><span>是这处景点 →</span></button>`).join('')}<p class="source-note">${esc(result.model_version)} · ${result.method==='cloud_visual'?'候选需人工确认':'相似度不是概率'}</p><button class="text-link" data-nav="spots">${result.status==='unknown'?'手动浏览景点':'都不是这些景点？手动选择'} →</button>`}
+  catch(e){if($('#photo-result'))$('#photo-result').innerHTML=`<p class="error">${esc(e.message)}</p><button class="text-link" data-nav="routes">手动选择路线与景点 →</button>`}
+  finally{photoBusy=false;if($('#recognize-button')){$('#recognize-button').disabled=false;$('#photo-file').disabled=false}}
+ };
+}
+async function toggleFavorite(kind,id){
+ const key=kind+':'+id;if(saving.has(key))return;saving.add(key);const generation=journeyGeneration;const wantSaved=!saved(kind,id);
+ try{await post('journey/favorite',{kind,item_id:id,saved:wantSaved});const fresh=await api('journey');if(generation!==journeyGeneration)return;journey=fresh;if(currentView==='journey')renderJourney();if(currentView==='map')renderDetail();if(currentView==='spot-full')renderSpotFull();if(currentView==='poems')renderPoems();notice(saved(kind,id)?'已收藏，山中记忆留在我的游历':'已取消收藏')}
+ catch(e){notice('收藏未保存：'+e.message)}finally{saving.delete(key)}
+}
+document.addEventListener('click',async e=>{
+ const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.enlargePhoto){const p=catalog.spots.flatMap(s=>s.photos??[]).find(p=>p.id===b.dataset.enlargePhoto);if(p)openModal(`<h2>实景照片</h2>${photoFigure(p,false)}`);return}
+ if(b.dataset.nav){$('#modal').close();changeView(b.dataset.nav);return}
+ if(b.dataset.poem){if(currentView==='story')storyTrail=true;poemId=b.dataset.poem;changeView('poems');return}
+ if(b.dataset.chapter){chapterId=b.dataset.chapter;changeView('story');return}
+ if(b.dataset.storySpot){storyTrail=true;await selectSpot(b.dataset.storySpot);return}
+ if(b.dataset.spot){await selectSpot(b.dataset.spot);return}
+ if(b.dataset.confirmSpot){b.disabled=true;try{await post('vision/predictions/'+b.dataset.prediction+'/confirm',{spot_id:b.dataset.confirmSpot});$('#modal').close();await selectSpot(b.dataset.confirmSpot);notice('已保存你的人工确认，并打开景点')}catch(err){b.disabled=false;notice(err.message)}return}
+ if(b.dataset.route){selectRoute(b.dataset.route);return}
+ if(b.dataset.variant){variantId=b.dataset.variant;selected=null;showRoute=true;renderDetail();syncLocation();return}
+ if(b.dataset.eraGroup){renderHistory(b.dataset.eraGroup);syncLocation();return}
+ if(b.dataset.filter){changeView('spots');renderSpots(b.dataset.filter);syncLocation();return}
+ if(b.dataset.era){renderHistory(b.dataset.era);syncLocation();return}
+ if(b.dataset.ask){assistant.open(b.dataset.ask);return}
+ if(b.dataset.saveKind){await toggleFavorite(b.dataset.saveKind,b.dataset.saveId);return}
+ if(b.dataset.speak){speak(b.dataset.speak==='poem'?catalog.poems.find(p=>p.id===poemId).original_text:b.dataset.speak==='chapter'?(()=>{const ch=catalog.story.chapters.find(ch=>ch.id===chapterId);return ch.title+'。'+ch.intro+ch.facts+ch.reflection})():selected.name+'。'+selected.intro+selected.interpretation,b);return}
+ switch(b.dataset.action){
+  case 'map-info':{const expanded=$('.map-heading').classList.toggle('expanded');b.setAttribute('aria-expanded',String(expanded));b.textContent=expanded?'收起地图简介':'展开地图简介';break}
+  case 'start':selectRoute('hongmen');await selectSpot('hongmen');break;
+  case 'back-route':selected=null;showRoute=true;renderDetail();syncLocation();break;
+  case 'close-detail':selected=null;showRoute=false;renderDetail();syncLocation();break;
+  case 'show-route':showRoute=true;renderDetail();syncLocation();break;
+  case 'chat':assistant?.open();break;
+  case 'close-chat':assistant?.close();break;
+  case 'close-modal':$('#modal').close();break;
+  case 'photo':if(catalog)photo();break;
+  case 'intro':intro();break;
+  case 'spot-full':if(selected)changeView('spot-full');break;
+  case 'back-map':changeView('map');renderDetail();break;
+  case 'menu':openModal('<h2>游历泰山</h2><div class="mobile-menu"><button data-nav="map">山水地图</button><button data-nav="spots">全部景点</button><button data-nav="routes">路线导览</button><button data-nav="history">历史文化</button><button data-nav="poems">诗词长卷</button><button data-nav="museum">石刻文博</button><button data-nav="story">五章文化游历</button><button data-nav="journey">我的足迹与收藏</button><button data-action="menu-chat">问问碧霞仙子</button></div>');break;
+  case 'menu-chat':$('#modal').close();assistant.open();break;
+  case 'enter':$('#welcome-dialog').close();try{localStorage.setItem('taishan-entered','yes')}catch{};changeView('map');showRoute=false;selected=null;routeId='hongmen';variantId='walk';renderDetail();syncLocation();break;
+  case 'about':if(catalog)about();break;
+  case 'stop-speech':stopSpeech();notice('已停止朗读');break;
+  case 'clear-journey':openModal('<h2>清除这段游历？</h2><p>这会删除当前浏览器匿名会话的游览足迹、文化章节进度、收藏、对话和识别记录。</p><div class="action-row"><button class="primary" data-action="confirm-clear">清除记录</button><button class="secondary-button" data-action="close-modal">保留记录</button></div>');break;
+  case 'confirm-clear':try{journeyGeneration++;await api('journey',{method:'DELETE'});journey=await api('journey');assistant.clear();$('#modal').close();renderJourney();notice('已清除记录与对话')}catch(err){notice(err.message)}break;
+  case 'retry':boot();break;
+ }
+});
+for(const id of ['modal','chat-dialog'])$( '#'+id).addEventListener('click',e=>{if(e.target!==e.currentTarget)return;const r=e.currentTarget.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.currentTarget.close()});
+function assistantContext(){
+ if(currentView==='poems'){const p=catalog.poems.find(p=>p.id===poemId);return {label:`正在阅读 · ${p.author}《${p.title}》`,payload:{current_poem:p.id}}}
+ if(currentView==='story'){const ch=catalog.story.chapters.find(ch=>ch.id===chapterId);return {label:`文化游历 · ${ch.title}`,payload:{current_spot:ch.spot_id,...(ch.poem_id?{current_poem:ch.poem_id}:{})}}}
+ if(['map','spot-full'].includes(currentView)&&selected)return {label:`正在游览 · ${selected.name}`,payload:{current_spot:selected.id}};
+ if(currentView==='map'&&showRoute)return {label:`路线导览 · ${route().name}`,payload:{current_route:routeId}};
+ return {payload:{}};
+}
+document.addEventListener('submit',async e=>{
+ if(e.target.id!=='story-form')return;e.preventDefault();const form=e.target,id=form.dataset.chapterId,choice=new FormData(form).get('choice');if(choice===null)return;
+ const generation=journeyGeneration,field=form.querySelector('fieldset');field.disabled=true;$('#story-feedback').textContent='正在核对答案与保存进度…';
+ try{const result=await post('story/chapters/'+id+'/answer',{choice:Number(choice)});if(generation!==journeyGeneration)return;journey.story_progress=result.progress;
+  if(currentView==='story'&&chapterId===id){if(result.correct){renderStory();$('#story-feedback').textContent='回答正确 · '+result.explanation;notice('本章已完成，进度已保存')}else{field.disabled=false;$('#story-feedback').textContent='再想一想 · '+result.explanation}}
+ }catch(err){if(generation===journeyGeneration&&form.isConnected){field.disabled=false;$('#story-feedback').textContent=err.message}}
+});
+window.addEventListener('hashchange',()=>{if(catalog&&location.hash!=='#main')restoreLocation()});
+async function boot(){
+ $('#boot').hidden=false;$('#boot').textContent='正在展开山水长卷…';
+ try{journey=await api('journey');[catalog,health]=await Promise.all([api('catalog'),api('health')]);map=createMap(catalog,selectSpot);assistant=createAssistant(assistantContext,health);$('#immersive-link').hidden=!health.immersive_available;$('#boot').hidden=true;restoreLocation();document.body.dataset.ready='true';try{if(!localStorage.getItem('taishan-entered')&&['','#map'].includes(location.hash))intro()}catch{}}
+ catch(e){$('#boot').innerHTML=`<p>长卷暂时未能展开：${esc(e.message)}</p><button class="primary" data-action="retry">重新加载</button>`}
+}
+boot();

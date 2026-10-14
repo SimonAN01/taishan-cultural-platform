@@ -1,0 +1,25 @@
+[Unit]
+Description=Taishan cultural experience API
+After=network.target
+
+[Service]
+User=taishan
+Group=taishan
+WorkingDirectory=/opt/taishan
+EnvironmentFile=-/opt/taishan/.env
+Environment=DATA_DIR=/opt/taishan/runtime
+Environment=CLIP_MODEL_DIR=/opt/taishan/models/clip
+ExecStart=/opt/taishan/.venv/bin/python -m uvicorn backend.app:app --host 127.0.0.1 --port 18600 --proxy-headers --forwarded-allow-ips=127.0.0.1
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/taishan/runtime
+MemoryMax=1100M
+CPUQuota=150%
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

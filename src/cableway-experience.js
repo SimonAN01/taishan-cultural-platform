@@ -87,7 +87,7 @@ export function createCablewayExperience(host, { onReady, onError, onProgress } 
     frame = requestAnimationFrame(frameLoop);
   }
 
-  new GLTFLoader().load('/models/taohuayuan-cable-car.glb', gltf => {
+  new GLTFLoader().load(import.meta.env.BASE_URL + 'models/taohuayuan-cable-car.glb', gltf => {
     model = gltf.scene;
     const bounds = new THREE.Box3().setFromObject(model);
     const size = bounds.getSize(new THREE.Vector3());

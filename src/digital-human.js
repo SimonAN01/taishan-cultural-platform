@@ -14,6 +14,7 @@ export function createDigitalHuman(host, { onReady, onError } = {}) {
   let mixer;
   let active = false;
   let speaking = false;
+  let lastBoundary = -Infinity;
   let thinking = false;
   let frame = 0;
   let last = performance.now();
@@ -71,7 +72,7 @@ export function createDigitalHuman(host, { onReady, onError } = {}) {
 
   function fallbackController() {
     return {
-      setActive() {}, setSpeaking() {}, setThinking() {}, gesture() {}, destroy() {},
+      speechBoundary() {}, setActive() {}, setSpeaking() {}, setThinking() {}, gesture() {}, destroy() {},
     };
   }
 
@@ -124,9 +125,9 @@ export function createDigitalHuman(host, { onReady, onError } = {}) {
 
     if (model) {
       model.rotation.y += ((speaking ? 0.035 : 0) - model.rotation.y) * Math.min(1, delta * 2.2);
-      const jaw = speaking ? 0.12 + Math.abs(Math.sin(now * 0.012)) * 0.42 : 0;
+      const jaw = speaking ? Math.max(0, 1 - (now - lastBoundary) / 160) * .55 : 0;
       setMorph('jawOpen', jaw);
-      setMorph('mouthRound', speaking ? Math.abs(Math.sin(now * 0.008 + 1.2)) * 0.2 : 0);
+      setMorph('mouthRound', jaw * .25);
       const blinking = now > blinkAt && now < blinkAt + 135;
       setMorph('eyeBlinkLeft', blinking ? 1 : 0);
       setMorph('eyeBlinkRight', blinking ? 1 : 0);
@@ -136,7 +137,7 @@ export function createDigitalHuman(host, { onReady, onError } = {}) {
     frame = requestAnimationFrame(frameLoop);
   }
 
-  new GLTFLoader().load('/models/princess-agent.glb', gltf => {
+  new GLTFLoader().load(import.meta.env.BASE_URL + 'models/princess-agent.glb', gltf => {
     model = gltf.scene;
     const bounds = new THREE.Box3().setFromObject(model);
     const size = bounds.getSize(new THREE.Vector3());
@@ -160,6 +161,7 @@ export function createDigitalHuman(host, { onReady, onError } = {}) {
     for (const clip of gltf.animations) actions.set(clip.name, mixer.clipAction(clip));
     playBase('Idle', 0);
     resize();
+    host.dataset.modelReady = 'true';
     onReady?.({ animations: [...actions.keys()] });
     if (active && !frame) frame = requestAnimationFrame(frameLoop);
   }, undefined, error => onError?.(error));
@@ -179,8 +181,10 @@ export function createDigitalHuman(host, { onReady, onError } = {}) {
         frame = 0;
       }
     },
+    speechBoundary() { lastBoundary = performance.now(); },
     setSpeaking(value) {
       speaking = value;
+      if (!value) lastBoundary = -Infinity;
       if (!mixer) return;
       playBase(value ? 'Talk' : (thinking ? 'LookAround' : 'Idle'));
     },

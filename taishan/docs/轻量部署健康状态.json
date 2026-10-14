@@ -1,0 +1,20 @@
+{
+  "status": "ok",
+  "version": "1.2.0",
+  "knowledge_documents": 25,
+  "agent_mode": "rag_llm",
+  "llm_configured": true,
+  "generation_service": {
+    "state": "verified",
+    "checked_at": 1791971683
+  },
+  "vision_available": true,
+  "vision_mode": "cloud_visual",
+  "vision_service": {
+    "state": "verified",
+    "checked_at": 1791971667
+  },
+  "trained_landmark_model": false,
+  "retrieval_mode": "bge_hybrid",
+  "language_model": "deepseek-v4.1-flash"
+}

@@ -1,0 +1,241 @@
+[
+  {
+    "request": {
+      "message": "这首诗里的羽人是什么意思？",
+      "current_poem": "libai-2"
+    },
+    "status": 200,
+    "seconds": 2.71,
+    "response": {
+      "answer": "“羽人”指仙人，是诗中的游仙想象。[1]",
+      "sources": [
+        {
+          "id": "libai-2",
+          "title": "李白《游泰山》其二 公版原文",
+          "url": "https://zh.wikisource.org/w/index.php?title=遊泰山_(清曉騎白鹿)&oldid=483278",
+          "publisher": "维基文库 · 古典作品转录",
+          "verified_at": "2026-10-14",
+          "verification": "已核对公开原文；公版古诗，简体转写；注释为本项目原创释读，待专家复核"
+        }
+      ],
+      "citations": [
+        {
+          "number": 1,
+          "title": "李白 游泰山·其二",
+          "sources": [
+            {
+              "id": "libai-2",
+              "title": "李白《游泰山》其二 公版原文",
+              "url": "https://zh.wikisource.org/w/index.php?title=遊泰山_(清曉騎白鹿)&oldid=483278",
+              "publisher": "维基文库 · 古典作品转录",
+              "verified_at": "2026-10-14",
+              "verification": "已核对公开原文；公版古诗，简体转写；注释为本项目原创释读，待专家复核"
+            }
+          ]
+        }
+      ],
+      "mode": "rag_llm",
+      "model": "deepseek-v4.1-flash",
+      "tool_calls": [
+        "get_poem_info"
+      ],
+      "refused": false,
+      "retrieved": [
+        {
+          "id": "k-poem-libai-2",
+          "title": "李白 游泰山·其二",
+          "relevance": 1
+        }
+      ],
+      "suggested_questions": [
+        "封禅是什么？",
+        "为什么说会当凌绝顶？",
+        "红门线怎么走？"
+      ]
+    }
+  },
+  {
+    "request": {
+      "message": "李白游泰山其一的天门一长啸是什么意思？",
+      "current_poem": "libai-2"
+    },
+    "status": 200,
+    "seconds": 2.56,
+    "response": {
+      "answer": "“天门一长啸”写登高至天门处放声长啸，万里清风随之而来，把登高的开阔感放大。[1]“天门”可关联南天门，但这是意象导览，不等于确认李白精确站位。[1]",
+      "sources": [
+        {
+          "id": "libai-1",
+          "title": "李白《游泰山》其一 公版原文",
+          "url": "https://zh.wikisource.org/w/index.php?title=遊泰山_(四月上泰山)&oldid=483277",
+          "publisher": "维基文库 · 古典作品转录",
+          "verified_at": "2026-10-14",
+          "verification": "已核对公开原文；公版古诗，简体转写；注释为本项目原创释读，待专家复核"
+        }
+      ],
+      "citations": [
+        {
+          "number": 1,
+          "title": "李白 游泰山·其一",
+          "sources": [
+            {
+              "id": "libai-1",
+              "title": "李白《游泰山》其一 公版原文",
+              "url": "https://zh.wikisource.org/w/index.php?title=遊泰山_(四月上泰山)&oldid=483277",
+              "publisher": "维基文库 · 古典作品转录",
+              "verified_at": "2026-10-14",
+              "verification": "已核对公开原文；公版古诗，简体转写；注释为本项目原创释读，待专家复核"
+            }
+          ]
+        }
+      ],
+      "mode": "rag_llm",
+      "model": "deepseek-v4.1-flash",
+      "tool_calls": [
+        "get_poem_info"
+      ],
+      "refused": false,
+      "retrieved": [
+        {
+          "id": "k-poem-libai-1",
+          "title": "李白 游泰山·其一",
+          "relevance": 1
+        }
+      ],
+      "suggested_questions": [
+        "封禅是什么？",
+        "为什么说会当凌绝顶？",
+        "红门线怎么走？"
+      ]
+    }
+  },
+  {
+    "request": {
+      "message": "这条路线怎么走？",
+      "current_route": "taohua"
+    },
+    "status": 200,
+    "seconds": 2.91,
+    "response": {
+      "answer": "桃花峪线：由桃花峪乘车至桃花源，换乘索道到岱顶上站，再步行游览南天门、天街、碧霞祠、玉皇顶[1]。注意：并非直达南天门的步道；班次、票价等请查景区官方公告[1]。",
+      "sources": [
+        {
+          "id": "routes",
+          "title": "第一次来泰山 可以推荐一下游览线路吗",
+          "publisher": "泰安市文化和旅游局",
+          "url": "https://whlyj.taian.gov.cn/art/2026/4/13/art_366342_10312047.html",
+          "verified_at": "2026-10-14",
+          "verification": "官方检索摘要核对；不沿用实时票价和开放状态"
+        },
+        {
+          "id": "taohua-route",
+          "title": "桃花峪游览线（景点介绍）",
+          "publisher": "泰山风景名胜区管理委员会",
+          "url": "https://tsgw.taian.gov.cn/art/2021/5/26/art_363479_10320186.html",
+          "verified_at": "2026-10-14",
+          "verification": "本次核对官方线路摘要；不表示已验证实时运营状态"
+        }
+      ],
+      "citations": [
+        {
+          "number": 1,
+          "title": "桃花峪线",
+          "sources": [
+            {
+              "id": "routes",
+              "title": "第一次来泰山 可以推荐一下游览线路吗",
+              "publisher": "泰安市文化和旅游局",
+              "url": "https://whlyj.taian.gov.cn/art/2026/4/13/art_366342_10312047.html",
+              "verified_at": "2026-10-14",
+              "verification": "官方检索摘要核对；不沿用实时票价和开放状态"
+            },
+            {
+              "id": "taohua-route",
+              "title": "桃花峪游览线（景点介绍）",
+              "publisher": "泰山风景名胜区管理委员会",
+              "url": "https://tsgw.taian.gov.cn/art/2021/5/26/art_363479_10320186.html",
+              "verified_at": "2026-10-14",
+              "verification": "本次核对官方线路摘要；不表示已验证实时运营状态"
+            }
+          ]
+        }
+      ],
+      "mode": "rag_llm",
+      "model": "deepseek-v4.1-flash",
+      "tool_calls": [
+        "get_route_info"
+      ],
+      "refused": false,
+      "retrieved": [
+        {
+          "id": "tool-route-taohua",
+          "title": "桃花峪线",
+          "relevance": 1
+        }
+      ],
+      "suggested_questions": [
+        "封禅是什么？",
+        "为什么说会当凌绝顶？",
+        "红门线怎么走？"
+      ]
+    }
+  },
+  {
+    "request": {
+      "message": "为什么泰山是文化与自然双重遗产？",
+      "current_spot": "riguan"
+    },
+    "status": 200,
+    "seconds": 4.77,
+    "response": {
+      "answer": "泰山1987年列入世界遗产名录，因山岳自然景观与古建筑、祭祀文化、文学艺术相互交织，体现文化与自然双重价值[1]。",
+      "sources": [
+        {
+          "id": "unesco",
+          "title": "Mount Taishan",
+          "publisher": "联合国教科文组织世界遗产中心",
+          "url": "https://whc.unesco.org/en/list/437/",
+          "verified_at": "2026-10-14",
+          "verification": "已核对世界遗产名录；译写概述"
+        }
+      ],
+      "citations": [
+        {
+          "number": 1,
+          "title": "泰山 世界文化与自然遗产",
+          "sources": [
+            {
+              "id": "unesco",
+              "title": "Mount Taishan",
+              "publisher": "联合国教科文组织世界遗产中心",
+              "url": "https://whc.unesco.org/en/list/437/",
+              "verified_at": "2026-10-14",
+              "verification": "已核对世界遗产名录；译写概述"
+            }
+          ]
+        }
+      ],
+      "mode": "rag_llm",
+      "model": "deepseek-v4.1-flash",
+      "tool_calls": [],
+      "refused": false,
+      "retrieved": [
+        {
+          "id": "k-world",
+          "title": "泰山 世界文化与自然遗产",
+          "relevance": 1.198
+        },
+        {
+          "id": "k-riguan",
+          "title": "日观峰 望见山外山",
+          "relevance": 0.858
+        }
+      ],
+      "suggested_questions": [
+        "封禅是什么？",
+        "为什么说会当凌绝顶？",
+        "红门线怎么走？"
+      ]
+    }
+  }
+]

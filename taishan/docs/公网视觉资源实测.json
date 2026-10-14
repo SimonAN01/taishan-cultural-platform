@@ -1,0 +1,66 @@
+[
+  {
+    "case": "空白图冷启动",
+    "status_code": 200,
+    "seconds": 2.22,
+    "response": {
+      "model_version": "CLIP ViT-B/32 · ONNX int8 · zero-shot",
+      "method": "zero-shot",
+      "status": "unknown",
+      "confidence": null,
+      "score_type": "cosine_similarity",
+      "candidates": [],
+      "margin": 0.0113,
+      "message": "暂时无法确认是泰山景点，请换一张包含完整地标的照片，或手动浏览景点。",
+      "request_id": "9f8858ec54384a1fb29f8cf476b907ae"
+    }
+  },
+  {
+    "case": "经石峪实景",
+    "status_code": 200,
+    "seconds": 0.821,
+    "response": {
+      "model_version": "CLIP ViT-B/32 · ONNX int8 · zero-shot",
+      "method": "zero-shot",
+      "status": "needs_confirmation",
+      "confidence": null,
+      "score_type": "cosine_similarity",
+      "candidates": [
+        {
+          "spot_id": "taohua",
+          "name": "桃花峪",
+          "similarity": 0.2887
+        },
+        {
+          "spot_id": "shibapan",
+          "name": "十八盘",
+          "similarity": 0.2854
+        },
+        {
+          "spot_id": "daguan",
+          "name": "大观峰",
+          "similarity": 0.2751
+        }
+      ],
+      "margin": 0.0033,
+      "message": "已找到视觉相近的景点，请对照名称人工确认。相似度不代表识别准确率。",
+      "request_id": "bb628fb9312043f49521d4421065dedc"
+    }
+  },
+  {
+    "case": "空白图热运行",
+    "status_code": 200,
+    "seconds": 0.183,
+    "response": {
+      "model_version": "CLIP ViT-B/32 · ONNX int8 · zero-shot",
+      "method": "zero-shot",
+      "status": "unknown",
+      "confidence": null,
+      "score_type": "cosine_similarity",
+      "candidates": [],
+      "margin": 0.0113,
+      "message": "暂时无法确认是泰山景点，请换一张包含完整地标的照片，或手动浏览景点。",
+      "request_id": "166fada9567b492686856d31dd1bbf16"
+    }
+  }
+]

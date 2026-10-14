@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-14",
+  "scope": "taishan.service内存单次采样，不是整机占用或并发压力测试；两种模式均已加载BGE检索",
+  "local_clip_and_bge_bytes": 495562752,
+  "cloud_vision_and_bge_bytes": 163065856,
+  "local_clip_and_bge_mib": 472.6,
+  "cloud_vision_and_bge_mib": 155.5,
+  "cloud_visual_reference_case_seconds": 6.005,
+  "cloud_visual_blank_seconds": [
+    1.931,
+    2.594
+  ],
+  "no_training_started": true,
+  "all_other_site_services_active": true
+}

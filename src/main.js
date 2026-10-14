@@ -7,7 +7,7 @@ import './style.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const A='/assets/';
+const A=import.meta.env.BASE_URL+'assets/';
 const assets={
   'mountains-far':'mountains-far.webp','mountains-main':'mountains-main.webp','taishan-ridge':'mountains-main.webp',
   'arch':'arch.webp','hongmen':'arch.webp','eighteen-bends':'stairs-study.webp','stairs-study':'stairs-study.webp',

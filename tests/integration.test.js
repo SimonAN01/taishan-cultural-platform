@@ -1,0 +1,29 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { askApi, recordVisit, apiSpotId, fullSite } from '../src/integration.js';
+
+test('immersive IDs map to valid backend IDs without inventing unsupported visits', async () => {
+  const calls = [];
+  const original = globalThis.fetch;
+  globalThis.fetch = async (url, options) => { calls.push({url, options}); return {ok:true, json:async()=>({answer:'文化资料'})}; };
+  try {
+    assert.equal(apiSpotId('nantianmen'), 'nantian');
+    await askApi('这里有什么故事', 'nantianmen', '南天门');
+    assert.equal(JSON.parse(calls[0].options.body).current_spot, 'nantian');
+    assert.equal(calls[0].options.credentials, 'same-origin');
+    await recordVisit('taoyuan');
+    assert.equal(calls.length, 1);
+    await askApi('怎么走', 'taoyuan', '桃花源');
+    assert.deepEqual(JSON.parse(calls[1].options.body), {message:'桃花源：怎么走',current_spot:null});
+    await recordVisit('nantianmen');
+    assert.equal(calls[2].url, '/api/journey/visit');
+    assert.equal(fullSite('spot-full','nantianmen'), '/#spot-full?spot=nantian');
+  } finally { globalThis.fetch = original; }
+});
+
+test('service failures remain failures instead of returning a scripted answer', async () => {
+  const original = globalThis.fetch;
+  globalThis.fetch = async () => ({ok:false,json:async()=>({detail:'请求过于频繁'})});
+  try { await assert.rejects(askApi('你是谁'), /请求过于频繁/); }
+  finally { globalThis.fetch = original; }
+});

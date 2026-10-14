@@ -1,0 +1,53 @@
+[
+  {
+    "case": "空白图（云端）",
+    "status_code": 200,
+    "seconds": 1.931,
+    "response": {
+      "model_version": "deepseek-v4.1-flash · 云端图像理解",
+      "method": "cloud_visual",
+      "status": "unknown",
+      "confidence": null,
+      "score_type": "visual_evidence",
+      "candidates": [],
+      "message": "画面还不足以确认泰山景点，请补充完整地标照片，或手动浏览景点。",
+      "request_id": "cb19879b94d64f89bdc7710f64b157ab"
+    }
+  },
+  {
+    "case": "经石峪实景",
+    "status_code": 200,
+    "seconds": 6.005,
+    "response": {
+      "model_version": "deepseek-v4.1-flash · 云端图像理解",
+      "method": "cloud_visual",
+      "status": "needs_confirmation",
+      "confidence": null,
+      "score_type": "visual_evidence",
+      "candidates": [
+        {
+          "spot_id": "jingshi",
+          "name": "经石峪",
+          "reason": "大面积裸露石坪上分布密集的摩崖刻字，符合经石峪以大字《金刚经》石刻闻名的地标特征。"
+        }
+      ],
+      "message": "云端模型已给出可能的景点，请对照实景图与画面依据人工确认。候选不代表识别准确率。",
+      "request_id": "52b4d00afe734977a7ff26db8fa25d40"
+    }
+  },
+  {
+    "case": "空白图（云端重复）",
+    "status_code": 200,
+    "seconds": 2.594,
+    "response": {
+      "model_version": "deepseek-v4.1-flash · 云端图像理解",
+      "method": "cloud_visual",
+      "status": "unknown",
+      "confidence": null,
+      "score_type": "visual_evidence",
+      "candidates": [],
+      "message": "画面还不足以确认泰山景点，请补充完整地标照片，或手动浏览景点。",
+      "request_id": "be8bd9afab8d405e91770144fd1d55d5"
+    }
+  }
+]

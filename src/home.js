@@ -1,10 +1,20 @@
 import * as THREE from 'three';
 import { gsap } from 'gsap';
 import { places, routes, summitPaths, source } from './home-data.js';
-import { answerGuide, getGuideGreeting, getGuideQuestions } from './guide-data.js';
+import { getGuideGreeting, getGuideQuestions } from './guide-data.js';
 import './home.css';
+import { requestApi, askApi, recordVisit, apiSpotId, unavailableSpots, fullSite } from './integration.js';
+const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let catalog = null;
+try { catalog = await requestApi('catalog'); } catch { /* The visual scene can still open; API failure is shown when a function is used. */ }
+if (catalog) for (const [id, place] of Object.entries(places)) {
+  if (unavailableSpots.has(id)) continue;
+  const verified = catalog.spots.find(spot => spot.id === apiSpotId(id));
+  if (verified) place.text = verified.intro + ' ' + verified.interpretation;
+}
 
-const asset = id => `/home-assets/${id}.webp`;
+
+const asset = id => `${import.meta.env.BASE_URL}home-assets/${id}.webp`;
 const icon = name => ({ motion: '◌', fullscreen: '⛶', sun: '☼', back: '↶' }[name]);
 const app = document.querySelector('#app');
 document.body.classList.add('welcome-open');
@@ -26,7 +36,7 @@ app.innerHTML = `
   <div class="paper-shade" aria-hidden="true"></div>
   <header class="topbar"><div class="brand-cluster"><a href="#journey" class="tiny-brand" aria-label="回到泰山全景"><span class="seal">岱</span>山河未改 · 来者不同</a><button class="welcome-return" id="welcome-return" type="button" title="返回欢迎页"><span aria-hidden="true">↶</span>返回卷首</button></div>
    <nav aria-label="探索内容"><button data-explore="overview" class="current">山</button><span>／</span><button data-explore="culture">史</button><span>／</span><button data-explore="poem">诗</button><span>／</span><button data-explore="travel">路</button><span>／</span><button data-explore="guide">人</button></nav>
-   <div class="tools"><button id="motion" aria-pressed="false" title="简化动效">${icon('motion')}<span>动效</span></button><button id="fullscreen" title="切换全屏">${icon('fullscreen')}<span>全屏</span></button></div>
+   <div class="tools"><a class="full-system-link" href="/">完整导览 ↗</a><button id="motion" aria-pressed="false" title="简化动效">${icon('motion')}<span>动效</span></button><button id="fullscreen" title="切换全屏">${icon('fullscreen')}<span>全屏</span></button></div>
   </header>
   <div class="side-script" aria-hidden="true">五岳之首 · 中华泰山<span class="small-seal">山河</span></div>
   <section class="hero" aria-labelledby="title"><p class="eyebrow">A JOURNEY THROUGH TIME</p>
@@ -43,7 +53,7 @@ app.innerHTML = `
    <div class="route-brief"><p id="route-tag"></p><button id="route-detail">查看路线 <span>→</span></button></div>
    <div class="line-legend"><span><i></i>步行</span><span><i class="bus"></i>乘车</span><span><i class="cable"></i>索道</span></div>
   </section>
-  <button class="guide-orb" id="guide-orb" aria-label="唤出碧霞仙子数字导游"><span class="guide-orb-image"><img src="/home-assets/bixia-guide.png" alt=""></span><span><b>问山</b><small>数字导游</small></span></button>
+  <button class="guide-orb" id="guide-orb" aria-label="唤出碧霞仙子数字导游"><span class="guide-orb-image"><img src="${import.meta.env.BASE_URL}home-assets/bixia-guide.png" alt=""></span><span><b>问山</b><small>数字导游</small></span></button>
   <footer class="bottom-bar"><button id="reset">${icon('back')} 返回全景</button><p class="map-action-guide"><span class="map-guide-arrow" aria-hidden="true">↑</span><span><b id="map-guide-title">也可以直接点击山中地标</b><small id="map-guide-copy">走近建筑，查看故事与诗词</small></span><span class="mobile-hint">左右滑动画卷 · 点击地标</span></p><span class="map-note">艺术化路线示意 · 非导航地图</span></footer>
   <div class="journey-meter" aria-hidden="true"><span></span></div>
   </main>
@@ -54,7 +64,7 @@ app.innerHTML = `
     <span class="mode-confirm-mark" aria-hidden="true">山</span>
     <h2 id="mode-confirm-title">循迹千年</h2>
     <p class="mode-confirm-copy" id="mode-confirm-copy">沿着朝代、人物与诗词的线索，重新认识这座山。</p>
-    <p class="mode-confirm-hint" id="mode-confirm-hint">选择一个时代，或直接点击山中的文化节点开始探索。</p>
+    <p class="mode-confirm-hint" id="mode-confirm-hint">点击山中的文化节点查看近景，或从上方“史”阅读有来源的时间轴。</p>
     <div class="mode-confirm-actions"><button class="mode-confirm-back" id="mode-confirm-back">返回</button><button class="mode-confirm-enter" id="mode-confirm-enter">进入千年泰山 <span>→</span></button></div>
    </div>
   </section>
@@ -69,7 +79,7 @@ app.innerHTML = `
    <div class="visit-tabs" role="tablist" aria-label="景点介绍"><button role="tab" id="visit-tab-history" aria-controls="visit-panel" aria-selected="true" data-visit-tab="history">历史</button><button role="tab" id="visit-tab-story" aria-controls="visit-panel" aria-selected="false" tabindex="-1" data-visit-tab="story">故事</button><button role="tab" id="visit-tab-poetry" aria-controls="visit-panel" aria-selected="false" tabindex="-1" data-visit-tab="poetry">诗词</button></div>
    <div class="visit-panel" id="visit-panel" role="tabpanel" aria-labelledby="visit-tab-history" tabindex="0"></div>
     <button class="visit-cable3d" id="visit-cable3d" hidden><span><b>进入 3D 索道</b><small>乘缆车穿过云海，拖动观察山中视角</small></span><i>进入体验 →</i></button>
-    <button class="visit-guide" id="visit-guide"><img src="/home-assets/bixia-guide.png" alt=""><span><b>请仙子讲解此处</b><small>带着当前景点进入数字人讲解</small></span><i>→</i></button>
+    <button class="visit-guide" id="visit-guide"><img src="${import.meta.env.BASE_URL}home-assets/bixia-guide.png" alt=""><span><b>请仙子讲解此处</b><small>带着当前景点进入数字人讲解</small></span><i>→</i></button>
    <div class="visit-source">文字参考：<a href="${source.routeGuide}" target="_blank" rel="noopener noreferrer">泰山官方游览资料 ↗</a></div>
   </aside>
  </section>
@@ -77,7 +87,7 @@ app.innerHTML = `
   <div class="cableway-backdrop" aria-hidden="true"></div>
   <div class="cableway-model" id="cableway-model"><div class="cableway-loading"><i></i><p>正在载入索道与云海</p></div></div>
   <div class="cableway-cloud cableway-cloud-a" aria-hidden="true"></div><div class="cableway-cloud cableway-cloud-b" aria-hidden="true"></div>
-  <header class="cableway-header"><div><small>TAOHUAYUAN · CABLEWAY</small><h2>乘云入山</h2><p>从桃花源启程，沿索道靠近泰山云海。</p></div><button id="cableway-close" aria-label="返回桃花源">×</button></header>
+  <header class="cableway-header"><div><small>TAOHUAYUAN · CABLEWAY</small><h2>乘云入山</h2><p>艺术化三维演绎，不代表实时位置或索道运行状态。</p></div><button id="cableway-close" aria-label="返回桃花源">×</button></header>
   <div class="cableway-depth" aria-hidden="true"><span></span></div>
   <div class="cableway-hud"><p id="cableway-status">模型载入中</p><div><button id="cableway-ride" aria-pressed="true">Ⅱ 暂停行进</button><button id="cableway-reset">◎ 复位视角</button></div><small>按住拖动旋转 · 滚轮拉近 · 观察缆车与群峰</small></div>
  </section>
@@ -85,17 +95,17 @@ app.innerHTML = `
   <div class="guide-visual">
    <div class="guide-mist" aria-hidden="true"></div>
    <div class="guide-model" id="guide-model"><div class="guide-loading"><span></span><p>仙子正从云中来</p></div></div>
-   <img class="guide-fallback" src="/home-assets/bixia-guide.png" alt="碧霞仙子数字导游立绘">
+   <img class="guide-fallback" src="${import.meta.env.BASE_URL}home-assets/bixia-guide.png" alt="碧霞仙子数字导游立绘">
    <div class="guide-identity"><small>DIGITAL GUIDE · TAISHAN</small><h2>碧霞仙子</h2><p>以山中故事，为你引路。</p></div>
-    <div class="guide-gestures" aria-label="数字人动作"><button data-gesture="nod">点头</button><button data-gesture="bow">作揖</button><button data-gesture="look">远望</button><span class="guide-rotate-hint">按住人物拖动旋转</span></div>
+    <div class="guide-gestures" aria-label="数字人动作"><button data-gesture="nod" disabled>点头</button><button data-gesture="bow" disabled>作揖</button><button data-gesture="look" disabled>远望</button><span class="guide-rotate-hint">按住人物拖动旋转</span></div>
   </div>
   <div class="guide-conversation">
    <header><div><p>一山千年 · 数字人讲解</p><h2>问山</h2></div><button class="guide-close" id="guide-close" aria-label="关闭数字导游">×</button></header>
    <p class="guide-context" id="guide-context">正在从泰山全景为你讲解</p>
    <div class="guide-answer" id="guide-answer" aria-live="polite"><span class="guide-speaker">碧霞仙子</span><p></p><button class="guide-route-link" id="guide-route-link" hidden></button></div>
    <div class="guide-status" id="guide-status" role="status"><i></i><span>可以开始提问</span></div>
-   <div class="guide-questions" id="guide-questions" aria-label="推荐问题"></div>
-   <form class="guide-form" id="guide-form"><label for="guide-input">还想知道什么？</label><div><input id="guide-input" maxlength="80" autocomplete="off" placeholder="例如：第一次登泰山走哪条路？"><button type="submit">请讲解</button></div></form>
+   <div id="guide-sources" class="guide-sources"></div><div class="guide-questions" id="guide-questions" aria-label="推荐问题"></div>
+   <form class="guide-form" id="guide-form"><label for="guide-input">还想知道什么？</label><div><input id="guide-input" maxlength="800" autocomplete="off" placeholder="例如：第一次登泰山走哪条路？"><button type="submit">请讲解</button></div></form>
    <div class="guide-controls"><button id="guide-replay">◉ 再听一遍</button><button id="guide-stop">□ 停止朗读</button><span id="guide-voice-label">当前声音：正在选择自然女声</span></div>
   </div>
  </section>
@@ -161,7 +171,9 @@ let guideAvatarPromise;
 let guidePreviousFocus;
 let guideContextId = null;
 let guideLastAnswer = '';
-let guideReplyTimer;
+let guideController;
+let guideRequest = 0;
+let guideBusy = false;
 let guideUtterance;
 let guideVoice;
 let guideSpeechRequest = 0;
@@ -325,6 +337,7 @@ dialog.addEventListener('click', e => {
 });
 
 function openPlace(id) {
+  recordVisit(id).catch(() => status('足迹未保存，请稍后重试；景点仍可阅读。'));
   const p = places[id];
   showDialog(`<p class="dialog-eyebrow">TAISHAN · ${p.tag}</p><h2 id="detail-title">${p.name}</h2><p class="dialog-poem">${p.poem}</p>${p.asset ? `<figure><img src="${asset(p.asset)}" alt="${p.name}概念插画"/><figcaption>概念插画 · 建筑与地貌细节待校准</figcaption></figure>` : ''}<p class="description">${p.text}</p><div class="dialog-actions"><button class="primary" id="next-place">${id === 'riguan' ? '观赏日出' : '继续游览 →'}</button><a href="${source.routeGuide}" target="_blank" rel="noopener noreferrer">官方路线资料 ↗</a></div>`);
   content.querySelector('img')?.addEventListener('error', e => { e.currentTarget.closest('figure').innerHTML = '<figcaption>图片暂未加载，请继续阅读介绍。</figcaption>'; });
@@ -337,11 +350,14 @@ function openPlace(id) {
 }
 
 function buildVisitCopy(id, profile) {
+  const verified = !unavailableSpots.has(id) && catalog?.spots.find(spot => spot.id === apiSpotId(id));
+  const citation = verified?.sources?.map(source => `<a href="${escapeHTML(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(source.publisher)} · ${escapeHTML(source.title)} ↗</a>`).join('') || '';
+  const details = `<p><a class="verified-detail" href="${fullSite(id === 'stone' ? 'museum' : unavailableSpots.has(id) ? 'spots' : 'spot-full', id === 'stone' || unavailableSpots.has(id) ? null : id)}">查看实景图、文化资料与足迹 ↗</a></p>`;
   const p = places[id];
   const classicPoem = ['hongmen', 'shibapan', 'nantianmen', 'yuhuang'].includes(id);
   return {
-    history: `<p class="visit-kicker">景点小志</p><h3>${profile.historyTitle}</h3><p>${profile.history || p.text}</p>`,
-    story: `<p class="visit-kicker">山中故事</p><h3>${profile.storyTitle}</h3><p>${profile.story}</p>`,
+    history: `<p class="visit-kicker">景点小志</p><h3>${profile.historyTitle}</h3><p>${escapeHTML(verified ? verified.intro + ' ' + verified.interpretation : profile.history || p.text)}</p><div class="verified-sources">${citation}</div>${details}`,
+    story: `<p class="visit-kicker">画卷情境 · 原创文学演绎</p><h3>${profile.storyTitle}</h3><p>${profile.story}</p>`,
     poetry: `<p class="visit-kicker">${classicPoem ? '与泰山同行的诗' : '画卷题句'}</p><blockquote>${p.poem}</blockquote>${classicPoem ? '<p class="visit-poet">唐 · 杜甫《望岳》</p>' : ''}<p>让文字停在风景旁，也让眼前这一处山水成为继续向前的引子。</p>`,
   };
 }
@@ -351,6 +367,7 @@ function showVisit(id, tab = 'history') {
   const profile = visitProfiles[id];
   if (!p || !profile) return openPlace(id);
   activeVisitId = id;
+  recordVisit(id).catch(() => status('足迹未保存，请稍后重试；景点仍可阅读。'));
   visitCopy = buildVisitCopy(id, profile);
   visitScene.inert = false;
   visitScene.setAttribute('aria-hidden', 'false');
@@ -454,7 +471,7 @@ function ensureCablewayExperience() {
         onReady: () => {
           cablewayScene.classList.add('is-ready');
           cablewayScene.classList.remove('is-error');
-          document.querySelector('#cableway-status').textContent = '索道已启程 · 正穿过桃花源云海';
+          document.querySelector('#cableway-status').textContent = '艺术化索道体验 · 正在演示穿云场景';
         },
         onError: () => {
           cablewayScene.classList.add('is-error');
@@ -482,7 +499,7 @@ function setCablewayRide(value) {
   button.setAttribute('aria-pressed', String(value));
   button.textContent = value ? 'Ⅱ 暂停行进' : '▶ 继续入山';
   if (cablewayScene.classList.contains('is-ready')) {
-    document.querySelector('#cableway-status').textContent = value ? '索道已启程 · 正穿过桃花源云海' : '索道已暂停 · 可拖动观察缆车';
+    document.querySelector('#cableway-status').textContent = value ? '艺术化索道体验 · 正在演示穿云场景' : '索道已暂停 · 可拖动观察缆车';
   }
   cablewayController?.setRide(value);
 }
@@ -588,11 +605,11 @@ const modeProfiles = {
     mark: '史',
     title: '循迹千年',
     copy: '沿着朝代、人物与诗词的线索，重新认识这座山。',
-    hint: '选择一个时代，或直接点击山中的文化节点开始探索。',
+    hint: '点击山中的文化节点查看近景，或从上方“史”阅读有来源的时间轴。',
     enter: '进入千年泰山',
     caption: '山是长卷，脚步是笔。从时间留下的痕迹读懂泰山。',
     routeTitle: '文化线索 · 红门古道',
-    routeGuide: '选择时代或文化节点',
+    routeGuide: '选择一处文化节点',
     mapGuide: '点击发光地标，寻找山中故事',
     mapHint: '每个地标都可以走近查看',
     status: '已进入“循迹千年” · 下一步将从时间与文化线索开始。',
@@ -602,7 +619,7 @@ const modeProfiles = {
     mark: '路',
     title: '今日登山',
     copy: '从四条经典线路中选择一条，看看今天该怎样走上泰山。',
-    hint: '你可以自己选路线，也可以让“问山”根据时间、体力和同行人帮你推荐。',
+    hint: '你可以自己选路线，也可以让“问山”比较路线结构与不同登山方式。',
     enter: '开始规划登山',
     caption: '四条入山路，一处云上峰。选择路线，再查看沿途节点。',
     routeTitle: '选择你的登山路线',
@@ -701,52 +718,10 @@ document.querySelector('#mode-confirm-back').onclick = () => closeModeConfirm();
 document.querySelector('#mode-confirm-enter').onclick = confirmModeSelection;
 modeConfirm.querySelector('.mode-confirm-wash').onclick = () => closeModeConfirm();
 
-const taishanPoems = [
-  {
-    title: '望岳', author: '唐 · 杜甫', badge: '咏泰山第一名篇',
-    poem: ['岱宗夫如何？齐鲁青未了。', '造化钟神秀，阴阳割昏晓。', '荡胸生曾云，决眦入归鸟。', '会当凌绝顶，一览众山小。'],
-    analysis: '全诗由远望、近望写到凝望与想象登顶。泰山的高大不仅是自然景观，也成为青年杜甫胸襟和抱负的象征。“会当”二字不是已经登顶，而是面对高山立下的志愿。',
-    translation: '泰山究竟是怎样的景象？横跨齐鲁大地，青翠山色望不到尽头。大自然把神奇秀美汇聚在这里，山南山北仿佛分开了黄昏与清晨。层云升起使胸怀激荡，目送归鸟直到它们消失。终有一天我要登上最高峰，把四周群山尽收眼底。'
-  },
-  {
-    title: '泰山吟', author: '晋 · 谢道韫', badge: '才女笔下的自然东岳',
-    poem: ['峨峨东岳高，秀极冲青天。', '岩中间虚宇，寂寞幽以玄。', '非工复非匠，云构发自然。', '器象尔何物？遂令我屡迁。', '逝将宅斯宇，可以尽天年。'],
-    analysis: '诗人先写泰山直冲青天的雄姿，再进入幽深岩壑，赞叹山岳没有人工雕琢却自成奇观。结尾由观景转为归隐愿望，表现魏晋士人亲近自然、超脱尘俗的精神。',
-    translation: '巍峨的东岳高耸，秀丽的峰顶直入青天。山岩间仿佛另有空灵世界，幽静而玄远。它并非工匠建造，却像云中宫殿一样自然生成。这样的气象究竟是什么，让我一次次生出迁居之念；将来真想住在这里，在山中安度一生。'
-  },
-  {
-    title: '游泰山六首·其一', author: '唐 · 李白', badge: '天门一啸，万里清风',
-    poem: ['四月上泰山，石平御道开。', '六龙过万壑，涧谷随萦回。', '马迹绕碧峰，于今满青苔。', '飞流洒绝巘，水急松声哀。', '北眺崿嶂奇，倾崖向东摧。', '洞门闭石扇，地底兴云雷。', '登高望蓬瀛，想象金银台。', '天门一长啸，万里清风来。', '玉女四五人，飘飖下九垓。', '含笑引素手，遗我流霞杯。', '稽首再拜之，自愧非仙才。', '旷然小宇宙，弃世何悠哉。'],
-    analysis: '这首诗把真实登山见闻与神仙想象融为一体。御道、飞瀑、松涛和奇峰构成壮阔行程，抵达天门后，诗境突然进入仙境。“万里清风来”写出了登高后的身体感受，也写出精神上的豁然开朗。',
-    translation: '四月登上泰山，沿着平整御道穿行万壑。古老马迹绕过青峰，如今已长满青苔；瀑布飞洒绝壁，急流和松涛相互应和。向北望见奇峰险崖，石洞深处仿佛有云雷涌动。登高遥想海上仙山，在南天门放声长啸，万里清风迎面而来。恍惚间仙女从天而降，赠我流霞美酒；我再拜致谢，自觉并非仙才，却因天地开阔而忘却尘世。'
-  },
-  {
-    title: '登泰山', author: '元 · 张养浩', badge: '云海日出与齐烟九点',
-    poem: ['风云一举到天关，快意生平有此观。', '万古齐州烟九点，五更沧海日三竿。', '向来井处方知隘，今后巢居亦觉宽。', '笑拍洪崖咏新作，满空笙鹤下高寒。'],
-    analysis: '诗从登临天关的畅快写到俯瞰齐州、遥观海日，再以“井处”和“巢居”对比人的眼界变化。登泰山因此不仅是空间升高，也是突破狭隘、获得开阔心境的过程。',
-    translation: '乘着风云仿佛一下登临天门，这是平生最畅快的景象。齐州城郭在烟霭中缩成九点，五更时海上红日已经升高。过去身处低地才知道眼界狭窄，如今即使住在高巢也觉得天地宽广。我笑着拍击山崖吟成新诗，高寒天空中仿佛传来仙乐与鹤鸣。'
-  },
-  {
-    title: '泰山', author: '明 · 李梦阳', badge: '岱岳雄图，烟霞万壑',
-    poem: ['岱岳摩苍昊，雄图控海邦。', '巨灵开绝嶂，元气涌长江。', '日月双崖逼，烟霞万壑降。', '平生怀古意，登览一凭窗。'],
-    analysis: '诗以“摩苍昊”“控海邦”写泰山的高度与气势，又借巨灵、元气把山岳写成天地开辟的结果。日月、双崖、万壑烟霞共同形成宏阔而带有历史感的画面。',
-    translation: '泰山高得仿佛触及苍天，以雄伟形势镇护东方海疆。像巨灵劈开险峰，天地元气奔涌不息。日月贴近两侧山崖，烟霞落入万千沟壑。我平生总怀着思古之情，登临远望，倚窗凝神。'
-  },
-  {
-    title: '登泰山', author: '清 · 乾隆', badge: '岳宗气象与极目乾坤',
-    poem: ['岳宗称岱宗，崇秩古所传。', '一气通元化，千秋镇大川。', '攀崖扪碧落，俯壑见苍烟。', '极目乾坤阔，超然意洒然。'],
-    analysis: '诗从泰山“岳宗”的历史地位写起，强调它贯通造化、镇护山河的象征意义。后半转入亲身攀登，以仰触青天、俯看烟壑的视角表现登顶后的开阔与超然。',
-    translation: '五岳之宗称作岱宗，这份崇高地位自古相传。天地元气在此贯通造化，千百年来镇护大河山川。攀着山崖仿佛能触到青天，低头看深谷只见苍茫烟云。放眼望去天地辽阔，心神也变得超然洒脱。'
-  },
-  {
-    title: '封泰山乐章·豫和', author: '唐 · 祭祀乐章', badge: '封禅礼仪中的泰山',
-    poem: ['泰阶平，礼告成。', '膺宝箓，荐精诚。', '乐已变，礼方行。', '永惟载，洽升平。'],
-    analysis: '这是一首用于国家祭祀礼仪的乐章，语言庄严、节奏整齐。它不重在描写山景，而是借泰山表达礼成、受命与天下升平，体现泰山在古代政治礼制中的特殊地位。',
-    translation: '象征天下安定的泰阶已经平正，庄严礼仪宣告完成。承受天命与祥瑞，以最真诚的心意奉献祭品。乐曲随仪节变换，礼典依次举行；愿功业长久记载，使天下共享太平。'
-  }
-];
 
 function openPoem() {
+  const taishanPoems = (catalog?.poems || []).map(p => ({title:p.title,author:p.era+' · '+p.author,badge:'附原文来源',poem:p.original_text.split('\n'),analysis:p.interpretation,translation:p.annotations.map(a=>a.meaning).join(' '),sources:p.sources}));
+  if (!taishanPoems.length) { location.href = fullSite('poems'); return; }
   const poemCards = taishanPoems.map((item, index) => {
     const bodyId = `poetry-body-${index}`;
     return `<article class="poetry-card${index === 0 ? ' is-open' : ''}">
@@ -755,12 +730,12 @@ function openPoem() {
       </button>
       <div class="poetry-card-body" id="${bodyId}"${index === 0 ? '' : ' hidden'}>
         <blockquote>${item.poem.join('<br>')}</blockquote>
-        <div class="poetry-actions"><button type="button" data-poetry-view="analysis" aria-pressed="false">解析</button><button type="button" data-poetry-view="translation" aria-pressed="false">白话翻译</button></div>
+        <div class="verified-sources">${item.sources.map(s => `<a href="${escapeHTML(s.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(s.title)} ↗</a>`).join('')}</div><div class="poetry-actions"><button type="button" data-poetry-view="analysis" aria-pressed="false">解析</button><button type="button" data-poetry-view="translation" aria-pressed="false">白话翻译</button></div>
         <div class="poetry-reading" aria-live="polite" hidden><p data-poetry-copy="analysis"><b>作品解析</b>${item.analysis}</p><p data-poetry-copy="translation" hidden><b>白话翻译</b>${item.translation}</p></div>
       </div>
     </article>`;
   }).join('');
-  showDialog(`<div class="poetry-library-head"><p class="dialog-eyebrow">POETRY IN THE MOUNTAIN</p><h2 id="detail-title">泰山诗词</h2><p>七首经典诗篇，沿诗句读山势、云海与千年人文。展开作品后，可按需查看解析或白话翻译。</p></div>
+  showDialog(`<div class="poetry-library-head"><p class="dialog-eyebrow">POETRY IN THE MOUNTAIN</p><h2 id="detail-title">泰山诗词</h2><p>${taishanPoems.length}首有来源的经典诗篇，沿诗句读山势、云海与千年人文。展开作品后，可按需查看解析或白话翻译。</p></div>
     <div class="poetry-list">${poemCards}</div>
     <section class="poetry-quotes"><small>石刻与游览常用名句</small><p>“泰山不让土壤，故能成其大。”<span>—— 李斯《谏逐客书》</span></p><p>“登高壮观天地间。”<span>—— 李白</span></p></section>
     <button class="primary poetry-start" id="poem-start">从红门开始循迹 →</button>`, 'poetry');
@@ -787,12 +762,17 @@ function openPoem() {
   content.querySelector('#poem-start').onclick = () => { closeDialog(); setMode('culture'); focusPlace('hongmen'); };
 }
 
+function openHistory() {
+  if (!catalog) { location.href = fullSite('history'); return; }
+  showDialog(`<p class="dialog-eyebrow">HISTORY IN THE MOUNTAIN</p><h2 id="detail-title">千年史脉</h2><div class="history-records">${catalog.history.map(event => `<article><small>${escapeHTML(event.era)} · ${escapeHTML(event.year)}</small><h3>${escapeHTML(event.title)}</h3><p>${escapeHTML(event.content)}</p><div class="verified-sources">${event.sources.map(source => `<a href="${escapeHTML(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(source.publisher)} · ${escapeHTML(source.title)} ↗</a>`).join('')}</div></article>`).join('')}</div><a href="${fullSite('history')}">走进完整历史与景点关联 ↗</a>`, 'history');
+}
+
 document.querySelectorAll('[data-explore]').forEach(b => b.onclick = () => {
   const action = b.dataset.explore;
   if (action === 'overview') reset();
   if (action === 'poem') openPoem();
   if (action === 'travel') openModeConfirm('travel');
-  if (action === 'culture') openModeConfirm('culture');
+  if (action === 'culture') openHistory();
   if (action === 'guide') openGuide();
 });
 
@@ -803,7 +783,7 @@ function setGuideStatus(label, state = 'ready') {
 
 function stopGuideSpeech() {
   guideSpeechRequest += 1;
-  clearTimeout(guideReplyTimer);
+
   if ('speechSynthesis' in window) speechSynthesis.cancel();
   guideUtterance = null;
   guideAvatar?.setThinking(false);
@@ -841,7 +821,7 @@ function resolveGuideVoice() {
     const finish = () => {
       const selected = selectGuideVoice(speechSynthesis.getVoices());
       if (selected) guideVoice = selected;
-      document.querySelector('#guide-voice-label').textContent = `当前声音：${describeGuideVoice(selected)}`;
+      document.querySelector('#guide-voice-label').textContent = `设备朗读：${describeGuideVoice(selected)} · 非音素级口型`;
       resolve(selected);
     };
     if (speechSynthesis.getVoices().length) return finish();
@@ -887,8 +867,9 @@ async function speakGuide(text) {
     guideAvatar?.gesture('nod');
     setGuideStatus('讲解完毕，可以继续提问', 'ready');
   };
+  utterance.onboundary = () => { if (guideUtterance === utterance) guideAvatar?.speechBoundary(); };
   utterance.onend = finish;
-  utterance.onerror = finish;
+  utterance.onerror = () => { if (guideUtterance !== utterance) return; finish(); setGuideStatus('设备朗读未播放，请点“再听一遍”重试', 'ready'); };
   speechSynthesis.speak(utterance);
 }
 
@@ -899,6 +880,15 @@ function renderGuideQuestions() {
 
 function showGuideAnswer(reply, speak = true) {
   guideAnswer.textContent = reply.answer;
+  document.querySelector('.guide-speaker').textContent = reply.mode === 'rag_llm' ? `碧霞仙子 · ${reply.model}` : reply.mode === 'local_knowledge_fallback' ? '碧霞仙子 · 模型不可用，引用文化资料' : reply.mode === 'local_knowledge' ? '碧霞仙子 · 引用文化资料' : '碧霞仙子 · 文化导览角色';
+  const sourceHost = document.querySelector('#guide-sources');
+  sourceHost.replaceChildren();
+  const groups = reply.citations?.length ? reply.citations.map(c => ({title: `[${c.number}] ${c.title}`, sources: c.sources})) : reply.sources?.length ? [{title: '资料来源', sources: reply.sources}] : [];
+  for (const group of groups) {
+    const title = document.createElement('strong'); title.textContent = group.title; sourceHost.append(title);
+    for (const source of group.sources) { const a = document.createElement('a'); a.href = source.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = `${source.publisher} · ${source.title} ↗`; sourceHost.append(a); }
+  }
+
   guideRouteLink.hidden = !reply.routeId;
   if (reply.routeId) {
     guideRouteLink.dataset.route = reply.routeId;
@@ -909,15 +899,37 @@ function showGuideAnswer(reply, speak = true) {
   else guideLastAnswer = reply.answer;
 }
 
-function askGuide(question) {
-  if (!question) return;
+async function askGuide(question) {
+  if (!question || guideBusy) return;
   stopGuideSpeech();
+  const request = ++guideRequest;
+  guideController = new AbortController();
+  const controller = guideController;
+  const timeout = setTimeout(() => controller.abort(), 40000);
+  guideBusy = true;
+  const submit = document.querySelector('#guide-form button'); submit.disabled = true;
   document.querySelector('#guide-input').value = '';
+  document.querySelector('#guide-sources').replaceChildren();
   guideAnswer.textContent = `你问：“${question}”`;
   guideRouteLink.hidden = true;
   guideAvatar?.setThinking(true);
-  setGuideStatus('正在翻阅山中故事', 'thinking');
-  guideReplyTimer = setTimeout(() => showGuideAnswer(answerGuide(question, guideContextId)), simple ? 80 : 460);
+  setGuideStatus('正在检索资料并请求模型', 'thinking');
+  try {
+    const reply = await askApi(question, guideContextId, places[guideContextId]?.name, controller.signal);
+    if (request !== guideRequest || !guideScene.classList.contains('is-open')) return;
+    guideAvatar?.setThinking(false);
+    showGuideAnswer(reply, false);
+    setGuideStatus(reply.mode === 'rag_llm' ? '模型已回答，可对照来源或点击朗读' : '已返回文化资料，请对照来源', 'ready');
+  } catch (error) {
+    if (request !== guideRequest) return;
+    guideAvatar?.setThinking(false);
+    guideAnswer.textContent = error.name === 'AbortError' ? '请求超时，请重新提问。' : `问答未完成：${error.message}`;
+    document.querySelector('#guide-input').value = question;
+    setGuideStatus('请求未完成，可重试或打开完整导览', 'ready');
+  } finally {
+    clearTimeout(timeout);
+    if (request === guideRequest) { guideBusy = false; submit.disabled = false; guideController = null; }
+  }
 }
 
 async function ensureGuideAvatar() {
@@ -925,7 +937,8 @@ async function ensureGuideAvatar() {
   if (!guideAvatarPromise) {
     guideAvatarPromise = import('./digital-human.js').then(({ createDigitalHuman }) => {
       guideAvatar = createDigitalHuman(guideModel, {
-        onReady: () => {
+        onReady: ({ animations }) => {
+          for (const button of document.querySelectorAll('[data-gesture]')) button.disabled = !animations.includes({nod:'Nod',bow:'Bow',look:'LookAround'}[button.dataset.gesture]);
           guideScene.classList.add('is-model-ready');
           guideScene.classList.remove('use-fallback');
           guideAvatar?.setActive(guideScene.classList.contains('is-open'));
@@ -967,6 +980,8 @@ function openGuide(placeId = null) {
 }
 
 function closeGuide() {
+  guideRequest++; guideController?.abort(); guideController = null; guideBusy = false;
+  document.querySelector('#guide-form button').disabled = false;
   stopGuideSpeech();
   guideAvatar?.setActive(false);
   guideScene.classList.remove('is-open');
@@ -1218,7 +1233,7 @@ try {
   addLayer('H-NT-04', { z: -18, x: 96, y: 107, width: 22, anchor: 'ground', opacity: .35, group: 'decor' });
   fogLayer = addLayer('H-BG-06', { z: 20, x: 50, y: 106, width: 125, opacity: .34, drift: .14, group: 'fog' });
 
-  fetch('/home-assets/manifest.json').then(r => { if (!r.ok) throw Error(); return r.json(); }).then(data => { manifest = data; placeLayers(); }).catch(() => {});
+  fetch(import.meta.env.BASE_URL + 'home-assets/manifest.json').then(r => { if (!r.ok) throw Error(); return r.json(); }).then(data => { manifest = data; placeLayers(); }).catch(() => {});
   resize();
 
   function frame(now) {

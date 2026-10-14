@@ -1,0 +1,640 @@
+[
+  {
+    "path": "public/assets/arch.webp",
+    "bytes": 480352,
+    "sha256": "05566caf5b7467ca2258c349e374a0624e430a5ea3e5f9fd5f274366dba4ff66",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/assets/cloud-far.webp",
+    "bytes": 202866,
+    "sha256": "70909f348d69804f93ba1c294b78fdd7bad41a9f20a246407cc60e327c2d2788",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/assets/cloud-mid.webp",
+    "bytes": 263046,
+    "sha256": "714cc71275a2fef59b39c8f447683a61fb0172535107384dd6e15d0a634c434e",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/assets/cloud-near.webp",
+    "bytes": 335772,
+    "sha256": "8c0c2bbb3bf2108dc3145297c72bb9b5e6fdb0f295e2c516a6c2c1f581f272d5",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/assets/mountains-far.webp",
+    "bytes": 211054,
+    "sha256": "12544c7b416292e2ca888892ab93b6942328e457834b1c8f7070edcd3e499999",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/assets/mountains-main.webp",
+    "bytes": 435616,
+    "sha256": "ce7e705e5a7041f1b6b37e9ef069dcee78c957f55c54f85004271edd18250427",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/assets/nantianmen.webp",
+    "bytes": 611414,
+    "sha256": "6145337c15dded3a2543f48e7ec0058dcb48e210798e47d4f6d504a92b1492cf",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/assets/pine-left.webp",
+    "bytes": 488104,
+    "sha256": "b0ed454ffe899dc4cb92dc680c736093a863df1efcff6dcbaf7432d51e95546d",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/assets/pine-right.webp",
+    "bytes": 425342,
+    "sha256": "d94cf14fc8b2d80de26f7760a7097d7b959b4c3b24b8e123b1c8e5fab02a66cb",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/assets/stairs-study.webp",
+    "bytes": 611414,
+    "sha256": "6145337c15dded3a2543f48e7ec0058dcb48e210798e47d4f6d504a92b1492cf",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/assets/stone.webp",
+    "bytes": 533730,
+    "sha256": "0da1688f464b2b20fd87a9145c8d796b647c9e1aa2a8b31205c1e84e1648fe5a",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/assets/temple-study.webp",
+    "bytes": 538824,
+    "sha256": "1186f01eeeffb69f096373a0fa578a8d78be203eda527b1883db9e57e81dcd4c",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/favicon.svg",
+    "bytes": 287,
+    "sha256": "2003c167d53b526e9b215e5c68e1f091edec2cdc5f49b40305167e4ac474572e",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-BG-01.png",
+    "bytes": 3558107,
+    "sha256": "2b6f3ef80f2de4ca5ec51cada5e3d8d41a8fff2d9f08437676b79d844f11a0f4",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-BG-01.webp",
+    "bytes": 536804,
+    "sha256": "cb0089c939ff1decb8459417eb0eb9d768618e5a42106ce73eee9591cbd61b1b",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-BG-03.png",
+    "bytes": 444161,
+    "sha256": "9420dbc5d0353c10dddcc6b7464261371a41a2f710d4bc1e9451e912f68bf9f1",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-BG-03.webp",
+    "bytes": 64382,
+    "sha256": "b7bc47a02a1b9d8a8ed9e47bd3a60d9b6352dfc6434cb7a448d48cbe90d3fe1b",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-BG-04.png",
+    "bytes": 920283,
+    "sha256": "48da28b018fbdc844a9193dae4cfc2760e6601c10211b051af161774a5490628",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-BG-04.webp",
+    "bytes": 159040,
+    "sha256": "ef13f10898f4bbd3d911c89c3ccf2d9f5dce2d366d029e7a70abac1206a12736",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-BG-06.png",
+    "bytes": 1069347,
+    "sha256": "ddf8a213dff3d08d87260be55e44fb777e7aaec8d916e076ce16afdecfabbd32",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-BG-06.webp",
+    "bytes": 175772,
+    "sha256": "e91b53b0d553778cc20ff024511411dff82e6ddf3bbf588b9258eb284803f199",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-BG-09.png",
+    "bytes": 2173471,
+    "sha256": "b6cec7b742a80797a1d3d70a9dc10be78b93a96065d42e0fe047259c620a9e3d",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-BG-09.webp",
+    "bytes": 351184,
+    "sha256": "655ed491329d1c00f82adcc19921178d1ac6bcad1b82a17cf1a403de20157b25",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-BG-11.png",
+    "bytes": 2029186,
+    "sha256": "4b4f788f33282b7087940994a159cbddfaa3234ee4066939d09fe416cd40aecc",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-BG-11.webp",
+    "bytes": 351466,
+    "sha256": "90c012105dcf61ce069882ac2ef02d796b1d416f039a64ac451710d74cf77026",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-01.png",
+    "bytes": 2281329,
+    "sha256": "938d05145819cf795d557d4fdde63fba39929f7f9ef8bef6b66ec74d2da495d8",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-01.webp",
+    "bytes": 382740,
+    "sha256": "6ad6cf38ececcdd44d2d8eecaf220b1bef05d16606970271a7b46a3316cea161",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-02.png",
+    "bytes": 1818292,
+    "sha256": "b58abd95767150d34edeabf033bf3c38ac2a0dd736c79819cc3dc8a9bd5b923e",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-02.webp",
+    "bytes": 292290,
+    "sha256": "7367f4b74fb83b5a02229d6d86ce12624610663b0d2f44c548d2995f5b53ce72",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-03.png",
+    "bytes": 1981462,
+    "sha256": "d30e271c47287c4b565c7937516d477a29b93e57795085c83335493c4c7673d1",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-03.webp",
+    "bytes": 356572,
+    "sha256": "840fdeae47ece892fccbbf6965d76b2710935c5da29646be2e8a7d0521dd3802",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-04.png",
+    "bytes": 2378340,
+    "sha256": "0302c00c2afa3d3d0a9d4d615b36a876866ce78bf7c5c0d5edeb452a7e423062",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-04.webp",
+    "bytes": 324792,
+    "sha256": "d060091f445e1738688cec5a36154664eb56497bc38c5fbf8543d4816bd97062",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-05-bg.png",
+    "bytes": 2673073,
+    "sha256": "011a4e59360813563cad31161faf0424c474cfc0f1a1feaa606c480e57ca2af2",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-05-bg.webp",
+    "bytes": 368108,
+    "sha256": "4a86e0193e3d5420542f3ad3f97b7ff1e76725f2db23d4fcb9a01442a5e8a861",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-05-gate.png",
+    "bytes": 1944086,
+    "sha256": "35235ae404baf59748f51e1555c13e6abd424f36900edcd0558c49b26552d3e2",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-05-gate.webp",
+    "bytes": 1359484,
+    "sha256": "465faae9ab6bac5fc6c2a653c3b6657b5e4200db66d936a1984333f8c4d1a719",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-05-street.png",
+    "bytes": 2870995,
+    "sha256": "e0b8057d1c8075be4e5a0f4a2777e32d4bf71f432d7da4bc292f4a272209ca3b",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-05-street.webp",
+    "bytes": 1743540,
+    "sha256": "235ff5f49dd93d60ab4dac50e872c770ea7e881ff8ccba085ce479814ccdd8f5",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-06.png",
+    "bytes": 2032894,
+    "sha256": "a8aefb3792ef862846c8322bce29ed82b73149030c37f8276f8b9df37c594ce1",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-06.webp",
+    "bytes": 366394,
+    "sha256": "ed8557d4a684e23bff5e58b57a7b3928020c306b52e0bdfbe64097ba2efe4338",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-07.png",
+    "bytes": 2732656,
+    "sha256": "76a0bf87a81d31b438f0342739cf15690c51a373e092a8c9450d797a359cf941",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-07.webp",
+    "bytes": 407780,
+    "sha256": "c3b395a5fddd45c6a75071149afbefe3b8645b64208561b79d3e5e2948adea21",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-08.png",
+    "bytes": 3171349,
+    "sha256": "e793adc539e0268830c9d763a980708221165b5bc547088686507a5760cbfce1",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-08.webp",
+    "bytes": 494502,
+    "sha256": "1e2ecf8dae0c3583508d0d12ec4f81d5068a63b590717bb45e2b6f6a09a666f6",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-09.png",
+    "bytes": 2060641,
+    "sha256": "cf83e605767a3f634ae9ca6b95dbff8d87df4699eef444745f8680742c4abfa9",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-09.webp",
+    "bytes": 374714,
+    "sha256": "b8ab70cfcad454268db3945ed05a17bf372f2d02d0491a6301b69d9697c35770",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-10.png",
+    "bytes": 1756603,
+    "sha256": "616940561cb9ebd33dc48e40d0acf80e0eaa9ff2e1f74b787fed3c7ee38c59e0",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-10.webp",
+    "bytes": 343376,
+    "sha256": "5bd1342b0c349736ffaa713d0b7a3c7b92454b1dde3de9cc10424486dc5a16cf",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-11.png",
+    "bytes": 2782539,
+    "sha256": "a48def4f76edb84610713e8d0de73f7690caff0a944096e7e4ddd766c1362392",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-11.webp",
+    "bytes": 496586,
+    "sha256": "ad098ca8f7e224bb6b205360fd9dc44e794804747641188a12f4a21dd9ddd58c",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-12.png",
+    "bytes": 2732438,
+    "sha256": "976db19dd619a76e61034cd80928757e8afd455845be92dbd85210f4b252e850",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-12.webp",
+    "bytes": 414584,
+    "sha256": "f4904a7c6e3d7d39d1ec81f1e184201768f523cf1ceba85a93d860bb21ed3e12",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-13-bg.png",
+    "bytes": 3026164,
+    "sha256": "af3a1027e7199fe804e4f6c8550051059618637e9b3e3a2963451d492e58c1b2",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-13-bg.webp",
+    "bytes": 484352,
+    "sha256": "e414969a6e9af968ec291b6bcf0e0b52bff095f900393f2fd89996a3c2cc7437",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-13-platform.png",
+    "bytes": 2841316,
+    "sha256": "ce1075ef8f8efb677e875055e35321250367ba0535fc48de90e9456ef925c3ba",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-13-platform.webp",
+    "bytes": 393002,
+    "sha256": "a1b191faa69eb3211bcceb642f623dcc369c7648a752937b09a87455d280b603",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-13-station.png",
+    "bytes": 1847455,
+    "sha256": "f3d2272bf4ff2caa58c494e84b4e2fe638674163a7de90646b1cdfc26e296475",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-ND-13-station.webp",
+    "bytes": 1249542,
+    "sha256": "952020785cca422368370facafab1cbedcaa862167b2e709b17361d86e6ad43f",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-NT-01.png",
+    "bytes": 2021782,
+    "sha256": "b247103a9c621d6ed5f177728e32e3d7a02a2795f10ef4045d385522358f2a43",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-NT-01.webp",
+    "bytes": 493824,
+    "sha256": "199aa1b19b51f5727402f427cd4b0c6686c407cef1544be0f1e067d3e6450008",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-NT-04.png",
+    "bytes": 2002755,
+    "sha256": "db7be2513d724eeb0d5e9545d95cf259e8a0468a01b0d1d6410288114f148c87",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-NT-04.webp",
+    "bytes": 350820,
+    "sha256": "ba6d8e298610f12cf7bfba448fc4eddce4d304579589c1fc7c1ca6c3d5e715de",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-NT-07.png",
+    "bytes": 2119295,
+    "sha256": "eea85a5ad4ad293fed7c198c2605f5951657ce98fd31be96d449f6bf4d7cd7e3",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-NT-07.webp",
+    "bytes": 289592,
+    "sha256": "4ca970d09c90e9aa5ed305d8911148ea4b9baf9d9b2b783dda057ffaa52db280",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-TR-01-cablecar.png",
+    "bytes": 1301309,
+    "sha256": "3d93f25483051e679baeb4237025a04cd4ec89612f7079827a5e2d6bd97609af",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/H-TR-01-cablecar.webp",
+    "bytes": 876700,
+    "sha256": "c8deec4a6ff6351d32358f906de6de5cd47afc2bdec5bef33eccc713a0382670",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/bixia-guide.png",
+    "bytes": 1130320,
+    "sha256": "ece4ec51ee8a20308ad52f97449ba80afe718d91fb268ff63da097e8dfde3dad",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/bixia-welcome-alt.png",
+    "bytes": 2277253,
+    "sha256": "e8d54363f001838d43901cf91abe5b04a78de9eb8ec9597087b7a1c5e694c076",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/bixia-welcome.png",
+    "bytes": 2524826,
+    "sha256": "b2103ca67025d55e62b9b5e41086f0b2a6fef182a274da4255fc21f52bf093c2",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/manifest.json",
+    "bytes": 10156,
+    "sha256": "b791846a1ab1230324e7061aebc052c8ea55edaffa5840a5c796a6bccbd090b0",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/welcome-cover.png",
+    "bytes": 5930590,
+    "sha256": "1171bdb23a00ba071a8539bdeac5487a59577dca27b688ca1b15d5d4e72fc60d",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明"
+  },
+  {
+    "path": "public/home-assets/welcome-cover.webp",
+    "bytes": 450276,
+    "sha256": "3f76740cf2229229a125682dd64c7a9cfac4f6ecebeb1477fb0a76ed736d5242",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明",
+    "derived_from": "public/home-assets/welcome-cover.png",
+    "processing": "本分支从原图转换WebP，质量88，不改变画面内容"
+  },
+  {
+    "path": "public/models/princess-agent.glb",
+    "bytes": 10677568,
+    "sha256": "4f2221047fda1843ba447fd2c5f22cdf7378ea37c0caa488fda6779382d53b67",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明",
+    "meshes": 2,
+    "skin_count": 1,
+    "joint_count": 3,
+    "animations": [
+      "Idle",
+      "Nod",
+      "Bow",
+      "LookAround",
+      "Talk",
+      "Blink"
+    ],
+    "morphs": [
+      [
+        "jawOpen",
+        "mouthRound"
+      ],
+      [
+        "eyeBlinkLeft",
+        "eyeBlinkRight",
+        "jawOpen",
+        "mouthRound"
+      ]
+    ],
+    "asset": {
+      "generator": "Khronos glTF Blender I/O v5.2.39",
+      "version": "2.0"
+    }
+  },
+  {
+    "path": "public/models/taohuayuan-cable-car.glb",
+    "bytes": 11214408,
+    "sha256": "ba98410450da0d84e83ea6e0af03e11104d1bda96eeb10ffe261d0ef04155afa",
+    "source_repository": "xiaozhi0519/digital-media-projects",
+    "source_commit": "b82929b",
+    "license_status": "原仓库未附统一许可；保持团队私有协作，待作者补齐原创与素材授权说明",
+    "meshes": 1,
+    "skin_count": 0,
+    "joint_count": 0,
+    "animations": [],
+    "morphs": [],
+    "asset": {
+      "version": "2.0",
+      "generator": "Beijing VAST-1e4098a1-4ec9-4b5f-b6f4-77ef8450d94f-AIGC Content"
+    }
+  }
+]

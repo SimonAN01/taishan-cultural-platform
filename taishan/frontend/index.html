@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#eee9dd"><meta name="description" content="沿一卷山水探索泰山，在景点、历史与诗词之间，与碧霞仙子共读一山千年。">
+<title>一山千年 · 泰山文化交互体验</title>
+<link rel="icon" href="assets/seal.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+<link rel="preload" href="assets/panorama-v2.webp" as="image">
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳至主要内容</a>
+<header class="site-header">
+<button class="brand" data-nav="map" aria-label="一山千年 返回山水地图"><span class="seal" aria-hidden="true">泰<br>山</span><span>一山千年 · 泰山<small>泰山文化交互体验</small></span></button>
+<nav aria-label="主要导航"><a id="immersive-link" href="/experience/" hidden>画卷</a><button data-action="intro" class="desktop-nav">首页</button><button data-nav="map" aria-current="page">地图</button><button data-nav="spots" class="desktop-nav">景点</button><button data-nav="routes">路线</button><button data-nav="history">文化</button><button data-nav="poems">诗词</button><button data-nav="museum" class="desktop-nav">文博</button><button data-nav="story" class="desktop-nav">游历</button><button data-nav="journey" class="desktop-nav">足迹</button><button data-action="chat" class="desktop-nav">问山</button><button data-action="menu" class="mobile-more">更多</button></nav>
+<button class="header-photo" data-action="photo">识景 <span aria-hidden="true">↗</span></button>
+</header>
+<main id="main" tabindex="-1">
+<div id="boot" class="boot" role="status">正在展开山水长卷…</div>
+<section id="view-map" class="view" hidden>
+<div class="map-shell">
+<div class="map-viewport" id="map-viewport" aria-label="泰山文化地图，可缩放、拖动；也可使用景点列表浏览">
+<div class="map-world" id="map-world"><img src="assets/panorama-v2.webp" alt="水墨山峦与登山古道构成的泰山艺术长卷" width="1672" height="941" fetchpriority="high" draggable="false"><svg id="route-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg><div id="map-nodes"></div></div>
+<div class="map-heading"><p class="eyebrow">一山千年 · 以山为卷</p><h1>泰山全景<span>五岳独尊 · 中华泰山</span></h1><p>五岳独尊，中华山河之魂。<br>沿古道与景点，读一座山的千年。</p><div class="map-stats"><span><strong id="spot-count">—</strong> 个景点</span><span><strong id="route-count">—</strong> 条经典路线</span><span><strong id="knowledge-count">—</strong> 篇文化资料</span></div><button class="text-link" data-nav="story">五章文化游历 <span aria-hidden="true">→</span></button><button class="map-info-toggle" data-action="map-info" aria-expanded="false">展开地图简介</button><div class="map-shortcuts"><button data-nav="history"><strong>揽胜千年 ↗</strong><small>从秦汉到今日的泰山</small></button><button data-action="show-route"><strong>今日登山 ↗</strong><small>择一条路，慢慢读山</small></button></div></div>
+<div class="map-quote" aria-hidden="true">会当凌绝顶<br><span>一览众山小</span><small>唐 · 杜甫</small></div>
+<div class="map-controls" role="group" aria-label="地图缩放"><button id="zoom-in" aria-label="放大地图">＋</button><output id="zoom-value">100%</output><button id="zoom-out" aria-label="缩小地图">−</button><button id="zoom-reset" aria-label="复位地图">复位</button></div>
+<div class="map-dock" role="group" aria-label="地图文化探索"><button data-nav="spots">全部景点</button><button data-filter="自然">自然风景</button><button data-filter="古建">古建信仰</button><button data-nav="museum">石刻文博</button><button data-action="photo">AI识景</button></div><div class="map-legend" aria-label="线路图例"><span>朱砂：步行</span><span>蓝色：交通接驳</span><span>赭色：索道</span><span>紫色：文化支线</span></div><div class="map-caption">艺术化文化地图 · 非实地导航</div>
+</div>
+<aside id="detail" class="detail" tabindex="-1" aria-label="路线与景点详情"></aside>
+</div>
+<div class="map-footer"><div><span class="tiny-seal">游</span><span id="route-summary"></span></div><button class="text-link" data-nav="routes">查看全部路线 →</button></div>
+<div class="below-map"><div><p class="eyebrow">山不只在眼前，也在千年文字里</p><h2>把风景，读成故事。</h2></div><button class="feature-link" data-nav="history"><span>从秦汉到今天</span><strong>千年史脉</strong><span>沿时间读泰山 →</span></button><button class="feature-link" data-nav="poems"><span>一首诗，一座山</span><strong>诗意泰山</strong><span>走进杜甫与李白的诗 →</span></button></div>
+</section>
+<section id="view-spots" class="view content-view" hidden></section>
+<section id="view-museum" class="view content-view" hidden></section>
+<section id="view-spot-full" class="view" hidden></section>
+<section id="view-routes" class="view content-view" hidden></section>
+<section id="view-history" class="view content-view" hidden></section>
+<section id="view-poems" class="view content-view" hidden></section>
+<section id="view-story" class="view content-view" hidden></section>
+<section id="view-journey" class="view content-view" hidden></section>
+</main>
+<footer class="site-footer"><span>一山千年 · 泰山</span><span>以山为卷，以史为脉，以诗为魂。</span><button data-action="about">资料与使用说明</button></footer>
+<button class="companion-launch" data-action="chat"><img src="assets/fairy-v2.webp" width="52" height="68" alt=""><span>问问碧霞仙子<small>与山对话</small></span><span aria-hidden="true">↗</span></button>
+<dialog id="welcome-dialog" class="welcome-dialog"><img class="welcome-art" src="assets/welcome.webp" alt="国风泰山山水与伸手迎宾的碧霞仙子"><button class="welcome-skip" data-action="enter">直接进入地图 ↗</button><div class="welcome-copy"><p>中华泰山 · 文化沉浸式体验</p><h1>一山千年<span>泰山</span></h1><h2>泰山文化沉浸式体验</h2><p class="english" lang="en">A JOURNEY THROUGH TIME IN TAISHAN</p><p class="welcome-prose">泰山，岱宗之首，五岳独尊。<br>在这里，读历史、品诗词，<br>沿着山路，与千年的文化相逢。</p></div><button class="welcome-enter" data-action="enter">启程入山 <span aria-hidden="true">→</span></button></dialog>
+<dialog id="modal" class="modal"><button class="close" data-action="close-modal" aria-label="关闭窗口">×</button><div id="modal-content"></div></dialog>
+<dialog id="chat-dialog" class="chat-dialog"><div class="chat-art"><p class="eyebrow">你的文化同行者</p><h2>碧霞仙子</h2><p>一问一答间，<br>听见泰山的千年回响。</p><img src="assets/fairy-v2.webp" alt="艺术化的碧霞仙子导览角色" width="512" height="768"></div><div class="chat-panel"><div class="chat-header"><div><h2>问山</h2><p id="chat-context">聊一聊泰山的历史与文化</p></div><button class="close" data-action="close-chat" aria-label="关闭文化问答">×</button></div><div class="chat-messages" id="chat-messages" role="log" aria-live="polite"></div><div class="suggestions" id="suggestions"></div><form id="chat-form"><label for="chat-input" class="sr-only">向碧霞仙子提问</label><textarea id="chat-input" placeholder="例如：封禅是什么？" maxlength="800" rows="2" required></textarea><button type="submit" id="chat-send">提问 →</button></form><p class="chat-note" id="chat-note">回答附资料来源，证据不足时会说明。</p></div></dialog>
+<div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+</body></html>

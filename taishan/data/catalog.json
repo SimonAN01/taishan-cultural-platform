@@ -1,0 +1,1651 @@
+{
+  "spots": [
+    {
+      "id": "hongmen",
+      "name": "红门",
+      "subtitle": "入山之门",
+      "category": "古建",
+      "map_x": 30,
+      "map_y": 85,
+      "intro": "红门是经典徒步游览线的入口，沿盘道向北可逐步进入泰山的人文山景。",
+      "interpretation": "从山脚开始，把沿途古建筑与山路放在一起看，便能读出登山文化的层次。",
+      "source_ids": [
+        "red"
+      ],
+      "vision_prompt": "a small traditional red Chinese temple gate at the foot of Mount Tai",
+      "review_status": "待专家复核",
+      "photos": [
+        {
+          "id": "44131616",
+          "url": "assets/photos/44131616.webp",
+          "caption": "红门建筑与游览入口（2015年拍摄）",
+          "author": "Zhangzhugang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Tai_Shan_2015.08.12_07-36-07.jpg",
+          "source_title": "File:Tai Shan 2015.08.12 07-36-07.jpg",
+          "change_note": "原图缩小并转换为WebP，保留完整画面",
+          "review_status": "已查看图像并核对原始文件描述；不作为训练集已审核标签",
+          "width": 1280,
+          "height": 853
+        }
+      ]
+    },
+    {
+      "id": "wanxian",
+      "name": "万仙楼",
+      "subtitle": "拾级入画",
+      "category": "古建",
+      "map_x": 36,
+      "map_y": 76,
+      "intro": "万仙楼是红门游览线上的建筑节点，连接山脚街巷与登山盘道。",
+      "interpretation": "不妨留意门楼、石阶与周围题刻，共同构成的入山空间。",
+      "source_ids": [
+        "red"
+      ],
+      "vision_prompt": "a traditional two story Chinese gate tower across the mountain stairway",
+      "review_status": "待专家复核",
+      "photos": [
+        {
+          "id": "4129384",
+          "url": "assets/photos/4129384.webp",
+          "caption": "万仙楼门楼",
+          "author": "Jiang",
+          "license": "Public domain",
+          "license_url": "",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Taishan_(1506).JPG",
+          "source_title": "File:Taishan (1506).JPG",
+          "change_note": "原图缩小并转换为WebP，保留完整画面",
+          "review_status": "已查看图像并核对原始文件描述；不作为训练集已审核标签",
+          "width": 1280,
+          "height": 960
+        }
+      ]
+    },
+    {
+      "id": "doumu",
+      "name": "斗母宫",
+      "subtitle": "古道深院",
+      "category": "信仰",
+      "map_x": 44,
+      "map_y": 64,
+      "intro": "斗母宫是红门线上宗教文化与传统建筑相交汇的游览节点。",
+      "interpretation": "游览宗教建筑时，可从建筑空间理解信仰文化，避免将传说当成历史结论。",
+      "source_ids": [
+        "red"
+      ],
+      "vision_prompt": "a Chinese Taoist temple courtyard surrounded by dense green trees on a mountain",
+      "review_status": "待专家复核",
+      "photos": [
+        {
+          "id": "commons-44150033",
+          "url": "assets/photos/doumu-44150033.webp",
+          "caption": "红门盘道沿途的斗母宫建筑（2015年拍摄）",
+          "author": "Zhangzhugang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Tai_Shan_2015.08.12_08-25-10.jpg",
+          "source_title": "File:Tai Shan 2015.08.12 08-25-10.jpg",
+          "change_note": "原图缩小并转换为WebP，保留完整画面",
+          "review_status": "已查看图像并核对原始文件描述；不作为训练集已审核标签",
+          "width": 1200,
+          "height": 800
+        }
+      ]
+    },
+    {
+      "id": "jingshi",
+      "name": "经石峪",
+      "subtitle": "石上有经",
+      "category": "石刻",
+      "map_x": 33,
+      "map_y": 70,
+      "intro": "经石峪以大字《金刚经》摩崖石刻著名，是泰山石刻文化的重要一站。",
+      "interpretation": "这是一处从主盘道延伸出去的文化支线，宜单独安排停留。",
+      "source_ids": [
+        "jingshi"
+      ],
+      "vision_prompt": "large ancient Chinese Buddhist calligraphy carved on a flat granite rock bed",
+      "review_status": "待专家复核",
+      "photos": [
+        {
+          "id": "commons-44151345",
+          "url": "assets/photos/jingshi-44151345.webp",
+          "caption": "经石峪摩崖刻经石面全景（2015年拍摄）",
+          "author": "Zhangzhugang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Tai_Shan_2015.08.12_08-46-17.jpg",
+          "source_title": "File:Tai Shan 2015.08.12 08-46-17.jpg",
+          "change_note": "原图缩小并转换为WebP，保留完整画面",
+          "review_status": "已查看图像并核对原始文件描述；不作为训练集已审核标签",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "id": "commons-44151397",
+          "url": "assets/photos/jingshi-44151397.webp",
+          "caption": "经石峪摩崖文字局部（2015年拍摄）",
+          "author": "Zhangzhugang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Tai_Shan_2015.08.12_08-46-31.jpg",
+          "source_title": "File:Tai Shan 2015.08.12 08-46-31.jpg",
+          "change_note": "原图缩小并转换为WebP，保留完整画面",
+          "review_status": "已查看图像并核对原始文件描述；不作为训练集已审核标签",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "id": "44151030",
+          "url": "assets/photos/44151030.webp",
+          "caption": "经石峪支线路口牌坊，并非摩崖刻经本体",
+          "author": "Zhangzhugang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Tai_Shan_2015.08.12_08-38-17.jpg",
+          "source_title": "File:Tai Shan 2015.08.12 08-38-17.jpg",
+          "change_note": "原图缩小并转换为WebP，保留完整画面",
+          "review_status": "已查看图像并核对原始文件描述；不作为训练集已审核标签",
+          "width": 1280,
+          "height": 853
+        }
+      ]
+    },
+    {
+      "id": "zhongtian",
+      "name": "中天门",
+      "subtitle": "山腰的交汇处",
+      "category": "古建",
+      "map_x": 51,
+      "map_y": 53,
+      "intro": "中天门是红门徒步线与天外村乘车线的重要衔接节点，可继续徒步或换乘索道。",
+      "interpretation": "在这里比较不同游览方式，能理解山路如何连接山脚与岱顶。",
+      "source_ids": [
+        "routes"
+      ],
+      "vision_prompt": "a Chinese stone gateway with red walls and tiled roof halfway up Mount Tai",
+      "review_status": "待专家复核",
+      "photos": [
+        {
+          "id": "44174842",
+          "url": "assets/photos/44174842.webp",
+          "caption": "中天门坊与财神殿（2015年拍摄）",
+          "author": "Zhangzhugang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Tai_Shan_2015.08.12_10-09-04.jpg",
+          "source_title": "File:Tai Shan 2015.08.12 10-09-04.jpg",
+          "change_note": "原图缩小并转换为WebP，保留完整画面",
+          "review_status": "已查看图像并核对原始文件描述；不作为训练集已审核标签",
+          "width": 1280,
+          "height": 853
+        }
+      ]
+    },
+    {
+      "id": "wudafu",
+      "name": "五大夫松",
+      "subtitle": "松间听古事",
+      "category": "自然",
+      "map_x": 54,
+      "map_y": 44,
+      "intro": "五大夫松位于中天门以上的登山路段，与秦始皇登岱传说相联系。",
+      "interpretation": "关于松树受封的故事属于历史叙事与传说交织的内容，应与现存树木年代分开理解。",
+      "source_ids": [
+        "red"
+      ],
+      "vision_prompt": "ancient Chinese pine trees with broad branches on rocky Mount Tai",
+      "review_status": "待专家复核",
+      "photos": [
+        {
+          "id": "commons-59699909",
+          "url": "assets/photos/wudafu-59699909.webp",
+          "caption": "五大夫松现存松树景观（照片不用于判定树龄）",
+          "author": "Nyx Ning",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:%E6%B3%B0%E5%B1%B1_%E4%BA%94%E5%A4%A7%E5%A4%AB%E6%9D%BE_-_panoramio.jpg",
+          "source_title": "File:泰山 五大夫松 - panoramio.jpg",
+          "change_note": "原图缩小并转换为WebP，保留完整画面",
+          "review_status": "已查看图像并核对原始文件描述；不作为训练集已审核标签",
+          "width": 1200,
+          "height": 675
+        }
+      ]
+    },
+    {
+      "id": "shibapan",
+      "name": "十八盘",
+      "subtitle": "一步一重山",
+      "category": "山景",
+      "map_x": 58,
+      "map_y": 37,
+      "intro": "十八盘是泰山登山盘道的险峻段落，石阶沿两侧山崖向南天门攀升。",
+      "interpretation": "这里最能感受石阶与山势相互塑造的景观。攀登时应遵循现场指引。",
+      "source_ids": [
+        "red"
+      ],
+      "vision_prompt": "a very steep long stone staircase between cliffs leading to a Chinese gate at Mount Tai",
+      "review_status": "待专家复核",
+      "photos": [
+        {
+          "id": "54919328",
+          "url": "assets/photos/54919328.webp",
+          "caption": "十八盘起点（2012年拍摄）",
+          "author": "rheins",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:%E5%8D%81%E5%85%AB%E7%9B%98%E8%B5%B7%E7%82%B9_-_Start_of_the_Eighteen_Twistings_-_2012.06_-_panoramio.jpg",
+          "source_title": "File:十八盘起点 - Start of the Eighteen Twistings - 2012.06 - panoramio.jpg",
+          "change_note": "原图缩小并转换为WebP，保留完整画面",
+          "review_status": "已查看图像并核对原始文件描述；不作为训练集已审核标签",
+          "width": 1280,
+          "height": 960
+        }
+      ]
+    },
+    {
+      "id": "nantian",
+      "name": "南天门",
+      "subtitle": "云上的门阙",
+      "category": "古建",
+      "map_x": 60,
+      "map_y": 29,
+      "intro": "南天门位于十八盘上端，是登山盘道与岱顶景观之间的标志性门阙。",
+      "interpretation": "抬头看门楼与崖壁的关系，体会传统建筑借山势营造出的空间感。",
+      "source_ids": [
+        "red"
+      ],
+      "vision_prompt": "a red Chinese gate tower at the top of very steep mountain steps with clouds below",
+      "review_status": "待专家复核",
+      "photos": [
+        {
+          "id": "5327850",
+          "url": "assets/photos/5327850.webp",
+          "caption": "沿十八盘仰望南天门",
+          "author": "Charlie fong",
+          "license": "Public domain",
+          "license_url": "",
+          "source_page": "https://commons.wikimedia.org/wiki/File:%E6%B3%B0%E5%B1%B1_%E5%8D%97%E5%A4%A9%E9%97%A8.jpg",
+          "source_title": "File:泰山 南天门.jpg",
+          "change_note": "原图缩小并转换为WebP，保留完整画面",
+          "review_status": "已查看图像并核对原始文件描述；不作为训练集已审核标签",
+          "width": 763,
+          "height": 1018
+        }
+      ]
+    },
+    {
+      "id": "tianjie",
+      "name": "天街",
+      "subtitle": "人间烟火入云端",
+      "category": "游山",
+      "map_x": 68,
+      "map_y": 31,
+      "intro": "天街是岱顶游览中的街巷空间，可串联山顶建筑与文化景点。",
+      "interpretation": "从登山转入山顶漫游，步调也可以随之放慢。",
+      "source_ids": [
+        "red"
+      ],
+      "vision_prompt": "a narrow stone street lined with traditional shops on top of Mount Tai",
+      "review_status": "待专家复核",
+      "photos": [
+        {
+          "id": "commons-28523713",
+          "url": "assets/photos/tianjie-28523713.webp",
+          "caption": "天街牌坊与石阶（冬季画面）",
+          "author": "Shizhao",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:%E5%A4%A9%E8%A1%97.jpg",
+          "source_title": "File:天街.jpg",
+          "change_note": "原图缩小并转换为WebP，保留完整画面",
+          "review_status": "已查看图像并核对原始文件描述；不作为训练集已审核标签",
+          "width": 1200,
+          "height": 803
+        }
+      ]
+    },
+    {
+      "id": "bixia",
+      "name": "碧霞祠",
+      "subtitle": "一座山的民间信仰",
+      "category": "信仰",
+      "map_x": 66,
+      "map_y": 22,
+      "intro": "碧霞祠是认识泰山民间信仰和传统建筑的重要地点。",
+      "interpretation": "碧霞元君属于宗教与民俗信仰。本平台的碧霞仙子是艺术化导览角色。",
+      "source_ids": [
+        "red"
+      ],
+      "vision_prompt": "a Chinese Taoist temple with bronze roof tiles on the summit of Mount Tai",
+      "review_status": "待专家复核",
+      "photos": [
+        {
+          "id": "97594617",
+          "url": "assets/photos/97594617.webp",
+          "caption": "碧霞祠建筑群（2012年拍摄）",
+          "author": "See-ming Lee from Hong Kong SAR, China",
+          "license": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:%E7%A2%A7%E9%9C%9E%E7%A5%A0_Azure_Clouds_Temple_%E5%B1%B1%E6%9D%B1%E7%9C%81%E6%B3%B0%E5%B1%B1_Mount_Tai,_Shandong_Province_%E5%B1%B1%E4%B8%9C%E7%9C%81%E6%B3%B0%E5%B1%B1_%E4%B8%AD%E5%9C%8B%E6%97%85%E9%81%8A_%E4%B8%AD%E5%9B%BD%E6%97%85%E6%B8%B8_China_Tourism_SML.20121011.7D.09574.ChinaTourism.CN.QingDao.MountTai_(8349283109).jpg",
+          "source_title": "File:碧霞祠 Azure Clouds Temple 山東省泰山 Mount Tai, Shandong Province 山东省泰山 中國旅遊 中国旅游 China Tourism SML.20121011.7D.09574.ChinaTourism.CN.QingDao.MountTai (8349283109).jpg",
+          "change_note": "原图缩小并转换为WebP，保留完整画面",
+          "review_status": "已查看图像并核对原始文件描述；不作为训练集已审核标签",
+          "width": 1280,
+          "height": 853
+        }
+      ]
+    },
+    {
+      "id": "yuhuang",
+      "name": "玉皇顶",
+      "subtitle": "登临岱顶",
+      "category": "山景",
+      "map_x": 56,
+      "map_y": 19,
+      "intro": "玉皇顶是泰山极顶的代表性地标，汇集自然视野与山岳文化体验。",
+      "interpretation": "从山脚到山顶，人们通过持续攀登形成对山岳的理解与想象。",
+      "source_ids": [
+        "unesco"
+      ],
+      "vision_prompt": "a Chinese temple on the highest rocky peak of Mount Tai",
+      "review_status": "待专家复核",
+      "photos": [
+        {
+          "id": "commons-44283635",
+          "url": "assets/photos/yuhuang-44283635.webp",
+          "caption": "玉皇顶玉皇庙门前建筑（2015年拍摄）",
+          "author": "Zhangzhugang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Tai_Shan_2015.08.12_14-07-13.jpg",
+          "source_title": "File:Tai Shan 2015.08.12 14-07-13.jpg",
+          "change_note": "原图缩小并转换为WebP，保留完整画面",
+          "review_status": "已查看图像并核对原始文件描述；不作为训练集已审核标签",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "id": "commons-44283692",
+          "url": "assets/photos/yuhuang-44283692.webp",
+          "caption": "玉皇顶无字碑与玉皇庙建筑（2015年拍摄）",
+          "author": "Zhangzhugang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Tai_Shan_2015.08.12_14-17-20.jpg",
+          "source_title": "File:Tai Shan 2015.08.12 14-17-20.jpg",
+          "change_note": "原图缩小并转换为WebP，保留完整画面",
+          "review_status": "已查看图像并核对原始文件描述；不作为训练集已审核标签",
+          "width": 1200,
+          "height": 800
+        }
+      ]
+    },
+    {
+      "id": "riguan",
+      "name": "日观峰",
+      "subtitle": "望见山外山",
+      "category": "自然",
+      "map_x": 78,
+      "map_y": 30,
+      "intro": "日观峰是岱顶观景的重要节点，与日出和云海的泰山景观意象相联系。",
+      "interpretation": "是否能观赏日出取决于实际天气，本平台不提供实时天气判断。",
+      "source_ids": [
+        "unesco"
+      ],
+      "vision_prompt": "a sunrise over a sea of clouds seen from a rocky mountain summit",
+      "review_status": "待专家复核",
+      "photos": [
+        {
+          "id": "commons-98954166",
+          "url": "assets/photos/riguan-98954166.webp",
+          "caption": "日观峰山石与泰山气象站建筑",
+          "author": "xiquinhosilva",
+          "license": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:50474-%E6%97%A5%E8%A7%82%E5%B3%B0%E4%B8%8E%E6%B3%B0%E5%B1%B1%E6%B0%94%E8%B1%A1%E7%AB%99.jpg",
+          "source_title": "File:50474-日观峰与泰山气象站.jpg",
+          "change_note": "原图缩小并转换为WebP，保留完整画面",
+          "review_status": "已查看图像并核对原始文件描述；不作为训练集已审核标签",
+          "width": 1200,
+          "height": 847
+        },
+        {
+          "id": "commons-177263414",
+          "url": "assets/photos/riguan-177263414.webp",
+          "caption": "日观峰山势与山顶建筑远景",
+          "author": "Yumeto",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:20230611_Riguan_Feng.jpg",
+          "source_title": "File:20230611 Riguan Feng.jpg",
+          "change_note": "原图缩小并转换为WebP，保留完整画面",
+          "review_status": "已查看图像并核对原始文件描述；不作为训练集已审核标签",
+          "width": 1200,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "id": "tianwai",
+      "name": "天外村",
+      "subtitle": "山路的另一种打开",
+      "category": "入口",
+      "map_x": 21,
+      "map_y": 83,
+      "intro": "天外村是乘车进山的入口，可到中天门后继续徒步或换乘索道。",
+      "interpretation": "适合希望调整步行强度的文化游览者。服务运行情况请查看景区公告。",
+      "source_ids": [
+        "tianwai"
+      ],
+      "vision_prompt": "a broad circular plaza with tall stone columns at the foot of Mount Tai",
+      "review_status": "待专家复核",
+      "photos": [
+        {
+          "id": "commons-54918536",
+          "url": "assets/photos/tianwai-54918536.webp",
+          "caption": "天外村广场实景（2012年拍摄）",
+          "author": "rheins",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:%E5%A4%A9%E5%A4%96%E6%9D%91%E5%B9%BF%E5%9C%BA_-_Tianwaicun_Square_-_2012.06_-_panoramio.jpg",
+          "source_title": "File:天外村广场 - Tianwaicun Square - 2012.06 - panoramio.jpg",
+          "change_note": "原图缩小并转换为WebP，保留完整画面",
+          "review_status": "已查看图像并核对原始文件描述；不作为训练集已审核标签",
+          "width": 1200,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "id": "taohua",
+      "name": "桃花峪",
+      "subtitle": "山溪与桃源",
+      "category": "入口",
+      "map_x": 26,
+      "map_y": 48,
+      "intro": "桃花峪线路可经景区交通到桃花源，再换乘索道到岱顶。",
+      "interpretation": "把溪谷景色与山顶游览组合起来，可体验不同的山岳景观。",
+      "source_ids": [
+        "routes"
+      ],
+      "vision_prompt": "a clear rocky stream through a forested mountain valley",
+      "review_status": "待专家复核",
+      "photos": [
+        {
+          "id": "commons-54919130",
+          "url": "assets/photos/taohua-54919130.webp",
+          "caption": "桃花峪线路的彩石溪景观（2012年拍摄）",
+          "author": "rheins",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:%E5%BD%A9%E7%9F%B3%E6%BA%AA_-_Colorful_Stone_Stream_-_2012.06_-_panoramio.jpg",
+          "source_title": "File:彩石溪 - Colorful Stone Stream - 2012.06 - panoramio.jpg",
+          "change_note": "原图缩小并转换为WebP，保留完整画面",
+          "review_status": "已查看图像并核对原始文件描述；不作为训练集已审核标签",
+          "width": 1200,
+          "height": 900
+        },
+        {
+          "id": "commons-54919235",
+          "url": "assets/photos/taohua-54919235.webp",
+          "caption": "桃花峪景区入口画面（2012年拍摄）",
+          "author": "rheins",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:%E6%A1%83%E8%8A%B1%E5%B3%AA%E6%99%AF%E5%8C%BA%E5%85%A5%E5%8F%A3_-_Entrance_of_Taohuayu_Canyon_-_2012.06_-_panoramio.jpg",
+          "source_title": "File:桃花峪景区入口 - Entrance of Taohuayu Canyon - 2012.06 - panoramio.jpg",
+          "change_note": "原图缩小并转换为WebP，保留完整画面",
+          "review_status": "已查看图像并核对原始文件描述；不作为训练集已审核标签",
+          "width": 1200,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "id": "dongyu",
+      "name": "东御道",
+      "subtitle": "从东麓慢慢入山",
+      "category": "入口",
+      "map_x": 84,
+      "map_y": 76,
+      "intro": "东御道位于泰山东麓，在中天门与红门登山路线汇合。",
+      "interpretation": "适合关注古道与自然环境的慢游主题，实际通行以现场公告为准。",
+      "source_ids": [
+        "routes"
+      ],
+      "vision_prompt": "an old stone stairway through a quiet dense forest on the eastern side of Mount Tai",
+      "review_status": "待专家复核",
+      "photos": []
+    },
+    {
+      "id": "daguan",
+      "name": "大观峰",
+      "subtitle": "崖壁上的历史记忆",
+      "category": "石刻",
+      "map_x": 60,
+      "map_y": 24,
+      "intro": "《纪泰山铭》刻于岱顶大观峰崖壁，是泰山摩崖石刻的重要实例。",
+      "interpretation": "把石刻的位置、书写与封禅记忆联系起来阅读；大观峰与玉皇顶是不同景点，地图位置仅为艺术化示意。",
+      "source_ids": [
+        "stone"
+      ],
+      "vision_prompt": "ancient Chinese calligraphy inscriptions carved on a large cliff face on Mount Tai",
+      "review_status": "待专家复核",
+      "photos": [
+        {
+          "id": "1636834",
+          "url": "assets/photos/1636834.webp",
+          "caption": "大观峰崖壁石刻",
+          "author": "Rolf Müller (User:Rolfmueller)",
+          "license": "CC BY-SA 3.0",
+          "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Mount_tai_rock_inscriptions.jpg",
+          "source_title": "File:Mount tai rock inscriptions.jpg",
+          "change_note": "原图缩小并转换为WebP，保留完整画面",
+          "review_status": "已查看图像并核对原始文件描述；不作为训练集已审核标签",
+          "width": 1280,
+          "height": 853
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "id": "hongmen",
+      "name": "红门经典线",
+      "tagline": "沿古道，读一座山",
+      "type": "徒步",
+      "effort": "连续登阶",
+      "description": "从红门沿古道上行，经中天门、十八盘抵达岱顶。经石峪作为支线单独游览。",
+      "node_sequence": [
+        "hongmen",
+        "wanxian",
+        "doumu",
+        "zhongtian",
+        "wudafu",
+        "shibapan",
+        "nantian",
+        "tianjie",
+        "bixia",
+        "yuhuang"
+      ],
+      "detours": [
+        "jingshi",
+        "riguan",
+        "daguan"
+      ],
+      "source_ids": [
+        "routes"
+      ],
+      "notes": "文化游览示意，不提供实时开放、班次、票价或精确导航。出行前请查看景区官方公告。",
+      "transport": []
+    },
+    {
+      "id": "tianwai",
+      "name": "天外村线",
+      "tagline": "半山起步，云上漫游",
+      "type": "乘车＋徒步 / 索道",
+      "effort": "可减少步行",
+      "description": "乘景区交通至中天门，再选择徒步经十八盘或换乘索道抵达山顶。",
+      "node_sequence": [
+        "tianwai",
+        "zhongtian",
+        "wudafu",
+        "shibapan",
+        "nantian",
+        "tianjie",
+        "bixia",
+        "yuhuang"
+      ],
+      "detours": [
+        "riguan",
+        "daguan"
+      ],
+      "source_ids": [
+        "routes"
+      ],
+      "notes": "文化游览示意，不提供实时开放、班次、票价或精确导航。出行前请查看景区官方公告。",
+      "variants": [
+        {
+          "id": "walk",
+          "name": "乘车后徒步",
+          "node_sequence": [
+            "tianwai",
+            "zhongtian",
+            "wudafu",
+            "shibapan",
+            "nantian",
+            "tianjie",
+            "bixia",
+            "yuhuang"
+          ],
+          "transport": [
+            {
+              "from": "tianwai",
+              "to": "zhongtian",
+              "mode": "vehicle",
+              "label": "乘景区交通至中天门"
+            }
+          ]
+        },
+        {
+          "id": "cable",
+          "name": "乘车后索道",
+          "node_sequence": [
+            "tianwai",
+            "zhongtian",
+            "nantian",
+            "tianjie",
+            "bixia",
+            "yuhuang"
+          ],
+          "transport": [
+            {
+              "from": "tianwai",
+              "to": "zhongtian",
+              "mode": "vehicle",
+              "label": "乘景区交通至中天门"
+            },
+            {
+              "from": "zhongtian",
+              "to": "nantian",
+              "mode": "cable",
+              "label": "中天门换乘索道至岱顶，再步行游览南天门；不经过十八盘"
+            }
+          ]
+        }
+      ],
+      "transport": []
+    },
+    {
+      "id": "taohua",
+      "name": "桃花峪线",
+      "tagline": "穿过溪谷，抵达桃源",
+      "type": "乘车＋索道",
+      "effort": "以交通接驳为主",
+      "description": "由桃花峪经景区交通至桃花源，换乘索道进入岱顶游览区。图中连线为文化示意。",
+      "node_sequence": [
+        "taohua",
+        "nantian",
+        "tianjie",
+        "bixia",
+        "yuhuang"
+      ],
+      "detours": [
+        "riguan",
+        "daguan"
+      ],
+      "source_ids": [
+        "routes",
+        "taohua-route"
+      ],
+      "notes": "文化游览示意，不提供实时开放、班次、票价或精确导航。出行前请查看景区官方公告。",
+      "transport": [
+        {
+          "from": "taohua",
+          "to": "nantian",
+          "mode": "transfer",
+          "label": "乘车至桃花源，换乘索道至岱顶上站，再步行游览南天门；并非直达南天门的步道"
+        }
+      ]
+    },
+    {
+      "id": "dongyu",
+      "name": "东御道线",
+      "tagline": "林间古道，慢读泰山",
+      "type": "徒步",
+      "effort": "山林古道",
+      "description": "由东麓进入，在中天门与红门线汇合，继续游览十八盘与岱顶文化景点。",
+      "node_sequence": [
+        "dongyu",
+        "zhongtian",
+        "wudafu",
+        "shibapan",
+        "nantian",
+        "tianjie",
+        "bixia",
+        "yuhuang"
+      ],
+      "detours": [
+        "riguan",
+        "daguan"
+      ],
+      "source_ids": [
+        "routes"
+      ],
+      "notes": "文化游览示意，不提供实时开放、班次、票价或精确导航。出行前请查看景区官方公告。",
+      "transport": []
+    }
+  ],
+  "history": [
+    {
+      "id": "preqin",
+      "era": "先秦",
+      "year": "山岳信仰的早期传统",
+      "title": "山岳与早期文明",
+      "content": "泰山地区与早期文明相联系，山岳崇拜形成了悠久的文化传统。解读古代叙事时，应区分可核对的史料与传说。",
+      "spot_ids": [
+        "yuhuang"
+      ],
+      "source_ids": [
+        "unesco"
+      ]
+    },
+    {
+      "id": "qin",
+      "era": "秦",
+      "year": "公元前219年",
+      "title": "秦始皇登岱封禅",
+      "content": "秦始皇东巡登泰山，举行封禅并刻石。这体现了山岳祭祀与帝王政治之间的联系。",
+      "spot_ids": [
+        "yuhuang",
+        "wudafu"
+      ],
+      "source_ids": [
+        "feng"
+      ]
+    },
+    {
+      "id": "han",
+      "era": "汉",
+      "year": "公元前110年",
+      "title": "汉武帝与元封",
+      "content": "汉武帝在泰山举行封禅。山岳礼制在帝国时代不断演变。",
+      "spot_ids": [
+        "dongyu",
+        "yuhuang"
+      ],
+      "source_ids": [
+        "feng"
+      ]
+    },
+    {
+      "id": "tang",
+      "era": "唐",
+      "year": "开元十三年 · 725年",
+      "title": "石上留名",
+      "content": "唐玄宗封禅泰山并撰《纪泰山铭》。石刻成为山岳历史的可见载体。",
+      "spot_ids": [
+        "daguan"
+      ],
+      "source_ids": [
+        "feng",
+        "stone"
+      ]
+    },
+    {
+      "id": "song",
+      "era": "宋",
+      "year": "宋代",
+      "title": "从封禅走向后世祭祀",
+      "content": "宋真宗之后，后世帝王登岱祭祀与此前的封禅典礼应加区分。",
+      "spot_ids": [
+        "yuhuang",
+        "bixia"
+      ],
+      "source_ids": [
+        "feng"
+      ]
+    },
+    {
+      "id": "mingqing",
+      "era": "明清",
+      "year": "明清时期",
+      "title": "古道与建筑的延续",
+      "content": "登山盘道和门阙持续修整，山岳景观与建筑空间共同形成今日的游览层次。",
+      "spot_ids": [
+        "shibapan",
+        "nantian"
+      ],
+      "source_ids": [
+        "red"
+      ]
+    },
+    {
+      "id": "modern",
+      "era": "近现代",
+      "year": "1987年",
+      "title": "走入世界遗产名录",
+      "content": "泰山被列入联合国教科文组织世界遗产名录，兼具文化与自然遗产价值。",
+      "spot_ids": [
+        "yuhuang",
+        "riguan"
+      ],
+      "source_ids": [
+        "unesco"
+      ]
+    }
+  ],
+  "poems": [
+    {
+      "id": "wangyue",
+      "title": "望岳",
+      "author": "杜甫",
+      "era": "唐",
+      "original_text": "岱宗夫如何？齐鲁青未了。\n造化钟神秀，阴阳割昏晓。\n荡胸生曾云，决眦入归鸟。\n会当凌绝顶，一览众山小。",
+      "interpretation": "诗歌由远望泰山写到登临的愿望。“岱宗”指泰山；“阴阳”在这里指山的向阳面与背阴面；末联表达将来登顶的志向，不能据此认定诗人在作诗时已经登顶。",
+      "spot_ids": [
+        "yuhuang",
+        "riguan"
+      ],
+      "source_ids": [
+        "poetry"
+      ],
+      "note": "原文为古典公版作品；注释为原创简要释读。",
+      "reading_title": "从望山，到登临的愿望",
+      "question": "为什么说会当凌绝顶？",
+      "annotations": [
+        {
+          "line": "岱宗夫如何？齐鲁青未了。",
+          "meaning": "岱宗指泰山；开篇以设问展开远望，青翠山色在齐鲁大地绵延。"
+        },
+        {
+          "line": "造化钟神秀，阴阳割昏晓。",
+          "meaning": "钟是聚集；阴阳指背阴面与向阳面，山势使两侧明暗鲜明。"
+        },
+        {
+          "line": "荡胸生曾云，决眦入归鸟。",
+          "meaning": "曾云即层云；云气激荡胸怀，诗人极目追随归鸟，把远望写得有动感。"
+        },
+        {
+          "line": "会当凌绝顶，一览众山小。",
+          "meaning": "会当含有一定要、终当之意，表达未来登临的志向，并非已经登顶的游记证明。"
+        }
+      ]
+    },
+    {
+      "id": "libai-1",
+      "title": "游泰山·其一",
+      "author": "李白",
+      "era": "唐",
+      "original_text": "四月上泰山，石屏御道开。\n六龙过万壑，涧谷随萦回。\n马迹绕碧峰，于今满青苔。\n飞流洒绝巘，水急松声哀。\n北眺崿嶂奇，倾崖向东摧。\n洞门闭石扇，地底兴云雷。\n登高望蓬瀛，想象金银台。\n天门一长啸，万里清风来。\n玉女四五人，飘摇下九垓。\n含笑引素手，遗我流霞杯。\n稽首再拜之，自愧非仙才。\n旷然小宇宙，弃世何悠哉。",
+      "reading_title": "山中实景，与游仙想象",
+      "interpretation": "诗中山谷、飞流、松声与登高的体验，逐步转入蓬瀛、玉女、流霞杯等游仙想象。读诗时可体会李白借山势打开精神空间的写法；仙人相逢属于文学表达，不能当成发生过的历史事件。",
+      "question": "李白游泰山其一里的天门一长啸写出了什么？",
+      "spot_ids": [
+        "nantian",
+        "riguan"
+      ],
+      "source_ids": [
+        "libai-1"
+      ],
+      "annotations": [
+        {
+          "line": "四月上泰山，石屏御道开。",
+          "meaning": "石屏以屏障描写山石；御道使山路带上历史记忆。原文另有“石平”异文，此处采用“石屏”。"
+        },
+        {
+          "line": "飞流洒绝巘，水急松声哀。",
+          "meaning": "巘指山峰，飞流与松声共同写出山势与水声；“哀”是诗中的听觉感受。"
+        },
+        {
+          "line": "登高望蓬瀛，想象金银台。",
+          "meaning": "蓬瀛是传说中的仙山；“想象”提示诗意从所见转向神仙世界。"
+        },
+        {
+          "line": "天门一长啸，万里清风来。",
+          "meaning": "长啸与清风把登高的开阔感放大。关联南天门是意象导览，不等于确认诗人的精确站位。"
+        }
+      ],
+      "note": "原文为古典公版作品，简体转写；注释为原创简要释读。关联景点是文学意象，不确认作者的精确游踪。"
+    },
+    {
+      "id": "libai-2",
+      "title": "游泰山·其二",
+      "author": "李白",
+      "era": "唐",
+      "original_text": "清晓骑白鹿，直上天门山。\n山际逢羽人，方瞳好容颜。\n扪萝欲就语，却掩青云关。\n遗我鸟迹书，飘然落岩间。\n其字乃上古，读之了不闲。\n感此三叹息，从师方未还。",
+      "reading_title": "以游仙意象，写求索之心",
+      "interpretation": "白鹿、羽人、青云关与鸟迹书构成游仙叙事。诗中想要接近羽人，却未能读懂古文字，留下向往与求索的意味。这是文学中的神仙想象，不表示现实游览可以骑白鹿登山。",
+      "question": "这首诗里的羽人和鸟迹书是什么意思？",
+      "spot_ids": [
+        "nantian"
+      ],
+      "source_ids": [
+        "libai-2"
+      ],
+      "annotations": [
+        {
+          "line": "清晓骑白鹿，直上天门山。",
+          "meaning": "清晓是清晨。白鹿是游仙意象，不能据此编造现实登山交通方式。"
+        },
+        {
+          "line": "山际逢羽人，方瞳好容颜。",
+          "meaning": "羽人指仙人；方瞳是诗中描述仙人外貌的想象。"
+        },
+        {
+          "line": "扪萝欲就语，却掩青云关。",
+          "meaning": "扪是攀援，萝指藤萝；试图走近交谈却被隔开，写出求索中的距离。"
+        },
+        {
+          "line": "其字乃上古，读之了不闲。",
+          "meaning": "闲在此读作熟习之意；诗人说自己并不熟悉那种文字，而非已经获得真实古文字知识。"
+        }
+      ],
+      "note": "原文为古典公版作品，简体转写；注释为原创简要释读。关联景点是文学意象，不确认作者的精确游踪。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "red",
+      "title": "红门游览线 景点介绍",
+      "publisher": "泰山风景名胜区管理委员会",
+      "url": "https://tsgw.taian.gov.cn/art/2021/5/26/art_363479_10320188.html",
+      "verified_at": "2026-10-14",
+      "verification": "官方检索摘要与可访问段落核对；内容待领域专家复核"
+    },
+    {
+      "id": "routes",
+      "title": "第一次来泰山 可以推荐一下游览线路吗",
+      "publisher": "泰安市文化和旅游局",
+      "url": "https://whlyj.taian.gov.cn/art/2026/4/13/art_366342_10312047.html",
+      "verified_at": "2026-10-14",
+      "verification": "官方检索摘要核对；不沿用实时票价和开放状态"
+    },
+    {
+      "id": "unesco",
+      "title": "Mount Taishan",
+      "publisher": "联合国教科文组织世界遗产中心",
+      "url": "https://whc.unesco.org/en/list/437/",
+      "verified_at": "2026-10-14",
+      "verification": "已核对世界遗产名录；译写概述"
+    },
+    {
+      "id": "feng",
+      "title": "秦皇汉武 双圣封禅",
+      "publisher": "泰安汶河新区",
+      "url": "https://clswhjq.taian.gov.cn/art/2020/6/22/art_159071_9227599.html",
+      "verified_at": "2026-10-14",
+      "verification": "已核对页面；原典需进一步考证"
+    },
+    {
+      "id": "poetry",
+      "title": "重读望岳 岱宗夫如何",
+      "publisher": "中国作家网",
+      "url": "https://www.chinawriter.com.cn/n1/2023/0626/c419384-40021170.html",
+      "verified_at": "2026-10-14",
+      "verification": "古诗原文为公版；赏析为本项目原创释读"
+    },
+    {
+      "id": "jingshi",
+      "title": "经石峪管理所 绘就责任地图",
+      "publisher": "泰山风景名胜区管理委员会",
+      "url": "https://tsgw.taian.gov.cn/art/2025/12/15/art_48271_10319554.html",
+      "verified_at": "2026-10-14",
+      "verification": "官方摘要核对"
+    },
+    {
+      "id": "tianwai",
+      "title": "天外村游览线 景点介绍",
+      "publisher": "泰山风景名胜区管理委员会",
+      "url": "https://tsgw.taian.gov.cn/art/2021/5/26/art_363479_10320187.html",
+      "verified_at": "2026-10-14",
+      "verification": "官方摘要核对"
+    },
+    {
+      "id": "stone",
+      "title": "石阙、碑碣、摩崖碑",
+      "publisher": "泰山风景名胜区管理委员会",
+      "url": "https://tsgw.taian.gov.cn/art/2021/6/16/art_162237_10286435.html",
+      "verified_at": "2026-10-14",
+      "verification": "本次核对官方公开摘要；位置与石刻类型已核对，详细释读待专家复核"
+    },
+    {
+      "id": "taohua-route",
+      "title": "桃花峪游览线（景点介绍）",
+      "publisher": "泰山风景名胜区管理委员会",
+      "url": "https://tsgw.taian.gov.cn/art/2021/5/26/art_363479_10320186.html",
+      "verified_at": "2026-10-14",
+      "verification": "本次核对官方线路摘要；不表示已验证实时运营状态"
+    },
+    {
+      "id": "libai-1",
+      "title": "李白《游泰山》其一 公版原文",
+      "url": "https://zh.wikisource.org/w/index.php?title=遊泰山_(四月上泰山)&oldid=483277",
+      "publisher": "维基文库 · 古典作品转录",
+      "verified_at": "2026-10-14",
+      "verification": "已核对公开原文；公版古诗，简体转写；注释为本项目原创释读，待专家复核"
+    },
+    {
+      "id": "libai-2",
+      "title": "李白《游泰山》其二 公版原文",
+      "url": "https://zh.wikisource.org/w/index.php?title=遊泰山_(清曉騎白鹿)&oldid=483278",
+      "publisher": "维基文库 · 古典作品转录",
+      "verified_at": "2026-10-14",
+      "verification": "已核对公开原文；公版古诗，简体转写；注释为本项目原创释读，待专家复核"
+    }
+  ],
+  "knowledge": [
+    {
+      "id": "k-hongmen",
+      "title": "红门 入山之门",
+      "content": "红门是经典徒步游览线的入口，沿盘道向北可逐步进入泰山的人文山景。\n从山脚开始，把沿途古建筑与山路放在一起看，便能读出登山文化的层次。",
+      "keywords": [
+        "红门",
+        "入山之门",
+        "古建"
+      ],
+      "spot_ids": [
+        "hongmen"
+      ],
+      "source_ids": [
+        "red"
+      ],
+      "type": "古建"
+    },
+    {
+      "id": "k-wanxian",
+      "title": "万仙楼 拾级入画",
+      "content": "万仙楼是红门游览线上的建筑节点，连接山脚街巷与登山盘道。\n不妨留意门楼、石阶与周围题刻，共同构成的入山空间。",
+      "keywords": [
+        "万仙楼",
+        "拾级入画",
+        "古建"
+      ],
+      "spot_ids": [
+        "wanxian"
+      ],
+      "source_ids": [
+        "red"
+      ],
+      "type": "古建"
+    },
+    {
+      "id": "k-doumu",
+      "title": "斗母宫 古道深院",
+      "content": "斗母宫是红门线上宗教文化与传统建筑相交汇的游览节点。\n游览宗教建筑时，可从建筑空间理解信仰文化，避免将传说当成历史结论。",
+      "keywords": [
+        "斗母宫",
+        "古道深院",
+        "信仰"
+      ],
+      "spot_ids": [
+        "doumu"
+      ],
+      "source_ids": [
+        "red"
+      ],
+      "type": "信仰"
+    },
+    {
+      "id": "k-jingshi",
+      "title": "经石峪 石上有经",
+      "content": "经石峪以大字《金刚经》摩崖石刻著名，是泰山石刻文化的重要一站。\n这是一处从主盘道延伸出去的文化支线，宜单独安排停留。",
+      "keywords": [
+        "经石峪",
+        "石上有经",
+        "石刻"
+      ],
+      "spot_ids": [
+        "jingshi"
+      ],
+      "source_ids": [
+        "jingshi"
+      ],
+      "type": "石刻"
+    },
+    {
+      "id": "k-zhongtian",
+      "title": "中天门 山腰的交汇处",
+      "content": "中天门是红门徒步线与天外村乘车线的重要衔接节点，可继续徒步或换乘索道。\n在这里比较不同游览方式，能理解山路如何连接山脚与岱顶。",
+      "keywords": [
+        "中天门",
+        "山腰的交汇处",
+        "古建"
+      ],
+      "spot_ids": [
+        "zhongtian"
+      ],
+      "source_ids": [
+        "routes"
+      ],
+      "type": "古建"
+    },
+    {
+      "id": "k-wudafu",
+      "title": "五大夫松 松间听古事",
+      "content": "五大夫松位于中天门以上的登山路段，与秦始皇登岱传说相联系。\n关于松树受封的故事属于历史叙事与传说交织的内容，应与现存树木年代分开理解。",
+      "keywords": [
+        "五大夫松",
+        "松间听古事",
+        "自然"
+      ],
+      "spot_ids": [
+        "wudafu"
+      ],
+      "source_ids": [
+        "red"
+      ],
+      "type": "自然"
+    },
+    {
+      "id": "k-shibapan",
+      "title": "十八盘 一步一重山",
+      "content": "十八盘是泰山登山盘道的险峻段落，石阶沿两侧山崖向南天门攀升。\n这里最能感受石阶与山势相互塑造的景观。攀登时应遵循现场指引。",
+      "keywords": [
+        "十八盘",
+        "一步一重山",
+        "山景"
+      ],
+      "spot_ids": [
+        "shibapan"
+      ],
+      "source_ids": [
+        "red"
+      ],
+      "type": "山景"
+    },
+    {
+      "id": "k-nantian",
+      "title": "南天门 云上的门阙",
+      "content": "南天门位于十八盘上端，是登山盘道与岱顶景观之间的标志性门阙。\n抬头看门楼与崖壁的关系，体会传统建筑借山势营造出的空间感。",
+      "keywords": [
+        "南天门",
+        "云上的门阙",
+        "古建"
+      ],
+      "spot_ids": [
+        "nantian"
+      ],
+      "source_ids": [
+        "red"
+      ],
+      "type": "古建"
+    },
+    {
+      "id": "k-tianjie",
+      "title": "天街 人间烟火入云端",
+      "content": "天街是岱顶游览中的街巷空间，可串联山顶建筑与文化景点。\n从登山转入山顶漫游，步调也可以随之放慢。",
+      "keywords": [
+        "天街",
+        "人间烟火入云端",
+        "游山"
+      ],
+      "spot_ids": [
+        "tianjie"
+      ],
+      "source_ids": [
+        "red"
+      ],
+      "type": "游山"
+    },
+    {
+      "id": "k-bixia",
+      "title": "碧霞祠 一座山的民间信仰",
+      "content": "碧霞祠是认识泰山民间信仰和传统建筑的重要地点。\n碧霞元君属于宗教与民俗信仰。本平台的碧霞仙子是艺术化导览角色。",
+      "keywords": [
+        "碧霞祠",
+        "一座山的民间信仰",
+        "信仰"
+      ],
+      "spot_ids": [
+        "bixia"
+      ],
+      "source_ids": [
+        "red"
+      ],
+      "type": "信仰"
+    },
+    {
+      "id": "k-yuhuang",
+      "title": "玉皇顶 登临岱顶",
+      "content": "玉皇顶是泰山极顶的代表性地标，汇集自然视野与山岳文化体验。\n从山脚到山顶，人们通过持续攀登形成对山岳的理解与想象。",
+      "keywords": [
+        "玉皇顶",
+        "登临岱顶",
+        "山景"
+      ],
+      "spot_ids": [
+        "yuhuang"
+      ],
+      "source_ids": [
+        "unesco"
+      ],
+      "type": "山景"
+    },
+    {
+      "id": "k-riguan",
+      "title": "日观峰 望见山外山",
+      "content": "日观峰是岱顶观景的重要节点，与日出和云海的泰山景观意象相联系。\n是否能观赏日出取决于实际天气，本平台不提供实时天气判断。",
+      "keywords": [
+        "日观峰",
+        "望见山外山",
+        "自然"
+      ],
+      "spot_ids": [
+        "riguan"
+      ],
+      "source_ids": [
+        "unesco"
+      ],
+      "type": "自然"
+    },
+    {
+      "id": "k-tianwai",
+      "title": "天外村 山路的另一种打开",
+      "content": "天外村是乘车进山的入口，可到中天门后继续徒步或换乘索道。\n适合希望调整步行强度的文化游览者。服务运行情况请查看景区公告。",
+      "keywords": [
+        "天外村",
+        "山路的另一种打开",
+        "入口"
+      ],
+      "spot_ids": [
+        "tianwai"
+      ],
+      "source_ids": [
+        "tianwai"
+      ],
+      "type": "入口"
+    },
+    {
+      "id": "k-taohua",
+      "title": "桃花峪 山溪与桃源",
+      "content": "桃花峪线路可经景区交通到桃花源，再换乘索道到岱顶。\n把溪谷景色与山顶游览组合起来，可体验不同的山岳景观。",
+      "keywords": [
+        "桃花峪",
+        "山溪与桃源",
+        "入口"
+      ],
+      "spot_ids": [
+        "taohua"
+      ],
+      "source_ids": [
+        "routes"
+      ],
+      "type": "入口"
+    },
+    {
+      "id": "k-dongyu",
+      "title": "东御道 从东麓慢慢入山",
+      "content": "东御道位于泰山东麓，在中天门与红门登山路线汇合。\n适合关注古道与自然环境的慢游主题，实际通行以现场公告为准。",
+      "keywords": [
+        "东御道",
+        "从东麓慢慢入山",
+        "入口"
+      ],
+      "spot_ids": [
+        "dongyu"
+      ],
+      "source_ids": [
+        "routes"
+      ],
+      "type": "入口"
+    },
+    {
+      "id": "k-feng",
+      "title": "封禅是什么",
+      "content": "封禅是古代帝王祭祀天地的典礼。“封”主要指祭天，“禅”主要指祭地。秦始皇与汉武帝均有在泰山举行封禅的历史记载。远古帝王封禅的叙述包含传说，不宜当作已证实史实。",
+      "keywords": [
+        "封禅",
+        "皇帝",
+        "祭天",
+        "祭地",
+        "秦始皇",
+        "汉武帝"
+      ],
+      "spot_ids": [
+        "yuhuang",
+        "dongyu"
+      ],
+      "source_ids": [
+        "feng"
+      ],
+      "type": "历史"
+    },
+    {
+      "id": "k-poem",
+      "title": "杜甫 望岳 会当凌绝顶",
+      "content": "岱宗夫如何？齐鲁青未了。\n造化钟神秀，阴阳割昏晓。\n荡胸生曾云，决眦入归鸟。\n会当凌绝顶，一览众山小。\n诗歌由远望泰山写到登临的愿望。“岱宗”指泰山；“阴阳”在这里指山的向阳面与背阴面；末联表达将来登顶的志向，不能据此认定诗人在作诗时已经登顶。\n岱宗夫如何？齐鲁青未了。 岱宗指泰山；开篇以设问展开远望，青翠山色在齐鲁大地绵延。\n造化钟神秀，阴阳割昏晓。 钟是聚集；阴阳指背阴面与向阳面，山势使两侧明暗鲜明。\n荡胸生曾云，决眦入归鸟。 曾云即层云；云气激荡胸怀，诗人极目追随归鸟，把远望写得有动感。\n会当凌绝顶，一览众山小。 会当含有一定要、终当之意，表达未来登临的志向，并非已经登顶的游记证明。",
+      "keywords": [
+        "望岳",
+        "杜甫",
+        "凌绝顶",
+        "岱宗",
+        "诗词",
+        "众山小",
+        "阴阳"
+      ],
+      "spot_ids": [
+        "yuhuang",
+        "riguan"
+      ],
+      "source_ids": [
+        "poetry"
+      ],
+      "type": "诗词"
+    },
+    {
+      "id": "k-world",
+      "title": "泰山 世界文化与自然遗产",
+      "content": "泰山于1987年列入世界遗产名录。它的山岳自然景观与古建筑、祭祀文化和文学艺术相互交织，体现了文化与自然的双重价值。",
+      "keywords": [
+        "泰山",
+        "世界遗产",
+        "文化遗产",
+        "自然",
+        "1987"
+      ],
+      "spot_ids": [
+        "yuhuang"
+      ],
+      "source_ids": [
+        "unesco"
+      ],
+      "type": "保护"
+    },
+    {
+      "id": "k-route-hongmen",
+      "title": "红门经典线",
+      "content": "从红门沿古道上行，经中天门、十八盘抵达岱顶。经石峪作为支线单独游览。\n文化游览示意，不提供实时开放、班次、票价或精确导航。出行前请查看景区官方公告。",
+      "keywords": [
+        "红门经典线",
+        "徒步",
+        "路线",
+        "怎么走"
+      ],
+      "spot_ids": [
+        "hongmen",
+        "wanxian",
+        "doumu",
+        "zhongtian",
+        "wudafu",
+        "shibapan",
+        "nantian",
+        "tianjie",
+        "bixia",
+        "yuhuang"
+      ],
+      "source_ids": [
+        "routes"
+      ],
+      "type": "路线"
+    },
+    {
+      "id": "k-route-tianwai",
+      "title": "天外村线",
+      "content": "从天外村乘景区交通至中天门。徒步方案经五大夫松、十八盘到南天门；索道方案从中天门乘索道至岱顶，不经过十八盘。山顶再游览天街、碧霞祠与玉皇顶。实时运营请查官方公告。",
+      "keywords": [
+        "天外村线",
+        "乘车＋徒步 / 索道",
+        "路线",
+        "怎么走"
+      ],
+      "spot_ids": [
+        "tianwai",
+        "zhongtian",
+        "shibapan",
+        "nantian",
+        "tianjie",
+        "bixia",
+        "yuhuang"
+      ],
+      "source_ids": [
+        "routes"
+      ],
+      "type": "路线"
+    },
+    {
+      "id": "k-route-taohua",
+      "title": "桃花峪线",
+      "content": "从桃花峪乘车至桃花源，再换乘索道至岱顶上站，之后步行游览南天门等山顶文化景点。桃花峪到南天门的示意连线包含乘车、索道与步行，不能当作连续步道。",
+      "keywords": [
+        "桃花峪线",
+        "乘车＋索道",
+        "路线",
+        "怎么走"
+      ],
+      "spot_ids": [
+        "taohua",
+        "nantian",
+        "tianjie",
+        "bixia",
+        "yuhuang"
+      ],
+      "source_ids": [
+        "routes",
+        "taohua-route"
+      ],
+      "type": "路线"
+    },
+    {
+      "id": "k-route-dongyu",
+      "title": "东御道线",
+      "content": "由东麓进入，在中天门与红门线汇合，继续游览十八盘与岱顶文化景点。\n文化游览示意，不提供实时开放、班次、票价或精确导航。出行前请查看景区官方公告。",
+      "keywords": [
+        "东御道线",
+        "徒步",
+        "路线",
+        "怎么走"
+      ],
+      "spot_ids": [
+        "dongyu",
+        "zhongtian",
+        "wudafu",
+        "shibapan",
+        "nantian",
+        "tianjie",
+        "bixia",
+        "yuhuang"
+      ],
+      "source_ids": [
+        "routes"
+      ],
+      "type": "路线"
+    },
+    {
+      "id": "k-daguan",
+      "title": "大观峰与纪泰山铭",
+      "content": "《纪泰山铭》刻于岱顶大观峰崖壁，是泰山摩崖石刻的重要实例。\n把石刻的位置、书写与封禅记忆联系起来阅读；大观峰与玉皇顶是不同景点，地图位置仅为艺术化示意。",
+      "keywords": [
+        "大观峰",
+        "纪泰山铭",
+        "唐摩崖"
+      ],
+      "spot_ids": [
+        "daguan"
+      ],
+      "source_ids": [
+        "stone"
+      ],
+      "type": "石刻"
+    },
+    {
+      "id": "k-poem-libai-1",
+      "title": "李白 游泰山·其一",
+      "content": "四月上泰山，石屏御道开。\n六龙过万壑，涧谷随萦回。\n马迹绕碧峰，于今满青苔。\n飞流洒绝巘，水急松声哀。\n北眺崿嶂奇，倾崖向东摧。\n洞门闭石扇，地底兴云雷。\n登高望蓬瀛，想象金银台。\n天门一长啸，万里清风来。\n玉女四五人，飘摇下九垓。\n含笑引素手，遗我流霞杯。\n稽首再拜之，自愧非仙才。\n旷然小宇宙，弃世何悠哉。\n诗中山谷、飞流、松声与登高的体验，逐步转入蓬瀛、玉女、流霞杯等游仙想象。读诗时可体会李白借山势打开精神空间的写法；仙人相逢属于文学表达，不能当成发生过的历史事件。\n四月上泰山，石屏御道开。 石屏以屏障描写山石；御道使山路带上历史记忆。原文另有“石平”异文，此处采用“石屏”。\n飞流洒绝巘，水急松声哀。 巘指山峰，飞流与松声共同写出山势与水声；“哀”是诗中的听觉感受。\n登高望蓬瀛，想象金银台。 蓬瀛是传说中的仙山；“想象”提示诗意从所见转向神仙世界。\n天门一长啸，万里清风来。 长啸与清风把登高的开阔感放大。关联南天门是意象导览，不等于确认诗人的精确站位。",
+      "keywords": [
+        "游泰山·其一",
+        "李白",
+        "四月上泰山"
+      ],
+      "spot_ids": [
+        "nantian",
+        "riguan"
+      ],
+      "source_ids": [
+        "libai-1"
+      ],
+      "type": "诗词"
+    },
+    {
+      "id": "k-poem-libai-2",
+      "title": "李白 游泰山·其二",
+      "content": "清晓骑白鹿，直上天门山。\n山际逢羽人，方瞳好容颜。\n扪萝欲就语，却掩青云关。\n遗我鸟迹书，飘然落岩间。\n其字乃上古，读之了不闲。\n感此三叹息，从师方未还。\n白鹿、羽人、青云关与鸟迹书构成游仙叙事。诗中想要接近羽人，却未能读懂古文字，留下向往与求索的意味。这是文学中的神仙想象，不表示现实游览可以骑白鹿登山。\n清晓骑白鹿，直上天门山。 清晓是清晨。白鹿是游仙意象，不能据此编造现实登山交通方式。\n山际逢羽人，方瞳好容颜。 羽人指仙人；方瞳是诗中描述仙人外貌的想象。\n扪萝欲就语，却掩青云关。 扪是攀援，萝指藤萝；试图走近交谈却被隔开，写出求索中的距离。\n其字乃上古，读之了不闲。 闲在此读作熟习之意；诗人说自己并不熟悉那种文字，而非已经获得真实古文字知识。",
+      "keywords": [
+        "游泰山·其二",
+        "李白",
+        "清晓骑白鹿"
+      ],
+      "spot_ids": [
+        "nantian"
+      ],
+      "source_ids": [
+        "libai-2"
+      ],
+      "type": "诗词"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "jingshi-inscription",
+      "name": "经石峪大字金刚经",
+      "subtitle": "摩崖刻经 · 文字与山石",
+      "spot_id": "jingshi",
+      "content": "经石峪摩崖刻经位于斗母宫东北一带，是泰山石刻文化的重要节点。",
+      "inscription": "金刚经",
+      "source_ids": [
+        "stone",
+        "jingshi"
+      ],
+      "visual_type": "real_photo",
+      "photo_id": "commons-44151345"
+    },
+    {
+      "id": "tang-inscription",
+      "name": "纪泰山铭",
+      "subtitle": "唐代摩崖碑 · 封禅记忆",
+      "spot_id": "daguan",
+      "content": "《纪泰山铭》刻于大观峰崖壁，记录唐玄宗封禅相关内容。它是摩崖刻石，并非独立石碑。",
+      "inscription": "纪泰山铭",
+      "source_ids": [
+        "stone"
+      ],
+      "visual_type": "real_photo",
+      "photo_id": "1636834"
+    },
+    {
+      "id": "mountain-gate",
+      "name": "泰山门阙建筑",
+      "subtitle": "建筑空间 · 山路与门阙",
+      "spot_id": "zhongtian",
+      "content": "中天门衔接山腰游览路线。对照牌坊、殿宇与山路的实景，可以理解门阙建筑和山势的空间关系；照片不替代文物测绘资料。",
+      "inscription": "山中门阙",
+      "source_ids": [
+        "routes"
+      ],
+      "visual_type": "real_photo",
+      "photo_id": "44174842"
+    }
+  ],
+  "story": {
+    "id": "read-mountain",
+    "title": "一座山，为什么成为文化象征？",
+    "subtitle": "从一条山路，读到中华文化的层层记忆",
+    "description": "五章主题游历，把实景、石刻、史料与诗词串成一段完整的读山旅程。每章先浏览相关景点，再回答一个文化问题，留下真实学习进度。",
+    "chapters": [
+      {
+        "id": "gate",
+        "title": "入山 · 一条路的记忆",
+        "spot_id": "hongmen",
+        "theme": "山路与人文",
+        "intro": "山不只是一处风景。从红门起步，把门楼、石阶、宗教建筑和沿路题刻连起来读，山路就成为认识泰山文化的线索。",
+        "facts": "红门是经典徒步游览线入口，主线经中天门、十八盘到岱顶；经石峪需要从主线分出单独游览。",
+        "reflection": "读山提示：注意山路如何把不同文化节点串在一起。本主题按文化问题组织章节，地图连线不提供实地导航。",
+        "source_ids": [
+          "red",
+          "routes"
+        ],
+        "question": "在红门线上想了解经石峪，应该怎样理解它的位置？",
+        "choices": [
+          "它是主线之外需要单独游览的文化支线",
+          "它是中天门索道的终点",
+          "它就是玉皇顶的另一种称呼"
+        ],
+        "correct_index": 0,
+        "explanation": "经石峪是从红门登山主线延伸出去的文化支线。文化游览时应单独安排停留，不能把支线理解成索道终点。",
+        "guide_question": "红门线的山路如何串联文化景点？"
+      },
+      {
+        "id": "stone",
+        "title": "刻经 · 山石成为文字",
+        "spot_id": "jingshi",
+        "theme": "石刻与传承",
+        "intro": "当文字刻在山石上，它便同时属于书写、信仰与山岳空间。经石峪让我们看到，泰山文化并不只在殿宇中，也在自然山石上。",
+        "facts": "经石峪以大字《金刚经》摩崖石刻著名，位于斗母宫东北一带，是泰山石刻文化的重要节点。",
+        "reflection": "读山提示：摩崖是在崖壁或天然石面上刻字。观赏时把文字和所在环境一起看；触摸、描画文物并不是学习石刻的方法。",
+        "source_ids": [
+          "stone",
+          "jingshi"
+        ],
+        "question": "“摩崖石刻”与普通纸上书写最大的区别是什么？",
+        "choices": [
+          "只用于记录天气",
+          "文字刻在天然山石表面，与环境相联系",
+          "是一种手机滤镜"
+        ],
+        "correct_index": 1,
+        "explanation": "摩崖文字刻在天然山石上。读经石峪时，文字、山石和信仰文化共同构成理解线索。",
+        "guide_question": "经石峪的摩崖刻经有什么文化意义？"
+      },
+      {
+        "id": "memory",
+        "title": "碑铭 · 留在崖壁上的历史",
+        "spot_id": "daguan",
+        "theme": "历史与证据",
+        "intro": "登山时看到的题刻，不只是装饰。一段铭文能带出一个时代的政治礼仪与书写传统，但历史判断还需要核对出处。",
+        "facts": "《纪泰山铭》刻于岱顶大观峰崖壁，记录唐玄宗封禅相关内容。大观峰与玉皇顶是不同景点，这件作品是摩崖刻石而非独立石碑。",
+        "reflection": "读山提示：题刻、历史记载与民间传说需要分别理解。先确认名称、位置和资料来源，再进一步解读。",
+        "source_ids": [
+          "stone",
+          "feng"
+        ],
+        "question": "《纪泰山铭》应该关联哪一处文化节点？",
+        "choices": [
+          "万仙楼",
+          "桃花峪",
+          "大观峰"
+        ],
+        "correct_index": 2,
+        "explanation": "《纪泰山铭》刻于大观峰崖壁，应关联大观峰，而不是把玉皇顶或另一处景点当作同一个地点。",
+        "guide_question": "纪泰山铭与泰山封禅有什么联系？"
+      },
+      {
+        "id": "poetry",
+        "title": "望岳 · 山外还有山",
+        "spot_id": "yuhuang",
+        "poem_id": "wangyue",
+        "theme": "诗词与志向",
+        "intro": "从杜甫的《望岳》，读到的既有泰山的雄伟，也有一个人对未来的志向。“会当凌绝顶”把眼前山色，转成了尚待实现的登临愿望。",
+        "facts": "《望岳》的末联“会当凌绝顶，一览众山小”表达未来登顶的志向，不能据此认定杜甫作诗时已经登上玉皇顶。",
+        "reflection": "读山提示：玉皇顶与此诗的关联，是帮助理解“登临”的文学意象，不是诗人的精确游踪证据。",
+        "source_ids": [
+          "poetry"
+        ],
+        "question": "“会当凌绝顶”在这里主要表达什么？",
+        "choices": [
+          "将来一定要登顶的志向",
+          "当天天气的实时预报",
+          "诗人已经登顶的精确位置"
+        ],
+        "correct_index": 0,
+        "explanation": "“会当”指向未来的愿望与志向。读诗不能把文学意象直接当成已经发生的游踪记录。",
+        "guide_question": "会当凌绝顶表达了怎样的志向？"
+      },
+      {
+        "id": "heritage",
+        "title": "传承 · 把山留给未来",
+        "spot_id": "riguan",
+        "theme": "自然与文化",
+        "intro": "读过山路、石刻、历史与诗词，再望向山外，就能理解一座山为什么同时拥有自然与文化价值。保护泰山，也是让后来者还能看到这些彼此交织的线索。",
+        "facts": "泰山于1987年列入世界遗产名录，具有文化与自然双重价值。日观峰与日出、云海景观意象相联系；实际是否能看见日出取决于天气。",
+        "reflection": "读山提示：不在文物上刻写，不把石刻当作可触摸的纪念品，依据现场指引游览。把理解带走，把山石与景物留在原处。",
+        "source_ids": [
+          "unesco",
+          "red"
+        ],
+        "question": "理解泰山世界遗产价值时，应该把哪些内容放在一起看？",
+        "choices": [
+          "只看现代商业设施",
+          "只看某一次天气",
+          "山岳自然景观，以及建筑、祭祀、文学等文化内容"
+        ],
+        "correct_index": 2,
+        "explanation": "泰山的山岳自然景观与古建筑、祭祀文化和文学艺术交织，体现文化与自然的双重价值。",
+        "guide_question": "为什么泰山是文化与自然双重遗产？"
+      }
+    ]
+  }
+}

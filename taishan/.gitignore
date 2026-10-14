@@ -1,0 +1,12 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+runtime/
+models/
+node_modules/
+.DS_Store
+.tools/
+.crawl-venv/
+data/image_library/
+vendor-skills/*/.git/
