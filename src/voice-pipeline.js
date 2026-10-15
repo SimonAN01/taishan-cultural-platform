@@ -12,8 +12,7 @@ export function createVoicePipeline({host,input,onSubmit,getAvatar,waitForAvatar
   function stop(){revision++;controller?.abort();controller=null;if(audio){audio.pause();audio.removeAttribute('src');audio.load();audio.remove();audio=null;}if(audioUrl){URL.revokeObjectURL(audioUrl);audioUrl=null;}cancelAnimationFrame(animation);animation=0;audioNode?.disconnect();analyser?.disconnect();audioNode=null;analyser=null;frequency=null;speaking=false;getAvatar()?.setAudioLevel?.(0);getAvatar()?.setSpeaking(false);if('speechSynthesis' in window)speechSynthesis.cancel();}
   function unlock(){
     const AudioContext=window.AudioContext||window.webkitAudioContext;
-    if(!context&&AudioContext)context=new AudioContext();
-    if(context?.state==='suspended')context.resume().catch(()=>{});
+    try{if(!context&&AudioContext)context=new AudioContext();if(context?.state==='suspended')context.resume().catch(()=>{});}catch{/* Audio analysis is optional; text and native audio remain available. */}
   }
   function meter(){if(!audio||audio.paused)return;let level=0;if(analyser){analyser.getByteTimeDomainData(frequency);let square=0;for(const sample of frequency)square+=((sample-128)/128)**2;level=Math.min(1,Math.sqrt(square/frequency.length)*5);}getAvatar()?.setAudioLevel?.(level);animation=requestAnimationFrame(meter);}
   async function speak(text){
@@ -33,7 +32,8 @@ export function createVoicePipeline({host,input,onSubmit,getAvatar,waitForAvatar
       if(waitForAvatar){onStatus('语音已就绪，正在等待三维形象','thinking');avatarReady=await waitForAvatar();}
       if(token!==revision||!isOpen())return;
       unlock();
-      if(context?.state==='suspended')await context.resume();
+      if(context?.state==='suspended')await context.resume().catch(()=>{});
+      if(token!==revision||!isOpen())return;
       audioUrl=URL.createObjectURL(blob);audio=new Audio(audioUrl);audio.preload='auto';audio.controls=true;audio.setAttribute('aria-label','碧霞仙子讲解音频');host.append(audio);const currentAudio=audio;
       // An AudioContext analyser measures the actual audio amplitude, not a timed mouth animation.
       if(context?.state==='running'){audioNode=context.createMediaElementSource(audio);analyser=context.createAnalyser();analyser.fftSize=256;frequency=new Uint8Array(analyser.fftSize);audioNode.connect(analyser);analyser.connect(context.destination);}

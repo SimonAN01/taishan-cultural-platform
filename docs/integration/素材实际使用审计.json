@@ -1,0 +1,408 @@
+{
+  "source_folder": "图片资产",
+  "total": 57,
+  "matched_source_files": 57,
+  "explicit_reference_count": 38,
+  "note": "全部可从图集浏览；明确代码引用不等于当前首屏同时可见。",
+  "assets": [
+    {
+      "id": "H-BG-01",
+      "source": "H-BG-01 首页泰山全景主底图.png",
+      "url": "image-assets/H-BG-01.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-BG-03",
+      "source": "H-BG-03 远山天际线.png",
+      "url": "image-assets/H-BG-03.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-BG-04",
+      "source": "H-BG-04 中景云海层 A.png",
+      "url": "image-assets/H-BG-04.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-BG-06",
+      "source": "H-BG-06 前景淡雾层 A.png",
+      "url": "image-assets/H-BG-06.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-ND-02",
+      "source": "H-BG-07中天门主体建筑.png",
+      "url": "image-assets/H-ND-02.webp",
+      "spot_id": "zhongtian",
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-BG-09",
+      "source": "H-BG-09 中央主山体区.png",
+      "url": "image-assets/H-BG-09.webp",
+      "spot_id": null,
+      "explicit_code_reference": false
+    },
+    {
+      "id": "H-BG-11",
+      "source": "H-BG-11 山顶核心平台区.png",
+      "url": "image-assets/H-BG-11.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-BG-14",
+      "source": "H-BG-14｜东御道—天烛峰一线环境全景.png",
+      "url": "image-assets/H-BG-14.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-BG-15",
+      "source": "H-BG-15｜岱庙环境全景.png",
+      "url": "image-assets/H-BG-15.webp",
+      "spot_id": null,
+      "explicit_code_reference": false
+    },
+    {
+      "id": "H-BG-17",
+      "source": "H-BG-17｜彩石溪环境全景.png",
+      "url": "image-assets/H-BG-17.webp",
+      "spot_id": null,
+      "explicit_code_reference": false
+    },
+    {
+      "id": "H-ND-01",
+      "source": "H-ND-01 红门主节点.png",
+      "url": "image-assets/H-ND-01.webp",
+      "spot_id": "hongmen",
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-ND-03",
+      "source": "H-ND-03 十八盘石阶节点.png",
+      "url": "image-assets/H-ND-03.webp",
+      "spot_id": "shibapan",
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-ND-04",
+      "source": "H-ND-04 南天门主节点.png",
+      "url": "image-assets/H-ND-04.webp",
+      "spot_id": "nantianmen",
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-ND-06",
+      "source": "H-ND-06 碧霞祠主节点.png",
+      "url": "image-assets/H-ND-06.webp",
+      "spot_id": "bixia",
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-ND-07",
+      "source": "H-ND-07 玉皇顶.png",
+      "url": "image-assets/H-ND-07.webp",
+      "spot_id": "yuhuang",
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-ND-08",
+      "source": "H-ND-08 五岳独尊石刻节点.png",
+      "url": "image-assets/H-ND-08.webp",
+      "spot_id": "stone",
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-ND-09",
+      "source": "H-ND-09 日观峰节点.png",
+      "url": "image-assets/H-ND-09.webp",
+      "spot_id": "riguan",
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-ND-10",
+      "source": "H-ND-10 天外村入口节点.png",
+      "url": "image-assets/H-ND-10.webp",
+      "spot_id": "tianwai",
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-ND-11",
+      "source": "H-ND-11 桃花峪入口节点.png",
+      "url": "image-assets/H-ND-11.webp",
+      "spot_id": "taohua",
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-ND-12",
+      "source": "H-ND-12 东御道入口节点.png",
+      "url": "image-assets/H-ND-12.webp",
+      "spot_id": "dongyu",
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-ND-14",
+      "source": "H-ND-14｜东天门透明主体图.png",
+      "url": "image-assets/H-ND-14.webp",
+      "spot_id": "dongtian",
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-ND-15A",
+      "source": "H-ND-15A｜岱庙透明主体.png",
+      "url": "image-assets/H-ND-15A.webp",
+      "spot_id": null,
+      "explicit_code_reference": false
+    },
+    {
+      "id": "H-ND-16",
+      "source": "H-ND-16｜望河亭透明主体.png",
+      "url": "image-assets/H-ND-16.webp",
+      "spot_id": null,
+      "explicit_code_reference": false
+    },
+    {
+      "id": "H-ND-18-bg",
+      "source": "H-ND-18｜北天门山口环境图.png",
+      "url": "image-assets/H-ND-18-bg.webp",
+      "spot_id": null,
+      "explicit_code_reference": false
+    },
+    {
+      "id": "H-ND-18",
+      "source": "H-ND-18｜北天门透明主体.png",
+      "url": "image-assets/H-ND-18.webp",
+      "spot_id": null,
+      "explicit_code_reference": false
+    },
+    {
+      "id": "H-ND-19",
+      "source": "H-ND-19｜瞻鲁台环境全景.png",
+      "url": "image-assets/H-ND-19.webp",
+      "spot_id": null,
+      "explicit_code_reference": false
+    },
+    {
+      "id": "H-ND-20",
+      "source": "H-ND-20｜拱北石透明主体.png",
+      "url": "image-assets/H-ND-20.webp",
+      "spot_id": null,
+      "explicit_code_reference": false
+    },
+    {
+      "id": "H-ND-21-bg",
+      "source": "H-ND-21｜后石坞环境全景.png",
+      "url": "image-assets/H-ND-21-bg.webp",
+      "spot_id": null,
+      "explicit_code_reference": false
+    },
+    {
+      "id": "H-ND-21",
+      "source": "H-ND-21｜后石坞节点透明主体.png",
+      "url": "image-assets/H-ND-21.webp",
+      "spot_id": null,
+      "explicit_code_reference": false
+    },
+    {
+      "id": "H-ND-22",
+      "source": "H-ND-22｜天烛峰景区环境全景.png",
+      "url": "image-assets/H-ND-22.webp",
+      "spot_id": null,
+      "explicit_code_reference": false
+    },
+    {
+      "id": "H-NT-01",
+      "source": "H-NT-01 中型古松.png",
+      "url": "image-assets/H-NT-01.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-NT-04",
+      "source": "H-NT-04 中型花岗岩山石.png",
+      "url": "image-assets/H-NT-04.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-NT-07",
+      "source": "H-NT-07溪流山涧点景.png",
+      "url": "image-assets/H-NT-07.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-NT-08",
+      "source": "H-NT-08｜彩石溪瀑布透明点景.png",
+      "url": "image-assets/H-NT-08.webp",
+      "spot_id": null,
+      "explicit_code_reference": false
+    },
+    {
+      "id": "dongtian-path",
+      "source": "东天门古道入口局部透明图.png",
+      "url": "image-assets/dongtian-path.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "dongtian-landscape",
+      "source": "东天门周边古道山景全景图.png",
+      "url": "image-assets/dongtian-landscape.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "dongtian-gate",
+      "source": "东天门建筑完整透明图.png",
+      "url": "image-assets/dongtian-gate.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "stone-landscape",
+      "source": "五岳独尊石刻周边环境全景.png",
+      "url": "image-assets/stone-landscape.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "nantian-front",
+      "source": "南天门门前.png",
+      "url": "image-assets/nantian-front.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "nantian-inside",
+      "source": "南天门门后、天街方向.png",
+      "url": "image-assets/nantian-inside.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "tianwai-landscape",
+      "source": "天外村入口环境全景.png",
+      "url": "image-assets/tianwai-landscape.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-ND-05-bg",
+      "source": "天街全景图.png",
+      "url": "image-assets/H-ND-05-bg.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-ND-05-gate",
+      "source": "天街牌坊街道入口透明图.png",
+      "url": "image-assets/H-ND-05-gate.webp",
+      "spot_id": "tianjie",
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-ND-05-street",
+      "source": "天街街道局部透明图.png",
+      "url": "image-assets/H-ND-05-street.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "riguan-landscape",
+      "source": "日观峰观日平台环境全景.png",
+      "url": "image-assets/riguan-landscape.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "taohua-landscape",
+      "source": "桃花峪游客入口环境全景.png",
+      "url": "image-assets/taohua-landscape.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-ND-13-platform",
+      "source": "桃花源换乘平台局部图.png",
+      "url": "image-assets/H-ND-13-platform.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-ND-13-bg",
+      "source": "桃花源索道站全景图.png",
+      "url": "image-assets/H-ND-13-bg.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "H-ND-13-station",
+      "source": "桃花源索道站透明图.png",
+      "url": "image-assets/H-ND-13-station.webp",
+      "spot_id": "taoyuan",
+      "explicit_code_reference": true
+    },
+    {
+      "id": "legacy-1",
+      "source": "素材1.png",
+      "url": "image-assets/legacy-1.webp",
+      "spot_id": null,
+      "explicit_code_reference": false
+    },
+    {
+      "id": "legacy-2",
+      "source": "素材2.png",
+      "url": "image-assets/legacy-2.webp",
+      "spot_id": null,
+      "explicit_code_reference": false
+    },
+    {
+      "id": "legacy-3",
+      "source": "素材3.png",
+      "url": "image-assets/legacy-3.webp",
+      "spot_id": null,
+      "explicit_code_reference": false
+    },
+    {
+      "id": "legacy-4",
+      "source": "素材4.png",
+      "url": "image-assets/legacy-4.webp",
+      "spot_id": null,
+      "explicit_code_reference": false
+    },
+    {
+      "id": "legacy-5",
+      "source": "素材5.png",
+      "url": "image-assets/legacy-5.webp",
+      "spot_id": null,
+      "explicit_code_reference": false
+    },
+    {
+      "id": "legacy-6",
+      "source": "素材6.png",
+      "url": "image-assets/legacy-6.webp",
+      "spot_id": null,
+      "explicit_code_reference": false
+    },
+    {
+      "id": "H-TR-01-cablecar",
+      "source": "索道轿厢透明图.png",
+      "url": "image-assets/H-TR-01-cablecar.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    },
+    {
+      "id": "map-cover",
+      "source": "首页全景图.png",
+      "url": "image-assets/map-cover.webp",
+      "spot_id": null,
+      "explicit_code_reference": true
+    }
+  ]
+}

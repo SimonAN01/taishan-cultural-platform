@@ -1,0 +1,72 @@
+{
+  "health": {
+    "status": "ok",
+    "version": "1.5.1",
+    "agent_provider": "coze",
+    "tts_available": true,
+    "vision_mode": "cloud_visual",
+    "retrieval_mode": "bge_hybrid",
+    "knowledge_documents": 25
+  },
+  "content": {
+    "spots": 16,
+    "routes": 4,
+    "history": 7,
+    "poems": 3,
+    "artifacts": 3
+  },
+  "photo_spots": 15,
+  "photos": 20,
+  "without_photos": [
+    "东御道"
+  ],
+  "poem_annotations": [
+    {
+      "title": "望岳",
+      "lines": 4,
+      "annotations": 4
+    },
+    {
+      "title": "游泰山·其一",
+      "lines": 12,
+      "annotations": 4
+    },
+    {
+      "title": "游泰山·其二",
+      "lines": 6,
+      "annotations": 4
+    }
+  ],
+  "vision": [
+    {
+      "case": "blank",
+      "http": 200,
+      "seconds": 2.33,
+      "method": "cloud_visual",
+      "status": "unknown",
+      "model_version": "deepseek-v4.1-flash · 云端图像理解",
+      "candidates": [],
+      "message": "画面还不足以确认泰山景点，请补充完整地标照片，或手动浏览景点。"
+    },
+    {
+      "case": "jingshi",
+      "http": 200,
+      "seconds": 7.12,
+      "method": "cloud_visual",
+      "status": "needs_confirmation",
+      "model_version": "deepseek-v4.1-flash · 云端图像理解",
+      "candidates": [
+        {
+          "spot_id": "jingshi",
+          "name": "经石峪",
+          "reason": "大面积倾斜石坪上可见成片摩崖刻字，符合经石峪摩崖刻经石面特征"
+        }
+      ],
+      "message": "云端模型已给出可能的景点，请对照实景图与画面依据人工确认。候选不代表识别准确率。"
+    }
+  ],
+  "static_assets": {
+    "checked": 77,
+    "missing_or_changed": []
+  }
+}

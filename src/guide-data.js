@@ -18,15 +18,16 @@ export const placeGuideQuestions = {
 const clean = value => value.toLowerCase().replace(/[，。？！、s]/g, '');
 const includesAny = (text, words) => words.some(word => text.includes(word));
 
-export function getGuideGreeting(placeId) {
-  const place = places[placeId];
+export function getGuideGreeting(placeId, verifiedSpot) {
+  const place = verifiedSpot || places[placeId === 'nantian' ? 'nantianmen' : placeId];
   if (!place) return '我是碧霞仙子。你可以问我泰山的路线、古迹、诗词与登山故事。选一个问题，我们从这幅山水长卷出发。';
-  return `此刻我们来到${place.name}。${place.tag}。你想先听这里的故事，还是继续问我后面的路线？`;
+  return `此刻我们来到${place.name}。${place.tag || place.subtitle}。你想先听这里的故事，还是继续问我后面的路线？`;
 }
 
-export function getGuideQuestions(placeId) {
-  const place = places[placeId];
-  const specific = placeGuideQuestions[placeId] || [
+export function getGuideQuestions(placeId, verifiedSpot) {
+  const localId = placeId === 'nantian' ? 'nantianmen' : placeId;
+  const place = verifiedSpot || places[localId];
+  const specific = placeGuideQuestions[localId] || [
     `${place?.name || '这里'}有什么故事？`,
     `从${place?.name || '这里'}怎样继续登顶？`,
   ];

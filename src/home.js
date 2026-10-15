@@ -4,6 +4,7 @@ import { places, routes, summitPaths, source } from './home-data.js';
 import { getGuideGreeting, getGuideQuestions } from './guide-data.js';
 import './home.css';
 import { createCulturalPages } from './cultural-pages.js';
+import { cultureHash } from './culture-location.js';
 import { installPanoramaControls } from './panorama-controls.js';
 import { createVoicePipeline } from './voice-pipeline.js';
 import {images as artImages, imageById, artUrl, openArtGallery} from './art-gallery.js';
@@ -808,7 +809,7 @@ async function speakGuide(text) {
 }
 
 function renderGuideQuestions() {
-  guideQuestions.innerHTML = getGuideQuestions(guideContextId).map(question => `<button type="button">${question}<span>↗</span></button>`).join('');
+  guideQuestions.innerHTML = getGuideQuestions(guideContextId,catalog?.spots.find(s=>s.id===guideContextId)).map(question => `<button type="button">${question}<span>↗</span></button>`).join('');
   guideQuestions.querySelectorAll('button').forEach(button => button.addEventListener('click', () => askGuide(button.textContent.replace('↗', '').trim())));
 }
 
@@ -926,13 +927,14 @@ document.querySelector('#guide-model-retry').onclick = () => {
   ensureGuideAvatar();
 };
 
-function openGuide(placeId = null) {
+function openGuide(placeId = null, update = true) {
   if (guideScene.classList.contains('is-open')) return;
   closeDialog();
   guidePreviousFocus = document.activeElement;
-  guideContextId = placeId ? apiSpotId(placeId) : null;
+  guideContextId = placeId === 'nantianmen' ? 'nantian' : placeId || null;
+  if(update){const hash=cultureHash('agent',{id:guideContextId});if(location.hash!==hash)history.pushState(null,'',hash);}
   document.querySelector('#guide-context').textContent = guideContextId ? `正在讲解：${catalog?.spots.find(s=>s.id===guideContextId)?.name || places[guideContextId]?.name || '当前景点'} · 可继续追问此处故事与路线` : '正在从泰山全景为你讲解 · 可问路线、古迹、诗词与日出';
-  showGuideAnswer({ answer: getGuideGreeting(guideContextId) }, false);
+  showGuideAnswer({ answer: getGuideGreeting(guideContextId,catalog?.spots.find(s=>s.id===guideContextId)) }, false);
   renderGuideQuestions();
   loadGuideHistory();
   guideScene.inert = false;
@@ -948,7 +950,7 @@ function openGuide(placeId = null) {
   ensureGuideAvatar().then(() => guideAvatar?.setActive(guideScene.classList.contains('is-open')));
 }
 
-function closeGuide() {
+function closeGuide(update = true) {
   document.querySelector('#guide-cancel').hidden=true;document.querySelector('#guide-clear').disabled=false;
   guideRequest++; guideController?.abort(); guideController = null; guideBusy = false;
   document.querySelector('#guide-form button').disabled = false;
@@ -956,6 +958,7 @@ function closeGuide() {
   voicePipeline?.stopListening();
   guideAvatar?.setActive(false);
   guideScene.classList.remove('is-open');
+  if(update&&location.hash.split('?')[0]==='#agent')history.pushState(null,'','#map');
   guideScene.inert = true;
   guideScene.setAttribute('aria-hidden', 'true');
   document.body.classList.remove('is-guiding');
@@ -967,7 +970,7 @@ function closeGuide() {
 
 document.querySelector('#guide-orb').addEventListener('click', () => openGuide());
 document.querySelector('#visit-guide').addEventListener('click', () => openGuide(visitPlaceId()));
-document.querySelector('#guide-close').addEventListener('click', closeGuide);
+document.querySelector('#guide-close').addEventListener('click', () => closeGuide());
 document.querySelector('#guide-form').addEventListener('submit', event => {
   event.preventDefault();
   askGuide(document.querySelector('#guide-input').value.trim());
@@ -1208,7 +1211,7 @@ try {
   resize();
 
   function frame(now) {
-    if (document.body.classList.contains('is-guiding')) { last = now; raf = requestAnimationFrame(frame); return; }
+    if (document.body.classList.contains('is-guiding') || document.body.classList.contains('culture-open')) { last = now; raf = requestAnimationFrame(frame); return; }
     const dt = Math.min(.06, (now - last) / 1000);
     last = now;
     const damping = 1 - Math.exp(-dt * 3);
@@ -1258,7 +1261,8 @@ if (innerWidth < 760) requestAnimationFrame(() => { const map = document.querySe
 document.addEventListener('visibilitychange', () => { last = performance.now(); });
 
 const culturalPages = createCulturalPages({getCatalog:()=>catalog,
-  onMap:()=>{}, onGuide:id=>openGuide(id),
+  onMap:()=>{}, onGuide:(id,update)=>{if(guideScene.classList.contains('is-open'))closeGuide(false);openGuide(id,update);},
+  onLeaveGuide:()=>{if(guideScene.classList.contains('is-open'))closeGuide(false);},
   onRoute:(id,variant)=>{routeVariants[id]=variant;setMode('travel');selectRoute(id,true);status('已标出路线示意；具体站点与交通方式请以路线详情为准。');},
   onScene:id=>{const local=id==='nantian'?'nantianmen':id;if(places[local])focusPlace(local);else{status('此景点尚无独立画境，已打开真实文化资料。');culturalPages.open('spot',id);}}
 });
@@ -1275,7 +1279,7 @@ document.querySelector('#guide-cancel').onclick=()=>{guideWasCancelled=true;guid
 document.querySelector('#guide-retry').onclick=()=>askGuide(lastGuideQuestion);
 document.querySelector('#guide-clear').onclick=async()=>{
   const button=document.querySelector('#guide-clear');button.disabled=true;
-  try{await requestApi('agent/history',{method:'DELETE'});historyRequest++;stopGuideSpeech();document.querySelector('#guide-transcript-log').innerHTML='<p>对话已清空。</p>';document.querySelector('#guide-sources').replaceChildren();showGuideAnswer({answer:getGuideGreeting(guideContextId)},false);document.querySelector('#guide-retry').hidden=true;setGuideStatus('对话已清空，景点足迹与收藏仍保留','ready');}
+  try{await requestApi('agent/history',{method:'DELETE'});historyRequest++;stopGuideSpeech();document.querySelector('#guide-transcript-log').innerHTML='<p>对话已清空。</p>';document.querySelector('#guide-sources').replaceChildren();showGuideAnswer({answer:getGuideGreeting(guideContextId,catalog?.spots.find(s=>s.id===guideContextId))},false);document.querySelector('#guide-retry').hidden=true;setGuideStatus('对话已清空，景点足迹与收藏仍保留','ready');}
   catch(e){setGuideStatus('未能清空：'+e.message,'ready');}finally{button.disabled=false;}
 };
 

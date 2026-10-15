@@ -29,6 +29,13 @@ test('first audio waits for the model, replay reuses TTS, and cancel prevents la
     const next=voice.speak('红门');await new Promise(resolve=>setImmediate(resolve));
     voice.stop();resolveReady(true);await next;
     assert.equal(players.length,2,'Cancelling during model loading must discard late playback');
+    // Cancellation can also happen while the browser resumes its audio device.
+    ready=Promise.resolve(true);let resumeAudio;
+    const resumed=new Promise(resolve=>{resumeAudio=resolve;});
+    window.AudioContext=class{constructor(){this.state='suspended';}resume(){return resumed;}close(){}};
+    const delayed=voice.speak('泰山');await new Promise(resolve=>setImmediate(resolve));
+    voice.stop();resumeAudio();await delayed;
+    assert.equal(players.length,2,'Cancelled audio must not reappear after AudioContext.resume resolves');
     voice.destroy();
   }finally{
     for(const [key,descriptor] of saved)if(descriptor)Object.defineProperty(globalThis,key,descriptor);else delete globalThis[key];

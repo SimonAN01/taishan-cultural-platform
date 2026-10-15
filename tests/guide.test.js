@@ -26,3 +26,13 @@ test('guide covers summit culture and practical questions', () => {
   assert.match(answerGuide('在哪里看日出更合适？').answer, /日观峰/);
   assert.match(answerGuide('南天门有多高？').answer, /1460/);
 });
+
+
+test('guide keeps API landmark aliases and catalog-only places in its greeting and questions', () => {
+  assert.match(getGuideGreeting('nantian'), /南天门/);
+  assert.equal(getGuideQuestions('nantian')[0], '南天门有多高？');
+  const place={id:'jingshi',name:'经石峪',subtitle:'山石上的经文'};
+  assert.match(getGuideGreeting(place.id,place),/经石峪/);
+  assert.match(getGuideQuestions(place.id,place)[0],/经石峪/);
+  assert.match(getGuideGreeting('stone'),/五岳独尊/);
+});
