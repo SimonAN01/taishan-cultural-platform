@@ -15,6 +15,7 @@ export function createDigitalHuman(host, { onReady, onError } = {}) {
   let active = false;
   let speaking = false;
   let lastBoundary = -Infinity;
+  let audioLevel = null;
   let thinking = false;
   let frame = 0;
   let last = performance.now();
@@ -72,7 +73,7 @@ export function createDigitalHuman(host, { onReady, onError } = {}) {
 
   function fallbackController() {
     return {
-      speechBoundary() {}, setActive() {}, setSpeaking() {}, setThinking() {}, gesture() {}, destroy() {},
+      setAudioLevel() {}, speechBoundary() {}, setActive() {}, setSpeaking() {}, setThinking() {}, gesture() {}, destroy() {},
     };
   }
 
@@ -125,7 +126,9 @@ export function createDigitalHuman(host, { onReady, onError } = {}) {
 
     if (model) {
       model.rotation.y += ((speaking ? 0.035 : 0) - model.rotation.y) * Math.min(1, delta * 2.2);
-      const jaw = speaking ? Math.max(0, 1 - (now - lastBoundary) / 160) * .55 : 0;
+      const jaw = speaking ? audioLevel!==null ? audioLevel * .7 : Math.max(0, 1 - (now - lastBoundary) / 160) * .55 : 0;
+      const level=jaw.toFixed(3);
+      if(host.dataset.jawOpen!==level)host.dataset.jawOpen=level;
       setMorph('jawOpen', jaw);
       setMorph('mouthRound', jaw * .25);
       const blinking = now > blinkAt && now < blinkAt + 135;
@@ -181,10 +184,12 @@ export function createDigitalHuman(host, { onReady, onError } = {}) {
         frame = 0;
       }
     },
-    speechBoundary() { lastBoundary = performance.now(); },
+    setAudioLevel(value) { audioLevel = Math.max(0,Math.min(1,value)); },
+    speechBoundary() { audioLevel=null; lastBoundary = performance.now(); },
     setSpeaking(value) {
       speaking = value;
-      if (!value) lastBoundary = -Infinity;
+      host.dataset.speaking=String(value);
+      if (!value) { lastBoundary = -Infinity; audioLevel=null; }
       if (!mixer) return;
       playBase(value ? 'Talk' : (thinking ? 'LookAround' : 'Idle'));
     },

@@ -1,0 +1,14 @@
+{
+  "audio": [
+    {
+      "duration": 15.72,
+      "paused": false,
+      "time": 0.27545
+    }
+  ],
+  "avatar": {
+    "jawOpen": "0.032",
+    "modelReady": "true",
+    "speaking": "true"
+  }
+}

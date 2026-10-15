@@ -1,0 +1,8 @@
+[Unit]
+Description=Renew Taishan IP TLS certificate
+After=network-online.target
+Wants=network-online.target
+[Service]
+Type=oneshot
+TimeoutStartSec=300
+ExecStart=/opt/taishan-certbot/bin/certbot renew --quiet --cert-name taishan-ip --no-random-sleep-on-renew

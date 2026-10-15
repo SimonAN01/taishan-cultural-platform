@@ -1,0 +1,120 @@
+{
+  "version": "1.4.0",
+  "checksummed_files": 66,
+  "paths": {
+    "/": 200,
+    "/experience/": 200,
+    "/api/health": 200,
+    "/experience/models/princess-agent.glb": 200
+  },
+  "health": {
+    "status": "ok",
+    "version": "1.4.0",
+    "immersive_available": true,
+    "knowledge_documents": 25,
+    "agent_mode": "rag_llm",
+    "agent_provider": "coze",
+    "llm_configured": true,
+    "generation_service": {
+      "state": "verified",
+      "checked_at": 1792058680
+    },
+    "tts_available": true,
+    "tts_voice": "zh-CN-XiaoxiaoNeural",
+    "tts_service": {
+      "state": "verified",
+      "checked_at": 1792058735
+    },
+    "vision_available": true,
+    "vision_mode": "cloud_visual",
+    "vision_service": {
+      "state": "configured",
+      "checked_at": null
+    },
+    "trained_landmark_model": false,
+    "retrieval_mode": "bge_hybrid",
+    "language_model": "Coze 智能体"
+  },
+  "coze": {
+    "seconds": 7.088,
+    "response": {
+      "answer": "经石峪最具代表性的就是大字《金刚经》摩崖石刻哦[1]，是泰山石刻文化里非常重要的点位~它在主盘道的支线位置，要是您感兴趣的话可以单独留些时间慢慢观赏。您接下来打算往哪个方向游览呀，需要的话我可以给您说说周边的景点~",
+      "sources": [
+        {
+          "id": "jingshi",
+          "title": "经石峪管理所 绘就责任地图",
+          "publisher": "泰山风景名胜区管理委员会",
+          "url": "https://tsgw.taian.gov.cn/art/2025/12/15/art_48271_10319554.html",
+          "verified_at": "2026-10-14",
+          "verification": "官方摘要核对"
+        }
+      ],
+      "citations": [
+        {
+          "number": 1,
+          "title": "经石峪 石上有经",
+          "sources": [
+            {
+              "id": "jingshi",
+              "title": "经石峪管理所 绘就责任地图",
+              "publisher": "泰山风景名胜区管理委员会",
+              "url": "https://tsgw.taian.gov.cn/art/2025/12/15/art_48271_10319554.html",
+              "verified_at": "2026-10-14",
+              "verification": "官方摘要核对"
+            }
+          ]
+        }
+      ],
+      "mode": "rag_llm",
+      "model": "Coze 智能体",
+      "provider": "coze",
+      "tool_calls": [],
+      "refused": false,
+      "retrieved": [
+        {
+          "id": "k-jingshi",
+          "title": "经石峪 石上有经",
+          "relevance": 1.868
+        }
+      ],
+      "suggested_questions": [
+        "封禅是什么？",
+        "为什么说会当凌绝顶？",
+        "红门线怎么走？"
+      ]
+    }
+  },
+  "tts": {
+    "seconds": 1.524,
+    "bytes": 137232,
+    "content_type": "audio/mpeg"
+  },
+  "health_after": {
+    "status": "ok",
+    "version": "1.4.0",
+    "immersive_available": true,
+    "knowledge_documents": 25,
+    "agent_mode": "rag_llm",
+    "agent_provider": "coze",
+    "llm_configured": true,
+    "generation_service": {
+      "state": "verified",
+      "checked_at": 1792058893
+    },
+    "tts_available": true,
+    "tts_voice": "zh-CN-XiaoxiaoNeural",
+    "tts_service": {
+      "state": "verified",
+      "checked_at": 1792058895
+    },
+    "vision_available": true,
+    "vision_mode": "cloud_visual",
+    "vision_service": {
+      "state": "configured",
+      "checked_at": null
+    },
+    "trained_landmark_model": false,
+    "retrieval_mode": "bge_hybrid",
+    "language_model": "Coze 智能体"
+  }
+}

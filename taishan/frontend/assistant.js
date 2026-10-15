@@ -21,6 +21,7 @@ export function createAssistant(getContext,health){
   }catch{if(revision===generation)notice('历史对话暂未读取，请重新打开问答重试')}finally{if(revision===generation)loading=null}})();await loading;
  }
  async function open(question){
+  $('#voice-guide-link').href='/experience/#agent'+(getContext().payload?.current_spot?'?id='+encodeURIComponent(getContext().payload.current_spot):'');
   $('#chat-context').textContent=getContext().label??'聊一聊泰山的历史与文化';
   if(!dialog.open)dialog.showModal();suggestions();
   $('#chat-note').textContent=health.llm_configured?'语言模型服务已配置，每条回答标明实际生成方式。':'当前使用文化资料检索，未配置生成式模型。';

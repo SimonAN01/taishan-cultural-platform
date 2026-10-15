@@ -59,3 +59,7 @@ IMMERSIVE_FRONTEND_DIR=/opt/taishan/immersive
 ### 前端方案 V1.0（2026-10-15）
 
 `/experience/` 已统一接入景点详情、四线比较、历史长卷、诗词朗诵、真实照片识景和问山会话。可直接访问 `#routes`、`#history`、`#poetry`、`#vision`、`#spot?id=nantian`。地图支持缩放与搜索，内容页返回保留地图状态。完整说明与验收证据见 [前端方案实施记录](docs/integration/前端方案实施记录.md)。
+
+### Coze 语音数字人（1.4.0）
+
+推荐入口：<https://118.89.176.236/experience/#agent>。点击“语音提问”授权麦克风；浏览器转写后提交 Coze，回答自动合成晓晓语音并驱动3D口型。可关闭自动朗读、暂停/重播或使用文字提问。识别支持情况取决于浏览器和网络，首次麦克风使用需在真实设备验证。详情见 [Coze语音接入记录](docs/integration/Coze语音数字人接入记录.md)。

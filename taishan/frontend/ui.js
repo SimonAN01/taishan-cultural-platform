@@ -1,7 +1,7 @@
 export const $ = (selector, root=document) => root.querySelector(selector);
 export const esc = value => String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const api = async (path, options={}) => {
- const response=await fetch(new URL(`api/${path}`,document.baseURI),{...options,headers:{...(options.body instanceof FormData?{}:{'Content-Type':'application/json'}),...options.headers},signal:options.signal??AbortSignal.timeout(45000)});
+ const response=await fetch(new URL(`api/${path}`,document.baseURI),{...options,headers:{...(options.body instanceof FormData?{}:{'Content-Type':'application/json'}),...options.headers},signal:options.signal??AbortSignal.timeout(65000)});
  const data=response.headers.get('content-type')?.includes('application/json')?await response.json():null;
  if(!response.ok)throw new Error(typeof data?.detail==='string'?data.detail:({413:'上传内容过大，图片限 8 MB',429:'操作较频繁，请稍后再试',502:'服务暂不可用，请稍后重试',503:'服务繁忙，请稍后重试'}[response.status]??'请求未完成，请稍后再试'));
  if(data===null)throw new Error('服务返回了无法读取的内容，请刷新后重试');return data;

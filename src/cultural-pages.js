@@ -26,7 +26,7 @@ export function createCulturalPages({getCatalog, onMap, onGuide, onRoute, onScen
   dialog.querySelector('.culture-brand').onclick=e=>{e.preventDefault();close();onMap();};
   async function open(next,id,update=true){
     if(next==='map'){close(update);onMap();return;}
-    if(next==='agent'){close(update);onGuide(currentSpot);return;}
+    if(next==='agent'){close(update);onGuide(id||(page==='spot'?currentSpot:null));return;}
     cleanup();page=next;const token=++revision;
     if(next==='spot'){if(id)currentSpot=apiSpotId(id);spotTab='history';photoIndex=0;}
     if(next==='routes'&&id)routeId=id;

@@ -70,6 +70,27 @@ class SystemTests(unittest.TestCase):
   journey=self.client.get('/api/journey').json()
   self.assertEqual(len(journey['visited']),1)
   self.assertEqual(len(journey['favorites']),1)
+ def test_coze_provider_is_reported_and_invalid_citations_fall_back(self):
+  from backend import app as service
+  with patch.object(service,'AGENT_PROVIDER','coze'),patch.object(service,'COZE_ENABLED',True),patch.object(service,'run_coze',AsyncMock(return_value='封禅与山岳祭祀相关[1]。')) as call:
+   result=self.client.post('/api/agent/chat',json={'message':'封禅是什么'}).json()
+   self.assertEqual(result['mode'],'rag_llm');self.assertEqual(result['provider'],'coze');self.assertEqual(result['model'],'Coze 智能体')
+   self.assertTrue(result['citations']);self.assertIn('本轮可核对资料',call.call_args.args[2])
+   self.assertEqual(self.client.get('/api/agent/history').json()[-1]['provider'],'coze')
+  with patch.object(service,'AGENT_PROVIDER','coze'),patch.object(service,'COZE_ENABLED',True),patch.object(service,'run_coze',AsyncMock(return_value='无效引用[999]')):
+   result=self.client.post('/api/agent/chat',json={'message':'封禅是什么'}).json()
+   self.assertEqual(result['mode'],'local_knowledge_fallback');self.assertNotIn('[999]',result['answer'])
+ def test_tts_audio_and_failure_contract(self):
+  from backend import app as service
+  with patch.object(service,'TTS_AVAILABLE',True),patch.object(service,'synthesize',AsyncMock(return_value=b'ID3test-audio')) as tts:
+   result=self.client.post('/api/speech/tts',json={'text':'经石峪[1]。'})
+   self.assertEqual(result.status_code,200);self.assertEqual(result.headers['content-type'],'audio/mpeg');self.assertEqual(result.content,b'ID3test-audio')
+   self.assertEqual(tts.call_args.args[0],'经石峪。')
+  with patch.object(service,'TTS_AVAILABLE',True),patch.object(service,'synthesize',AsyncMock(side_effect=RuntimeError('provider details'))):
+   result=self.client.post('/api/speech/tts',json={'text':'你好'})
+   self.assertEqual(result.status_code,503);self.assertNotIn('provider details',result.text)
+  self.assertEqual(self.client.post('/api/speech/tts',json={'text':''}).status_code,422)
+  self.assertEqual(self.client.post('/api/speech/tts',json={'text':'山'*1501}).status_code,422)
  def test_grounded_answers_followup_refusal_and_sources(self):
   a=self.client.post('/api/agent/chat',json={'message':'封禅是什么？'}).json()
   self.assertIn('祭天',a['answer']);self.assertTrue(a['sources']);self.assertFalse(a['refused'])

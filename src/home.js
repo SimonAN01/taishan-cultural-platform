@@ -5,6 +5,7 @@ import { getGuideGreeting, getGuideQuestions } from './guide-data.js';
 import './home.css';
 import { createCulturalPages } from './cultural-pages.js';
 import { installPanoramaControls } from './panorama-controls.js';
+import { createVoicePipeline } from './voice-pipeline.js';
 import {images as artImages, imageById, artUrl, openArtGallery} from './art-gallery.js';
 import { requestApi, askApi, recordVisit, apiSpotId, unavailableSpots, fullSite } from './integration.js';
 const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -98,14 +99,14 @@ app.innerHTML = `
     <div class="guide-gestures" aria-label="数字人动作"><button data-gesture="nod" disabled>点头</button><button data-gesture="bow" disabled>作揖</button><button data-gesture="look" disabled>远望</button><span class="guide-rotate-hint">按住人物拖动旋转</span></div>
   </div>
   <div class="guide-conversation">
-   <header><div><p>一山千年 · 数字人讲解</p><h2>问山</h2></div><button class="guide-close" id="guide-close" aria-label="关闭数字导游">×</button></header>
+   <header><div><p>一山千年 · 数字人讲解</p><h2>问山</h2></div><button class="guide-close" id="guide-close" aria-label="关闭数字导游">×</button></header><div class="guide-scroll">
    <p class="guide-context" id="guide-context">正在从泰山全景为你讲解</p>
    <div class="guide-answer" id="guide-answer" aria-live="polite"><span class="guide-speaker">碧霞仙子</span><p></p><button class="guide-route-link" id="guide-route-link" hidden></button></div>
    <div class="guide-status" id="guide-status" role="status"><i></i><span>可以开始提问</span></div>
    <div id="guide-sources" class="guide-sources"></div><div class="guide-questions" id="guide-questions" aria-label="推荐问题"></div>
    <form class="guide-form" id="guide-form"><label for="guide-input">还想知道什么？</label><div><input id="guide-input" maxlength="800" autocomplete="off" placeholder="例如：第一次登泰山走哪条路？"><button type="submit">请讲解</button></div></form>
-   <div class="guide-request-controls"><button id="guide-cancel" hidden>停止等待</button><button id="guide-retry" hidden>重试上个问题</button><button id="guide-clear">清空对话</button></div><details class="guide-transcript"><summary>本次会话记录</summary><div class="guide-transcript-log" id="guide-transcript-log"><p>尚无提问。</p></div></details><div class="guide-controls"><button id="guide-replay">◉ 再听一遍</button><button id="guide-stop">□ 停止朗读</button><span id="guide-voice-label">当前声音：正在选择自然女声</span></div>
-  </div>
+   <div class="guide-voice-input" id="guide-voice-input"></div><div class="guide-request-controls"><button id="guide-cancel" hidden>停止等待</button><button id="guide-retry" hidden>重试上个问题</button><button id="guide-clear">清空对话</button></div><details class="guide-transcript"><summary>本次会话记录</summary><div class="guide-transcript-log" id="guide-transcript-log"><p>尚无提问。</p></div></details><div class="guide-controls"><button id="guide-replay">◉ 再听一遍</button><button id="guide-stop">□ 停止朗读</button><span id="guide-voice-label">云端 TTS：晓晓 · 实际音频驱动口型</span></div>
+  </div></div>
  </section>
  <div class="scroll-space" aria-hidden="true"></div>
  <dialog class="detail-dialog" aria-labelledby="detail-title"><button class="close" aria-label="关闭介绍">×</button><div class="dialog-content"></div></dialog>
@@ -174,7 +175,6 @@ let guideController;
 let guideRequest = 0;
 let guideBusy = false;
 let guideUtterance;
-let guideVoice;
 let guideSpeechRequest = 0;
 let cablewayController;
 let cablewayControllerPromise;
@@ -783,6 +783,7 @@ function setGuideStatus(label, state = 'ready') {
 }
 
 function stopGuideSpeech() {
+  voicePipeline?.stop();
   guideSpeechRequest += 1;
 
   if ('speechSynthesis' in window) speechSynthesis.cancel();
@@ -792,86 +793,10 @@ function stopGuideSpeech() {
   setGuideStatus('可以继续提问', 'ready');
 }
 
-function describeGuideVoice(voice) {
-  const name = voice?.name || '';
-  if (/xiaoxiao|晓晓/i.test(name)) return '晓晓 · 自然女声';
-  if (/huihui|慧慧/i.test(name)) return '慧慧 · 温柔舒缓女声';
-  if (/yaoyao|瑶瑶/i.test(name)) return '瑶瑶 · 轻柔女声';
-  return name ? name.replace(/microsoft|chinese|simplified|prc|desktop|\(|\)|-|,/gi, '').replace(/\s+/g, ' ').trim() : '系统普通话女声';
-}
-
-function selectGuideVoice(voices) {
-  const chinese = voices.filter(voice => voice.lang?.toLowerCase().startsWith('zh'));
-  const preferences = [
-    /xiaoxiao|晓晓|xiaoyi|晓伊/i,
-    /huihui|慧慧/i,
-    /hsiaochen|xiaozhen|小臻/i,
-    /yaoyao|瑶瑶/i,
-    /ting-ting|meijia|sin-ji/i,
-  ];
-  for (const pattern of preferences) {
-    const voice = chinese.find(item => pattern.test(item.name));
-    if (voice) return voice;
-  }
-  return chinese.find(voice => voice.lang?.toLowerCase() === 'zh-cn') || chinese[0] || null;
-}
-
-function resolveGuideVoice() {
-  if (guideVoice) return Promise.resolve(guideVoice);
-  return new Promise(resolve => {
-    const finish = () => {
-      const selected = selectGuideVoice(speechSynthesis.getVoices());
-      if (selected) guideVoice = selected;
-      document.querySelector('#guide-voice-label').textContent = `设备朗读：${describeGuideVoice(selected)} · 非音素级口型`;
-      resolve(selected);
-    };
-    if (speechSynthesis.getVoices().length) return finish();
-    const timer = setTimeout(finish, 700);
-    speechSynthesis.addEventListener('voiceschanged', () => {
-      clearTimeout(timer);
-      finish();
-    }, { once: true });
-  });
-}
-
+let voicePipeline;
 async function speakGuide(text) {
-  guideLastAnswer = text;
-  if (!('speechSynthesis' in window)) {
-    guideAvatar?.gesture('nod');
-    setGuideStatus('浏览器暂不支持语音，可阅读右侧讲解', 'ready');
-    return;
-  }
-  const request = ++guideSpeechRequest;
-  speechSynthesis.cancel();
-  setGuideStatus('正在准备自然女声', 'thinking');
-  const selectedVoice = await resolveGuideVoice();
-  if (request !== guideSpeechRequest || !guideScene.classList.contains('is-open')) return;
-  const utterance = new SpeechSynthesisUtterance(text);
-  guideUtterance = utterance;
-  utterance.lang = 'zh-CN';
-  // A calmer cadence and a slightly lower register suit the fairy guide better
-  // than the bright childlike defaults used by many Windows Chinese voices.
-  utterance.rate = 0.84;
-  utterance.pitch = /xiaoxiao|xiaoyi/i.test(selectedVoice?.name || '') ? 0.98 : 0.96;
-  utterance.volume = 0.9;
-  utterance.voice = selectedVoice;
-  utterance.onstart = () => {
-    if (guideUtterance !== utterance) return;
-    guideAvatar?.setThinking(false);
-    guideAvatar?.setSpeaking(true);
-    setGuideStatus('正在为你讲解', 'speaking');
-  };
-  const finish = () => {
-    if (guideUtterance !== utterance) return;
-    guideUtterance = null;
-    guideAvatar?.setSpeaking(false);
-    guideAvatar?.gesture('nod');
-    setGuideStatus('讲解完毕，可以继续提问', 'ready');
-  };
-  utterance.onboundary = () => { if (guideUtterance === utterance) guideAvatar?.speechBoundary(); };
-  utterance.onend = finish;
-  utterance.onerror = () => { if (guideUtterance !== utterance) return; finish(); setGuideStatus('设备朗读未播放，请点“再听一遍”重试', 'ready'); };
-  speechSynthesis.speak(utterance);
+  guideLastAnswer=text;
+  if(voicePipeline)await voicePipeline.speak(text);
 }
 
 function renderGuideQuestions() {
@@ -914,6 +839,8 @@ async function loadGuideHistory() {
 }
 async function askGuide(question) {
   if (!question || guideBusy) return;
+  voicePipeline?.unlock();
+  voicePipeline?.stopListening();
   stopGuideSpeech();
   lastGuideQuestion=question;guideWasCancelled=false;
   document.querySelector('#guide-cancel').hidden=false;
@@ -922,7 +849,7 @@ async function askGuide(question) {
   const request = ++guideRequest;
   guideController = new AbortController();
   const controller = guideController;
-  const timeout = setTimeout(() => controller.abort(), 40000);
+  const timeout = setTimeout(() => controller.abort(), 65000);
   guideBusy = true;
   const submit = document.querySelector('#guide-form button'); submit.disabled = true;
   document.querySelector('#guide-input').value = '';
@@ -936,8 +863,9 @@ async function askGuide(question) {
     if (request !== guideRequest || !guideScene.classList.contains('is-open')) return;
     guideAvatar?.setThinking(false);
     showGuideAnswer(reply, false);
+    if(voicePipeline?.autoSpeak())speakGuide(reply.answer);
     loadGuideHistory();
-    setGuideStatus(reply.mode === 'rag_llm' ? '模型已回答，可对照来源或点击朗读' : '已返回文化资料，请对照来源', 'ready');
+    if(!voicePipeline?.autoSpeak())setGuideStatus(reply.mode === 'rag_llm' ? '模型已回答，可对照来源或点击朗读' : '已返回文化资料，请对照来源', 'ready');
   } catch (error) {
     if (request !== guideRequest) return;
     guideAvatar?.setThinking(false);
@@ -994,7 +922,7 @@ function openGuide(placeId = null) {
   requestAnimationFrame(() => {
     guideScene.classList.add('is-open');
     document.querySelector('#guide-close').focus({ preventScroll: true });
-    speakGuide(guideLastAnswer);
+    // Microphone and audio start only after an explicit user action.
   });
   ensureGuideAvatar().then(() => guideAvatar?.setActive(true));
 }
@@ -1004,6 +932,7 @@ function closeGuide() {
   guideRequest++; guideController?.abort(); guideController = null; guideBusy = false;
   document.querySelector('#guide-form button').disabled = false;
   stopGuideSpeech();
+  voicePipeline?.stopListening();
   guideAvatar?.setActive(false);
   guideScene.classList.remove('is-open');
   guideScene.inert = true;
@@ -1022,7 +951,7 @@ document.querySelector('#guide-form').addEventListener('submit', event => {
   event.preventDefault();
   askGuide(document.querySelector('#guide-input').value.trim());
 });
-document.querySelector('#guide-replay').addEventListener('click', () => guideLastAnswer && speakGuide(guideLastAnswer));
+document.querySelector('#guide-replay').addEventListener('click', () => {voicePipeline?.unlock();if(guideLastAnswer)speakGuide(guideLastAnswer);});
 document.querySelector('#guide-stop').addEventListener('click', stopGuideSpeech);
 document.querySelectorAll('[data-gesture]').forEach(button => button.addEventListener('click', () => guideAvatar?.gesture(button.dataset.gesture)));
 guideRouteLink.addEventListener('click', () => {
@@ -1338,5 +1267,8 @@ catalogReady.then(data=>{
   }
   for(const route of routes)syncVerifiedRoute(route.id);
   panoramaControls.setCatalog(catalog);
+  if(guideContextId&&guideScene.classList.contains('is-open')){const current=catalog.spots.find(spot=>spot.id===guideContextId);if(current)document.querySelector('#guide-context').textContent=`正在讲解：${current.name} · 可继续追问此处故事与路线`;}
   routeState();
 });
+
+voicePipeline=createVoicePipeline({host:document.querySelector('#guide-voice-input'),input:document.querySelector('#guide-input'),onSubmit:question=>askGuide(question),getAvatar:()=>guideAvatar,onStatus:setGuideStatus,isOpen:()=>guideScene.classList.contains('is-open'),isBusy:()=>guideBusy});
