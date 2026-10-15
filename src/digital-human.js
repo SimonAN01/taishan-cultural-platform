@@ -260,8 +260,13 @@ export function createDigitalHuman(host, { onReady, onError, onProgress, reduced
       if (!mixer) return;
       playBase(value ? 'Talk' : 'Idle');
     },
-    setThinking() {
+    setThinking(value) {
       if (!mixer || speaking) return;
+      if (value) {
+        gestureAction = null;
+        host.dataset.gesture = '';
+        host.dataset.gesturePhase = '';
+      }
       playBase('Idle');
     },
     gesture,

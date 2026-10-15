@@ -828,7 +828,6 @@ function showGuideAnswer(reply, speak = true) {
     guideRouteLink.dataset.route = reply.routeId;
     guideRouteLink.textContent = `${reply.routeLabel} →`;
   }
-  guideAvatar?.gesture(reply.emotion || 'nod');
   if (speak) speakGuide(reply.answer);
   else guideLastAnswer = reply.answer;
 }
@@ -933,7 +932,7 @@ function openGuide(placeId = null) {
   guidePreviousFocus = document.activeElement;
   guideContextId = placeId ? apiSpotId(placeId) : null;
   document.querySelector('#guide-context').textContent = guideContextId ? `正在讲解：${catalog?.spots.find(s=>s.id===guideContextId)?.name || places[guideContextId]?.name || '当前景点'} · 可继续追问此处故事与路线` : '正在从泰山全景为你讲解 · 可问路线、古迹、诗词与日出';
-  showGuideAnswer({ answer: getGuideGreeting(guideContextId), emotion: 'bow' }, false);
+  showGuideAnswer({ answer: getGuideGreeting(guideContextId) }, false);
   renderGuideQuestions();
   loadGuideHistory();
   guideScene.inert = false;
