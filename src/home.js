@@ -15,7 +15,7 @@ const catalogReady = requestApi('catalog').catch(() => null);
 if (location.hash.split('?')[0] === '#agent') {
   const preload = document.createElement('link');
   preload.rel = 'preload'; preload.as = 'fetch'; preload.crossOrigin = 'anonymous';
-  preload.href = import.meta.env.BASE_URL + 'models/princess-agent-web-v2.glb';
+  preload.href = import.meta.env.BASE_URL + 'models/princess-agent-web-v4.glb';
   preload.fetchPriority = 'high'; document.head.append(preload);
 }
 

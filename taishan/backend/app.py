@@ -78,7 +78,7 @@ async def lifespan(app):
     init_db()
     yield
 
-app=FastAPI(title='一山千年 泰山文化导览 API',version='1.4.1',lifespan=lifespan)
+app=FastAPI(title='一山千年 泰山文化导览 API',version='1.5.1',lifespan=lifespan)
 limits=defaultdict(deque)
 
 @app.middleware('http')
@@ -118,7 +118,7 @@ async def protect(request,call_next):
         result.set_cookie('taishan_session',request.state.session_id,max_age=30*86400,httponly=True,samesite='lax',secure=request.url.scheme=='https',path='/')
         result.headers['Cache-Control']='no-store'
     result.headers['X-Content-Type-Options']='nosniff'; result.headers['Referrer-Policy']='strict-origin-when-cross-origin'
-    if path == '/experience/models/princess-agent-web-v2.glb' and result.status_code == 200:
+    if path in {'/experience/models/princess-agent-web-v2.glb','/experience/models/princess-agent-web-v3.glb','/experience/models/princess-agent-web-v4.glb'} and result.status_code in {200,304}:
         result.headers['Cache-Control']='public, max-age=31536000, immutable'
     # Meshopt's bundled decoder uses WebAssembly; textures load from local Blob URLs.
     result.headers['Content-Security-Policy']="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; connect-src 'self' blob:; media-src 'self' blob:; object-src 'none'; base-uri 'self'; frame-ancestors 'self'"
@@ -129,7 +129,7 @@ def source_records(ids):return [SOURCES[i] for i in dict.fromkeys(ids) if i in S
 def enriched(item):return dict(item,sources=source_records(item.get('source_ids',[])))
 
 @app.get('/api/health')
-def health():return {'status':'ok','version':'1.4.1','immersive_available':(IMMERSIVE_DIR/'index.html').is_file(),'knowledge_documents':len(CAT['knowledge']),'agent_mode':'rag_llm' if agent_enabled() else 'local_knowledge','agent_provider':AGENT_PROVIDER,'llm_configured':agent_enabled(),'generation_service':dict(COZE_STATUS if AGENT_PROVIDER=='coze' else LLM_STATUS),'tts_available':TTS_AVAILABLE,'tts_voice':TTS_VOICE,'tts_service':dict(TTS_STATUS),'vision_available':LLM_ENABLED if VISION_BACKEND=='cloud' else VISION.available(),'vision_mode':'cloud_visual' if VISION_BACKEND=='cloud' else 'zero_shot_clip','vision_service':dict(VISION_STATUS),'trained_landmark_model':False,'retrieval_mode':'bge_hybrid' if RETRIEVER.available() else 'lexical','language_model':agent_model() if agent_enabled() else None}
+def health():return {'status':'ok','version':'1.5.1','immersive_available':(IMMERSIVE_DIR/'index.html').is_file(),'knowledge_documents':len(CAT['knowledge']),'agent_mode':'rag_llm' if agent_enabled() else 'local_knowledge','agent_provider':AGENT_PROVIDER,'llm_configured':agent_enabled(),'generation_service':dict(COZE_STATUS if AGENT_PROVIDER=='coze' else LLM_STATUS),'tts_available':TTS_AVAILABLE,'tts_voice':TTS_VOICE,'tts_service':dict(TTS_STATUS),'vision_available':LLM_ENABLED if VISION_BACKEND=='cloud' else VISION.available(),'vision_mode':'cloud_visual' if VISION_BACKEND=='cloud' else 'zero_shot_clip','vision_service':dict(VISION_STATUS),'trained_landmark_model':False,'retrieval_mode':'bge_hybrid' if RETRIEVER.available() else 'lexical','language_model':agent_model() if agent_enabled() else None}
 
 @app.get('/api/catalog')
 def catalog():

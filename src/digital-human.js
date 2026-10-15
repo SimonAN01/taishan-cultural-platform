@@ -19,7 +19,6 @@ export function createDigitalHuman(host, { onReady, onError, onProgress, reduced
   let speaking = false;
   let lastBoundary = -Infinity;
   let audioLevel = null;
-  let thinking = false;
   let frame = 0;
   let last = performance.now();
   let blinkAt = last + 2200;
@@ -27,11 +26,19 @@ export function createDigitalHuman(host, { onReady, onError, onProgress, reduced
   let disposed = false;
   let settled = false;
   let resolveReady;
+  let loadTimeout;
+  let loadDeadline;
   const ready = new Promise(resolve => { resolveReady = resolve; });
   function fail(error) {
     if (disposed || settled) return;
     settled = true;
+    clearTimeout(loadTimeout);
+    clearTimeout(loadDeadline);
+    active = false;
+    cancelAnimationFrame(frame);
+    frame = 0;
     host.dataset.modelState = 'error';
+    host.dataset.modelReady = 'false';
     resolveReady(false);
     onError?.(error);
   }
@@ -101,9 +108,9 @@ export function createDigitalHuman(host, { onReady, onError, onProgress, reduced
     renderer.setSize(width, height, false);
     // A short phone stage needs an upper-body view for the mouth to be readable.
     const compact = height < 340;
-    camera.fov = compact ? 17 : 27;
-    camera.position.y = compact ? 0.8 : 0.08;
-    controls.target.y = compact ? 0.8 : 0.2;
+    camera.fov = compact ? 21 : 27;
+    camera.position.y = compact ? 0.55 : 0.08;
+    controls.target.y = compact ? 0.55 : 0.2;
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
   }
@@ -135,6 +142,7 @@ export function createDigitalHuman(host, { onReady, onError, onProgress, reduced
     for (const other of actions.values()) if (other !== action) other.fadeOut(0.16);
     gestureAction = action;
     host.dataset.gesture = kind;
+    host.dataset.gesturePhase = '';
     action.reset().setEffectiveWeight(1).setLoop(THREE.LoopOnce, 1);
     action.clampWhenFinished = true;
     action.fadeIn(0.16).play();
@@ -145,6 +153,14 @@ export function createDigitalHuman(host, { onReady, onError, onProgress, reduced
     const delta = Math.min(0.05, (now - last) / 1000);
     last = now;
     mixer?.update(delta);
+    if (gestureAction) {
+      const progress = gestureAction.time / gestureAction.getClip().duration;
+      const phase = host.dataset.gesture === 'bow'
+        ? progress < .20 ? 'gather' : progress < .38 ? 'bow' : progress < .55 ? 'hold' : progress < .80 ? 'rise' : 'settle'
+        : host.dataset.gesture === 'look' ? progress < .26 ? 'turn' : progress < .63 ? 'hold' : 'return' : '';
+
+      if (host.dataset.gesturePhase !== phase) host.dataset.gesturePhase = phase;
+    }
     controls.update();
 
     if (model) {
@@ -163,9 +179,12 @@ export function createDigitalHuman(host, { onReady, onError, onProgress, reduced
     frame = requestAnimationFrame(frameLoop);
   }
 
-  const loadTimeout = setTimeout(() => fail(new Error('Model load timeout')), 25000);
-  new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).load(import.meta.env.BASE_URL + 'models/princess-agent-web-v2.glb', gltf => {
+  // A slow but progressing download is not a stalled download.
+  loadTimeout = setTimeout(() => fail(new Error('Model download stalled')), 20000);
+  loadDeadline = setTimeout(() => fail(new Error('Model load deadline')), 60000);
+  new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).load(import.meta.env.BASE_URL + 'models/princess-agent-web-v4.glb', gltf => {
     clearTimeout(loadTimeout);
+    clearTimeout(loadDeadline);
     if (disposed || settled) return;
     model = gltf.scene;
     const bounds = new THREE.Box3().setFromObject(model);
@@ -192,10 +211,14 @@ export function createDigitalHuman(host, { onReady, onError, onProgress, reduced
       if (event.action !== gestureAction) return;
       gestureAction = null;
       host.dataset.gesture = '';
-      playBase(speaking ? 'Talk' : (thinking ? 'LookAround' : 'Idle'));
+      host.dataset.gesturePhase = '';
+      playBase(speaking ? 'Talk' : 'Idle');
     });
-    playBase(speaking ? 'Talk' : (thinking ? 'LookAround' : 'Idle'), 0);
+    playBase(speaking ? 'Talk' : 'Idle', 0);
     resize();
+    const bones = []; model.traverse(node => { if (node.isBone) bones.push(node.name); });
+    host.dataset.rigBones = String(bones.length);
+    host.dataset.fingerBones = String(bones.filter(name => /^(Thumb|Index|Middle|Ring|Little)_/.test(name)).length);
     host.dataset.modelReady = 'true';
     host.dataset.modelState = 'ready';
     host.dataset.loadMs = String(Math.round(performance.now() - loadStarted));
@@ -203,7 +226,12 @@ export function createDigitalHuman(host, { onReady, onError, onProgress, reduced
     resolveReady(true);
     onReady?.({ animations: [...actions.keys()] });
     if (active && !frame) frame = requestAnimationFrame(frameLoop);
-  }, event => { if (!settled && !disposed) onProgress?.(event.lengthComputable ? Math.round(event.loaded / event.total * 100) : null); }, error => { clearTimeout(loadTimeout); fail(error); });
+  }, event => {
+    if (settled || disposed) return;
+    clearTimeout(loadTimeout);
+    loadTimeout = setTimeout(() => fail(new Error('Model download stalled')), 20000);
+    onProgress?.(event.lengthComputable ? Math.round(event.loaded / event.total * 100) : null);
+  }, fail);
 
   const observer = new ResizeObserver(resize);
   observer.observe(host);
@@ -211,8 +239,9 @@ export function createDigitalHuman(host, { onReady, onError, onProgress, reduced
 
   return {
     ready,
-    setReducedMotion(value) { reducedMotion = value; playBase(speaking ? 'Talk' : (thinking ? 'LookAround' : 'Idle')); },
+    setReducedMotion(value) { reducedMotion = value; playBase(speaking ? 'Talk' : 'Idle'); },
     setActive(value) {
+      if (value && settled && !model) return;
       active = value;
       if (active) {
         last = performance.now();
@@ -229,12 +258,11 @@ export function createDigitalHuman(host, { onReady, onError, onProgress, reduced
       host.dataset.speaking=String(value);
       if (!value) { lastBoundary = -Infinity; audioLevel=null; }
       if (!mixer) return;
-      playBase(value ? 'Talk' : (thinking ? 'LookAround' : 'Idle'));
+      playBase(value ? 'Talk' : 'Idle');
     },
-    setThinking(value) {
-      thinking = value;
+    setThinking() {
       if (!mixer || speaking) return;
-      playBase(value ? 'LookAround' : 'Idle');
+      playBase('Idle');
     },
     gesture,
     destroy() {
@@ -242,6 +270,7 @@ export function createDigitalHuman(host, { onReady, onError, onProgress, reduced
       disposed = true;
       resolveReady(false);
       clearTimeout(loadTimeout);
+      clearTimeout(loadDeadline);
       cancelAnimationFrame(frame);
       mixer?.stopAllAction();
       observer.disconnect();

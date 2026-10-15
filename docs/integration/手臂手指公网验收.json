@@ -1,0 +1,50 @@
+{
+  "version": "1.5.1",
+  "files_verified": 24,
+  "checks": {
+    "/experience/": {
+      "status": 200,
+      "bytes": 1553
+    },
+    "/api/health": {
+      "status": 200,
+      "bytes": 533,
+      "provider": "coze",
+      "tts_available": true
+    },
+    "/experience/models/princess-agent-web-v4.glb": {
+      "status": 200,
+      "bytes": 1195620,
+      "method": "HEAD",
+      "cache_control": "public, max-age=31536000, immutable"
+    },
+    "conditional_model": {
+      "status": 304,
+      "cache_control": "public, max-age=31536000, immutable"
+    }
+  },
+  "browser": {
+    "viewport_desktop": [
+      1280,
+      720
+    ],
+    "viewport_mobile": [
+      390,
+      844
+    ],
+    "rig_bones": 49,
+    "finger_bones": 30,
+    "cached_model_load_ms": 67,
+    "far_look": "upright side gaze, hold, return",
+    "bow": "hands and prop stay together; mobile hands visible",
+    "tts": {
+      "duration_seconds": 12.432,
+      "observed_playback_seconds": 11.00307,
+      "observed_jaw_open": 0.429,
+      "jaw_after_stop": 0,
+      "speaking_after_stop": false
+    },
+    "horizontal_overflow": false,
+    "console_errors_or_warnings": []
+  }
+}
