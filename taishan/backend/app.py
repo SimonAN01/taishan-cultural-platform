@@ -66,7 +66,7 @@ async def lifespan(app):
     init_db()
     yield
 
-app=FastAPI(title='一山千年 泰山文化导览 API',version='1.2.1',lifespan=lifespan)
+app=FastAPI(title='一山千年 泰山文化导览 API',version='1.3.0',lifespan=lifespan)
 limits=defaultdict(deque)
 
 @app.middleware('http')
@@ -115,7 +115,7 @@ def source_records(ids):return [SOURCES[i] for i in dict.fromkeys(ids) if i in S
 def enriched(item):return dict(item,sources=source_records(item.get('source_ids',[])))
 
 @app.get('/api/health')
-def health():return {'status':'ok','version':'1.2.1','immersive_available':(IMMERSIVE_DIR/'index.html').is_file(),'knowledge_documents':len(CAT['knowledge']),'agent_mode':'rag_llm' if LLM_ENABLED else 'local_knowledge','llm_configured':LLM_ENABLED,'generation_service':dict(LLM_STATUS),'vision_available':LLM_ENABLED if VISION_BACKEND=='cloud' else VISION.available(),'vision_mode':'cloud_visual' if VISION_BACKEND=='cloud' else 'zero_shot_clip','vision_service':dict(VISION_STATUS),'trained_landmark_model':False,'retrieval_mode':'bge_hybrid' if RETRIEVER.available() else 'lexical','language_model':LLM_MODEL if LLM_ENABLED else None}
+def health():return {'status':'ok','version':'1.3.0','immersive_available':(IMMERSIVE_DIR/'index.html').is_file(),'knowledge_documents':len(CAT['knowledge']),'agent_mode':'rag_llm' if LLM_ENABLED else 'local_knowledge','llm_configured':LLM_ENABLED,'generation_service':dict(LLM_STATUS),'vision_available':LLM_ENABLED if VISION_BACKEND=='cloud' else VISION.available(),'vision_mode':'cloud_visual' if VISION_BACKEND=='cloud' else 'zero_shot_clip','vision_service':dict(VISION_STATUS),'trained_landmark_model':False,'retrieval_mode':'bge_hybrid' if RETRIEVER.available() else 'lexical','language_model':LLM_MODEL if LLM_ENABLED else None}
 
 @app.get('/api/catalog')
 def catalog():
@@ -208,6 +208,14 @@ class Chat(BaseModel):
 def chat_history(request:Request):
     with db() as con:rows=con.execute('SELECT role,text,spot_id,metadata FROM messages WHERE session_id=? ORDER BY id DESC LIMIT 20',(request.state.session_id,)).fetchall()
     return list(reversed([{'role':x['role'],'text':x['text'],'spot_id':x['spot_id'],**json.loads(x['metadata'] or '{}')} for x in rows]))
+
+@app.delete('/api/agent/history')
+def clear_chat_history(request:Request):
+    with db() as con:
+        con.execute('BEGIN IMMEDIATE')
+        con.execute('UPDATE sessions SET revision=revision+1 WHERE id=?',(request.state.session_id,))
+        con.execute('DELETE FROM messages WHERE session_id=?',(request.state.session_id,))
+    return {'cleared':True}
 
 @app.post('/api/agent/chat')
 async def chat(body:Chat,request:Request):

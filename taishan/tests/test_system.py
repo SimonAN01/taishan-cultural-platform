@@ -58,6 +58,18 @@ class SystemTests(unittest.TestCase):
   self.assertEqual(len(self.client.get('/api/journey').json()['visited']),1)
   self.assertFalse(self.other.get('/api/journey').json()['visited'])
   self.client.delete('/api/journey');self.assertFalse(self.client.get('/api/journey').json()['favorites'])
+ def test_clear_chat_preserves_journey_and_other_sessions(self):
+  self.client.post('/api/journey/visit',json={'spot_id':'nantian'})
+  self.client.post('/api/journey/favorite',json={'kind':'spot','item_id':'nantian','saved':True})
+  self.client.post('/api/agent/chat',json={'message':'你是谁'})
+  self.other.post('/api/agent/chat',json={'message':'你是谁'})
+  self.assertTrue(self.client.get('/api/agent/history').json())
+  self.assertEqual(self.client.delete('/api/agent/history').status_code,200)
+  self.assertFalse(self.client.get('/api/agent/history').json())
+  self.assertTrue(self.other.get('/api/agent/history').json())
+  journey=self.client.get('/api/journey').json()
+  self.assertEqual(len(journey['visited']),1)
+  self.assertEqual(len(journey['favorites']),1)
  def test_grounded_answers_followup_refusal_and_sources(self):
   a=self.client.post('/api/agent/chat',json={'message':'封禅是什么？'}).json()
   self.assertIn('祭天',a['answer']);self.assertTrue(a['sources']);self.assertFalse(a['refused'])

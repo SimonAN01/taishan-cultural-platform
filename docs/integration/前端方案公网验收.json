@@ -1,0 +1,106 @@
+{
+  "version": "1.3.0",
+  "verified_release_files": 21,
+  "paths": {
+    "/": 200,
+    "/experience/": 200,
+    "/api/health": 200,
+    "/api/catalog": 200,
+    "/experience/models/princess-agent.glb": 200,
+    "/assets/photos/jingshi-44151397.webp": 200
+  },
+  "health": {
+    "status": "ok",
+    "version": "1.3.0",
+    "immersive_available": true,
+    "knowledge_documents": 25,
+    "agent_mode": "rag_llm",
+    "llm_configured": true,
+    "generation_service": {
+      "state": "configured",
+      "checked_at": null
+    },
+    "vision_available": true,
+    "vision_mode": "cloud_visual",
+    "vision_service": {
+      "state": "configured",
+      "checked_at": null
+    },
+    "trained_landmark_model": false,
+    "retrieval_mode": "bge_hybrid",
+    "language_model": "deepseek-v4.1-flash"
+  },
+  "chat": {
+    "seconds": 5.555,
+    "response": {
+      "answer": "经石峪的摩崖刻经以大字《金刚经》著称，是泰山石刻文化的重要一站[1]。它位于主盘道延伸出去的文化支线上，适合单独安排停留观赏[1]。",
+      "sources": [
+        {
+          "id": "jingshi",
+          "title": "经石峪管理所 绘就责任地图",
+          "publisher": "泰山风景名胜区管理委员会",
+          "url": "https://tsgw.taian.gov.cn/art/2025/12/15/art_48271_10319554.html",
+          "verified_at": "2026-10-14",
+          "verification": "官方摘要核对"
+        }
+      ],
+      "citations": [
+        {
+          "number": 1,
+          "title": "经石峪 石上有经",
+          "sources": [
+            {
+              "id": "jingshi",
+              "title": "经石峪管理所 绘就责任地图",
+              "publisher": "泰山风景名胜区管理委员会",
+              "url": "https://tsgw.taian.gov.cn/art/2025/12/15/art_48271_10319554.html",
+              "verified_at": "2026-10-14",
+              "verification": "官方摘要核对"
+            }
+          ]
+        }
+      ],
+      "mode": "rag_llm",
+      "model": "deepseek-v4.1-flash",
+      "tool_calls": [],
+      "refused": false,
+      "retrieved": [
+        {
+          "id": "k-jingshi",
+          "title": "经石峪 石上有经",
+          "relevance": 1.865
+        }
+      ],
+      "suggested_questions": [
+        "封禅是什么？",
+        "为什么说会当凌绝顶？",
+        "红门线怎么走？"
+      ]
+    }
+  },
+  "chat_clear_preserves_visits": true,
+  "vision": {
+    "seconds": 3.738,
+    "response": {
+      "model_version": "deepseek-v4.1-flash · 云端图像理解",
+      "method": "cloud_visual",
+      "status": "needs_confirmation",
+      "confidence": null,
+      "score_type": "visual_evidence",
+      "candidates": [
+        {
+          "spot_id": "jingshi",
+          "name": "经石峪",
+          "reason": "大面积摩崖石刻，石面刻有密集文字，符合经石峪摩崖刻经特征"
+        },
+        {
+          "spot_id": "daguan",
+          "name": "大观峰",
+          "reason": "崖壁摩崖石刻，可见大面积刻字，符合大观峰石刻特征"
+        }
+      ],
+      "message": "云端模型已给出可能的景点，请对照实景图与画面依据人工确认。候选不代表识别准确率。",
+      "request_id": "5db8124bc6d14a5f8367a645545ef867"
+    }
+  }
+}

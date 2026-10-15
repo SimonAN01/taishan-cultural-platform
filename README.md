@@ -55,3 +55,7 @@ IMMERSIVE_FRONTEND_DIR=/opt/taishan/immersive
 ## 图片资产
 
 用户提供的57张画境已用于分层地图、景点近景与“画”入口的完整图集。接入记录见 [图片资产接入记录](docs/integration/图片资产接入记录.md)，每张原文件的校验和及网页用途见 `src/image-assets.json`。原图保留，网页使用保留透明通道的WebP，不把插画当作真实景点照片或训练数据。
+
+### 前端方案 V1.0（2026-10-15）
+
+`/experience/` 已统一接入景点详情、四线比较、历史长卷、诗词朗诵、真实照片识景和问山会话。可直接访问 `#routes`、`#history`、`#poetry`、`#vision`、`#spot?id=nantian`。地图支持缩放与搜索，内容页返回保留地图状态。完整说明与验收证据见 [前端方案实施记录](docs/integration/前端方案实施记录.md)。

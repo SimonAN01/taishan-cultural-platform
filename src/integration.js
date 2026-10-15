@@ -6,9 +6,10 @@ export const fullSite = (view = 'map', spot = null) => `/#${view}${spot ? '?spot
 export async function requestApi(path, options = {}) {
   const response = await fetch('/api/' + path, {
     credentials: 'same-origin', ...options,
-    headers: { 'Content-Type': 'application/json', ...options.headers },
+    headers: { ...(options.body instanceof FormData ? {} : {'Content-Type': 'application/json'}), ...options.headers },
+    signal: options.signal || AbortSignal.timeout(15000),
   });
-  const result = await response.json();
+  const result = await response.json().catch(() => { throw new Error('服务响应异常，请稍后重试'); });
   if (!response.ok) throw new Error(typeof result.detail === 'string' ? result.detail : '服务暂不可用，请重试');
   return result;
 }

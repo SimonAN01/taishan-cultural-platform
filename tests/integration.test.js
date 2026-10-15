@@ -27,3 +27,11 @@ test('service failures remain failures instead of returning a scripted answer', 
   try { await assert.rejects(askApi('你是谁'), /请求过于频繁/); }
   finally { globalThis.fetch = original; }
 });
+
+test('image uploads let the browser set multipart boundaries and preserve cancellation', async () => {
+  const {requestApi} = await import('../src/integration.js');
+  const original=globalThis.fetch, form=new FormData(), controller=new AbortController();
+  form.append('file',new Blob(['test'],{type:'image/png'}),'photo.png');
+  globalThis.fetch=async(url,options)=>{assert.equal(url,'/api/vision/recognize');assert.equal(options.body,form);assert.equal(options.signal,controller.signal);assert.equal(options.headers['Content-Type'],undefined);return {ok:true,json:async()=>({status:'unknown'})};};
+  try{assert.equal((await requestApi('vision/recognize',{method:'POST',body:form,signal:controller.signal})).status,'unknown');}finally{globalThis.fetch=original;}
+});
