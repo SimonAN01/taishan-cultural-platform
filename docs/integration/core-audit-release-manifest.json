@@ -1,0 +1,16 @@
+{
+  "backend/app.py": "3c8a1218e9f70a349f49015d27655db73b8a5290ffb943ec301e9929c712bdca",
+  "backend/speech.py": "63e065ef7206efd2c63efabe714d55b836b46af8f51e777fdcca80da34f64cde",
+  "data/catalog.json": "97f0dcba4a0ddd05d7da3f58c64040e56cdc044ee7ac5eaec008e937df54f58a",
+  "data/scenes.json": "218b62ec950572ed45a62cb1c57e71a5e7647bb8429bcc6d4c9019cef90ac200",
+  "frontend/app.js": "f552376bfcc1aca81fe1f1d5ae05f7acd4e6cbfd18c9f231182f469f08f2f931",
+  "tests/test_system.py": "7f9a6c95cc13d19cabfac33c7c41eaecffb4059d6397d84d559e0c87f45d5350",
+  "immersive/index.html": "681ff175c8ab738c65d8ef4c99a072f463c2bf142d6710a824e19d81de57908b",
+  "immersive/assets/meshopt_decoder.module-j6OW_3Rk.js": "9a6907b2af2f6747383fa4be44c5322fc5a0ebb43b4b6996f441490a4a13f204",
+  "immersive/assets/index-DGUjtpQL.js": "2850d29ba209d04f13432c88f99c9de0e290b48c3672924e9f5ff823157521d0",
+  "immersive/assets/digital-human-BpkyCztW.js": "6e89b97969b96401ae6fac8988c774e2aa8cc667be59c4f267a1d425e997606c",
+  "immersive/assets/spatial-scene-Km_nYPql.js": "06fafb578544b6979b0514838fa3bc5f5ffec755e28a2a77c453bdfaae36ffa1",
+  "immersive/assets/cableway-experience-GBu-ZNio.js": "ca5cb1b440e946d82a4932147015a8b614e3d5b7c97088d24a7743eab5c57cd2",
+  "immersive/assets/GLTFLoader-pCY3s9QI.js": "ae1dc052d4303a8545ae2bad8e34742c85215a94ad6a96257f79a28205f87d14",
+  "immersive/assets/index-B0nEIaXY.css": "45f5db5df2bc43a67fd11c65deb943e9a9555bea735ca5af143c6040c0b25735"
+}

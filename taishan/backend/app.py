@@ -1,5 +1,6 @@
 import asyncio
 import io
+import hashlib
 import json
 import logging
 import os
@@ -24,11 +25,16 @@ from .vision import Vision
 from .agent_tools import guide_tools
 from .cloud_vision import recognize_cloud
 from .coze_agent import run_coze
-from .speech import synthesize, AVAILABLE as TTS_AVAILABLE, VOICE as TTS_VOICE
+from .speech import synthesize, synthesize_poem, AVAILABLE as TTS_AVAILABLE, VOICE as TTS_VOICE
 
 ROOT=Path(__file__).resolve().parent.parent
 IMMERSIVE_DIR=Path(os.getenv('IMMERSIVE_FRONTEND_DIR',str(ROOT.parent/'dist')))
 CAT=json.loads((ROOT/'data/catalog.json').read_text())
+# Poetry pages and retrieval share one authoritative set of annotations.
+for poem in CAT['poems']:
+    key='k-poem' if poem['id']=='wangyue' else 'k-poem-'+poem['id']
+    for document in CAT['knowledge']:
+        if document['id']==key:document['content']=poem['original_text']+'\n'+poem['interpretation']+'\n'+'\n'.join(a['line']+' '+a['meaning'] for a in poem['annotations'])
 SCENES={scene['id']:scene for scene in json.loads((ROOT/'data/scenes.json').read_text())}
 CAT['scenes']=list(SCENES.values())
 for scene in SCENES.values():
@@ -84,7 +90,7 @@ async def lifespan(app):
     init_db()
     yield
 
-app=FastAPI(title='一山千年 泰山文化导览 API',version='1.6.0',lifespan=lifespan)
+app=FastAPI(title='一山千年 泰山文化导览 API',version='1.7.0',lifespan=lifespan)
 limits=defaultdict(deque)
 
 @app.middleware('http')
@@ -137,13 +143,17 @@ def source_records(ids):return [SOURCES[i] for i in dict.fromkeys(ids) if i in S
 
 def enriched(item):return dict(item,sources=source_records(item.get('source_ids',[])))
 
+def enriched_scene(s):
+    model_file='models/scenes/'+s['id']+'.glb'
+    return enriched(s) | {'points':[enriched(p) for p in s['points']],'model_available':(IMMERSIVE_DIR/model_file).is_file(),'model_url':'/experience/'+model_file}
+
 @app.get('/api/health')
-def health():return {'status':'ok','version':'1.6.0','immersive_available':(IMMERSIVE_DIR/'index.html').is_file(),'knowledge_documents':len(CAT['knowledge']),'agent_mode':'rag_llm' if agent_enabled() else 'local_knowledge','agent_provider':AGENT_PROVIDER,'llm_configured':agent_enabled(),'generation_service':dict(COZE_STATUS if AGENT_PROVIDER=='coze' else LLM_STATUS),'tts_available':TTS_AVAILABLE,'tts_voice':TTS_VOICE,'tts_service':dict(TTS_STATUS),'vision_available':LLM_ENABLED if VISION_BACKEND=='cloud' else VISION.available(),'vision_mode':'cloud_visual' if VISION_BACKEND=='cloud' else 'zero_shot_clip','vision_service':dict(VISION_STATUS),'trained_landmark_model':False,'retrieval_mode':'bge_hybrid' if RETRIEVER.available() else 'lexical','language_model':agent_model() if agent_enabled() else None}
+def health():return {'status':'ok','version':'1.7.0','immersive_available':(IMMERSIVE_DIR/'index.html').is_file(),'knowledge_documents':len(CAT['knowledge']),'agent_mode':'rag_llm' if agent_enabled() else 'local_knowledge','agent_provider':AGENT_PROVIDER,'llm_configured':agent_enabled(),'generation_service':dict(COZE_STATUS if AGENT_PROVIDER=='coze' else LLM_STATUS),'tts_available':TTS_AVAILABLE,'tts_voice':TTS_VOICE,'tts_service':dict(TTS_STATUS),'vision_available':LLM_ENABLED if VISION_BACKEND=='cloud' else VISION.available(),'vision_mode':'cloud_visual' if VISION_BACKEND=='cloud' else 'zero_shot_clip','vision_service':dict(VISION_STATUS),'trained_landmark_model':False,'retrieval_mode':'bge_hybrid' if RETRIEVER.available() else 'lexical','language_model':agent_model() if agent_enabled() else None}
 
 @app.get('/api/catalog')
 def catalog():
     story=dict(CAT['story'],chapters=[enriched({k:v for k,v in ch.items() if k not in ['correct_index','explanation']}) for ch in CAT['story']['chapters']])
-    return {k:[enriched(x) for x in CAT[k]] for k in ['spots','routes','history','poems','artifacts']} | {'sources':CAT['sources'],'story':story,'scenes':[enriched(s) | {'points':[enriched(p) for p in s['points']]} for s in SCENES.values()]}
+    return {k:[enriched(x) for x in CAT[k]] for k in ['spots','routes','history','poems','artifacts']} | {'sources':CAT['sources'],'story':story,'scenes':[enriched_scene(s) for s in SCENES.values()]}
 
 def scene_progress(con,sid,scene):
     viewed=[r['point_id'] for r in con.execute('SELECT point_id FROM scene_steps WHERE session_id=? AND scene_id=?',(sid,scene['id']))]
@@ -156,7 +166,7 @@ def cultural_scene(scene_id:str,request:Request):
     with db() as con:
         progress=scene_progress(con,request.state.session_id,scene)
         saved=bool(con.execute('SELECT 1 FROM favorites WHERE session_id=? AND kind=? AND item_id=?',(request.state.session_id,'spot',scene['spot_id'])).fetchone())
-    return enriched(scene) | {'points':[enriched(p) for p in scene['points']],'progress':progress,'saved':saved}
+    return enriched_scene(scene) | {'progress':progress,'saved':saved}
 
 class SceneDiscovery(BaseModel):point_id:str=Field(min_length=1,max_length=40)
 @app.post('/api/scenes/{scene_id}/discover')
@@ -304,6 +314,13 @@ async def chat(body:Chat,request:Request):
     if poem and context.startswith('当前阅读诗词') and not tool_calls:
         docs=[dict(d,relevance=1) for d in CAT['knowledge'] if d['id']==('k-poem' if poem['id']=='wangyue' else 'k-poem-'+poem['id'])]
         tool_calls=['get_poem_info']
+    reading_poem=named_poems[0] if len(named_poems)==1 else poem if context.startswith('当前阅读诗词') else None
+    if reading_poem and not realtime:
+        line_question=normalized.replace(re.sub(r'[\s·《》]','',reading_poem['title']),'').replace(reading_poem['author'],'').replace('泰山','')
+        hits=[a for a in reading_poem['annotations'] if any(a['line'][i:i+2] in line_question and re.fullmatch(r'[\u4e00-\u9fff]{2}',a['line'][i:i+2]) for i in range(len(a['line'])-1))]
+        if hits:
+            docs=[{'id':'poem-line-'+reading_poem['id']+'-'+str(i),'title':reading_poem['title']+' · '+a['line'],'content':a['line']+' '+a['meaning'],'source_ids':reading_poem['source_ids'],'spot_ids':reading_poem['spot_ids'],'relevance':1} for i,a in enumerate(hits[:3])]
+            tool_calls=['get_poem_info']
     if not docs and not realtime:docs=await asyncio.to_thread(RETRIEVER.search,query,current)
     mode='local_knowledge'; refused=not bool(docs);citations=[]
     if realtime:
@@ -368,6 +385,36 @@ async def speech_tts(body:SpeechRequest,request:Request):
         logger.warning('Hosted TTS unavailable')
         raise HTTPException(503,'语音服务暂不可用，可重试或使用设备朗读') from None
     return Response(audio,media_type='audio/mpeg',headers={'Cache-Control':'no-store'})
+
+# Only curated poem IDs can create cached audio; arbitrary public text is not cached.
+POEM_AUDIO_LOCK=asyncio.Lock()
+def poem_audio_files(poem_id):
+    poem=next((p for p in CAT['poems'] if p['id']==poem_id),None)
+    if not poem:raise HTTPException(404,'诗词不存在')
+    version=hashlib.sha256((TTS_VOICE+'-10%-words-v1'+poem['original_text']).encode()).hexdigest()[:20]
+    folder=DATA_DIR/'poem-audio';folder.mkdir(exist_ok=True)
+    return poem,version,folder/(version+'.mp3'),folder/(version+'.json')
+
+@app.post('/api/poems/{poem_id}/narration')
+async def poem_narration(poem_id:str):
+    poem,version,audio,metadata=poem_audio_files(poem_id)
+    async with POEM_AUDIO_LOCK:
+        if not(audio.is_file() and metadata.is_file()):
+            try:
+                data,cues=await synthesize_poem(poem['original_text'].splitlines())
+                audio.with_suffix('.tmp').write_bytes(data);audio.with_suffix('.tmp').replace(audio)
+                metadata.with_suffix('.json.tmp').write_text(json.dumps({'cues':cues},ensure_ascii=False));metadata.with_suffix('.json.tmp').replace(metadata)
+                TTS_STATUS.update(state='verified',checked_at=int(time.time()))
+            except Exception:
+                TTS_STATUS.update(state='unavailable',checked_at=int(time.time()))
+                raise HTTPException(503,'诗词朗诵暂不可用，请重试；仍可逐句阅读') from None
+    return json.loads(metadata.read_text()) | {'audio_url':f'/api/poems/{poem_id}/audio?v={version}','timing':'provider_word_boundary','voice':TTS_VOICE}
+
+@app.get('/api/poems/{poem_id}/audio')
+def poem_audio(poem_id:str,v:str=''):
+    _,version,audio,metadata=poem_audio_files(poem_id)
+    if v!=version or not(audio.is_file() and metadata.is_file()):raise HTTPException(404,'朗诵尚未生成或已更新，请重新点击朗诵')
+    return FileResponse(audio,media_type='audio/mpeg')
 
 @app.post('/api/vision/recognize')
 async def recognize(request:Request,file:UploadFile):

@@ -10,9 +10,25 @@ export function installPanoramaControls({stage, viewport, places, catalog, openS
   document.querySelector('.home').append(search);
   const input=search.querySelector('input'),results=search.querySelector('.panorama-results');
   let items=catalog?.spots||Object.entries(places).map(([id,p])=>({id,name:p.name,subtitle:p.tag}));
-  function searchSpots(){const q=input.value.trim();results.hidden=!q;if(!q)return;results.replaceChildren();const found=items.filter(s=>(s.name+s.subtitle).includes(q));for(const s of found){const b=document.createElement('button');b.type='button';b.textContent=`${s.name} · ${s.subtitle||'查看文化资料'} →`;b.onclick=()=>{results.hidden=true;openSpot(s.id);};results.append(b);}if(!found.length){const p=document.createElement('p');p.textContent='未找到景点，试试“红门”或“玉皇顶”。';results.append(p);}}
+  const feedback=document.createElement('p');feedback.className='panorama-search-status';feedback.setAttribute('role','status');search.append(feedback);
+  function mapId(id){const local=id==='nantian'?'nantianmen':id;return places[local]?local:null;}
+  function locate(id){
+    const local=mapId(id),node=local&&stage.querySelector(`[data-place="${local}"]`);if(!node)return;
+    const box=node.getBoundingClientRect(),view=viewport.getBoundingClientRect(),next=Math.max(scale,1.6),ratio=next/scale;
+    x=(x-(box.x+box.width/2-(view.x+view.width/2)))*ratio;y=(y-(box.y+box.height/2-(view.y+view.height/2)))*ratio;scale=next;apply();
+    results.hidden=true;node.focus({preventScroll:true});feedback.textContent='已定位'+places[local].name+'，点击地标可继续探索。';
+  }
+  function searchSpots(){
+    const q=input.value.trim();results.hidden=!q;feedback.textContent='';if(!q)return;results.replaceChildren();
+    const found=items.filter(s=>(s.name+(s.subtitle||'')+(s.alias||[]).join('')).includes(q));
+    for(const s of found){const row=document.createElement('div');row.className='panorama-search-result';const label=document.createElement('strong');label.textContent=s.name;row.append(label);
+      if(mapId(s.id)){const b=document.createElement('button');b.type='button';b.textContent='定位'+s.name;b.onclick=()=>locate(s.id);row.append(b);}
+      const read=document.createElement('button');read.type='button';read.textContent='阅读'+s.name;read.onclick=()=>{results.hidden=true;openSpot(s.id);};row.append(read);results.append(row);
+    }
+    if(!found.length){const p=document.createElement('p');p.textContent='未找到景点，试试“红门”或“玉皇顶”。';results.append(p);}
+  }
   input.oninput=searchSpots;search.onsubmit=e=>{e.preventDefault();searchSpots();results.querySelector('button')?.focus();};search.onkeydown=e=>{if(e.key==='Escape'){results.hidden=true;input.focus();}};
-  function apply(){if(frame)return;frame=requestAnimationFrame(()=>{frame=0;const maxX=stage.clientWidth*Math.max(.25,scale-.65)/2,maxY=stage.clientHeight*Math.max(.25,scale-.65)/2;x=Math.max(-maxX,Math.min(maxX,x));y=Math.max(-maxY,Math.min(maxY,y));stage.style.transform=`translate(${x}px,${y}px) scale(${scale})`;toolbar.querySelector('output').textContent=Math.round(scale*100)+'%';toolbar.querySelector('[data-zoom=in]').disabled=scale>=2.5;toolbar.querySelector('[data-zoom=out]').disabled=scale<=.8;});}
+  function apply(){if(frame)return;frame=requestAnimationFrame(()=>{frame=0;const maxX=stage.clientWidth*Math.max(.25,scale-.65)/2,maxY=stage.clientHeight*Math.max(.25,scale-.65)/2;x=Math.max(-maxX,Math.min(maxX,x));y=Math.max(-maxY,Math.min(maxY,y));stage.style.transform=`translate(${x}px,${y}px) scale(${scale})`;stage.style.setProperty('--map-scale',scale);toolbar.querySelector('output').textContent=Math.round(scale*100)+'%';toolbar.querySelector('[data-zoom=in]').disabled=scale>=2.5;toolbar.querySelector('[data-zoom=out]').disabled=scale<=.8;});}
   function zoom(value){scale=Math.max(.8,Math.min(2.5,value));apply();}
   toolbar.querySelector('[data-zoom=in]').onclick=()=>zoom(scale+.2);
   toolbar.querySelector('[data-zoom=out]').onclick=()=>zoom(scale-.2);

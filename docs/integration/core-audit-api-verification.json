@@ -1,0 +1,287 @@
+{
+  "version": "1.7.0",
+  "https_final_index_and_bundle_hashes": true,
+  "precise_scene_models_available": {
+    "daimiao": false,
+    "caishixi": false,
+    "houshiwu": false
+  },
+  "poetry": [
+    {
+      "id": "wangyue",
+      "timing": "provider_word_boundary",
+      "cues": [
+        {
+          "line": 0,
+          "start": 0.105541,
+          "end": 3.388874
+        },
+        {
+          "line": 1,
+          "start": 4.027791,
+          "end": 6.791666
+        },
+        {
+          "line": 2,
+          "start": 7.430541,
+          "end": 10.277791
+        },
+        {
+          "line": 3,
+          "start": 10.916666,
+          "end": 13.569416
+        }
+      ],
+      "bytes": 85248,
+      "seconds": 3.63
+    },
+    {
+      "id": "libai-1",
+      "timing": "provider_word_boundary",
+      "cues": [
+        {
+          "line": 0,
+          "start": 0.105541,
+          "end": 2.869416
+        },
+        {
+          "line": 1,
+          "start": 3.5,
+          "end": 6.083333
+        },
+        {
+          "line": 2,
+          "start": 6.708333,
+          "end": 9.361125
+        },
+        {
+          "line": 3,
+          "start": 9.986125,
+          "end": 12.736124
+        },
+        {
+          "line": 4,
+          "start": 13.361125,
+          "end": 16.111125
+        },
+        {
+          "line": 5,
+          "start": 16.722208,
+          "end": 19.458333
+        },
+        {
+          "line": 6,
+          "start": 20.097208,
+          "end": 22.708333
+        },
+        {
+          "line": 7,
+          "start": 23.347208,
+          "end": 25.972249
+        },
+        {
+          "line": 8,
+          "start": 26.597208,
+          "end": 29.166666
+        },
+        {
+          "line": 9,
+          "start": 29.805541,
+          "end": 32.430541
+        },
+        {
+          "line": 10,
+          "start": 33.055541,
+          "end": 35.944458
+        },
+        {
+          "line": 11,
+          "start": 36.569458,
+          "end": 39.194416
+        }
+      ],
+      "bytes": 238896,
+      "seconds": 19.69
+    },
+    {
+      "id": "libai-2",
+      "timing": "provider_word_boundary",
+      "cues": [
+        {
+          "line": 0,
+          "start": 0.105541,
+          "end": 2.841666
+        },
+        {
+          "line": 1,
+          "start": 3.472208,
+          "end": 6.25
+        },
+        {
+          "line": 2,
+          "start": 6.875,
+          "end": 9.486083
+        },
+        {
+          "line": 3,
+          "start": 10.125,
+          "end": 12.694458
+        },
+        {
+          "line": 4,
+          "start": 13.319458,
+          "end": 15.916666
+        },
+        {
+          "line": 5,
+          "start": 16.541666,
+          "end": 19.291666
+        }
+      ],
+      "bytes": 119664,
+      "seconds": 7.08
+    }
+  ],
+  "persisted_workflow": {
+    "chapters": 5,
+    "visited": 5,
+    "favorites": 2,
+    "requires_reading": true,
+    "wrong_answer_does_not_complete": true
+  },
+  "answers": [
+    {
+      "question": {
+        "message": "这首诗中的羽人和鸟迹书是什么意思？",
+        "current_poem": "libai-2"
+      },
+      "seconds": 14.68,
+      "answer": "清晓骑白鹿，直上天门山。\n山际逢羽人，方瞳好容颜。\n扪萝欲就语，却掩青云关。\n遗我鸟迹书，飘然落岩间。\n其字乃上古，读之了不闲。\n感此三叹息，从师方未还。\n白鹿、羽人、青云关与鸟迹书构成游仙叙事。诗中想要接近羽人，却未能读懂古文字，留下向往与求索的意味。这是文学中的神仙想象，不表示现实游览可以骑白鹿登山。\n清晓骑白鹿，直上天门山。 清晓是清晨。白鹿是游仙意象，不能据此编造现实登山交通方式。\n山际逢羽人，方瞳好容颜。 羽人指仙人；方瞳是诗中描述仙人外貌的想象。\n扪萝欲就语，却掩青云关。 扪是攀援，萝指藤萝；试图走近交谈却被隔开，写出求索中的距离。\n其字乃上古，读之了不闲。 闲在此读作熟习之意；诗人说自己并不熟悉那种文字，而非已经获得真实古文字知识。 [1]",
+      "sources": [
+        {
+          "id": "libai-2",
+          "title": "李白《游泰山》其二 公版原文",
+          "url": "https://zh.wikisource.org/w/index.php?title=遊泰山_(清曉騎白鹿)&oldid=483278",
+          "publisher": "维基文库 · 古典作品转录",
+          "verified_at": "2026-10-14",
+          "verification": "已核对公开原文；公版古诗，简体转写；注释为本项目原创释读，待专家复核"
+        }
+      ],
+      "provider": null,
+      "mode": "local_knowledge_fallback",
+      "tool_calls": [
+        "get_poem_info"
+      ]
+    },
+    {
+      "question": {
+        "message": "这条路线有哪些主要站点和交通方式？",
+        "current_route": "tianwai"
+      },
+      "seconds": 3.57,
+      "answer": "这条是天外村游览线哦，首先可以乘景区交通车到中天门[1]。\n之后有两种选择：要是想体验登山，就走徒步线，途经五大夫松、十八盘，到南天门、天街、碧霞祠，最后到玉皇顶[1]；想省力气的话，可以在中天门换乘索道直达南天门，之后步行逛天街、碧霞祠、玉皇顶，这条线不会经过十八盘哦[1]。出行前可以留意景区官方最新公告哦~",
+      "sources": [
+        {
+          "id": "routes",
+          "title": "第一次来泰山 可以推荐一下游览线路吗",
+          "publisher": "泰安市文化和旅游局",
+          "url": "https://whlyj.taian.gov.cn/art/2026/4/13/art_366342_10312047.html",
+          "verified_at": "2026-10-14",
+          "verification": "官方检索摘要核对；不沿用实时票价和开放状态"
+        }
+      ],
+      "provider": "coze",
+      "mode": "rag_llm",
+      "tool_calls": [
+        "get_route_info"
+      ]
+    }
+  ],
+  "vision": {
+    "status": "needs_confirmation",
+    "model_version": "deepseek-v4.1-flash · 云端图像理解",
+    "message": "云端模型已给出可能的景点，请对照实景图与画面依据人工确认。候选不代表识别准确率。",
+    "candidates": [
+      {
+        "spot_id": "jingshi",
+        "name": "经石峪",
+        "reason": "大面积倾斜石坪上分布摩崖刻字，符合经石峪摩崖刻经石面特征"
+      }
+    ],
+    "user_confirmation_test": true
+  },
+  "api_test_session": "isolated anonymous QA session; no user data cleared",
+  "final_release": {
+    "version": "1.7.0",
+    "final_index_and_main_bundle_sha256": "matched",
+    "poetry_focused_query": {
+      "answer": "诗里的“羽人”指的是仙人[1]，“方瞳”是诗中对仙人外貌的奇幻想象哦。\n“鸟迹书”是外形古奥、像鸟爪痕迹一样的文字，是诗里写羽人赠送给诗人的，从空中飘然落到山岩之间，充满了游仙的奇幻色彩[2]。\n李白游泰山时笔下满是仙意，是不是特别有浪漫感呀？",
+      "mode": "rag_llm",
+      "provider": "coze",
+      "sources": [
+        {
+          "id": "libai-2",
+          "title": "李白《游泰山》其二 公版原文",
+          "url": "https://zh.wikisource.org/w/index.php?title=遊泰山_(清曉騎白鹿)&oldid=483278",
+          "publisher": "维基文库 · 古典作品转录",
+          "verified_at": "2026-10-14",
+          "verification": "已核对公开原文；公版古诗，简体转写；注释为本项目原创释读，待专家复核"
+        }
+      ],
+      "citations": [
+        {
+          "number": 1,
+          "title": "游泰山·其二 · 山际逢羽人，方瞳好容颜。",
+          "sources": [
+            {
+              "id": "libai-2",
+              "title": "李白《游泰山》其二 公版原文",
+              "url": "https://zh.wikisource.org/w/index.php?title=遊泰山_(清曉騎白鹿)&oldid=483278",
+              "publisher": "维基文库 · 古典作品转录",
+              "verified_at": "2026-10-14",
+              "verification": "已核对公开原文；公版古诗，简体转写；注释为本项目原创释读，待专家复核"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "title": "游泰山·其二 · 遗我鸟迹书，飘然落岩间。",
+          "sources": [
+            {
+              "id": "libai-2",
+              "title": "李白《游泰山》其二 公版原文",
+              "url": "https://zh.wikisource.org/w/index.php?title=遊泰山_(清曉騎白鹿)&oldid=483278",
+              "publisher": "维基文库 · 古典作品转录",
+              "verified_at": "2026-10-14",
+              "verification": "已核对公开原文；公版古诗，简体转写；注释为本项目原创释读，待专家复核"
+            }
+          ]
+        }
+      ],
+      "retrieved": [
+        {
+          "id": "poem-line-libai-2-0",
+          "title": "游泰山·其二 · 山际逢羽人，方瞳好容颜。",
+          "relevance": 1
+        },
+        {
+          "id": "poem-line-libai-2-1",
+          "title": "游泰山·其二 · 遗我鸟迹书，飘然落岩间。",
+          "relevance": 1
+        }
+      ]
+    },
+    "seconds": 5.5,
+    "audio_cache_survives_restart": true
+  },
+  "source_asset_audit": {
+    "图片资产": {
+      "pngs": 57,
+      "manifest_matches": 57
+    },
+    "图片资产解压": {
+      "pngs": 57,
+      "manifest_matches": 57
+    }
+  }
+}

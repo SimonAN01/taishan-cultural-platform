@@ -43,7 +43,7 @@ app.innerHTML = `
   </div></div>
   <div class="paper-shade" aria-hidden="true"></div>
   <header class="topbar"><div class="brand-cluster"><a href="#journey" class="tiny-brand" aria-label="回到泰山全景"><span class="seal">岱</span>山河未改 · 来者不同</a><button class="welcome-return" id="welcome-return" type="button" title="返回欢迎页"><span aria-hidden="true">↶</span>返回卷首</button></div>
-   <nav aria-label="探索内容"><button data-explore="overview" class="current">山水</button><span>／</span><button data-explore="culture">历史</button><span>／</span><button data-explore="poem">诗词</button><span>／</span><button data-explore="travel">路线</button><span>／</span><button data-explore="guide">问山</button><span>／</span><button data-explore="scenes">山境</button><span>／</span><button data-explore="art">图集</button><span>／</span><button data-explore="vision">识景</button></nav>
+   <nav aria-label="探索内容"><button data-explore="overview" class="current">山水</button><span>／</span><button data-explore="culture">历史</button><span>／</span><button data-explore="poem">诗词</button><span>／</span><button data-explore="travel">路线</button><span>／</span><button data-explore="guide">问山</button><span>／</span><button data-explore="trail">足迹</button><span>／</span><button data-explore="scenes">山境</button><span>／</span><button data-explore="art">图集</button><span>／</span><button data-explore="vision">识景</button></nav>
    <div class="tools"><a class="full-system-link" href="/">完整导览 ↗</a><button id="motion" aria-pressed="false" title="简化动效">${icon('motion')}<span>动效</span></button><button id="fullscreen" title="切换全屏">${icon('fullscreen')}<span>全屏</span></button></div>
   </header>
   <div class="side-script" aria-hidden="true">五岳之首 · 中华泰山<span class="small-seal">山河</span></div>
@@ -113,7 +113,7 @@ app.innerHTML = `
    <div class="guide-answer" id="guide-answer" aria-live="polite"><span class="guide-speaker">碧霞仙子</span><p></p><button class="guide-route-link" id="guide-route-link" hidden></button></div>
    <div class="guide-status" id="guide-status" role="status"><i></i><span>可以开始提问</span></div>
    <div id="guide-sources" class="guide-sources"></div><div class="guide-questions" id="guide-questions" aria-label="推荐问题"></div>
-   <form class="guide-form" id="guide-form"><label for="guide-input">还想知道什么？</label><div><input id="guide-input" maxlength="800" autocomplete="off" placeholder="例如：第一次登泰山走哪条路？"><button type="submit">请讲解</button></div></form>
+   <form class="guide-form" id="guide-form"><label for="guide-input">还想知道什么？</label><div><input id="guide-input" required maxlength="800" autocomplete="off" placeholder="例如：第一次登泰山走哪条路？"><button type="submit" disabled>请讲解</button></div></form>
    <div class="guide-voice-input" id="guide-voice-input"></div><div class="guide-request-controls"><button id="guide-cancel" hidden>停止等待</button><button id="guide-retry" hidden>重试上个问题</button><button id="guide-clear">清空对话</button></div><details class="guide-transcript"><summary>本次会话记录</summary><div class="guide-transcript-log" id="guide-transcript-log"><p>尚无提问。</p></div></details><div class="guide-controls"><button id="guide-replay">◉ 再听一遍</button><button id="guide-stop">□ 停止朗读</button><span id="guide-voice-label">云端 TTS：晓晓 · 实际音频驱动口型</span></div>
   </div></div>
  </section>
@@ -179,6 +179,7 @@ let guideAvatar;
 let guideAvatarPromise;
 let guidePreviousFocus;
 let guideSceneReturn = null;
+let guideTopic = {};
 let guideContextId = null;
 let guideLastAnswer = '';
 let guideController;
@@ -780,6 +781,7 @@ document.querySelectorAll('[data-explore]').forEach(b => b.onclick = () => {
   const action = b.dataset.explore;
   if (action === 'overview') reset();
   if (action === 'art') openArtGallery(showDialog,focusPlace,{scenes:catalog?.scenes||[],openScene:id=>{closeDialog();culturalPages.open('scene',id);}});
+  if (action === 'trail') culturalPages.open('trail');
   if (action === 'scenes') culturalPages.open('scenes');
   if (action === 'poem') culturalPages.open('poetry');
   if (action === 'travel') culturalPages.open('routes');
@@ -811,7 +813,7 @@ async function speakGuide(text) {
 }
 
 function renderGuideQuestions() {
-  guideQuestions.innerHTML = getGuideQuestions(guideContextId,catalog?.spots.find(s=>s.id===guideContextId)).map(question => `<button type="button">${question}<span>↗</span></button>`).join('');
+  guideQuestions.innerHTML = (guideTopic.poem?[(catalog?.poems.find(p=>p.id===guideTopic.poem)?.question||'请讲解这首诗'),'这首诗表达了怎样的感情？','这首诗与泰山有什么联系？']:guideTopic.route?[`${catalog?.routes.find(r=>r.id===guideTopic.route)?.name}有哪些主要节点？`,'这条路线有哪些文化故事？','这条路线有什么交通方式？']:getGuideQuestions(guideContextId,catalog?.spots.find(s=>s.id===guideContextId))).map(question => `<button type="button">${question}<span>↗</span></button>`).join('');
   guideQuestions.querySelectorAll('button').forEach(button => button.addEventListener('click', () => askGuide(button.textContent.replace('↗', '').trim())));
 }
 
@@ -869,7 +871,7 @@ async function askGuide(question) {
   guideAvatar?.setThinking(true);
   setGuideStatus('正在检索资料并请求模型', 'thinking');
   try {
-    const reply = await askApi(question, guideContextId, catalog?.spots.find(s=>s.id===guideContextId)?.name || places[guideContextId]?.name, controller.signal);
+    const reply = await askApi(question, guideContextId, catalog?.spots.find(s=>s.id===guideContextId)?.name || places[guideContextId]?.name, controller.signal, guideTopic);
     if (request !== guideRequest || !guideScene.classList.contains('is-open')) return;
     guideAvatar?.setThinking(false);
     showGuideAnswer(reply, false);
@@ -885,7 +887,7 @@ async function askGuide(question) {
     setGuideStatus('请求未完成，可重试或打开完整导览', 'ready');
   } finally {
     clearTimeout(timeout);
-    if (request === guideRequest) { guideBusy = false; submit.disabled = false; guideController = null; document.querySelector('#guide-cancel').hidden=true; document.querySelector('#guide-clear').disabled=false; }
+    if (request === guideRequest) { guideBusy = false; updateGuideSubmit(); guideController = null; document.querySelector('#guide-cancel').hidden=true; document.querySelector('#guide-clear').disabled=false; }
   }
 }
 
@@ -929,15 +931,20 @@ document.querySelector('#guide-model-retry').onclick = () => {
   ensureGuideAvatar();
 };
 
-function openGuide(placeId = null, update = true) {
+function openGuide(placeId = null, update = true, context = {}) {
   if (guideScene.classList.contains('is-open')) return;
-  guideSceneReturn = location.hash.startsWith('#scene?') ? location.hash : null;
+  const returnState=readCultureLocation(location.hash);
+  guideSceneReturn = returnState&&!['map','agent'].includes(returnState.page) ? location.hash : null;
+  guideTopic=context;
+  document.querySelector('#guide-input').value='';updateGuideSubmit();
   closeDialog();
   guidePreviousFocus = document.activeElement;
   guideContextId = placeId === 'nantianmen' ? 'nantian' : placeId || null;
-  if(update){const hash=cultureHash('agent',{id:guideContextId});if(location.hash!==hash)history.pushState(null,'',hash);}
+  if(update){const hash=cultureHash('agent',{id:guideContextId,...guideTopic});if(location.hash!==hash)history.pushState(null,'',hash);}
   document.querySelector('#guide-context').textContent = guideContextId ? `正在讲解：${catalog?.spots.find(s=>s.id===guideContextId)?.name || places[guideContextId]?.name || '当前景点'} · 可继续追问此处故事与路线` : '正在从泰山全景为你讲解 · 可问路线、古迹、诗词与日出';
-  showGuideAnswer({ answer: getGuideGreeting(guideContextId,catalog?.spots.find(s=>s.id===guideContextId)) }, false);
+  const topic=guideTopic.poem?catalog?.poems.find(p=>p.id===guideTopic.poem):guideTopic.route?catalog?.routes.find(r=>r.id===guideTopic.route):null;
+  if(topic)document.querySelector('#guide-context').textContent='正在讲解：'+(topic.title||topic.name)+' · 提问会携带当前'+(guideTopic.poem?'诗词':'路线')+'上下文';
+  showGuideAnswer({ answer:topic?'我们接着读'+(topic.title||topic.name)+'。可以从推荐问题开始，或输入你的问题。':getGuideGreeting(guideContextId,catalog?.spots.find(s=>s.id===guideContextId)) }, false);
   renderGuideQuestions();
   loadGuideHistory();
   guideScene.inert = false;
@@ -956,7 +963,7 @@ function openGuide(placeId = null, update = true) {
 function closeGuide(update = true) {
   document.querySelector('#guide-cancel').hidden=true;document.querySelector('#guide-clear').disabled=false;
   guideRequest++; guideController?.abort(); guideController = null; guideBusy = false;
-  document.querySelector('#guide-form button').disabled = false;
+  updateGuideSubmit();
   stopGuideSpeech();
   voicePipeline?.stopListening();
   guideAvatar?.setActive(false);
@@ -971,12 +978,14 @@ function closeGuide(update = true) {
   visitScene.inert = !visitOpen;
   document.querySelector('.home').inert = visitOpen;
   guidePreviousFocus?.focus({ preventScroll: true });
-  if(returnScene)culturalPages.open('scene',returnScene.id,false);
+  if(returnScene)culturalPages.open(returnScene.page,returnScene.id,false);
 }
 
 document.querySelector('#guide-orb').addEventListener('click', () => openGuide());
 document.querySelector('#visit-guide').addEventListener('click', () => openGuide(visitPlaceId()));
 document.querySelector('#guide-close').addEventListener('click', () => closeGuide());
+function updateGuideSubmit(){document.querySelector('#guide-form button').disabled=guideBusy||!document.querySelector('#guide-input').value.trim();}
+document.querySelector('#guide-input').addEventListener('input',updateGuideSubmit);
 document.querySelector('#guide-form').addEventListener('submit', event => {
   event.preventDefault();
   askGuide(document.querySelector('#guide-input').value.trim());
@@ -986,7 +995,7 @@ document.querySelector('#guide-stop').addEventListener('click', stopGuideSpeech)
 document.querySelectorAll('[data-gesture]').forEach(button => button.addEventListener('click', () => guideAvatar?.gesture(button.dataset.gesture)));
 guideRouteLink.addEventListener('click', () => {
   const routeId = guideRouteLink.dataset.route;
-  closeGuide();
+  closeGuide(false);history.pushState(null,'','#map');
   if (visitScene.classList.contains('is-open')) returnPanorama();
   setMode('travel');
   selectRoute(routeId, true);
@@ -1152,6 +1161,7 @@ function syncOverlay() {
   if (!base?.mesh.visible) {
     const width = Math.max(stage.clientWidth, stage.clientHeight * 1672 / 941);
     overlay.style.transform = `translate(${(stage.clientWidth - width) / 2}px,${(stage.clientHeight - width * 941 / 1672) / 2}px) scale(${width / 1000})`;
+    overlay.style.setProperty('--overlay-scale',width/1000);
     return;
   }
   const b = base.mesh;
@@ -1161,6 +1171,7 @@ function syncOverlay() {
   const top = (1 - a.y) / 2 * stage.clientHeight;
   const width = (c.x - a.x) / 2 * stage.clientWidth;
   overlay.style.transform = `translate(${left}px,${top}px) scale(${width / 1000})`;
+  overlay.style.setProperty('--overlay-scale',width/1000);
 }
 
 function resize() {
@@ -1267,7 +1278,7 @@ if (innerWidth < 760) requestAnimationFrame(() => { const map = document.querySe
 document.addEventListener('visibilitychange', () => { last = performance.now(); });
 
 const culturalPages = createCulturalPages({getCatalog:()=>catalog,
-  onMap:()=>{}, onGuide:(id,update,question)=>{if(guideScene.classList.contains('is-open'))closeGuide(false);openGuide(id,update);if(question)document.querySelector('#guide-input').value=question;},
+  onMap:()=>{}, onGuide:(id,update,question,context={})=>{if(guideScene.classList.contains('is-open'))closeGuide(false);openGuide(id,update,context);if(question)document.querySelector('#guide-input').value=question;updateGuideSubmit();},
   onLeaveGuide:()=>{if(guideScene.classList.contains('is-open'))closeGuide(false);},
   onRoute:(id,variant)=>{routeVariants[id]=variant;setMode('travel');selectRoute(id,true);status('已标出路线示意；具体站点与交通方式请以路线详情为准。');},
   onScene:id=>{const local=id==='nantian'?'nantianmen':id;if(places[local])focusPlace(local);else{status('此景点尚无独立画境，已打开真实文化资料。');culturalPages.open('spot',id);}}
@@ -1276,7 +1287,7 @@ for(const route of routes)syncVerifiedRoute(route.id);
 panoramaControls=installPanoramaControls({stage,viewport:document.querySelector('.map-scroll'),places,catalog,openSpot:id=>culturalPages.open('spot',id)});
 document.querySelector('#visit-panel').addEventListener('click',e=>{const b=e.target.closest('[data-cultural-spot]');if(b){const id=b.dataset.culturalSpot;returnPanorama();culturalPages.open('spot',id);}});
 const initialPage=location.hash.slice(1).split('?')[0];
-if(['map','spot','routes','history','poetry','vision','agent','scenes','scene'].includes(initialPage)){
+if(['map','spot','routes','history','poetry','vision','agent','scenes','scene','trail','study'].includes(initialPage)){
   enterTaishan(true);
   if(initialPage!=='map')setTimeout(()=>culturalPages.open(initialPage,new URLSearchParams(location.hash.split('?')[1]).get('id'),false),0);
 }

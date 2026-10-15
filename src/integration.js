@@ -15,13 +15,15 @@ export async function requestApi(path, options = {}) {
   return result;
 }
 
-export function askApi(message, placeId, placeName, signal) {
+export function askApi(message, placeId, placeName, signal, context = {}) {
   const known = placeId && !unavailableSpots.has(placeId);
   return requestApi('agent/chat', {
     method: 'POST', signal,
     body: JSON.stringify({
       message: !known && placeName ? `${placeName}：${message}` : message,
       current_spot: known ? apiSpotId(placeId) : null,
+      ...(context.poem ? {current_poem:context.poem} : {}),
+      ...(context.route ? {current_route:context.route} : {}),
     }),
   });
 }

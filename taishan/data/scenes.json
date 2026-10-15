@@ -87,7 +87,8 @@
           "碑刻"
         ]
       }
-    ]
+    ],
+    "model_file": "models/scenes/daimiao.glb"
   },
   {
     "id": "caishixi",
@@ -180,7 +181,8 @@
           "生态"
         ]
       }
-    ]
+    ],
+    "model_file": "models/scenes/caishixi.glb"
   },
   {
     "id": "houshiwu",
@@ -272,6 +274,7 @@
           "史实"
         ]
       }
-    ]
+    ],
+    "model_file": "models/scenes/houshiwu.glb"
   }
 ]

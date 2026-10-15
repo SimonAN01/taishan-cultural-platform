@@ -29,6 +29,16 @@ class SystemTests(unittest.TestCase):
   self.assertTrue(self.client.get('/api/health').json()['immersive_available'])
   model=self.client.get('/experience/models/princess-agent.glb')
   self.assertEqual(model.content[:4],b'glTF')
+ def test_scene_artist_slots_only_enable_when_a_local_file_exists(self):
+  from backend import app as service
+  with tempfile.TemporaryDirectory() as tmp:
+   with patch.object(service,'IMMERSIVE_DIR',Path(tmp)):
+    scene=self.client.get('/api/scenes/daimiao').json();self.assertFalse(scene['model_available'])
+    self.assertEqual(scene['model_url'],'/experience/models/scenes/daimiao.glb')
+    model=Path(tmp)/'models/scenes/daimiao.glb';model.parent.mkdir(parents=True);model.write_bytes(b'glTF-test-slot')
+    self.assertTrue(self.client.get('/api/scenes/daimiao').json()['model_available'])
+    self.assertTrue(self.client.get('/api/catalog').json()['scenes'][0]['model_available'])
+
  def test_scene_reading_records_favorites_clear_and_other_sessions(self):
   scene=self.client.get('/api/scenes/daimiao').json()
   self.assertEqual(scene['progress'],{'viewed':[],'total':3});self.assertFalse(scene['saved'])
@@ -114,6 +124,35 @@ class SystemTests(unittest.TestCase):
   with patch.object(service,'AGENT_PROVIDER','coze'),patch.object(service,'COZE_ENABLED',True),patch.object(service,'run_coze',AsyncMock(return_value='无效引用[999]')):
    result=self.client.post('/api/agent/chat',json={'message':'封禅是什么'}).json()
    self.assertEqual(result['mode'],'local_knowledge_fallback');self.assertNotIn('[999]',result['answer'])
+ def test_poem_questions_use_new_notes_instead_of_stale_whole_poem(self):
+  from backend import app as service
+  with patch.object(service,'AGENT_PROVIDER','coze'),patch.object(service,'COZE_ENABLED',True),patch.object(service,'run_coze',AsyncMock(return_value='羽人是仙人形象。[1] 鸟迹书是诗中形容古奥文字的意象。[2]')) as generate:
+   r=self.client.post('/api/agent/chat',json={'message':'这首诗中的羽人和鸟迹书是什么意思？','current_poem':'libai-2'})
+   self.assertEqual(r.status_code,200);a=r.json();self.assertEqual(a['mode'],'rag_llm');self.assertEqual(len(a['citations']),2)
+   evidence=generate.call_args.args[2];self.assertIn('“鸟迹书”写外形古奥',evidence);self.assertNotIn('清晓骑白鹿，直上天门山。',evidence)
+
+ def test_poem_audio_is_cached_versioned_and_uses_actual_boundaries(self):
+  from backend import app as service
+  from backend.speech import line_cues
+  cues=line_cues(['岱宗夫如何？','齐鲁青未了。'],[
+   {'text':'岱宗','offset':1000000,'duration':2000000},
+   {'text':'夫如何','offset':3000000,'duration':5000000},
+   {'text':'齐鲁青未了','offset':9000000,'duration':7000000}])
+  self.assertEqual(cues,[{'line':0,'start':0.1,'end':0.8},{'line':1,'start':0.9,'end':1.6}])
+  with self.assertRaises(ValueError):line_cues(['山','水'],[{'text':'山','offset':0,'duration':10}])
+  self.assertEqual(self.client.get('/api/poems/wangyue/audio').status_code,404)
+  with patch.object(service,'synthesize_poem',AsyncMock(return_value=(b'ID3real-fixture',cues))) as generate:
+   a=self.client.post('/api/poems/wangyue/narration');self.assertEqual(a.status_code,200)
+   self.assertEqual(a.json()['timing'],'provider_word_boundary');self.assertEqual(a.json()['cues'],cues)
+   self.assertEqual(self.client.get(a.json()['audio_url']).content,b'ID3real-fixture')
+   self.assertEqual(self.client.get(a.json()['audio_url']+'x').status_code,404)
+   self.assertEqual(self.client.post('/api/poems/wangyue/narration').json(),a.json());self.assertEqual(generate.await_count,1)
+  self.assertEqual(self.client.post('/api/poems/missing/narration').status_code,404)
+  with patch.object(service,'synthesize_poem',AsyncMock(side_effect=RuntimeError('offline'))):
+   self.assertEqual(self.client.post('/api/poems/libai-1/narration').status_code,503)
+  for poem in CAT['poems']:
+   self.assertEqual([a['line'] for a in poem['annotations']],poem['original_text'].splitlines())
+
  def test_tts_audio_and_failure_contract(self):
   from backend import app as service
   with patch.object(service,'TTS_AVAILABLE',True),patch.object(service,'synthesize',AsyncMock(return_value=b'ID3test-audio')) as tts:
@@ -228,12 +267,14 @@ class SystemTests(unittest.TestCase):
    self.client.post('/api/agent/chat',json={'message':'南天门有什么故事','current_spot':'nantian'})
    result=self.client.post('/api/agent/chat',json={'message':'这首诗里的羽人是什么意思','current_poem':'libai-2'}).json()
    self.assertIn('get_poem_info',result['tool_calls'])
-   self.assertEqual(result['retrieved'][0]['id'],'k-poem-libai-2')
+   self.assertTrue(all('libai-2' in d['id'] for d in result['retrieved']))
    self.assertIn('羽人指仙人',result['answer'])
+   overview=self.client.post('/api/agent/chat',json={'message':'请介绍李白游泰山其一','current_poem':'libai-1'}).json()
+   self.assertEqual(overview['retrieved'][0]['id'],'k-poem-libai-1')
    other=self.client.post('/api/agent/chat',json={'message':'望岳写了什么','current_poem':'libai-2'}).json()
    self.assertIn('k-poem',[d['id'] for d in other['retrieved']])
    explicit=self.client.post('/api/agent/chat',json={'message':'李白游泰山其一的天门一长啸是什么意思','current_poem':'libai-2'}).json()
-   self.assertEqual(explicit['retrieved'][0]['id'],'k-poem-libai-1')
+   self.assertTrue(all('libai-1' in d['id'] for d in explicit['retrieved']))
    route=self.client.post('/api/agent/chat',json={'message':'这条路线怎么走','current_route':'taohua'}).json()
    self.assertIn('get_route_info',route['tool_calls']);self.assertEqual(route['retrieved'][0]['id'],'tool-route-taohua')
    self.assertEqual(self.client.post('/api/agent/chat',json={'message':'这首诗','current_poem':'missing'}).status_code,404)

@@ -50,3 +50,10 @@ test('proxy HTML errors become helpful upload, rate-limit and service messages',
     await assert.rejects(requestApi('catalog'),/响应异常/);
   }finally{globalThis.fetch=original;}
 });
+
+
+test('poetry and route guide calls retain explicit context without inventing a spot',async()=>{
+  const original=globalThis.fetch;const calls=[];
+  globalThis.fetch=async(url,options)=>{calls.push(JSON.parse(options.body));return {ok:true,json:async()=>({answer:'资料'})};};
+  try{await askApi('这首诗的羽人指什么？',null,null,undefined,{poem:'libai-2'});await askApi('这条路线有哪些节点？',null,null,undefined,{route:'tianwai'});assert.equal(calls[0].current_poem,'libai-2');assert.equal(calls[0].current_spot,null);assert.equal(calls[1].current_route,'tianwai');}finally{globalThis.fetch=original;}
+});
