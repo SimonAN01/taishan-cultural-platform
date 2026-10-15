@@ -1,9 +1,10 @@
 // User-triggered browser speech recognition -> same-origin API -> audio -> avatar.
-export function createVoicePipeline({host,input,onSubmit,getAvatar,onStatus,isOpen,isBusy}) {
+export function createVoicePipeline({host,input,onSubmit,getAvatar,waitForAvatar,onStatus,isOpen,isBusy}) {
   host.innerHTML=`<button type="button" id="guide-mic">语音提问</button><label><input type="checkbox" id="guide-autospeak" checked> 回答后自动朗读</label><p id="guide-mic-note"></p><button type="button" id="guide-device-voice" hidden>改用设备朗读</button>`;
   const mic=host.querySelector('#guide-mic'),note=host.querySelector('#guide-mic-note'),auto=host.querySelector('#guide-autospeak'),device=host.querySelector('#guide-device-voice');
   const Recognition=window.SpeechRecognition||window.webkitSpeechRecognition;
   let recognition=null, audio=null, audioUrl=null, controller=null, context=null, analyser=null, audioNode=null, frequency=null, animation=0, revision=0, recognitionRevision=0,lastText='',speaking=false;
+  let cachedText='', cachedBlob=null;
   if(!window.isSecureContext){mic.disabled=true;note.textContent='当前 HTTP 地址无法启用麦克风，请使用 HTTPS 语音入口；文字提问和朗读仍可使用。';if(location.hostname==='118.89.176.236'){const a=document.createElement('a');a.href='https://118.89.176.236/experience/#agent';a.textContent=' 前往 HTTPS 语音入口 →';note.append(a);}}
   else if(!Recognition){mic.disabled=true;note.textContent='此浏览器未提供语音识别，请使用支持该功能的浏览器，或输入文字提问。';}
   else note.textContent='点击后授权麦克风，语音将由浏览器的语音服务转成文字。';
@@ -19,15 +20,26 @@ export function createVoicePipeline({host,input,onSubmit,getAvatar,onStatus,isOp
     stop();lastText=text;device.hidden=true;const token=revision;controller=new AbortController();const activeController=controller;const timeout=setTimeout(()=>activeController.abort(),35000);
     onStatus('正在合成晓晓语音','thinking');
     try{
-      const response=await fetch('/api/speech/tts',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:text.replace(/\[\d+\]/g,'').slice(0,1500)}),signal:activeController.signal});
-      if(!response.ok){const error=await response.json().catch(()=>({}));throw new Error(error.detail||'语音服务暂不可用');}
-      const blob=await response.blob();if(token!==revision||!isOpen())return;
+      let blob=cachedText===text?cachedBlob:null;
+      if(!blob){
+        const response=await fetch('/api/speech/tts',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:text.replace(/\[\d+\]/g,'').slice(0,1500)}),signal:activeController.signal});
+        if(!response.ok){const error=await response.json().catch(()=>({}));throw new Error(error.detail||'语音服务暂不可用');}
+        blob=await response.blob();if(token!==revision||!isOpen())return;
+        cachedText=text;cachedBlob=blob;
+      }
+      // Do not consume the first explanation while only the poster is visible.
+      clearTimeout(timeout);
+      let avatarReady=true;
+      if(waitForAvatar){onStatus('语音已就绪，正在等待三维形象','thinking');avatarReady=await waitForAvatar();}
+      if(token!==revision||!isOpen())return;
+      unlock();
+      if(context?.state==='suspended')await context.resume();
       audioUrl=URL.createObjectURL(blob);audio=new Audio(audioUrl);audio.preload='auto';audio.controls=true;audio.setAttribute('aria-label','碧霞仙子讲解音频');host.append(audio);const currentAudio=audio;
       // An AudioContext analyser measures the actual audio amplitude, not a timed mouth animation.
-      if(context){audioNode=context.createMediaElementSource(audio);analyser=context.createAnalyser();analyser.fftSize=256;frequency=new Uint8Array(analyser.fftSize);audioNode.connect(analyser);analyser.connect(context.destination);}
+      if(context?.state==='running'){audioNode=context.createMediaElementSource(audio);analyser=context.createAnalyser();analyser.fftSize=256;frequency=new Uint8Array(analyser.fftSize);audioNode.connect(analyser);analyser.connect(context.destination);}
       const finish=()=>{if(token!==revision)return;speaking=false;cancelAnimationFrame(animation);getAvatar()?.setAudioLevel?.(0);getAvatar()?.setSpeaking(false);onStatus('讲解完毕，可以继续提问','ready');};
-      currentAudio.onplaying=()=>{if(token!==revision)return;speaking=true;getAvatar()?.setSpeaking(true);onStatus('正在播放 TTS 讲解','speaking');meter();};
-      currentAudio.onpause=()=>{if(token!==revision)return;speaking=false;getAvatar()?.setAudioLevel?.(0);getAvatar()?.setSpeaking(false);if(!currentAudio.ended)onStatus('讲解已暂停，可在播放器继续','ready');};
+      currentAudio.onplaying=()=>{if(token!==revision)return;speaking=true;getAvatar()?.setSpeaking(true);onStatus(!avatarReady?'正在播放讲解 · 立绘模式暂无三维口型':analyser?'正在播放 TTS 讲解 · 音频驱动口型':'正在播放 TTS 讲解 · 当前设备无法分析口型','speaking');cancelAnimationFrame(animation);meter();};
+      currentAudio.onpause=()=>{if(token!==revision)return;speaking=false;cancelAnimationFrame(animation);getAvatar()?.setAudioLevel?.(0);getAvatar()?.setSpeaking(false);if(!currentAudio.ended)onStatus('讲解已暂停，可在播放器继续','ready');};
       currentAudio.onended=finish;
       currentAudio.onerror=()=>{finish();device.hidden=false;onStatus('音频未能播放，可重试或改用设备朗读','ready');};
       await currentAudio.play();

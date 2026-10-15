@@ -11,6 +11,14 @@ import { requestApi, askApi, recordVisit, apiSpotId, unavailableSpots, fullSite 
 const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let catalog = null;
 const catalogReady = requestApi('catalog').catch(() => null);
+// A direct guide visit should start its small model before hidden map imagery.
+if (location.hash.split('?')[0] === '#agent') {
+  const preload = document.createElement('link');
+  preload.rel = 'preload'; preload.as = 'fetch'; preload.crossOrigin = 'anonymous';
+  preload.href = import.meta.env.BASE_URL + 'models/princess-agent-web-v2.glb';
+  preload.fetchPriority = 'high'; document.head.append(preload);
+}
+
 
 
 const asset = id => artUrl(id === 'H-BG-01' ? 'map-cover' : id) || `${import.meta.env.BASE_URL}home-assets/${id}.webp`;
@@ -93,7 +101,7 @@ app.innerHTML = `
  <section class="guide-scene" id="guide-scene" aria-label="碧霞仙子数字导游" aria-hidden="true" inert>
   <div class="guide-visual">
    <div class="guide-mist" aria-hidden="true"></div>
-   <div class="guide-model" id="guide-model"><div class="guide-loading"><span></span><p>仙子正从云中来</p></div></div>
+   <div class="guide-model" id="guide-model"><div class="guide-loading" role="status"><span></span><p>正在加载三维形象…</p><button type="button" id="guide-model-retry" hidden>重新加载三维形象</button></div></div>
    <img class="guide-fallback" src="${import.meta.env.BASE_URL}home-assets/bixia-guide.png" alt="碧霞仙子数字导游立绘">
    <div class="guide-identity"><small>DIGITAL GUIDE · TAISHAN</small><h2>碧霞仙子</h2><p>以山中故事，为你引路。</p></div>
     <div class="guide-gestures" aria-label="数字人动作"><button data-gesture="nod" disabled>点头</button><button data-gesture="bow" disabled>作揖</button><button data-gesture="look" disabled>远望</button><span class="guide-rotate-hint">按住人物拖动旋转</span></div>
@@ -232,7 +240,7 @@ function transportMark(segment) {
 paths.innerHTML = routes.map(route => `<g class="route-path" data-path="${route.id}" style="--route-color:${route.color}">${route.segments.map(segment => `<path class="route-under" d="${curve(segment.points)}"/><path class="route-stroke ${segment.type}" d="${curve(segment.points)}"/><path class="route-hit" data-select="${route.id}" d="${curve(segment.points)}"/>${transportMark(segment)}`).join('')}</g>`).join('') + `<g class="summit-path">${summitPaths.map(p => `<path class="route-under" d="${curve(p)}"/><path class="route-stroke" d="${curve(p)}"/>`).join('')}</g>`;
 
 nodeWrap.innerHTML = Object.entries(places).map(([id, p]) => `<button class="landmark level-${p.level} ${p.labelSide === 'left' ? 'label-left' : ''} ${p.immersive ? 'immersive' : ''}" data-place="${id}" style="left:${p.x * 10}px;top:${p.y * 5.625}px" aria-label="探索${p.name}" ${p.immersive ? `title="点击进入${p.name}近景"` : ''}><i></i><span>${p.name}</span>${id === 'yuhuang' ? '<small>极顶</small>' : ''}</button>`).join('');
-iconWrap.innerHTML = Object.entries(places).filter(([, p]) => p.mapIcon).map(([id, p]) => `<img class="landmark-icon" data-icon-place="${id}" src="${asset(p.mapIcon.asset)}" alt="" style="left:${p.x * 10}px;top:${p.y * 5.625}px;width:${p.mapIcon.width}px">`).join('');
+iconWrap.innerHTML = Object.entries(places).filter(([, p]) => p.mapIcon).map(([id, p]) => `<img loading="lazy" class="landmark-icon" data-icon-place="${id}" src="${asset(p.mapIcon.asset)}" alt="" style="left:${p.x * 10}px;top:${p.y * 5.625}px;width:${p.mapIcon.width}px">`).join('');
 
 function showSpotlight(id, locked = false) {
   const p = places[id];
@@ -880,29 +888,44 @@ async function askGuide(question) {
 }
 
 async function ensureGuideAvatar() {
-  if (guideAvatar || simple) return;
-  if (!guideAvatarPromise) {
-    guideAvatarPromise = import('./digital-human.js').then(({ createDigitalHuman }) => {
-      guideAvatar = createDigitalHuman(guideModel, {
-        onReady: ({ animations }) => {
-          for (const button of document.querySelectorAll('[data-gesture]')) button.disabled = !animations.includes({nod:'Nod',bow:'Bow',look:'LookAround'}[button.dataset.gesture]);
-          guideScene.classList.add('is-model-ready');
-          guideScene.classList.remove('use-fallback');
-          guideAvatar?.setActive(guideScene.classList.contains('is-open'));
-        },
-        onError: () => {
-          guideScene.classList.add('use-fallback');
-          setGuideStatus('已切换为轻量形象，讲解功能可继续使用', 'ready');
-        },
-      });
-      return guideAvatar;
-    }).catch(() => {
-      guideScene.classList.add('use-fallback');
-      setGuideStatus('已切换为轻量形象，讲解功能可继续使用', 'ready');
+  if (guideAvatarPromise) return guideAvatarPromise;
+  const loading = guideModel.querySelector('.guide-loading');
+  const label = loading.querySelector('p');
+  const retry = loading.querySelector('button');
+  retry.hidden = true;
+  loading.classList.remove('is-error');
+  label.textContent = '正在加载三维形象…';
+  const failed = () => {
+    guideScene.classList.remove('is-model-ready');
+    guideScene.classList.add('use-fallback');
+    loading.classList.add('is-error');
+    label.textContent = '三维形象未载入，暂用立绘；语音仍可播放';
+    retry.hidden = false;
+    for (const button of document.querySelectorAll('[data-gesture]')) button.disabled = true;
+  };
+  guideAvatarPromise = import('./digital-human.js').then(async ({ createDigitalHuman }) => {
+    guideAvatar = createDigitalHuman(guideModel, {
+      reducedMotion: simple,
+      onProgress: percent => { label.textContent = percent === null ? '正在下载三维形象…' : percent < 100 ? `正在下载三维形象 ${percent}%` : '正在准备动作与表情…'; },
+      onReady: ({ animations }) => {
+        for (const button of document.querySelectorAll('[data-gesture]')) button.disabled = !animations.includes({nod:'Nod',bow:'Bow',look:'LookAround'}[button.dataset.gesture]);
+        guideScene.classList.add('is-model-ready');
+        guideScene.classList.remove('use-fallback');
+      },
+      onError: failed,
     });
-  }
-  await guideAvatarPromise;
+    guideAvatar.setActive(guideScene.classList.contains('is-open'));
+    return guideAvatar.ready;
+  }).catch(() => { failed(); return false; });
+  return guideAvatarPromise;
 }
+document.querySelector('#guide-model-retry').onclick = () => {
+  guideAvatar?.destroy();
+  guideAvatar = null;
+  guideAvatarPromise = null;
+  guideScene.classList.remove('use-fallback', 'is-model-ready');
+  ensureGuideAvatar();
+};
 
 function openGuide(placeId = null) {
   if (guideScene.classList.contains('is-open')) return;
@@ -918,13 +941,12 @@ function openGuide(placeId = null) {
   document.querySelector('.home').inert = true;
   if (visitScene.classList.contains('is-open')) visitScene.inert = true;
   document.body.classList.add('is-guiding');
-  guideScene.classList.toggle('use-fallback', simple);
   requestAnimationFrame(() => {
     guideScene.classList.add('is-open');
     document.querySelector('#guide-close').focus({ preventScroll: true });
     // Microphone and audio start only after an explicit user action.
   });
-  ensureGuideAvatar().then(() => guideAvatar?.setActive(true));
+  ensureGuideAvatar().then(() => guideAvatar?.setActive(guideScene.classList.contains('is-open')));
 }
 
 function closeGuide() {
@@ -980,9 +1002,8 @@ function setMotion(value) {
   button.querySelector('span').textContent = simple ? '静态' : '动效';
   if (simple) targetMouse = { x: 0, y: 0 };
   if (guideScene.classList.contains('is-open')) {
-    guideScene.classList.toggle('use-fallback', simple);
-    guideAvatar?.setActive(!simple);
-    if (!simple) ensureGuideAvatar().then(() => guideAvatar?.setActive(true));
+    guideAvatar?.setReducedMotion?.(simple);
+    ensureGuideAvatar();
   }
 }
 
@@ -1188,6 +1209,7 @@ try {
   resize();
 
   function frame(now) {
+    if (document.body.classList.contains('is-guiding')) { last = now; raf = requestAnimationFrame(frame); return; }
     const dt = Math.min(.06, (now - last) / 1000);
     last = now;
     const damping = 1 - Math.exp(-dt * 3);
@@ -1271,4 +1293,4 @@ catalogReady.then(data=>{
   routeState();
 });
 
-voicePipeline=createVoicePipeline({host:document.querySelector('#guide-voice-input'),input:document.querySelector('#guide-input'),onSubmit:question=>askGuide(question),getAvatar:()=>guideAvatar,onStatus:setGuideStatus,isOpen:()=>guideScene.classList.contains('is-open'),isBusy:()=>guideBusy});
+voicePipeline=createVoicePipeline({host:document.querySelector('#guide-voice-input'),input:document.querySelector('#guide-input'),onSubmit:question=>askGuide(question),getAvatar:()=>guideAvatar,waitForAvatar:ensureGuideAvatar,onStatus:setGuideStatus,isOpen:()=>guideScene.classList.contains('is-open'),isBusy:()=>guideBusy});

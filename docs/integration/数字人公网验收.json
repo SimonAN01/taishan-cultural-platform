@@ -1,0 +1,47 @@
+{
+  "version": "1.4.1",
+  "files_verified": 29,
+  "checks": {
+    "/experience/": {
+      "status": 200,
+      "bytes": 1553,
+      "seconds": 0.044
+    },
+    "/api/health": {
+      "status": 200,
+      "bytes": 541,
+      "seconds": 0.024,
+      "provider": "coze",
+      "tts_available": true
+    },
+    "/experience/models/princess-agent-web-v2.glb": {
+      "status": 200,
+      "bytes": 1005188,
+      "seconds": 2.467,
+      "cache_control": "public, max-age=31536000, immutable"
+    }
+  },
+  "client_observations": {
+    "old_model_bytes": 10677568,
+    "old_model_download_seconds": 29.767404,
+    "new_model_bytes": 1005188,
+    "new_model_download_seconds": 2.408173,
+    "first_model_ready_ms": 3806,
+    "cached_model_ready_ms": 128,
+    "during_playback": {
+      "current_time_seconds": 0.384831,
+      "duration_seconds": 15.72,
+      "paused": false,
+      "model_ready": true,
+      "jaw_open": 1.0
+    },
+    "stage_scroll_after_gestures": 0,
+    "mobile_viewport": [
+      390,
+      844
+    ],
+    "mobile_horizontal_overflow": false,
+    "browser_errors_or_warnings": [],
+    "microphone_hardware_tested": false
+  }
+}
