@@ -4,7 +4,7 @@ import { places, routes, summitPaths, source } from './home-data.js';
 import { getGuideGreeting, getGuideQuestions } from './guide-data.js';
 import './home.css';
 import { createCulturalPages } from './cultural-pages.js';
-import { cultureHash } from './culture-location.js';
+import { cultureHash, readCultureLocation } from './culture-location.js';
 import { installPanoramaControls } from './panorama-controls.js';
 import { createVoicePipeline } from './voice-pipeline.js';
 import {images as artImages, imageById, artUrl, openArtGallery} from './art-gallery.js';
@@ -43,7 +43,7 @@ app.innerHTML = `
   </div></div>
   <div class="paper-shade" aria-hidden="true"></div>
   <header class="topbar"><div class="brand-cluster"><a href="#journey" class="tiny-brand" aria-label="回到泰山全景"><span class="seal">岱</span>山河未改 · 来者不同</a><button class="welcome-return" id="welcome-return" type="button" title="返回欢迎页"><span aria-hidden="true">↶</span>返回卷首</button></div>
-   <nav aria-label="探索内容"><button data-explore="overview" class="current">山水</button><span>／</span><button data-explore="culture">历史</button><span>／</span><button data-explore="poem">诗词</button><span>／</span><button data-explore="travel">路线</button><span>／</span><button data-explore="guide">问山</button><span>／</span><button data-explore="art">图集</button><span>／</span><button data-explore="vision">识景</button></nav>
+   <nav aria-label="探索内容"><button data-explore="overview" class="current">山水</button><span>／</span><button data-explore="culture">历史</button><span>／</span><button data-explore="poem">诗词</button><span>／</span><button data-explore="travel">路线</button><span>／</span><button data-explore="guide">问山</button><span>／</span><button data-explore="scenes">山境</button><span>／</span><button data-explore="art">图集</button><span>／</span><button data-explore="vision">识景</button></nav>
    <div class="tools"><a class="full-system-link" href="/">完整导览 ↗</a><button id="motion" aria-pressed="false" title="简化动效">${icon('motion')}<span>动效</span></button><button id="fullscreen" title="切换全屏">${icon('fullscreen')}<span>全屏</span></button></div>
   </header>
   <div class="side-script" aria-hidden="true">五岳之首 · 中华泰山<span class="small-seal">山河</span></div>
@@ -178,6 +178,7 @@ let visitCopy = {};
 let guideAvatar;
 let guideAvatarPromise;
 let guidePreviousFocus;
+let guideSceneReturn = null;
 let guideContextId = null;
 let guideLastAnswer = '';
 let guideController;
@@ -778,7 +779,8 @@ modeConfirm.querySelector('.mode-confirm-wash').onclick = () => closeModeConfirm
 document.querySelectorAll('[data-explore]').forEach(b => b.onclick = () => {
   const action = b.dataset.explore;
   if (action === 'overview') reset();
-  if (action === 'art') openArtGallery(showDialog,focusPlace);
+  if (action === 'art') openArtGallery(showDialog,focusPlace,{scenes:catalog?.scenes||[],openScene:id=>{closeDialog();culturalPages.open('scene',id);}});
+  if (action === 'scenes') culturalPages.open('scenes');
   if (action === 'poem') culturalPages.open('poetry');
   if (action === 'travel') culturalPages.open('routes');
   if (action === 'culture') culturalPages.open('history');
@@ -929,6 +931,7 @@ document.querySelector('#guide-model-retry').onclick = () => {
 
 function openGuide(placeId = null, update = true) {
   if (guideScene.classList.contains('is-open')) return;
+  guideSceneReturn = location.hash.startsWith('#scene?') ? location.hash : null;
   closeDialog();
   guidePreviousFocus = document.activeElement;
   guideContextId = placeId === 'nantianmen' ? 'nantian' : placeId || null;
@@ -958,7 +961,9 @@ function closeGuide(update = true) {
   voicePipeline?.stopListening();
   guideAvatar?.setActive(false);
   guideScene.classList.remove('is-open');
-  if(update&&location.hash.split('?')[0]==='#agent')history.pushState(null,'','#map');
+  const returnScene = update && guideSceneReturn ? readCultureLocation(guideSceneReturn) : null;
+  if(update&&location.hash.split('?')[0]==='#agent')history.pushState(null,'',returnScene ? guideSceneReturn : '#map');
+  guideSceneReturn = null;
   guideScene.inert = true;
   guideScene.setAttribute('aria-hidden', 'true');
   document.body.classList.remove('is-guiding');
@@ -966,6 +971,7 @@ function closeGuide(update = true) {
   visitScene.inert = !visitOpen;
   document.querySelector('.home').inert = visitOpen;
   guidePreviousFocus?.focus({ preventScroll: true });
+  if(returnScene)culturalPages.open('scene',returnScene.id,false);
 }
 
 document.querySelector('#guide-orb').addEventListener('click', () => openGuide());
@@ -1261,7 +1267,7 @@ if (innerWidth < 760) requestAnimationFrame(() => { const map = document.querySe
 document.addEventListener('visibilitychange', () => { last = performance.now(); });
 
 const culturalPages = createCulturalPages({getCatalog:()=>catalog,
-  onMap:()=>{}, onGuide:(id,update)=>{if(guideScene.classList.contains('is-open'))closeGuide(false);openGuide(id,update);},
+  onMap:()=>{}, onGuide:(id,update,question)=>{if(guideScene.classList.contains('is-open'))closeGuide(false);openGuide(id,update);if(question)document.querySelector('#guide-input').value=question;},
   onLeaveGuide:()=>{if(guideScene.classList.contains('is-open'))closeGuide(false);},
   onRoute:(id,variant)=>{routeVariants[id]=variant;setMode('travel');selectRoute(id,true);status('已标出路线示意；具体站点与交通方式请以路线详情为准。');},
   onScene:id=>{const local=id==='nantian'?'nantianmen':id;if(places[local])focusPlace(local);else{status('此景点尚无独立画境，已打开真实文化资料。');culturalPages.open('spot',id);}}
@@ -1270,7 +1276,7 @@ for(const route of routes)syncVerifiedRoute(route.id);
 panoramaControls=installPanoramaControls({stage,viewport:document.querySelector('.map-scroll'),places,catalog,openSpot:id=>culturalPages.open('spot',id)});
 document.querySelector('#visit-panel').addEventListener('click',e=>{const b=e.target.closest('[data-cultural-spot]');if(b){const id=b.dataset.culturalSpot;returnPanorama();culturalPages.open('spot',id);}});
 const initialPage=location.hash.slice(1).split('?')[0];
-if(['map','spot','routes','history','poetry','vision','agent'].includes(initialPage)){
+if(['map','spot','routes','history','poetry','vision','agent','scenes','scene'].includes(initialPage)){
   enterTaishan(true);
   if(initialPage!=='map')setTimeout(()=>culturalPages.open(initialPage,new URLSearchParams(location.hash.split('?')[1]).get('id'),false),0);
 }

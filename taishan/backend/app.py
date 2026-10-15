@@ -29,10 +29,15 @@ from .speech import synthesize, AVAILABLE as TTS_AVAILABLE, VOICE as TTS_VOICE
 ROOT=Path(__file__).resolve().parent.parent
 IMMERSIVE_DIR=Path(os.getenv('IMMERSIVE_FRONTEND_DIR',str(ROOT.parent/'dist')))
 CAT=json.loads((ROOT/'data/catalog.json').read_text())
+SCENES={scene['id']:scene for scene in json.loads((ROOT/'data/scenes.json').read_text())}
+CAT['scenes']=list(SCENES.values())
+for scene in SCENES.values():
+    for point in scene['points']:
+        CAT['knowledge'].append({'id':f"scene-{scene['id']}-{point['id']}",'title':scene['name']+' · '+point['title'],'content':point['text'],'keywords':[scene['name'],point['label'],point['title'],*point.get('keywords',[])],'spot_ids':[scene['spot_id']],'source_ids':point['source_ids'],'type':point['kind']})
 SPOTS={s['id']:s for s in CAT['spots']}; SOURCES={s['id']:s for s in CAT['sources']}
 DATA_DIR=Path(os.getenv('DATA_DIR',str(ROOT/'runtime'))); DATA_DIR.mkdir(parents=True,exist_ok=True)
 DB=DATA_DIR/'taishan.sqlite3'
-VISION=Vision(os.getenv('CLIP_MODEL_DIR',str(ROOT/'models/clip')),CAT['spots'])
+VISION=Vision(os.getenv('CLIP_MODEL_DIR',str(ROOT/'models/clip')),[s for s in CAT['spots'] if s.get('vision_enabled',True)])
 RETRIEVER=SemanticRetriever(os.getenv('EMBEDDING_MODEL_DIR',str(ROOT/'models/bge')),CAT)
 LLM_KEY=os.getenv('LLM_API_KEY',''); LLM_URL=os.getenv('LLM_BASE_URL','https://dashscope.aliyuncs.com/compatible-mode/v1').rstrip('/'); LLM_MODEL=os.getenv('LLM_MODEL','qwen-plus')
 LLM_LOCAL=urlparse(LLM_URL).hostname in {'127.0.0.1','localhost','::1'}
@@ -67,6 +72,7 @@ def init_db():
         CREATE TABLE IF NOT EXISTS journeys(session_id TEXT, spot_id TEXT, visited_at INTEGER, PRIMARY KEY(session_id,spot_id), FOREIGN KEY(session_id) REFERENCES sessions(id) ON DELETE CASCADE);
         CREATE TABLE IF NOT EXISTS favorites(session_id TEXT, kind TEXT, item_id TEXT, PRIMARY KEY(session_id,kind,item_id), FOREIGN KEY(session_id) REFERENCES sessions(id) ON DELETE CASCADE);
         CREATE TABLE IF NOT EXISTS messages(id INTEGER PRIMARY KEY, session_id TEXT, role TEXT, text TEXT, spot_id TEXT, created_at INTEGER, metadata TEXT DEFAULT '{}', FOREIGN KEY(session_id) REFERENCES sessions(id) ON DELETE CASCADE);
+        CREATE TABLE IF NOT EXISTS scene_steps(session_id TEXT, scene_id TEXT, point_id TEXT, viewed_at INTEGER, PRIMARY KEY(session_id,scene_id,point_id), FOREIGN KEY(session_id) REFERENCES sessions(id) ON DELETE CASCADE);
         CREATE TABLE IF NOT EXISTS predictions(id TEXT PRIMARY KEY, session_id TEXT, model_version TEXT, result TEXT, created_at INTEGER, FOREIGN KEY(session_id) REFERENCES sessions(id) ON DELETE CASCADE);''')
         if 'metadata' not in [r[1] for r in con.execute('PRAGMA table_info(messages)')]:con.execute("ALTER TABLE messages ADD COLUMN metadata TEXT DEFAULT '{}'")
         if 'revision' not in [r[1] for r in con.execute('PRAGMA table_info(sessions)')]:con.execute('ALTER TABLE sessions ADD COLUMN revision INTEGER NOT NULL DEFAULT 0')
@@ -78,7 +84,7 @@ async def lifespan(app):
     init_db()
     yield
 
-app=FastAPI(title='一山千年 泰山文化导览 API',version='1.5.1',lifespan=lifespan)
+app=FastAPI(title='一山千年 泰山文化导览 API',version='1.6.0',lifespan=lifespan)
 limits=defaultdict(deque)
 
 @app.middleware('http')
@@ -105,7 +111,10 @@ async def protect(request,call_next):
         while q and q[0]<now-60:q.popleft()
         if len(q)>=limit:return JSONResponse({'detail':'操作较频繁，请稍后再试'},status_code=429,headers={'Retry-After':'60'})
         q.append(now)
-        sid=request.cookies.get('taishan_session','')
+        # HTTP cannot replace an existing Secure cookie after visiting HTTPS.
+        # Keep the secure identity intact and give the legacy port its own session.
+        cookie_name='taishan_session' if request.url.scheme=='https' else 'taishan_session_http'
+        sid=request.cookies.get(cookie_name,request.cookies.get('taishan_session',''))
         with db() as con:
             exists=con.execute('SELECT id FROM sessions WHERE id=?',(sid,)).fetchone() if re.fullmatch(r'[A-Za-z0-9_-]{43}',sid) else None
             if not exists:
@@ -115,7 +124,7 @@ async def protect(request,call_next):
         request.state.session_id=sid
     result=await call_next(request)
     if path.startswith('/api/'):
-        result.set_cookie('taishan_session',request.state.session_id,max_age=30*86400,httponly=True,samesite='lax',secure=request.url.scheme=='https',path='/')
+        result.set_cookie(cookie_name,request.state.session_id,max_age=30*86400,httponly=True,samesite='lax',secure=request.url.scheme=='https',path='/')
         result.headers['Cache-Control']='no-store'
     result.headers['X-Content-Type-Options']='nosniff'; result.headers['Referrer-Policy']='strict-origin-when-cross-origin'
     if path in {'/experience/models/princess-agent-web-v2.glb','/experience/models/princess-agent-web-v3.glb','/experience/models/princess-agent-web-v4.glb'} and result.status_code in {200,304}:
@@ -129,12 +138,38 @@ def source_records(ids):return [SOURCES[i] for i in dict.fromkeys(ids) if i in S
 def enriched(item):return dict(item,sources=source_records(item.get('source_ids',[])))
 
 @app.get('/api/health')
-def health():return {'status':'ok','version':'1.5.1','immersive_available':(IMMERSIVE_DIR/'index.html').is_file(),'knowledge_documents':len(CAT['knowledge']),'agent_mode':'rag_llm' if agent_enabled() else 'local_knowledge','agent_provider':AGENT_PROVIDER,'llm_configured':agent_enabled(),'generation_service':dict(COZE_STATUS if AGENT_PROVIDER=='coze' else LLM_STATUS),'tts_available':TTS_AVAILABLE,'tts_voice':TTS_VOICE,'tts_service':dict(TTS_STATUS),'vision_available':LLM_ENABLED if VISION_BACKEND=='cloud' else VISION.available(),'vision_mode':'cloud_visual' if VISION_BACKEND=='cloud' else 'zero_shot_clip','vision_service':dict(VISION_STATUS),'trained_landmark_model':False,'retrieval_mode':'bge_hybrid' if RETRIEVER.available() else 'lexical','language_model':agent_model() if agent_enabled() else None}
+def health():return {'status':'ok','version':'1.6.0','immersive_available':(IMMERSIVE_DIR/'index.html').is_file(),'knowledge_documents':len(CAT['knowledge']),'agent_mode':'rag_llm' if agent_enabled() else 'local_knowledge','agent_provider':AGENT_PROVIDER,'llm_configured':agent_enabled(),'generation_service':dict(COZE_STATUS if AGENT_PROVIDER=='coze' else LLM_STATUS),'tts_available':TTS_AVAILABLE,'tts_voice':TTS_VOICE,'tts_service':dict(TTS_STATUS),'vision_available':LLM_ENABLED if VISION_BACKEND=='cloud' else VISION.available(),'vision_mode':'cloud_visual' if VISION_BACKEND=='cloud' else 'zero_shot_clip','vision_service':dict(VISION_STATUS),'trained_landmark_model':False,'retrieval_mode':'bge_hybrid' if RETRIEVER.available() else 'lexical','language_model':agent_model() if agent_enabled() else None}
 
 @app.get('/api/catalog')
 def catalog():
     story=dict(CAT['story'],chapters=[enriched({k:v for k,v in ch.items() if k not in ['correct_index','explanation']}) for ch in CAT['story']['chapters']])
-    return {k:[enriched(x) for x in CAT[k]] for k in ['spots','routes','history','poems','artifacts']} | {'sources':CAT['sources'],'story':story}
+    return {k:[enriched(x) for x in CAT[k]] for k in ['spots','routes','history','poems','artifacts']} | {'sources':CAT['sources'],'story':story,'scenes':[enriched(s) | {'points':[enriched(p) for p in s['points']]} for s in SCENES.values()]}
+
+def scene_progress(con,sid,scene):
+    viewed=[r['point_id'] for r in con.execute('SELECT point_id FROM scene_steps WHERE session_id=? AND scene_id=?',(sid,scene['id']))]
+    return {'viewed':[p['id'] for p in scene['points'] if p['id'] in viewed],'total':len(scene['points'])}
+
+@app.get('/api/scenes/{scene_id}')
+def cultural_scene(scene_id:str,request:Request):
+    scene=SCENES.get(scene_id)
+    if not scene:raise HTTPException(404,'文化场景不存在')
+    with db() as con:
+        progress=scene_progress(con,request.state.session_id,scene)
+        saved=bool(con.execute('SELECT 1 FROM favorites WHERE session_id=? AND kind=? AND item_id=?',(request.state.session_id,'spot',scene['spot_id'])).fetchone())
+    return enriched(scene) | {'points':[enriched(p) for p in scene['points']],'progress':progress,'saved':saved}
+
+class SceneDiscovery(BaseModel):point_id:str=Field(min_length=1,max_length=40)
+@app.post('/api/scenes/{scene_id}/discover')
+def scene_discover(scene_id:str,body:SceneDiscovery,request:Request):
+    scene=SCENES.get(scene_id)
+    if not scene:raise HTTPException(404,'文化场景不存在')
+    if body.point_id not in {p['id'] for p in scene['points']}:raise HTTPException(422,'阅读点不属于这个场景')
+    with db() as con:
+        con.execute('BEGIN IMMEDIATE')
+        con.execute('INSERT OR IGNORE INTO scene_steps VALUES(?,?,?,?)',(request.state.session_id,scene_id,body.point_id,int(time.time())))
+        con.execute('INSERT INTO journeys VALUES(?,?,?) ON CONFLICT(session_id,spot_id) DO UPDATE SET visited_at=excluded.visited_at',(request.state.session_id,scene['spot_id'],int(time.time())))
+        progress=scene_progress(con,request.state.session_id,scene)
+    return {'saved':True,'progress':progress}
 
 def story_progress(con,sid):
     rows=[dict(r) for r in con.execute('SELECT chapter_id,completed_at FROM story_steps WHERE session_id=? ORDER BY completed_at,chapter_id',(sid,))]
@@ -208,7 +243,7 @@ def favorite(body:Favorite,request:Request):
 @app.delete('/api/journey')
 def clear(request:Request):
     with db() as con:
-        for table in ['journeys','favorites','messages','predictions','story_steps']:con.execute(f'DELETE FROM {table} WHERE session_id=?',(request.state.session_id,))
+        for table in ['journeys','favorites','messages','predictions','story_steps','scene_steps']:con.execute(f'DELETE FROM {table} WHERE session_id=?',(request.state.session_id,))
         con.execute('UPDATE sessions SET revision=revision+1 WHERE id=?',(request.state.session_id,))
     return {'cleared':True}
 
@@ -350,7 +385,7 @@ async def recognize(request:Request,file:UploadFile):
     try:
         if VISION_BACKEND=='cloud':
             await asyncio.wait_for(LLM_SEMAPHORE.acquire(),timeout=3)
-            try:result=await recognize_cloud(image,CAT['spots'],LLM_URL,LLM_KEY,LLM_MODEL,request.state.session_id)
+            try:result=await recognize_cloud(image,[s for s in CAT['spots'] if s.get('vision_enabled',True)],LLM_URL,LLM_KEY,LLM_MODEL,request.state.session_id)
             finally:LLM_SEMAPHORE.release()
             VISION_STATUS.update(state='verified',checked_at=int(time.time()))
         else:result=await asyncio.to_thread(VISION.recognize,image)

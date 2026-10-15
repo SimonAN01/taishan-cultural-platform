@@ -1,0 +1,277 @@
+[
+  {
+    "id": "daimiao",
+    "spot_id": "daimiao",
+    "name": "岱庙",
+    "title": "一庙，读懂一座山",
+    "eyebrow": "01 · 山前礼序",
+    "intro": "从庙宇轴线到壁画叙事，在山脚下读泰山的人文开篇。",
+    "theme": "礼制 · 建筑 · 时间",
+    "asset_ids": [
+      "H-ND-15A"
+    ],
+    "cover": "H-ND-15A",
+    "background": null,
+    "foreground": "H-ND-15A",
+    "foreground_style": "temple",
+    "art_note": "岱庙建筑意象；阅读点为叙事入口，不对应建筑实测位置。",
+    "source_ids": [
+      "dai-guide",
+      "dai-mural"
+    ],
+    "related_spots": [
+      "hongmen",
+      "bixia"
+    ],
+    "related_route": "hongmen",
+    "points": [
+      {
+        "id": "axis",
+        "title": "沿中轴，读礼序",
+        "label": "礼序",
+        "x": 30,
+        "y": 72,
+        "text": "岱庙位于泰山南麓泰城，是祭祀泰山神的场所。建筑沿南北轴线组织，天贶殿处在中轴的重要位置。空间的层层递进，也在表达礼制中的秩序。",
+        "observe": "在建筑意象图里，先看对称的屋檐与台基，再想一想：为什么走向大殿的过程也是一种叙事？",
+        "question": "岱庙为什么采用中轴布局？",
+        "source_ids": [
+          "dai-guide"
+        ],
+        "kind": "文化释读",
+        "detail_asset": null,
+        "keywords": [
+          "中轴",
+          "礼制",
+          "布局",
+          "秩序"
+        ]
+      },
+      {
+        "id": "mural",
+        "title": "天贶殿里，山神走进画卷",
+        "label": "壁画",
+        "x": 60,
+        "y": 40,
+        "text": "天贶殿内的壁画《泰山神启跸回銮图》表现泰山神出巡、回宫的场景。它以古代仪卫形象组织人物，让宗教观念通过绘画变得可见。",
+        "observe": "当前素材没有壁画原作。请对照资料认识作品，不把建筑插画当作壁画细节。",
+        "question": "岱庙天贶殿的壁画讲了什么？",
+        "source_ids": [
+          "dai-mural"
+        ],
+        "kind": "文化释读",
+        "detail_asset": null,
+        "keywords": [
+          "壁画",
+          "天贶殿",
+          "启跸",
+          "回銮"
+        ]
+      },
+      {
+        "id": "trees",
+        "title": "古柏与碑刻，让时间可读",
+        "label": "岁月",
+        "x": 75,
+        "y": 70,
+        "text": "岱庙保存古柏和历代碑刻。“汉柏”是当地重要的文化称谓，其历史叙述也承载着登岱记忆；树木、碑石与建筑共同构成了庙中的时间层次。",
+        "observe": "把古树理解为有生命的遗产。关于植树人物的传统记载，应与现代植物年龄测定分开看。",
+        "question": "如何理解岱庙的汉柏文化？",
+        "source_ids": [
+          "dai-guide"
+        ],
+        "kind": "文化释读",
+        "detail_asset": null,
+        "keywords": [
+          "汉柏",
+          "古柏",
+          "碑刻"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "caishixi",
+    "spot_id": "caishixi",
+    "name": "彩石溪",
+    "title": "把山的年轮，读给溪水听",
+    "eyebrow": "02 · 西麓水石",
+    "intro": "循着石纹与溪声，读地质景观，也读人与自然的相处。",
+    "theme": "水石 · 地质 · 生态",
+    "asset_ids": [
+      "H-BG-17",
+      "H-NT-08"
+    ],
+    "cover": "H-BG-17",
+    "background": "H-BG-17",
+    "foreground": null,
+    "foreground_style": "",
+    "art_note": "彩石溪山水与流瀑意象；不表达实时水量、通行状态或精确方位。",
+    "source_ids": [
+      "caishi-water",
+      "caishi-culture"
+    ],
+    "related_spots": [
+      "taohua",
+      "tianwai"
+    ],
+    "related_route": "taohua",
+    "points": [
+      {
+        "id": "stone",
+        "title": "山石不是静止的背景",
+        "label": "石纹",
+        "x": 27,
+        "y": 55,
+        "text": "彩石溪位于泰山西麓。带状彩石是这里具有辨识度的景观，山谷又与地质断裂有关。石纹和谷地让人从风景中读到漫长的地质过程。",
+        "observe": "观察画境中岩石的纹理与层次。插画用于引导观察，具体岩性与形成时代请以地质资料为准。",
+        "question": "彩石溪的水石景观有什么特点？",
+        "source_ids": [
+          "caishi-water",
+          "caishi-culture"
+        ],
+        "kind": "文化释读",
+        "detail_asset": null,
+        "keywords": [
+          "石纹",
+          "地质",
+          "彩石",
+          "断裂"
+        ]
+      },
+      {
+        "id": "water",
+        "title": "溪水把散落的山景连起来",
+        "label": "溪流",
+        "x": 62,
+        "y": 67,
+        "text": "彩石溪的水系与山谷共同形成游览景观。当地开展河道与生态治理，保护并展示地质遗迹，也让步游空间与自然环境相衔接。",
+        "observe": "切换到流瀑意象，看看水流如何把高低不同的岩面连成一个整体。实地游览请沿开放步道，不攀爬湿滑岩面。",
+        "question": "彩石溪为什么要同时保护河流和地质遗迹？",
+        "source_ids": [
+          "caishi-water"
+        ],
+        "kind": "文化释读",
+        "detail_asset": "H-NT-08",
+        "keywords": [
+          "河道",
+          "治理",
+          "溪流",
+          "水系"
+        ]
+      },
+      {
+        "id": "fish",
+        "title": "为一尾鱼，留住一条清溪",
+        "label": "生态",
+        "x": 77,
+        "y": 38,
+        "text": "彩石溪水系是泰山赤鳞鱼的重要栖息环境，相关区域开展了保护与增殖工作。看山观水，也是在认识生态系统中彼此依存的生命。",
+        "observe": "画境没有绘出具体鱼群。这个阅读点连接的是生态知识，而非声称图中已发现赤鳞鱼。",
+        "question": "彩石溪与泰山赤鳞鱼保护有什么关系？",
+        "source_ids": [
+          "caishi-water"
+        ],
+        "kind": "文化释读",
+        "detail_asset": null,
+        "keywords": [
+          "赤鳞鱼",
+          "赤磷鱼",
+          "栖息",
+          "生态"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "houshiwu",
+    "spot_id": "houshiwu",
+    "name": "后石坞",
+    "title": "转到山的背面，听松石说话",
+    "eyebrow": "03 · 岱阴松境",
+    "intro": "在古松、山岩与祠宇之间，走近泰山幽深的另一面。",
+    "theme": "古松 · 祠宇 · 传说",
+    "asset_ids": [
+      "H-ND-21-bg",
+      "H-ND-21",
+      "H-NT-01"
+    ],
+    "cover": "H-ND-21-bg",
+    "background": "H-ND-21-bg",
+    "foreground": "H-ND-21",
+    "foreground_style": "cliff",
+    "art_note": "后石坞山谷、祠宇与古松的艺术合成；非元君庙测绘复原。",
+    "source_ids": [
+      "houshi-pines",
+      "houshi-landscape",
+      "houshi-temple"
+    ],
+    "related_spots": [
+      "yuhuang",
+      "bixia"
+    ],
+    "related_route": null,
+    "points": [
+      {
+        "id": "pines",
+        "title": "松，怎样与山岩相处",
+        "label": "古松",
+        "x": 25,
+        "y": 42,
+        "text": "后石坞以古松景观见长。官方资料介绍了九龙岗上的姊妹松，以及青云庵附近的卧虎松。不同的树姿，让古松成为这里独特的景观语言。",
+        "observe": "近看这幅古松意象的枝干走向。素材是通用古松画，不用它辨认某一株姊妹松或卧虎松。",
+        "question": "后石坞的古松有什么代表性景观？",
+        "source_ids": [
+          "houshi-pines"
+        ],
+        "kind": "文化释读",
+        "detail_asset": "H-NT-01",
+        "keywords": [
+          "古松",
+          "姊妹松",
+          "卧虎松"
+        ]
+      },
+      {
+        "id": "temple",
+        "title": "山中祠宇，承接人间心愿",
+        "label": "祠宇",
+        "x": 59,
+        "y": 61,
+        "text": "后石坞有元君庙等文化遗存，古庙与松石共同构成此处的人文山景。读祠宇时，可以关注信仰如何与具体的山地空间相联系。",
+        "observe": "建筑主体来自已有概念素材。它帮助理解“祠宇在山中”的关系，不作为真实元君庙立面依据。",
+        "question": "后石坞的祠宇与山地景观有什么联系？",
+        "source_ids": [
+          "houshi-landscape",
+          "houshi-temple"
+        ],
+        "kind": "文化释读",
+        "detail_asset": null,
+        "keywords": [
+          "元君庙",
+          "祠宇",
+          "古庙"
+        ]
+      },
+      {
+        "id": "legend",
+        "title": "传说，是理解山的一种方式",
+        "label": "传说",
+        "x": 76,
+        "y": 30,
+        "text": "关于碧霞元君在后石坞修炼的说法，属于流传于此的信仰传说。它表达了人们对山的想象，不能当成可以直接证实的人物生平。",
+        "observe": "把画境中的云、岩与庙放在一起看：哪些是可见的景物，哪些是人们赋予它的文化意义？",
+        "question": "后石坞碧霞元君修炼的故事是史实还是传说？",
+        "source_ids": [
+          "houshi-landscape"
+        ],
+        "kind": "民间信仰传说",
+        "detail_asset": null,
+        "keywords": [
+          "修炼",
+          "传说",
+          "史实"
+        ]
+      }
+    ]
+  }
+]

@@ -6,6 +6,9 @@ def guide_tools(question,catalog,current_spot=None):
     if re.search(r'你是谁|你叫什么|自我介绍|你能做什么|你可以做什么|你的名字|介绍你自己',text) or text in ['你好','您好','嗨']:
         return [{'id':'guide-identity','title':'文化导览角色说明','content':'我是碧霞仙子，这个泰山文化体验平台的艺术化导览角色。我可以介绍泰山景点和路线、讲解历史文化、解读诗词，也可以协助你查看照片识景候选结果。我不是历史人物或宗教权威。','keywords':[],'spot_ids':[],'source_ids':[],'relevance':1}],['guide_identity']
     named=[s for s in catalog['spots'] if s['name'] in text]
+    targets={s['id'] for s in named} or ({current_spot} if current_spot else set())
+    scene_docs=[d for d in catalog['knowledge'] if d['id'].startswith('scene-') and targets.intersection(d['spot_ids']) and any(k in text for k in d['keywords'][1:] if len(k)>=2)]
+    if scene_docs:return [dict(d,relevance=1) for d in scene_docs[:3]],['get_scene_culture']
     contextual=bool(current_spot and re.search(r'这里|这个景点|它|此处',text))
     specific_routes=[r for r in catalog['routes'] if r['name'].replace('经典','').removesuffix('线') in text]
     if specific_routes and re.search(r'路线|线路|怎么走|怎么去|索道|徒步|乘车',text):

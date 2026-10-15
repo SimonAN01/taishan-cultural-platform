@@ -1,0 +1,81 @@
+{
+  "version": "1.6.0",
+  "spots": 19,
+  "scenes": [
+    "daimiao",
+    "caishixi",
+    "houshiwu"
+  ],
+  "https_hashes_verified": 20,
+  "progress_and_favorite": "all three persisted in isolated QA cookie session",
+  "answers": [
+    {
+      "scene": "daimiao",
+      "seconds": 13.56,
+      "answer": "岱庙天贶殿里的壁画叫《泰山神启跸回銮图》[1]，讲的是泰山神出巡和回宫的场景哦。壁画参照古代的仪卫形象来安排人物排布，把原本抽象的宗教观念用生动的绘画形式展现了出来，是非常珍贵的古代艺术遗存~",
+      "sources": [
+        {
+          "id": "dai-mural",
+          "title": "山东泰安：一座因山而生的城市",
+          "publisher": "泰安市发展和改革委员会",
+          "url": "https://fgw.taian.gov.cn/art/2026/1/26/art_339298_10312911.html",
+          "verified_at": "2026-10-15",
+          "verification": "官方页面核对并简要改写；天烛峰页面为官方检索摘要核对；仍待专业文化审校"
+        }
+      ],
+      "model": "Coze 智能体",
+      "provider": "coze",
+      "mode": "rag_llm"
+    },
+    {
+      "scene": "caishixi",
+      "seconds": 3.47,
+      "answer": "彩石溪水系是泰山赤鳞鱼的重要栖息环境[2]，保护赤鳞鱼也是维护当地生态系统的平衡，让山里的生命能彼此依存共生~大家来这儿看山观水的时候，也能感受到自然生态的鲜活趣味哦。",
+      "sources": [
+        {
+          "id": "caishi-water",
+          "title": "泰安市泰山彩石溪水利风景区",
+          "publisher": "泰安市水利局",
+          "url": "https://slj.taian.gov.cn/art/2024/12/12/art_354136_10296884.html",
+          "verified_at": "2026-10-15",
+          "verification": "官方页面核对并简要改写；天烛峰页面为官方检索摘要核对；仍待专业文化审校"
+        }
+      ],
+      "model": "Coze 智能体",
+      "provider": "coze",
+      "mode": "rag_llm"
+    },
+    {
+      "scene": "houshiwu",
+      "seconds": 3.47,
+      "answer": "碧霞元君在后石坞修炼的说法属于当地流传的信仰传说哦[1]，它承载着人们对泰山的美好想象，并不是可以直接证实的史实，可不能把它当成真实的人物生平来看待哒~",
+      "sources": [
+        {
+          "id": "houshi-landscape",
+          "title": "天烛峰景区（景点介绍）",
+          "publisher": "泰山风景名胜区管理委员会",
+          "url": "https://tsgw.taian.gov.cn/art/2021/5/26/art_363479_10320185.html",
+          "verified_at": "2026-10-15",
+          "verification": "官方页面核对并简要改写；天烛峰页面为官方检索摘要核对；仍待专业文化审校"
+        }
+      ],
+      "model": "Coze 智能体",
+      "provider": "coze",
+      "mode": "rag_llm"
+    }
+  ],
+  "tts": {
+    "bytes": 33264,
+    "content_type": "audio/mpeg",
+    "seconds": 3.48
+  },
+  "final_compatibility_release": {
+    "version": "1.6.0",
+    "knowledge_documents": 34,
+    "https_final_index_and_bundle_hashes": true,
+    "http_after_https_read_and_favorite_persistent": true,
+    "secure_session_preserved": true,
+    "generation_service": "configured",
+    "tts_service": "configured"
+  }
+}

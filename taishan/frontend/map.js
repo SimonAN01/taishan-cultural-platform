@@ -1,7 +1,7 @@
 import {$,esc} from './ui.js';
 export function createMap(catalog,onSpot){
  const viewport=$('#map-viewport'),world=$('#map-world');let scale=1,x=0,y=0,drag=null,moved=false;
- $('#map-nodes').innerHTML=catalog.spots.map(s=>`<button class="map-node" data-map-spot="${s.id}" style="left:${s.map_x}%;top:${s.map_y}%" aria-label="查看${esc(s.name)}"><span class="dot" aria-hidden="true"></span><span class="label">${esc(s.name)}</span></button>`).join('');
+ $('#map-nodes').innerHTML=catalog.spots.filter(s=>s.map_visible!==false).map(s=>`<button class="map-node" data-map-spot="${s.id}" style="left:${s.map_x}%;top:${s.map_y}%" aria-label="查看${esc(s.name)}"><span class="dot" aria-hidden="true"></span><span class="label">${esc(s.name)}</span></button>`).join('');
  $('#map-nodes').addEventListener('click',e=>{const button=e.target.closest('[data-map-spot]');if(button&&!moved)onSpot(button.dataset.mapSpot)});
  function paint(){const extraX=world.clientWidth*(scale-1)/2,extraY=world.clientHeight*(scale-1)/2;x=Math.max(viewport.clientWidth-world.offsetLeft-world.clientWidth-extraX,Math.min(-world.offsetLeft+extraX,x));y=Math.max(viewport.clientHeight-world.offsetTop-world.clientHeight-extraY,Math.min(-world.offsetTop+extraY,y));world.style.transform=`translate(${x}px,${y}px) scale(${scale})`;$('#zoom-value').value=`${Math.round(scale*100)}%`;$('#zoom-out').disabled=scale<=1;$('#zoom-in').disabled=scale>=2.5}
  function zoom(delta){scale=Math.max(1,Math.min(2.5,scale+delta));if(scale===1){x=0;y=0}paint()}

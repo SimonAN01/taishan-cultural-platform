@@ -29,6 +29,28 @@ class SystemTests(unittest.TestCase):
   self.assertTrue(self.client.get('/api/health').json()['immersive_available'])
   model=self.client.get('/experience/models/princess-agent.glb')
   self.assertEqual(model.content[:4],b'glTF')
+ def test_scene_reading_records_favorites_clear_and_other_sessions(self):
+  scene=self.client.get('/api/scenes/daimiao').json()
+  self.assertEqual(scene['progress'],{'viewed':[],'total':3});self.assertFalse(scene['saved'])
+  self.assertTrue(all(p['sources'] for p in scene['points']))
+  self.assertEqual(self.client.post('/api/scenes/daimiao/discover',json={'point_id':'invalid'}).status_code,422)
+  for point in scene['points']:
+   result=self.client.post('/api/scenes/daimiao/discover',json={'point_id':point['id']})
+   self.assertEqual(result.status_code,200)
+  self.assertEqual(len(result.json()['progress']['viewed']),3)
+  again=self.client.post('/api/scenes/daimiao/discover',json={'point_id':'axis'}).json()
+  self.assertEqual(len(again['progress']['viewed']),3)
+  self.assertEqual(self.other.get('/api/scenes/daimiao').json()['progress']['viewed'],[])
+  self.client.post('/api/journey/favorite',json={'kind':'spot','item_id':'daimiao','saved':True})
+  self.assertTrue(self.client.get('/api/scenes/daimiao').json()['saved'])
+  self.assertIn('daimiao',[v['spot_id'] for v in self.client.get('/api/journey').json()['visited']])
+  self.client.delete('/api/journey')
+  cleared=self.client.get('/api/scenes/daimiao').json();self.assertEqual(cleared['progress']['viewed'],[]);self.assertFalse(cleared['saved'])
+  self.assertEqual(self.client.get('/api/scenes/missing').status_code,404)
+ def test_new_scene_knowledge_is_available_to_grounded_chat(self):
+  for sid,query,word in [('daimiao','岱庙的壁画讲了什么','壁画'),('caishixi','彩石溪的赤鳞鱼如何保护','赤鳞鱼'),('houshiwu','后石坞修炼传说是不是史实','传说')]:
+   reply=self.client.post('/api/agent/chat',json={'message':query,'current_spot':sid}).json()
+   self.assertFalse(reply['refused']);self.assertIn(word,reply['answer']);self.assertTrue(reply['sources'])
  def test_catalog_routes_have_valid_ids_and_sources(self):
   c=self.client.get('/api/catalog').json();ids={s['id'] for s in c['spots']};self.assertGreaterEqual(len(ids),8)
   for r in c['routes']:
@@ -52,6 +74,18 @@ class SystemTests(unittest.TestCase):
   for p in photos:
    self.assertTrue((root/'frontend'/p['url']).is_file());self.assertTrue(p['author']);self.assertTrue(p['license']);self.assertEqual(urlparse(p['source_page']).hostname,'commons.wikimedia.org')
    with Image.open(root/'frontend'/p['url']) as im:self.assertEqual(im.size,(p['width'],p['height']))
+ def test_http_after_https_keeps_both_sessions_persistent(self):
+  with TestClient(app,base_url='https://testserver') as browser:
+   browser.get('/api/journey')
+   secure_id=browser.cookies['taishan_session']
+   browser.base_url='http://testserver'
+   browser.post('/api/scenes/daimiao/discover',json={'point_id':'axis'})
+   self.assertEqual(browser.get('/api/scenes/daimiao').json()['progress']['viewed'],['axis'])
+   self.assertNotEqual(browser.cookies['taishan_session_http'],secure_id)
+   browser.base_url='https://testserver'
+   self.assertEqual(browser.get('/api/scenes/daimiao').json()['progress']['viewed'],[])
+   self.assertEqual(browser.cookies['taishan_session'],secure_id)
+
  def test_anonymous_sessions_and_clear_are_isolated(self):
   self.client.post('/api/journey/visit',json={'spot_id':'nantian'})
   self.client.post('/api/journey/favorite',json={'kind':'spot','item_id':'nantian','saved':True})
@@ -127,7 +161,7 @@ class SystemTests(unittest.TestCase):
   with patch.object(retriever,'load',side_effect=ValueError('invalid weights')):docs=retriever.search('封禅是什么')
   self.assertTrue(docs);self.assertFalse(retriever.available())
  def test_confirmation_requires_own_known_prediction(self):
-  self.client.get('/api/journey');sid=self.client.cookies['taishan_session']
+  self.client.get('/api/journey');sid=self.client.cookies['taishan_session_http']
   prediction={'status':'needs_confirmation','candidates':[{'spot_id':'nantian'}]}
   with db() as con:
    con.execute('INSERT INTO predictions(id,session_id,model_version,result,created_at) VALUES(?,?,?,?,?)',('fixture-known',sid,'test fixture',json.dumps(prediction),1))

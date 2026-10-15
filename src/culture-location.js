@@ -1,5 +1,5 @@
 // Share the visitor's content selection through reloads, links and browser history.
-export const culturePages = ['map', 'spot', 'routes', 'history', 'poetry', 'vision', 'agent'];
+export const culturePages = ['map', 'spot', 'routes', 'history', 'poetry', 'vision', 'agent', 'scenes', 'scene'];
 export const cultureEras = ['先秦', '秦汉', '唐宋', '明清', '近现代'];
 export function readCultureLocation(hash) {
   const [page, query] = hash.replace(/^#/, '').split('?');
@@ -8,11 +8,12 @@ export function readCultureLocation(hash) {
   return {page, id:params.get('id') || '', variant:params.get('variant') || 'walk',
     era:cultureEras.includes(params.get('era')) ? params.get('era') : '先秦',
     tab:['history','poetry','architecture'].includes(params.get('tab')) ? params.get('tab') : 'history',
-    photo:Math.max(0, Math.floor(Number(params.get('photo')) || 0))};
+    point:params.get('point') || '', photo:Math.max(0, Math.floor(Number(params.get('photo')) || 0))};
 }
 export function cultureHash(page, state = {}) {
   const params = new URLSearchParams();
-  if (['spot','routes','poetry','agent'].includes(page) && state.id) params.set('id',state.id);
+  if (['spot','routes','poetry','agent','scene'].includes(page) && state.id) params.set('id',state.id);
+  if (page === 'scene' && state.point) params.set('point',state.point);
   if (page === 'routes' && state.variant && state.variant !== 'walk') params.set('variant',state.variant);
   if (page === 'history' && state.era !== '先秦' && cultureEras.includes(state.era)) params.set('era',state.era);
   if (page === 'spot' && state.tab && state.tab !== 'history') params.set('tab',state.tab);

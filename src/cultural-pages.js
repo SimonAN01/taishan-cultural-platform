@@ -1,12 +1,13 @@
 import { requestApi, apiSpotId, recordVisit } from './integration.js';
 import { artUrl, images } from './art-gallery.js';
 import './cultural-pages.css';
+import {renderSceneDirectory,mountCulturalScene} from './cultural-scenes.js';
 import { readCultureLocation, cultureHash } from './culture-location.js';
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const sources = item => `<div class="culture-sources"><strong>资料出处</strong>${(item.sources || []).map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.publisher)} · ${esc(s.title)} ↗</a>`).join('') || '<p>本条资料暂未附出处。</p>'}</div>`;
 const photoUrl = p => '/' + p.url.replace(/^\//, '');
-const sceneUrl = id => artUrl(({nantian:'nantian-front',riguan:'riguan-landscape',taohua:'taohua-landscape',tianwai:'tianwai-landscape'})[id] || images.find(i => i.spot_id === (id === 'nantian' ? 'nantianmen' : id))?.id || 'map-cover');
-const sections = [['map','山水地图'],['spot','景点详情'],['routes','登山路线'],['history','历史长卷'],['poetry','诗词文化'],['vision','AI识景'],['agent','问山']];
+const sceneUrl = id => artUrl(({nantian:'nantian-front',riguan:'riguan-landscape',taohua:'taohua-landscape',tianwai:'tianwai-landscape',daimiao:'H-ND-15A',caishixi:'H-BG-17',houshiwu:'H-ND-21-bg'})[id] || images.find(i => i.spot_id === (id === 'nantian' ? 'nantianmen' : id))?.id || 'map-cover');
+const sections = [['map','山水地图'],['spot','景点详情'],['scenes','三卷山境'],['routes','登山路线'],['history','历史长卷'],['poetry','诗词文化'],['vision','AI识景'],['agent','问山']];
 
 export function createCulturalPages({getCatalog, onMap, onGuide, onLeaveGuide, onRoute, onScene}) {
   const dialog = document.createElement('dialog');
@@ -20,13 +21,13 @@ export function createCulturalPages({getCatalog, onMap, onGuide, onLeaveGuide, o
   document.body.append(photoViewer);
   photoViewer.querySelector('button').onclick=()=>photoViewer.close();
   photoViewer.addEventListener('click',event=>{if(event.target===photoViewer)photoViewer.close();});
-  let cat, page='map', currentSpot='', routeId='hongmen', variantId='walk', era='先秦', poemId='wangyue', spotTab='history', photoIndex=0;
+  let cat, page='map', currentSpot='', routeId='hongmen', variantId='walk', era='先秦', poemId='wangyue', spotTab='history', photoIndex=0, sceneId='daimiao', scenePoint='', sceneView;
   let revision=0, controller, previewUrl, speechToken=0, speechTimer, poemUtterance, returnFocus;
   const spot = id => cat?.spots.find(s=>s.id===id);
   const related = ids => `<div class="culture-links">${ids.map(id=>`<button data-spot="${esc(id)}">${esc(spot(id)?.name || id)} ↗</button>`).join('')}</div>`;
   const title = (small,text,lead='') => `<p class="culture-eyebrow">${small}</p><h1 id="culture-title">${text}</h1>${lead?`<p class="culture-lead">${lead}</p>`:''}`;
   function stopAudio(){ speechToken++; clearTimeout(speechTimer); poemUtterance=null; if('speechSynthesis' in window)speechSynthesis.cancel(); }
-  function cleanup(){if(photoViewer.open)photoViewer.close();controller?.abort();controller=null;stopAudio();if(previewUrl){URL.revokeObjectURL(previewUrl);previewUrl=null;}}
+  function cleanup(){sceneView?.destroy();sceneView=null;if(photoViewer.open)photoViewer.close();controller?.abort();controller=null;stopAudio();if(previewUrl){URL.revokeObjectURL(previewUrl);previewUrl=null;}}
   function close(update=true){revision++;cleanup();if(dialog.open)dialog.close();document.body.classList.remove('culture-open');if(update&&location.hash!=='#map')history.pushState(null,'','#map');returnFocus?.focus({preventScroll:true});}
   dialog.querySelector('.culture-close').onclick=()=>close();
   dialog.addEventListener('cancel',e=>{e.preventDefault();close();});
@@ -39,6 +40,7 @@ export function createCulturalPages({getCatalog, onMap, onGuide, onLeaveGuide, o
     if(next==='spot'){if(id)currentSpot=apiSpotId(id);spotTab='history';photoIndex=0;}
     if(next==='routes'&&id)routeId=id;
     if(next==='poetry'&&id)poemId=id;
+    if(next==='scene'){sceneId=id||'daimiao';scenePoint='';}
     if(!update){
       const saved=readCultureLocation(location.hash);
       if(saved?.page===next){
@@ -46,30 +48,40 @@ export function createCulturalPages({getCatalog, onMap, onGuide, onLeaveGuide, o
         if(next==='routes'){routeId=saved.id||'hongmen';variantId=saved.variant;}
         if(next==='history')era=saved.era;
         if(next==='poetry')poemId=saved.id||'wangyue';
+        if(next==='scene'){sceneId=saved.id||'daimiao';scenePoint=saved.point;}
       }
     }
     if(!dialog.open){returnFocus=document.activeElement;dialog.showModal();}
     document.body.classList.add('culture-open');
 
-    dialog.querySelector('nav').innerHTML=sections.map(([key,label])=>`<button data-page="${key}" ${page===key?'aria-current="page"':''}>${label}</button>`).join('');
+    dialog.querySelector('nav').innerHTML=sections.map(([key,label])=>`<button data-page="${key}" ${(page==='scene'?'scenes':page)===key?'aria-current="page"':''}>${label}</button>`).join('');
     dialog.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>open(b.dataset.page));
     body.innerHTML=title('一山千年 · 文化长卷','正在展开画卷')+'<p role="status">正在读取文化资料…</p>';
     try{cat=getCatalog() || await requestApi('catalog');if(token!==revision||!dialog.open)return;render(update);dialog.querySelector('.culture-close').focus();if(next==='spot'&&spot(currentSpot))recordVisit(currentSpot).catch(()=>{if(token===revision){const note=document.createElement('p');note.className='culture-note';note.textContent='足迹暂未保存，可稍后重新打开此景点。';body.append(note);}});}
     catch(error){if(token!==revision)return;body.innerHTML=title('文化资料','暂时未能展开')+`<p role="alert">${esc(error.message)}</p><button class="culture-primary" id="culture-retry">重新加载</button>`;body.querySelector('#culture-retry').onclick=()=>open(page,id,false);}
   }
   function syncLocation(push=true){
-    const hash=cultureHash(page,{id:page==='spot'?currentSpot:page==='routes'?routeId:page==='poetry'?poemId:null,variant:variantId,era,tab:spotTab,photo:photoIndex});
+    const hash=cultureHash(page,{id:page==='spot'?currentSpot:page==='routes'?routeId:page==='poetry'?poemId:page==='scene'?sceneId:null,point:scenePoint,variant:variantId,era,tab:spotTab,photo:photoIndex});
     if(hash!==location.hash)history[push?'pushState':'replaceState'](null,'',hash);
   }
   function render(push=true,preserveScroll=false){
     const scroll=preserveScroll?body.scrollTop:0;stopAudio();
-    if(page==='routes')renderRoutes();else if(page==='history')renderHistory();else if(page==='poetry')renderPoetry();else if(page==='vision')renderVision();else renderSpot();
+    if(page==='scenes')renderSceneDirectory(body,cat.scenes||[],id=>open('scene',id));else if(page==='scene')renderScenePage();else if(page==='routes')renderRoutes();else if(page==='history')renderHistory();else if(page==='poetry')renderPoetry();else if(page==='vision')renderVision();else renderSpot();
     syncLocation(push);
+    body.querySelectorAll('[data-cultural-scene]').forEach(b=>b.onclick=()=>open('scene',b.dataset.culturalScene));
     body.querySelectorAll('[data-spot]').forEach(b=>b.onclick=()=>open('spot',b.dataset.spot));
     body.querySelectorAll('[data-poem]').forEach(b=>b.onclick=()=>open('poetry',b.dataset.poem));
     body.querySelectorAll('[data-ask]').forEach(b=>b.onclick=()=>{close(false);onGuide(b.dataset.ask,true);});
     body.querySelectorAll('[data-scene]').forEach(b=>b.onclick=()=>{const id=b.dataset.scene;close();onScene(id);});
     body.scrollTop=scroll;
+  }
+  function renderScenePage(){
+    const scene=cat.scenes?.find(s=>s.id===sceneId);
+    if(!scene){page='scenes';renderSceneDirectory(body,cat.scenes||[],id=>open('scene',id));return;}
+    sceneView=mountCulturalScene(body,{scene:{...scene,related_names:Object.fromEntries(cat.spots.map(s=>[s.id,s.name+' ↗']))},initialPoint:scenePoint,
+      onPoint:id=>{scenePoint=id;syncLocation();},onGuide:(id,question)=>{close(false);onGuide(id,true,question);},
+      onSpot:id=>open('spot',id),onRoute:id=>open('routes',id),onDirectory:()=>open('scenes')});
+    scenePoint=sceneView.pointId;
   }
   function renderRoutes(){
     const route=cat.routes.find(r=>r.id===routeId)||cat.routes[0];routeId=route.id;
@@ -93,7 +105,7 @@ export function createCulturalPages({getCatalog, onMap, onGuide, onLeaveGuide, o
     photoIndex=Math.min(photoIndex,Math.max(0,(s.photos?.length||0)-1));
     const p=s.photos?.[photoIndex];
     const text=spotTab==='history'?`<h2>${esc(s.subtitle)}</h2><p>${esc(s.intro)}</p><p>${esc(s.interpretation)}</p>${sources(s)}${events.map(e=>`<h3>${esc(e.era)} · ${esc(e.title)}</h3><p>${esc(e.content)}</p>${sources(e)}`).join('')}`:spotTab==='poetry'?(poems.map(p=>`<h2>${esc(p.title)}</h2><p>${esc(p.author)} · ${esc(p.era)}</p><p class="culture-poem-excerpt">${esc(p.original_text)}</p><button data-poem="${p.id}">读诗与释义 →</button>`).join('')||'<p>当前资料中尚未收录与此处直接关联的诗词。</p>'):`<h2>${esc(s.category)} · 景观与空间</h2><p>${esc(s.interpretation)}</p><p class="culture-note">现有资料仅支持上述概述，更细的建筑测绘、年代与形制尚待补充核验。</p>${sources(s)}`;
-    body.innerHTML=title('CULTURAL LANDMARK · 山中一处',esc(s.name),esc(s.subtitle))+`<div class="culture-columns"><div><figure class="culture-photo">${p?`<button class="culture-photo-zoom" aria-label="放大${esc(p.caption)}"><img src="${photoUrl(p)}" alt="${esc(p.caption)}"></button>`:`<img src="${sceneUrl(s.id)}" alt="${esc(s.name)}艺术化插画">`}<figcaption>${p?`${esc(p.caption)} · ${esc(p.author)} · <a href="${esc(p.source_page)}" target="_blank" rel="noopener noreferrer">${esc(p.license)} / 原图出处 ↗</a>`:'艺术化插画 · 此处暂未收录实景照片'}</figcaption></figure>${s.photos?.length>1?`<div class="culture-tabs" aria-label="景点图集">${s.photos.map((_,i)=>`<button data-photo="${i}" aria-pressed="${i===photoIndex}">实景 ${i+1}</button>`).join('')}</div>`:''}<div class="culture-tabs" aria-label="景点文化分类">${[['history','历史沿革'],['poetry','诗词典故'],['architecture','建筑与景观']].map(([key,label])=>`<button data-spot-tab="${key}" aria-pressed="${spotTab===key}">${label}</button>`).join('')}</div><article class="culture-card">${text}</article></div><aside class="culture-card culture-fold"><span class="culture-tag">入山见史</span><h2>从风景走向故事</h2><p>看一处山景，读一段历史。带着眼前的风景，向碧霞仙子继续提问。</p><button class="culture-primary" data-ask="${s.id}">请仙子讲解此处 →</button><button data-scene="${s.id}">回到画卷定位 ↗</button><h3>山中还有这些风景</h3>${related(cat.spots.filter(x=>x.id!==s.id).slice(0,5).map(x=>x.id))}<p class="culture-note">文化资料已附来源，专业史实与建筑细节仍待领域专家复核。</p></aside></div>`;
+    body.innerHTML=title('CULTURAL LANDMARK · 山中一处',esc(s.name),esc(s.subtitle))+`<div class="culture-columns"><div><figure class="culture-photo">${p?`<button class="culture-photo-zoom" aria-label="放大${esc(p.caption)}"><img src="${photoUrl(p)}" alt="${esc(p.caption)}"></button>`:`<img src="${sceneUrl(s.id)}" alt="${esc(s.name)}艺术化插画">`}<figcaption>${p?`${esc(p.caption)} · ${esc(p.author)} · <a href="${esc(p.source_page)}" target="_blank" rel="noopener noreferrer">${esc(p.license)} / 原图出处 ↗</a>`:'艺术化插画 · 此处暂未收录实景照片'}</figcaption></figure>${s.photos?.length>1?`<div class="culture-tabs" aria-label="景点图集">${s.photos.map((_,i)=>`<button data-photo="${i}" aria-pressed="${i===photoIndex}">实景 ${i+1}</button>`).join('')}</div>`:''}<div class="culture-tabs" aria-label="景点文化分类">${[['history','历史沿革'],['poetry','诗词典故'],['architecture','建筑与景观']].map(([key,label])=>`<button data-spot-tab="${key}" aria-pressed="${spotTab===key}">${label}</button>`).join('')}</div><article class="culture-card">${text}</article></div><aside class="culture-card culture-fold"><span class="culture-tag">入山见史</span><h2>从风景走向故事</h2><p>看一处山景，读一段历史。带着眼前的风景，向碧霞仙子继续提问。</p><button class="culture-primary" data-ask="${s.id}">请仙子讲解此处 →</button>${s.scene_id?`<button data-cultural-scene="${s.scene_id}">走入${esc(s.name)}文化场景 ↗</button>`:`<button data-scene="${s.id}">回到画卷定位 ↗</button>`}<h3>山中还有这些风景</h3>${related(cat.spots.filter(x=>x.id!==s.id).slice(0,5).map(x=>x.id))}<p class="culture-note">文化资料已附来源，专业史实与建筑细节仍待领域专家复核。</p></aside></div>`;
     const enlarge=body.querySelector('.culture-photo-zoom');
     if(enlarge)enlarge.onclick=()=>{
       const image=photoViewer.querySelector('img');image.src=photoUrl(p);image.alt=p.caption;

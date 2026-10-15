@@ -550,6 +550,67 @@
           "height": 853
         }
       ]
+    },
+    {
+      "id": "daimiao",
+      "name": "岱庙",
+      "subtitle": "礼制 · 建筑 · 时间",
+      "category": "古建",
+      "map_x": null,
+      "map_y": null,
+      "map_visible": false,
+      "scene_id": "daimiao",
+      "intro": "从庙宇轴线到壁画叙事，在山脚下读泰山的人文开篇。",
+      "interpretation": "岱庙位于泰山南麓泰城，是祭祀泰山神的场所。建筑沿南北轴线组织，天贶殿处在中轴的重要位置。空间的层层递进，也在表达礼制中的秩序。 天贶殿内的《泰山神启跸回銮图》表现泰山神出巡、回宫的场景。它以古代仪卫形象组织人物，让宗教观念通过绘画变得可见。 岱庙保存古柏和历代碑刻。“汉柏”是当地重要的文化称谓，其历史叙述也承载着登岱记忆；树木、碑石与建筑共同构成了庙中的时间层次。",
+      "source_ids": [
+        "dai-guide",
+        "dai-mural"
+      ],
+      "vision_prompt": "",
+      "vision_enabled": false,
+      "review_status": "官方资料核对，待专家复核；图片为概念画面",
+      "photos": []
+    },
+    {
+      "id": "caishixi",
+      "name": "彩石溪",
+      "subtitle": "水石 · 地质 · 生态",
+      "category": "自然",
+      "map_x": null,
+      "map_y": null,
+      "map_visible": false,
+      "scene_id": "caishixi",
+      "intro": "循着石纹与溪声，读地质景观，也读人与自然的相处。",
+      "interpretation": "彩石溪位于泰山西麓。带状彩石是这里具有辨识度的景观，山谷又与地质断裂有关。石纹和谷地让人从风景中读到漫长的地质过程。 彩石溪的水系与山谷共同形成游览景观。当地开展河道与生态治理，保护并展示地质遗迹，也让步游空间与自然环境相衔接。 彩石溪水系是泰山赤鳞鱼的重要栖息环境，相关区域开展了保护与增殖工作。看山观水，也是在认识生态系统中彼此依存的生命。",
+      "source_ids": [
+        "caishi-water",
+        "caishi-culture"
+      ],
+      "vision_prompt": "",
+      "vision_enabled": false,
+      "review_status": "官方资料核对，待专家复核；图片为概念画面",
+      "photos": []
+    },
+    {
+      "id": "houshiwu",
+      "name": "后石坞",
+      "subtitle": "古松 · 祠宇 · 传说",
+      "category": "自然",
+      "map_x": null,
+      "map_y": null,
+      "map_visible": false,
+      "scene_id": "houshiwu",
+      "intro": "在古松、山岩与祠宇之间，走近泰山幽深的另一面。",
+      "interpretation": "后石坞以古松景观见长。官方资料介绍了九龙岗上的姊妹松，以及青云庵附近的卧虎松。不同的树姿，让古松成为这里独特的景观语言。 后石坞有元君庙等文化遗存，古庙与松石共同构成此处的人文山景。读祠宇时，可以关注信仰如何与具体的山地空间相联系。 关于碧霞元君在后石坞修炼的说法，属于流传于此的信仰传说。它表达了人们对山的想象，不能当成可以直接证实的人物生平。",
+      "source_ids": [
+        "houshi-pines",
+        "houshi-landscape",
+        "houshi-temple"
+      ],
+      "vision_prompt": "",
+      "vision_enabled": false,
+      "review_status": "官方资料核对，待专家复核；图片为概念画面",
+      "photos": []
     }
   ],
   "routes": [
@@ -1016,6 +1077,62 @@
       "publisher": "维基文库 · 古典作品转录",
       "verified_at": "2026-10-14",
       "verification": "已核对公开原文；公版古诗，简体转写；注释为本项目原创释读，待专家复核"
+    },
+    {
+      "id": "dai-guide",
+      "title": "岱庙（景点介绍）",
+      "publisher": "泰山风景名胜区管理委员会",
+      "url": "https://tsgw.taian.gov.cn/art/2021/6/13/art_363479_10320189.html",
+      "verified_at": "2026-10-15",
+      "verification": "官方页面核对并简要改写；天烛峰页面为官方检索摘要核对；仍待专业文化审校"
+    },
+    {
+      "id": "dai-mural",
+      "title": "山东泰安：一座因山而生的城市",
+      "publisher": "泰安市发展和改革委员会",
+      "url": "https://fgw.taian.gov.cn/art/2026/1/26/art_339298_10312911.html",
+      "verified_at": "2026-10-15",
+      "verification": "官方页面核对并简要改写；天烛峰页面为官方检索摘要核对；仍待专业文化审校"
+    },
+    {
+      "id": "caishi-water",
+      "title": "泰安市泰山彩石溪水利风景区",
+      "publisher": "泰安市水利局",
+      "url": "https://slj.taian.gov.cn/art/2024/12/12/art_354136_10296884.html",
+      "verified_at": "2026-10-15",
+      "verification": "官方页面核对并简要改写；天烛峰页面为官方检索摘要核对；仍待专业文化审校"
+    },
+    {
+      "id": "caishi-culture",
+      "title": "泰山风景名胜区：彩石溪",
+      "publisher": "泰安市文化和旅游局",
+      "url": "https://whlyj.taian.gov.cn/art/2024/1/2/art_69508_4676522.html",
+      "verified_at": "2026-10-15",
+      "verification": "官方页面核对并简要改写；天烛峰页面为官方检索摘要核对；仍待专业文化审校"
+    },
+    {
+      "id": "houshi-pines",
+      "title": "泰山古松",
+      "publisher": "泰山风景名胜区管理委员会",
+      "url": "https://tsgw.taian.gov.cn/art/2021/6/17/art_162237_10286454.html",
+      "verified_at": "2026-10-15",
+      "verification": "官方页面核对并简要改写；天烛峰页面为官方检索摘要核对；仍待专业文化审校"
+    },
+    {
+      "id": "houshi-landscape",
+      "title": "天烛峰景区（景点介绍）",
+      "publisher": "泰山风景名胜区管理委员会",
+      "url": "https://tsgw.taian.gov.cn/art/2021/5/26/art_363479_10320185.html",
+      "verified_at": "2026-10-15",
+      "verification": "官方页面核对并简要改写；天烛峰页面为官方检索摘要核对；仍待专业文化审校"
+    },
+    {
+      "id": "houshi-temple",
+      "title": "后石坞元君庙院落环境维护设计方案公告",
+      "publisher": "泰山风景名胜区管理委员会",
+      "url": "https://tsgw.taian.gov.cn/art/2026/7/8/art_250485_10324165.html?xxgkhide=1",
+      "verified_at": "2026-10-15",
+      "verification": "官方页面核对并简要改写；天烛峰页面为官方检索摘要核对；仍待专业文化审校"
     }
   ],
   "knowledge": [

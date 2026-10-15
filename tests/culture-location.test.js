@@ -9,9 +9,10 @@ test('content links retain route transport, era, poem and spot reading state', (
   const era=cultureHash('history',{era:'唐宋'});
   assert.equal(readCultureLocation(era).era,'唐宋');
   assert.equal(readCultureLocation(cultureHash('poetry',{id:'libai-2'})).id,'libai-2');
-  assert.deepEqual(readCultureLocation(cultureHash('spot',{id:'nantian',tab:'poetry',photo:1})),
-    {page:'spot',id:'nantian',variant:'walk',era:'先秦',tab:'poetry',photo:1});
+  assert.deepEqual(readCultureLocation(cultureHash('spot',{id:'nantian',tab:'poetry',point:'',photo:1})),
+    {page:'spot',id:'nantian',variant:'walk',era:'先秦',tab:'poetry',point:'',photo:1});
   assert.equal(cultureHash('agent',{id:'nantian'}),'#agent?id=nantian');
+  assert.equal(readCultureLocation(cultureHash('scene',{id:'houshiwu',point:'legend'})).point,'legend');
   assert.equal(cultureHash('map',{id:'nantian'}),'#map');
 });
 
