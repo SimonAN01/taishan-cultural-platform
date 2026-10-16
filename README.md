@@ -7,6 +7,25 @@
 
 复用范围、修复内容和限制见 [融合审查与验收](docs/integration/融合审查与验收.md)。使用和部署文档见 [原导览说明](taishan/README.md)。素材与代码未获得统一开源许可，保持团队私有仓库协作，保留各文件来源；实景照片按各自许可署名。
 
+## 当前系统交付入口
+
+本分支 `codex/taishan-integration` 包含当前 1.7.1 系统的源码与必要运行素材。克隆本分支后按下文安装依赖并构建；`dist/` 可重新生成，无需另行下载网页素材。
+
+| 内容 | 仓库位置 |
+| --- | --- |
+| 沉浸式前端、地图、文化页面与交互 | `src/`、`public/` |
+| API、智能体适配、云端识图与语音 | `taishan/backend/` |
+| 景点、历史、诗词、文化场景与来源 | `taishan/data/` |
+| 完整导览界面及实景照片 | `taishan/frontend/` |
+| 数字人 Blender 源文件与生成脚本 | `character/` |
+| 数字人及索道网页模型 | `public/models/` |
+| 依赖锁定、环境变量示例与部署配置 | `package-lock.json`、`taishan/requirements.lock.txt`、`taishan/.env.example`、`taishan/deployment/` |
+| 测试及发布验证记录 | `tests/`、`taishan/tests/`、`docs/integration/` |
+
+可直接发给建模团队：[建模手交付清单](docs/modeling/建模手交付清单.md)。技术约定见 [场景建模交付规范](docs/modeling/场景建模交付规范.md)，文字接入见 [文字与模型协作说明](docs/content/文字与模型协作说明.md)。
+
+岱庙、彩石溪、后石坞的精细场景 GLB 尚待建模团队交付，当前使用分层空间画境。真实 API 密钥、会话数据库、模型缓存与服务器证书保留在运行环境中，仓库提供不含密钥的配置示例。
+
 ## 本地运行
 
 需要 Node.js 22+、Python 3.12+。不需要本机训练模型或 GPU。
