@@ -1,0 +1,95 @@
+{
+  "change": "Full guide link aligns vertically with motion and fullscreen controls; minimum 44px height",
+  "preview_checks": [
+    {
+      "width": 320,
+      "height": 844,
+      "horizontal_overflow": false,
+      "header_bottom": 156,
+      "hero_top": 160,
+      "tool_heights": [
+        44,
+        44,
+        44
+      ],
+      "tool_tops": [
+        58,
+        58,
+        58
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "horizontal_overflow": false,
+      "header_bottom": 116,
+      "hero_top": 160,
+      "tool_heights": [
+        44,
+        44,
+        44
+      ],
+      "tool_tops": [
+        18,
+        18,
+        18
+      ]
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "horizontal_overflow": false,
+      "header_bottom": 81,
+      "hero_top": 105,
+      "tool_heights": [
+        44,
+        44,
+        44
+      ],
+      "tool_tops": [
+        31,
+        31,
+        31
+      ]
+    },
+    {
+      "width": 1470,
+      "height": 956,
+      "horizontal_overflow": false,
+      "header_bottom": 81,
+      "hero_top": 96,
+      "tool_heights": [
+        44,
+        44,
+        44
+      ],
+      "tool_tops": [
+        31,
+        31,
+        31
+      ]
+    }
+  ],
+  "guide_link": "clicked into full guide on desktop and mobile; mobile destination has no horizontal overflow",
+  "public_http_https_bundles": {
+    "http://118.89.176.236:8037": "index and main JS/CSS verified",
+    "https://118.89.176.236": "index and main JS/CSS verified"
+  },
+  "backup": "/opt/taishan/runtime/before-header-layout-polish-20261016",
+  "backend_restart": false,
+  "public_browser": {
+    "headerBottom": 81,
+    "height": 720,
+    "heroTop": 105,
+    "overflow": false,
+    "styles": [
+      "http://118.89.176.236:8037/experience/assets/index-DVuqE-IB.css"
+    ],
+    "toolHeights": [
+      44,
+      44,
+      44
+    ],
+    "width": 1280
+  }
+}

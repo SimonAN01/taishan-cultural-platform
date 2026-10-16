@@ -169,3 +169,15 @@ body.welcome-open{overflow:hidden}.welcome-scene{position:fixed;inset:0;z-index:
 
 /* A scene is a clipped stage, not a hidden scroll container that focus can move. */
 .guide-visual{overflow:clip}
+
+/* Keep the guide link and native tools on the same visual and touch baseline. */
+.topbar .brand-cluster,.topbar .tools{flex-shrink:0}
+.topbar .tools{align-items:center;gap:12px}
+.topbar .tools>.full-system-link,.topbar .tools>button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;box-sizing:border-box;line-height:1;padding:8px 6px;white-space:nowrap}
+.topbar .tools>.full-system-link{font-size:14px;letter-spacing:1px;color:#70513d;text-decoration:none}
+.topbar .tools>.full-system-link:hover{text-decoration:underline;text-underline-offset:5px}
+.topbar .tools>.full-system-link:focus-visible{outline:2px solid #903c30;outline-offset:3px}
+.topbar nav button{min-height:44px}
+@media(max-width:1199px) and (min-width:760px){.home .hero{top:105px}.topbar nav{flex:1;min-width:0;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;scrollbar-width:thin;gap:4px;margin:0}.topbar nav button,.topbar nav span{flex-shrink:0}.topbar .tiny-brand{display:none}}
+@media(max-width:759px){.topbar .tiny-brand{font-size:0;gap:0}.topbar .tiny-brand .seal{font-size:18px}.topbar .tools{margin-left:auto;gap:6px}.topbar .tools>.full-system-link{font-size:12px;letter-spacing:0}.topbar .tools>button{padding-inline:5px}.topbar .tools span{font-size:12px;letter-spacing:1px}.topbar nav button{flex-shrink:0}.topbar .brand-cluster{gap:6px}}
+@media(max-height:800px) and (min-width:760px){.home .hero{top:105px}}
