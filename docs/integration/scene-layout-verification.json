@@ -1,0 +1,50 @@
+{
+  "release": "scene-layout-20261016",
+  "backend_version": "1.7.1 unchanged",
+  "public": {
+    "https://118.89.176.236": {
+      "bundles": "SHA256 matched",
+      "precise_models_available": {
+        "daimiao": false,
+        "caishixi": false,
+        "houshiwu": false
+      }
+    },
+    "http://118.89.176.236:8037": {
+      "bundles": "SHA256 matched",
+      "precise_models_available": {
+        "daimiao": false,
+        "caishixi": false,
+        "houshiwu": false
+      }
+    }
+  },
+  "preview": {
+    "desktop": [
+      1470,
+      956
+    ],
+    "mobile": [
+      390,
+      844
+    ],
+    "short_desktop": [
+      1280,
+      720
+    ],
+    "concept_theme_pins": "hidden; real model pins only",
+    "controls": "outside scene viewport",
+    "manual_theme_selection": "stops automatic reading",
+    "reading_progress": "saved in isolated local session; retained through reload",
+    "guide": "question and point return retained",
+    "three_scene_modes": "loaded; switching to reading destroys canvas; exit clears scene layout class",
+    "glb_fixture": {
+      "representation": "model",
+      "pins": 3,
+      "removed_before_release": true
+    },
+    "unit_tests": 28
+  },
+  "backup": "/opt/taishan/runtime/before-scene-layout-20261016",
+  "remaining": "precise 3D assets and source image edge/detail quality"
+}
