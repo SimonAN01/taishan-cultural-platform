@@ -1,0 +1,58 @@
+{
+  "release": "1.7.1",
+  "date": "2026-10-16",
+  "public": {
+    "https://118.89.176.236": {
+      "version": "1.7.1",
+      "index_and_bundles": "SHA256 matched",
+      "spots": 19,
+      "history": 7,
+      "poem_paths": 3,
+      "agent_provider": "coze",
+      "vision_mode": "cloud_visual"
+    },
+    "http://118.89.176.236:8037": {
+      "version": "1.7.1",
+      "index_and_bundles": "SHA256 matched",
+      "spots": 19,
+      "history": 7,
+      "poem_paths": 3,
+      "agent_provider": "coze",
+      "vision_mode": "cloud_visual"
+    }
+  },
+  "ai_sample": {
+    "guide": {
+      "mode": "rag_llm",
+      "provider": "coze",
+      "refused": false,
+      "citations": 1,
+      "seconds": 19.26,
+      "answer": "《纪泰山铭》刻在岱顶大观峰崖壁，作为泰山摩崖石刻的重要实例[1]，你可以把它的刻写位置、书法内容与对应的封禅历史记忆结合起来阅读解读，它就像凿在崖石上的史书记载，能让后世直观触摸到唐代封禅的相关历史痕迹，成为可阅读的特殊历史载体。"
+    },
+    "vision": {
+      "status": "needs_confirmation",
+      "model": "deepseek-v4.1-flash · 云端图像理解",
+      "candidates": [
+        "daguan"
+      ],
+      "seconds": 6.83
+    }
+  },
+  "browser": {
+    "desktop": [
+      1280,
+      720
+    ],
+    "mobile_preview": [
+      390,
+      844
+    ],
+    "poem_reading_path": "line 3 selected with annotation and URL update in production",
+    "study_flow": "homepage resolves actual chapter; spot retains chapter through reload; return and correct answer persisted in isolated local session",
+    "map_return": "catalog-only daguan returns to map instead of reopening spot",
+    "console_errors": 0
+  },
+  "precise_scene_models": "awaiting team assets",
+  "backup": "/opt/taishan/runtime/before-frontend-content-20261016"
+}

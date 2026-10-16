@@ -53,7 +53,7 @@ app.innerHTML = `
    <p class="mode-question">你想先读懂这座山，还是先走进这座山？</p>
    <div class="mode-guide" aria-hidden="true"><span>第 1 步</span><b>选择一种方式开始</b><i>↓</i></div>
    <div class="mode-buttons"><button class="mode" data-mode="culture" aria-pressed="false"><b>循迹千年 <span>↗</span></b><small>从朝代、人物与诗词中认识泰山</small></button><button class="mode" data-mode="travel" aria-pressed="false"><b>今日登山 <span>↗</span></b><small>从路线、索道与景点中规划登山</small></button></div>
-   <p class="mode-caption">点击一种方式开始，也可以随时切换。</p>
+   <p class="mode-caption">点击一种方式开始，也可以随时切换。</p><button class="home-study-entry" id="home-study-entry">初次来访？跟着五章读山 <span>→</span></button>
   </section>
   <aside class="poem"><p>会当凌绝顶，<br>一览众山小。</p><span>—— 杜甫《望岳》</span><button id="sunrise" aria-pressed="false">${icon('sun')} 等一场日出</button></aside>
   <section class="route-selector" aria-labelledby="route-title"><div class="route-guide" id="route-guide"><span>第 2 步</span><b id="route-guide-copy">选择一条登山路线</b><i aria-hidden="true">↓</i></div><div class="route-heading"><span class="mini-line"></span><h2 id="route-title">红门古道</h2><small>四径同归</small></div>
@@ -72,7 +72,7 @@ app.innerHTML = `
     <span class="mode-confirm-mark" aria-hidden="true">山</span>
     <h2 id="mode-confirm-title">循迹千年</h2>
     <p class="mode-confirm-copy" id="mode-confirm-copy">沿着朝代、人物与诗词的线索，重新认识这座山。</p>
-    <p class="mode-confirm-hint" id="mode-confirm-hint">点击山中的文化节点查看近景，或从上方“史”阅读有来源的时间轴。</p>
+    <p class="mode-confirm-hint" id="mode-confirm-hint">点击山中的文化节点查看近景，或从上方“历史”阅读有来源的时间轴。</p>
     <div class="mode-confirm-actions"><button class="mode-confirm-back" id="mode-confirm-back">返回</button><button class="mode-confirm-enter" id="mode-confirm-enter">进入千年泰山 <span>→</span></button></div>
    </div>
   </section>
@@ -656,6 +656,7 @@ function focusPlace(id) {
 document.querySelectorAll('[data-place]').forEach(b => b.onclick = () => focusPlace(b.dataset.place));
 
 document.querySelector('#route-detail').onclick = () => culturalPages.open('routes',selected);
+document.querySelector('#home-study-entry').onclick = () => culturalPages.open('study');
 
 const modeProfiles = {
   culture: {
@@ -663,7 +664,7 @@ const modeProfiles = {
     mark: '史',
     title: '循迹千年',
     copy: '沿着朝代、人物与诗词的线索，重新认识这座山。',
-    hint: '点击山中的文化节点查看近景，或从上方“史”阅读有来源的时间轴。',
+    hint: '点击山中的文化节点查看近景，或从上方“历史”阅读有来源的时间轴。',
     enter: '进入千年泰山',
     caption: '山是长卷，脚步是笔。从时间留下的痕迹读懂泰山。',
     routeTitle: '文化线索 · 红门古道',
@@ -1281,6 +1282,7 @@ const culturalPages = createCulturalPages({getCatalog:()=>catalog,
   onMap:()=>{}, onGuide:(id,update,question,context={})=>{if(guideScene.classList.contains('is-open'))closeGuide(false);openGuide(id,update,context);if(question)document.querySelector('#guide-input').value=question;updateGuideSubmit();},
   onLeaveGuide:()=>{if(guideScene.classList.contains('is-open'))closeGuide(false);},
   onRoute:(id,variant)=>{routeVariants[id]=variant;setMode('travel');selectRoute(id,true);status('已标出路线示意；具体站点与交通方式请以路线详情为准。');},
+  canOpenScene:id=>Boolean(places[id==='nantian'?'nantianmen':id]),
   onScene:id=>{const local=id==='nantian'?'nantianmen':id;if(places[local])focusPlace(local);else{status('此景点尚无独立画境，已打开真实文化资料。');culturalPages.open('spot',id);}}
 });
 for(const route of routes)syncVerifiedRoute(route.id);

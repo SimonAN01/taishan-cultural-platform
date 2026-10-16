@@ -1,0 +1,12 @@
+{
+  "backend/app.py": "6d5135d64c6cae39ba69af3fb63bbc191582e76553f6eb4adc173c3e0cf4229b",
+  "data/catalog.json": "8246a8f40bc4594d6285922be3182c540bedd6d920109279ec4ed19b0dc31e06",
+  "immersive/index.html": "029bb1c1daf26d8ab9e4d6bb686c6f7b2739b9597dc361ce1ff7ccd9c97c5116",
+  "immersive/assets/meshopt_decoder.module-j6OW_3Rk.js": "9a6907b2af2f6747383fa4be44c5322fc5a0ebb43b4b6996f441490a4a13f204",
+  "immersive/assets/spatial-scene-BbQI0ul1.js": "e5e0652b38fe16668c208cd8cbf219b5be55f9f8316341f489066c9358750a98",
+  "immersive/assets/index-DwAzr8WY.js": "24866d477045e92a51430ddcbebb3ee43a634b3b6eea2154b91b5e249ed16458",
+  "immersive/assets/index-DAI9ues2.css": "b4f832f2a5e6eb69d833f1e054af0f284b40e55e16e83b1bd1399a707731c210",
+  "immersive/assets/cableway-experience-B2afntKt.js": "b94d1b080d5a50b5494864d03af2a82d7f27b51d261d602330d96f9804f00a40",
+  "immersive/assets/GLTFLoader-BXdPkRqS.js": "4b57ce0f6464e7d5925d589c8b607dcda4848a85991c0cdbbedaae9333d1c5ff",
+  "immersive/assets/digital-human-DFQuzM0X.js": "c9b8748a8b8dd3fa33f784121e8e7d6fb3497bed94ddee5a900c77b476a838ab"
+}
