@@ -8,6 +8,7 @@ mkdir -p runtime
 chown -R taishan:taishan /opt/taishan
 chmod 750 runtime
 if [ -f .env ]; then chmod 600 .env; fi
+if [ -f config/team.env ]; then chmod 600 config/team.env; fi
 install -m 644 deployment/taishan.service /etc/systemd/system/taishan.service
 install -m 644 deployment/nginx.conf /etc/nginx/conf.d/taishan.conf
 nginx -t

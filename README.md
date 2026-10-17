@@ -9,6 +9,8 @@
 
 ## 当前系统交付入口
 
+**团队直接运行：本分支已包含授权共享的 API 配置，安装依赖并构建后执行 `./taishan/start.sh`。无需成员自行申请或填写服务密钥。**
+
 本分支 `codex/taishan-integration` 包含当前 1.7.1 系统的源码与必要运行素材。克隆本分支后按下文安装依赖并构建；`dist/` 可重新生成，无需另行下载网页素材。
 
 | 内容 | 仓库位置 |
@@ -24,31 +26,30 @@
 
 可直接发给建模团队：[建模手交付清单](docs/modeling/建模手交付清单.md)。技术约定见 [场景建模交付规范](docs/modeling/场景建模交付规范.md)，文字接入见 [文字与模型协作说明](docs/content/文字与模型协作说明.md)。
 
-岱庙、彩石溪、后石坞的精细场景 GLB 尚待建模团队交付，当前使用分层空间画境。真实 API 密钥、会话数据库、模型缓存与服务器证书保留在运行环境中，仓库提供不含密钥的配置示例。
+岱庙、彩石溪、后石坞的精细场景 GLB 尚待建模团队交付，当前使用分层空间画境。本私有分支已按项目负责人授权包含后端团队 API 配置 `taishan/config/team.env`，团队成员无需另行填写 Key。会话数据库、模型缓存、服务器登录私钥与证书仍保留在运行环境。
 
-配置重点见下文“智能体、AI 识图与语音配置”：Coze 与识图需要分别填写凭证，并通过实际请求确认成功。
+配置重点见下文“智能体、AI 识图与语音配置”：Coze 与识图使用独立凭证，启动脚本已自动加载团队配置；更换服务和排错时可按文档自检。
 
 ## 本地运行
 
-需要 Node.js 22+、Python 3.12+。不需要本机训练模型或 GPU。
+需要 Node.js 22+、Python 3.12+ 和可访问云端 API 的网络。不需要本机训练模型或 GPU。首次克隆时指定本分支：
+
+```sh
+git clone --branch codex/taishan-integration --single-branch https://github.com/xiaozhi0519/digital-media-projects.git
+cd digital-media-projects
+```
 
 ```sh
 npm ci
 npm run build
 python3 -m venv taishan/.venv
 taishan/.venv/bin/pip install -r taishan/requirements.lock.txt
-test -f taishan/.env || cp taishan/.env.example taishan/.env
+./taishan/start.sh
 ```
 
-将实际服务密钥填入 `taishan/.env`，不要提交。启动时加载该文件（它采用 shell 环境变量格式）：
+**正常团队运行无需复制 `.env.example`，无需填写 Token／Key，也无需手动 `source`。** `start.sh` 先加载已提交的后端 `config/team.env`，再加载可选的本机 `.env` 覆盖；不要从空白模板创建 `.env`，否则其中的空值会覆盖团队凭证。依赖安装、前端构建和云端网络可达仍是必要条件。
 
-```sh
-cd taishan
-set -a
-source .env
-set +a
-.venv/bin/uvicorn backend.app:app --host 127.0.0.1 --port 18605
-```
+Windows 请使用 WSL，在同一 Linux 环境内安装 Python／Node 依赖并运行启动脚本。
 
 访问 `http://127.0.0.1:18605/` 或 `http://127.0.0.1:18605/experience/`。没有模型密钥时问答会明确采用资料检索，云端识景不可用；不会伪装已调用模型。BGE 权重为可选下载，缺少时自动采用文本检索。未提交本机运行数据库或模型缓存。
 
@@ -56,12 +57,14 @@ set +a
 
 ## 智能体、AI 识图与语音配置
 
-以下说明对照本分支的实际代码编写，更新日期为 2026-10-17。**克隆仓库可以得到接入代码、提示词、文化资料和空密钥配置模板，但不会得到真实 API 凭证或 Coze 平台账号内的工作流。**
+以下说明对照本分支的实际代码编写，更新日期为 2026-10-17。**本私有分支已按负责人授权提交可直接运行的团队 API 配置，启动脚本自动加载；Coze 平台账号内的工作流并未导出。**
 
 ### 1. 哪些配置已经在 GitHub
 
 | 内容 | 位置／说明 |
 | --- | --- |
+| 团队运行配置 | [`taishan/config/team.env`](taishan/config/team.env)，包含已填入的 Coze 和图像模型凭证；仅用于后端 |
+| 自动启动入口 | [`taishan/start.sh`](taishan/start.sh)，自动加载团队配置，再加载可选本机覆盖 |
 | 环境变量模板 | [`taishan/.env.example`](taishan/.env.example)；包括服务地址、模型名、空 Token／Key、运行目录说明 |
 | Coze 请求体、鉴权及 SSE 解析 | [`taishan/backend/coze_agent.py`](taishan/backend/coze_agent.py) |
 | 导游角色提示词、资料检索、引用校验、会话与接口 | [`taishan/backend/app.py`](taishan/backend/app.py)、[`agent_tools.py`](taishan/backend/agent_tools.py)、[`retrieval.py`](taishan/backend/retrieval.py) |
@@ -70,7 +73,7 @@ set +a
 | 语音与数字人联动 | [`speech.py`](taishan/backend/speech.py)、[`src/voice-pipeline.js`](src/voice-pipeline.js)、[`src/digital-human.js`](src/digital-human.js) |
 | 生产进程与 HTTPS 配置样例 | [`taishan/deployment/`](taishan/deployment/)、[`taishan/deploy/https/`](taishan/deploy/https/) |
 
-真实 `taishan/.env`、服务器 `/opt/taishan/.env`、数据库、缓存及证书私钥不进入 Git。不能直接拿示例文件覆盖已有生产 `.env`。
+`taishan/config/team.env` 是本次明确授权提交的私有团队配置。可选的本机 `taishan/.env`、服务器 `/opt/taishan/.env`、数据库、缓存及证书私钥不进入 Git。团队凭证保持在后端，不能复制到网页资源或 `VITE_*` 变量中；仓库若改变共享范围或改为公开，应先移除并轮换凭证。
 
 **Coze 平台本身的机器人／项目定义、系统提示词、插件、工作流和平台知识库未包含在此仓库。** 如果继续使用现有部署，只需拥有该部署可用的 Token；如果要在自己的 Coze 账号重新创建相同智能体，需要原创建者提供相应导出或配置说明。当前后端可带入本系统资料调用兼容端点，但不能凭调用地址还原平台上的全部配置。也可按第 4 节切换为直连模型，继续使用仓库内的文化资料。
 
@@ -86,15 +89,16 @@ set +a
 
 **Coze Token 和图像模型 Key 是两组独立凭证。** 只填 Coze 配置时，问山可以工作，云端识图仍未配置。`AGENT_PROVIDER` 决定文本生成走哪条链路；`VISION_BACKEND=cloud` 决定识图走云端，图像模型始终读取 `LLM_*`。
 
-在**仓库根目录**首次执行以下命令；若 `taishan/.env` 已存在，保留原文件并直接编辑：
+团队成员直接运行 `./taishan/start.sh` 即可。以下配置示例用于理解字段，不是团队运行时需要粘贴的步骤；真实值已填入 `taishan/config/team.env`。服务能否持续调用仍取决于权限、余额、有效期和网络。
+
+只有项目维护者需要更换配置时，才创建本机覆盖文件（现有文件不覆盖）：
 
 ```sh
-# 仅在不存在时复制，避免覆盖已有密钥。
-test -f taishan/.env || cp taishan/.env.example taishan/.env
+test -f taishan/.env || cp taishan/config/team.env taishan/.env
 chmod 600 taishan/.env
 ```
 
-使用本地编辑器填写 `taishan/.env`。下面两个凭证占位符必须换成真实值，不能原样使用；地址和模型名是本项目现有接入值，能否继续调用取决于服务权限、余额与部署状态。
+编辑本机 `taishan/.env` 中需要覆盖的字段。下面占位符仅为文档示意，不要覆盖团队配置文件中的真实值。
 
 ```dotenv
 AGENT_PROVIDER=coze
@@ -123,21 +127,27 @@ VISION_BACKEND=cloud
 | `EMBEDDING_MODEL_DIR` | 可选 BGE 模型目录；缺少权重时使用关键词检索。不是开启 Coze 的必要条件。 |
 | `CLIP_MODEL_DIR` | 仅本地 CLIP 识景需要；云端识图不需要。 |
 
-这些变量由后端启动时读取。**本项目没有自动读取 `.env` 的逻辑；修改文件后必须重新加载环境并重启进程。** 不要把密钥写到 `src/`、`public/`、`VITE_*` 或前端请求里。
+这些变量由后端启动时读取。**Python 模块本身不会自动读取环境文件；统一启动脚本会自动加载。修改配置后用脚本重启进程，或重启生产 systemd 服务。** 不要把密钥写到 `src/`、`public/`、`VITE_*` 或前端请求里。
 
 ### 3. 本地启动
 
-先完成上文“本地运行”的依赖安装和 `npm run build`。然后从仓库根目录进入后端目录启动：
+先完成上文依赖安装与 `npm run build`，然后在仓库根目录启动：
 
 ```sh
-cd taishan
-set -a
-source .env
-set +a
-.venv/bin/uvicorn backend.app:app --host 127.0.0.1 --port 18605
+./taishan/start.sh
 ```
 
-`.env` 使用 shell 兼容的 `KEY=value` 格式，不在等号两边添加空格；值含空格或特殊字符时加引号。示例中的 `COZE_PROJECT_ID=` 表示空值。若从上一套配置切换，请先停止旧进程，再在干净终端中加载完整配置。
+默认仅监听本机 `127.0.0.1:18605`。如需指定其他本机端口，可传入 Uvicorn 参数：
+
+```sh
+./taishan/start.sh --host 127.0.0.1 --port 18606
+```
+
+修改端口后，若使用 Vite 开发，须同步调整 `vite.config.js` 中的代理目标。运行时生成的会话与缓存仍写入忽略的 `taishan/runtime/`。
+
+已验证在无本机 `.env`、无继承 API 环境变量的临时项目目录中由 `start.sh` 自动加载团队配置，并实际完成 Coze、识图与 TTS 请求；依赖使用已安装环境，未将此测试描述为所有系统上的全新依赖安装验证。见 [团队启动验收](docs/integration/team-start-verification.json)。
+
+团队配置与可选 `.env` 均使用 shell 兼容的 `KEY=value` 格式，不在等号两边添加空格；值含空格或特殊字符时加引号。`COZE_PROJECT_ID=` 表示空值。启动脚本中的路径相对于脚本所在目录解析，可从不同工作目录启动。
 
 - 问山：`http://127.0.0.1:18605/experience/#agent`
 - 识图：`http://127.0.0.1:18605/experience/#vision`
@@ -264,7 +274,7 @@ curl --fail-with-body --silent --show-error --max-time 40 \
 
 ### 7. 已有服务器如何修改配置
 
-以下针对现有 `/opt/taishan` 部署。**更新配置无需重建数据库，也无需把密钥提交 GitHub。**
+以下针对现有 `/opt/taishan` 部署。**现有生产 `.env` 可独立更新，无需重建数据库。新服务模板已支持团队配置与生产覆盖。**
 
 ```sh
 # 服务器终端：在现有环境文件中编辑对应变量，保留其他配置。
@@ -275,7 +285,7 @@ sudo systemctl is-active taishan
 curl --fail-with-body --silent --show-error http://127.0.0.1:18600/api/health
 ```
 
-[`taishan.service`](taishan/deployment/taishan.service) 使用 `EnvironmentFile=-/opt/taishan/.env`；systemd 不需要手动 `source`，更改文件后重启即可加载。现有服务用户为 `taishan`，运行目录 `/opt/taishan`，Uvicorn 监听 `127.0.0.1:18600`，由 Nginx 转发公网请求。
+本分支的 [`taishan.service`](taishan/deployment/taishan.service) 依次读取 `/opt/taishan/config/team.env` 和可选的 `/opt/taishan/.env`，后者覆盖团队值。使用此新版服务文件部署的成员无需另填凭证；已有生产机器若仍安装旧版服务文件，则继续使用原 `/opt/taishan/.env`。systemd 不需要手动 `source`，更改文件后重启即可加载。现有服务用户为 `taishan`，运行目录 `/opt/taishan`，Uvicorn 监听 `127.0.0.1:18600`，由 Nginx 转发公网请求。
 
 生产环境保留：
 
@@ -294,14 +304,14 @@ DATA_DIR=/opt/taishan/runtime
 
 | 现象 | 检查与处理 |
 | --- | --- |
-| 克隆后问山只给资料摘录 | 检查 `.env` 是否填写、是否 `source`／重启，以及 `AGENT_PROVIDER`。先看响应 `mode`，不要只看 HTTP 200。 |
+| 克隆后问山只给资料摘录 | 使用 `./taishan/start.sh`，核对团队配置是否存在；检查旧本机 `.env` 的空值是否覆盖团队凭证，然后重启。先看响应 `mode`，不要只看 HTTP 200。 |
 | 只配置 Coze 后识图报未配置 | 补齐独立的 `LLM_BASE_URL`、`LLM_MODEL`、`LLM_API_KEY`，并设 `VISION_BACKEND=cloud`。 |
 | 401／403 或 Token 无效 | 对应服务的 Token／Key、权限或有效期有问题；Key 不带 `Bearer `，不要交换两种凭证。 |
 | 文本能回答、图片请求失败 | 核对模型与网关是否支持当前 `image_url`、`response_format` 等请求参数；普通文本模型不能仅通过改名字获得视觉能力。 |
 | Coze 一直回退到资料 | 核对 `/stream_run`、部署是否在线、协议是否为本适配器要求的 SSE，以及是否保留资料引用。日志中 `LLM unavailable or citation invalid` 既可能是网络失败，也可能是返回内容未通过校验。 |
 | 使用了 `/task/{task_id}` | 这是任务状态查询，不是当前代码发起对话的端点。改回部署对应的对话端点。 |
 | `project_id` 错误 | 有要求时填整数 ID；现有部署可留空。不要从 Token、Bot ID 或 URL 猜填项目 ID。 |
-| 修改 `.env` 没生效 | 变量在模块导入时读取；重启旧后端，并确认浏览器访问的确实是该进程。Vite 的代理目标固定为本机 18605。 |
+| 修改 `.env` 没生效 | 变量在模块导入时读取；用启动脚本重启旧后端，并确认浏览器访问的确实是该进程。Vite 的代理目标固定为本机 18605。 |
 | 语音不出声或数字人不开口 | 先测 `/api/speech/tts`，再检查浏览器播放授权与播放器状态。`tts_available=true` 只检查依赖安装，不能证明网络和播放成功。 |
 | 公网麦克风不可用 | 使用有效 HTTPS，检查浏览器语音识别支持与站点授权；不在 HTTP 上反复申请。 |
 | `retrieval_mode=lexical` | 未安装 BGE 可选权重，系统使用关键词检索，云端生成与识图仍可工作。 |

@@ -1,0 +1,29 @@
+{
+  "fresh_checkout_config": {
+    "no_local_env": true,
+    "automatic_team_credentials": true,
+    "provider": "coze",
+    "vision_mode": "cloud_visual"
+  },
+  "coze": {
+    "mode": "rag_llm",
+    "provider": "coze",
+    "citations": 2,
+    "seconds": 17.29
+  },
+  "vision": {
+    "status": "needs_confirmation",
+    "candidates": [
+      "daguan"
+    ]
+  },
+  "tts": {
+    "bytes": 13392,
+    "content_type": "audio/mpeg"
+  },
+  "local_override": "verified: optional local .env takes precedence",
+  "date": "2026-10-17",
+  "repository_visibility": "PRIVATE confirmed through GitHub API",
+  "scope": "backend-only team API configuration; owner explicitly authorized credential sharing in this private repository",
+  "test_limitations": "Temporary clean project directory without local .env or inherited API variables; reused installed Python environment. Fresh dependency installation on other operating systems was not tested."
+}

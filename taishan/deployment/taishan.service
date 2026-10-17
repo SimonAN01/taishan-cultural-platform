@@ -6,6 +6,7 @@ After=network.target
 User=taishan
 Group=taishan
 WorkingDirectory=/opt/taishan
+EnvironmentFile=-/opt/taishan/config/team.env
 EnvironmentFile=-/opt/taishan/.env
 Environment=DATA_DIR=/opt/taishan/runtime
 Environment=CLIP_MODEL_DIR=/opt/taishan/models/clip

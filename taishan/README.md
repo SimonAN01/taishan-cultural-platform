@@ -1,33 +1,26 @@
 # 一山千年 泰山文化体验
 
-> 当前集成分支的 Coze、云端识图、环境变量与自检步骤，请先阅读[根目录 README 的配置指南](../README.md#智能体ai-识图与语音配置)。下文部分部署记录为早期版本；真实密钥保留在本机或服务器环境中。
+> 当前集成分支的 Coze、云端识图、环境变量与自检步骤，请先阅读[根目录 README 的配置指南](../README.md#智能体ai-识图与语音配置)。下文部分部署记录为早期版本；当前私有分支已包含授权共享的后端团队凭证，使用 `./start.sh` 自动加载；本机覆盖、服务器私钥和证书仍不提交。
 
-当前在线版本1.2.0：http://118.89.176.236:8037/ 。实际完成情况与尚未完成事项见`docs/方案落实与功能审查.md`，不能把效果图、模型文件存在或接口可调用当成方案已验收。
+当前后端版本1.7.1：http://118.89.176.236:8037/ 。实际完成情况与尚未完成事项见`docs/方案落实与功能审查.md`，不能把效果图、模型文件存在或接口可调用当成方案已验收。
 
 ## 本地运行
 
-使用Python 3.12。现有`.venv`可直接使用；新环境：
+在仓库根目录按根 README 构建前端。进入本目录后安装后端依赖并启动：
 
 ```sh
-python3.12 -m venv .venv
-.venv/bin/pip install -r requirements.txt
-.venv/bin/python scripts/download_models.py
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.lock.txt
+./start.sh
 ```
 
-复制`.env.example`为`.env`，在本机填写模型服务密钥，设置权限600，然后运行：
-
-```sh
-set -a
-source .env
-set +a
-.venv/bin/python -m uvicorn backend.app:app --host 127.0.0.1 --port 18600
-```
+默认地址为 `http://127.0.0.1:18605/`；沉浸入口为 `/experience/`。启动脚本自动加载 `config/team.env`，团队无需填写密钥或下载本地模型。可选本机 `.env` 会覆盖团队配置，空白模板中的空 Key 也会覆盖已填值。
 
 未配置语言模型时，问答直接返回有出处的文化资料；云端识景由现有模型API提供；未配置服务时返回未就绪状态。只有显式选择VISION_BACKEND=local才使用本地CLIP权重。BGE不可用时降级为文字检索。API不会将这些降级情况显示为模型生成。
 
 ## 技术与数据
 
-前端为原生HTML/CSS/JavaScript模块，地图采用图像、SVG线路与交互节点。后端为FastAPI，匿名会话、足迹、文化章节进度、收藏、对话、识景记录保存在SQLite。语言模型只从后端访问，默认配置为DeepSeek V4.1 Flash服务。BGE用于中文资料检索，线上识景使用现有DeepSeek云端图像理解，不加载本地视觉模型；CLIP仅保留可选研究基线。
+前端为原生HTML/CSS/JavaScript模块，地图采用图像、SVG线路与交互节点。后端为FastAPI，匿名会话、足迹、文化章节进度、收藏、对话、识景记录保存在SQLite。语言模型只从后端访问，团队默认文本问山使用 Coze，云端识图使用 DeepSeek V4.1 Flash 服务。BGE用于中文资料检索，线上识景使用现有DeepSeek云端图像理解，不加载本地视觉模型；CLIP仅保留可选研究基线。
 
 `data/catalog.json`统一保存景点、路线、交通方式、历史、诗词、文博介绍和资料来源。实景照片署名与许可同样随目录返回。`data/image_library`是独立采集候选库，尚未按训练/验证/测试划分，也没有训练完成的准确率。
 
