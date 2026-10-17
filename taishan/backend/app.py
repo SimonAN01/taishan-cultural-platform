@@ -90,7 +90,7 @@ async def lifespan(app):
     init_db()
     yield
 
-VERSION='1.7.2'
+VERSION='1.7.3'
 app=FastAPI(title='一山千年 泰山文化导览 API',version=VERSION,lifespan=lifespan)
 limits=defaultdict(deque)
 

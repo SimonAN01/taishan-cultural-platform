@@ -1,0 +1,91 @@
+{
+  "version": "1.7.3",
+  "samples": [
+    {
+      "sample": "pavilion-cutout",
+      "seconds": 4.87,
+      "result": {
+        "model_version": "deepseek-v4.1-flash · 云端图像理解",
+        "method": "cloud_visual",
+        "status": "unknown",
+        "confidence": null,
+        "score_type": "visual_evidence",
+        "candidates": [],
+        "observation": "画面为一处孤立的中式四角亭，建在岩石基座上，有石栏、台阶和红色立柱，亭身及周边未见任何可辨认的题刻、匾额或文字标识。",
+        "uncertainty_reason": "目录中多个景点均可能包含亭类建筑，但该亭无题字、无独特可辨地标，且背景被处理为纯白，无法与目录中任一具体景点建立明确对应。",
+        "suggestion": "请补拍包含亭上匾额、楹联或周边可辨认地标（如石刻、门楼、山势特征）的照片；也可手动浏览红门、斗母宫、中天门、玉皇顶等含亭节点的景点目录进行比对。",
+        "message": "云端分析已完成，但现有画面不足以定位到目录中的泰山景点。",
+        "request_id": "e964b98d86ef4750b8585854fd5b4958"
+      }
+    },
+    {
+      "sample": "blank",
+      "seconds": 2.86,
+      "result": {
+        "model_version": "deepseek-v4.1-flash · 云端图像理解",
+        "method": "cloud_visual",
+        "status": "unknown",
+        "confidence": null,
+        "score_type": "visual_evidence",
+        "candidates": [],
+        "observation": "画面为纯白色，未显示任何建筑、山势、石刻或可辨认的地标特征。",
+        "uncertainty_reason": "照片中没有可见的泰山景点地标、题刻或环境特征，无法与目录中任何地点对应。",
+        "suggestion": "请重新拍摄包含清晰可辨地标（如石刻题字、门楼匾额、标志性建筑或山势）的照片，或手动浏览目录中的景点图片进行比对。",
+        "message": "云端分析已完成，但现有画面不足以定位到目录中的泰山景点。",
+        "request_id": "ff60edff0d0948e19d92a6cde6413d71"
+      }
+    },
+    {
+      "sample": "user-wuyue",
+      "seconds": 4.88,
+      "result": {
+        "model_version": "deepseek-v4.1-flash · 云端图像理解",
+        "method": "cloud_visual",
+        "status": "needs_confirmation",
+        "confidence": null,
+        "score_type": "visual_evidence",
+        "candidates": [
+          {
+            "spot_id": "yuhuang",
+            "name": "玉皇顶",
+            "reason": "岩石上可辨认竖排“五岳独尊”四字题刻，符合目录中玉皇顶子地标“五岳独尊石刻”的required_text；但画面为拼接合成，不证明实地拍摄位置。",
+            "landmark_name": "五岳独尊石刻",
+            "landmark_relation": "位于玉皇庙东南侧，关联玉皇顶周边导览；石刻与玉皇庙本体、大观峰《纪泰山铭》不是同一地标。",
+            "visible_text": "五岳独尊"
+          }
+        ],
+        "observation": "画面左侧岩石上可见竖排红色题刻“五岳独尊”，右侧有松树与远山，天空为蓝天白云；画面带有多处“图精灵 616pic.com”水印，整体呈拼接或合成效果。",
+        "uncertainty_reason": "",
+        "suggestion": "题刻“五岳独尊”是玉皇顶周边子地标的明确特征，但该图明显为拼接或合成画面，不能据此判断实地拍摄位置；如需确认实地位置，建议补拍包含玉皇庙、无字碑或周边环境的连续实景照片。",
+        "message": "云端模型已给出可能的景点，请对照实景图与画面依据人工确认。候选不代表识别准确率。",
+        "request_id": "02b284334079430897566432c1cfbae3"
+      }
+    },
+    {
+      "sample": "user-daimiao",
+      "seconds": 4.59,
+      "result": {
+        "model_version": "deepseek-v4.1-flash · 云端图像理解",
+        "method": "cloud_visual",
+        "status": "needs_confirmation",
+        "confidence": null,
+        "score_type": "visual_evidence",
+        "candidates": [
+          {
+            "spot_id": "daimiao",
+            "name": "岱庙",
+            "reason": "建筑檐下竖匾可见“宋天贶殿”题字，且为重檐庑殿顶、红色列柱的殿身，符合目录中岱庙天贶殿的视觉特征。",
+            "landmark_name": "天贶殿",
+            "landmark_relation": "岱庙的主体建筑，关联岱庙礼制空间与壁画文化导览。",
+            "visible_text": "宋天贶殿"
+          }
+        ],
+        "observation": "画面为一座重檐庑殿顶的宏大古建筑正面，檐下正中悬挂竖匾，匾上可见“宋天贶殿”字样；建筑有红色列柱、斗拱和宽阔月台，前方广场上有游客。",
+        "uncertainty_reason": "",
+        "suggestion": "画面中建筑匾额题字清晰，可确认为岱庙天贶殿；如需进一步确认拍摄位置，可结合岱庙中轴线其他建筑或碑刻信息。",
+        "message": "云端模型已给出可能的景点，请对照实景图与画面依据人工确认。候选不代表识别准确率。",
+        "request_id": "0648fb37ab6f4ae0ad021c24ae18aa65"
+      }
+    }
+  ]
+}

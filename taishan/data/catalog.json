@@ -465,9 +465,10 @@
       "map_x": 56,
       "map_y": 19,
       "intro": "玉皇顶是泰山极顶的代表性地标，汇集自然视野与山岳文化体验。",
-      "interpretation": "从山脚到山顶，人们通过持续攀登形成对山岳的理解与想象。",
+      "interpretation": "从山脚到山顶，人们通过持续攀登形成对山岳的理解与想象。 玉皇庙东南侧有“五岳独尊”题刻，属周边石刻景观，与玉皇庙本体及大观峰《纪泰山铭》应分别辨认。",
       "source_ids": [
-        "unesco"
+        "unesco",
+        "wuyueduzun"
       ],
       "vision_prompt": "a Chinese temple on the highest rocky peak of Mount Tai",
       "review_status": "待专家复核",
@@ -512,7 +513,15 @@
           "bixia"
         ],
         "review_status": "AI 辅助导读 · 依据本条资料整理，待人工复核"
-      }
+      },
+      "visual_landmarks": [
+        {
+          "name": "五岳独尊石刻",
+          "evidence": "岩石上可辨认的竖排“五岳独尊”四字题刻；只有水印或说明文字提到该词不能作为依据。",
+          "relation": "位于玉皇庙东南侧，关联玉皇顶周边导览；石刻与玉皇庙本体、大观峰《纪泰山铭》不是同一地标。",
+          "required_text": "五岳独尊"
+        }
+      ]
     },
     {
       "id": "riguan",
@@ -751,14 +760,14 @@
       "map_y": null,
       "map_visible": false,
       "scene_id": "daimiao",
-      "intro": "从庙宇轴线到壁画叙事，在山脚下读泰山的人文开篇。",
+      "intro": "岱庙位于泰山南麓泰城，天贶殿是其主体建筑。沿中轴建筑、壁画与古柏碑刻，读泰山的人文开篇。",
       "interpretation": "岱庙位于泰山南麓泰城，是祭祀泰山神的场所。建筑沿南北轴线组织，天贶殿处在中轴的重要位置。空间的层层递进，也在表达礼制中的秩序。 天贶殿内的《泰山神启跸回銮图》表现泰山神出巡、回宫的场景。它以古代仪卫形象组织人物，让宗教观念通过绘画变得可见。 岱庙保存古柏和历代碑刻。“汉柏”是当地重要的文化称谓，其历史叙述也承载着登岱记忆；树木、碑石与建筑共同构成了庙中的时间层次。",
       "source_ids": [
         "dai-guide",
         "dai-mural"
       ],
-      "vision_prompt": "",
-      "vision_enabled": false,
+      "vision_prompt": "the Tiankuang Hall of Dai Temple in Taian, a wide traditional Chinese palace hall with double eaves, red columns and a central vertical Tiankuang Dian plaque",
+      "vision_enabled": true,
       "review_status": "官方资料核对，待专家复核；图片为概念画面",
       "photos": [],
       "reading": {
@@ -772,7 +781,15 @@
           "hongmen"
         ],
         "review_status": "AI 辅助导读 · 依据本条资料整理，待人工复核"
-      }
+      },
+      "visual_landmarks": [
+        {
+          "name": "天贶殿",
+          "evidence": "中央可辨认“宋天贶殿”或“天贶殿”竖匾，结合宽阔殿身、重檐庑殿顶和红色列柱；仅有通用宫殿屋顶不足以判定。",
+          "relation": "岱庙的主体建筑，关联岱庙礼制空间与壁画文化导览。",
+          "required_text": "天贶殿"
+        }
+      ]
     },
     {
       "id": "caishixi",
@@ -1506,6 +1523,14 @@
       "url": "https://tsgw.taian.gov.cn/art/2026/7/8/art_250485_10324165.html?xxgkhide=1",
       "verified_at": "2026-10-15",
       "verification": "官方页面核对并简要改写；天烛峰页面为官方检索摘要核对；仍待专业文化审校"
+    },
+    {
+      "id": "wuyueduzun",
+      "title": "清光绪宗室玉构题“五岳独尊”刻石",
+      "publisher": "泰山风景名胜区管理委员会",
+      "url": "https://tsgw.taian.gov.cn/art/2023/4/13/art_322517_1472.html",
+      "verified_at": "2026-10-17",
+      "verification": "已核对景区官网题刻名称、正文及官方石刻索引所载位置：玉皇庙东南40米处；仅用于文化导览关联，非照片定位证明。"
     }
   ],
   "knowledge": [

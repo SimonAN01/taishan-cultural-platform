@@ -9,7 +9,7 @@ const assets=JSON.parse(readFileSync(new URL('../src/image-assets.json',import.m
 test('three cultural scenes have real asset paths, sourced reading points and navigable links',()=>{
   assert.deepEqual(scenes.map(s=>s.id),['daimiao','caishixi','houshiwu']);
   for(const s of scenes){
-    const spot=catalog.spots.find(p=>p.id===s.spot_id);assert.ok(spot);assert.equal(spot.map_visible,false);assert.equal(spot.vision_enabled,false);
+    const spot=catalog.spots.find(p=>p.id===s.spot_id);assert.ok(spot);assert.equal(spot.map_visible,false);assert.equal(spot.vision_enabled,s.id==='daimiao');if(spot.vision_enabled)assert.ok(spot.vision_prompt);
     assert.equal(s.points.length,3);assert.equal(new Set(s.points.map(p=>p.id)).size,3);
     for(const id of s.asset_ids){const asset=assets.find(a=>a.id===id);assert.ok(asset,id);assert.ok(existsSync(new URL('../public/'+asset.url,import.meta.url)));}
     assert.ok(!s.asset_ids.includes('H-BG-15'),'The pavilion mislabeled as Daimiao must not become a false temple background');

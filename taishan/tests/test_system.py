@@ -314,5 +314,29 @@ class SystemTests(unittest.TestCase):
   self.assertEqual(result['status'],'unknown');self.assertEqual(result['candidates'],[])
   result=run({'status':'needs_confirmation','candidates':[{'spot_id':'jingshi','reason':'刻字'},{'spot_id':'jingshi','reason':'重复'}]})
   self.assertEqual(len(result['candidates']),1);self.assertIsNone(result['confidence']);self.assertNotIn('similarity',result['candidates'][0])
+  result=run({'status':'needs_confirmation','candidates':[{'spot_id':'yuhuang','landmark_name':'五岳独尊石刻','visible_text':'五岳独尊','reason':'可辨认岩石上竖排五岳独尊四字'}]})
+  self.assertEqual(result['candidates'][0]['landmark_name'],'五岳独尊石刻')
+  self.assertIn('不是同一地标',result['candidates'][0]['landmark_relation'])
+  result=run({'status':'needs_confirmation','candidates':[{'spot_id':'yuhuang','landmark_name':'不存在的题刻','reason':'test'}]})
+  self.assertNotIn('landmark_name',result['candidates'][0])
+  result=run({'status':'needs_confirmation','candidates':[{'spot_id':'daguan','reason':'摩崖石刻'},{'spot_id':'yuhuang','landmark_name':'五岳独尊石刻','visible_text':'','reason':'仅因相邻，画面未出现'}]})
+  self.assertEqual([c['spot_id'] for c in result['candidates']],['daguan'])
+
+ def test_cloud_vision_explains_unknown_and_composites_transparency(self):
+  import asyncio,base64
+  from backend.cloud_vision import recognize_cloud
+  output={'status':'unknown','candidates':[],'observation':'亭子与局部岩石','uncertainty_reason':'没有题字与周围地形','suggestion':'补充全景照片'}
+  response=httpx.Response(200,request=httpx.Request('POST','https://example.test'),json={'choices':[{'message':{'content':json.dumps(output)}}]})
+  with patch('backend.cloud_vision.httpx.AsyncClient.post',AsyncMock(return_value=response)) as post:
+   result=asyncio.run(recognize_cloud(Image.new('RGBA',(64,64),(0,0,0,0)),CAT['spots'],'https://example.test','test-key','test-model','test-session'))
+  self.assertEqual(result['observation'],output['observation']);self.assertEqual(result['uncertainty_reason'],output['uncertainty_reason']);self.assertEqual(result['suggestion'],output['suggestion'])
+  payload=post.call_args.kwargs['json'];encoded=payload['messages'][1]['content'][1]['image_url']['url'].split(',',1)[1]
+  with Image.open(io.BytesIO(base64.b64decode(encoded))) as image:self.assertTrue(all(c>245 for c in image.getpixel((0,0))))
+  self.assertIn('截图或游客出现在画面中不是拒识理由',payload['messages'][0]['content'])
+  output.update(observation=['invalid'],uncertainty_reason=None,suggestion='长'*500)
+  response=httpx.Response(200,request=httpx.Request('POST','https://example.test'),json={'choices':[{'message':{'content':json.dumps(output)}}]})
+  with patch('backend.cloud_vision.httpx.AsyncClient.post',AsyncMock(return_value=response)):
+   result=asyncio.run(recognize_cloud(Image.new('RGB',(64,64)),CAT['spots'],'https://example.test','test-key','test-model','test-session'))
+  self.assertEqual(result['observation'],'');self.assertTrue(result['uncertainty_reason']);self.assertEqual(len(result['suggestion']),240)
 
 if __name__=='__main__':unittest.main()

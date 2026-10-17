@@ -1,0 +1,654 @@
+{
+  "base_url": "https://118.89.176.236",
+  "scope": "disposable anonymous HTTP sessions",
+  "external_services_tested": false,
+  "checks": [
+    {
+      "name": "health and OpenAPI use the same version",
+      "passed": true,
+      "detail": {
+        "health": "1.7.3",
+        "openapi": "1.7.3"
+      }
+    },
+    {
+      "name": "at least eight cultural spots",
+      "passed": true
+    },
+    {
+      "name": "four routes",
+      "passed": true
+    },
+    {
+      "name": "spots catalog parity",
+      "passed": true
+    },
+    {
+      "name": "spots/hongmen valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/wanxian valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/doumu valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/jingshi valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/zhongtian valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/wudafu valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/shibapan valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/nantian valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/tianjie valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/bixia valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/yuhuang valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/riguan valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/tianwai valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/taohua valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/dongyu valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/daguan valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/daimiao valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/caishixi valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/houshiwu valid sources",
+      "passed": true
+    },
+    {
+      "name": "routes catalog parity",
+      "passed": true
+    },
+    {
+      "name": "routes/hongmen valid sources",
+      "passed": true
+    },
+    {
+      "name": "routes/tianwai valid sources",
+      "passed": true
+    },
+    {
+      "name": "routes/taohua valid sources",
+      "passed": true
+    },
+    {
+      "name": "routes/dongyu valid sources",
+      "passed": true
+    },
+    {
+      "name": "history catalog parity",
+      "passed": true
+    },
+    {
+      "name": "history/preqin valid sources",
+      "passed": true
+    },
+    {
+      "name": "history/qin valid sources",
+      "passed": true
+    },
+    {
+      "name": "history/han valid sources",
+      "passed": true
+    },
+    {
+      "name": "history/tang valid sources",
+      "passed": true
+    },
+    {
+      "name": "history/song valid sources",
+      "passed": true
+    },
+    {
+      "name": "history/mingqing valid sources",
+      "passed": true
+    },
+    {
+      "name": "history/modern valid sources",
+      "passed": true
+    },
+    {
+      "name": "poems catalog parity",
+      "passed": true
+    },
+    {
+      "name": "poems/wangyue valid sources",
+      "passed": true
+    },
+    {
+      "name": "poems/libai-1 valid sources",
+      "passed": true
+    },
+    {
+      "name": "poems/libai-2 valid sources",
+      "passed": true
+    },
+    {
+      "name": "spot detail/hongmen",
+      "passed": true
+    },
+    {
+      "name": "spot detail/wanxian",
+      "passed": true
+    },
+    {
+      "name": "spot detail/doumu",
+      "passed": true
+    },
+    {
+      "name": "spot detail/jingshi",
+      "passed": true
+    },
+    {
+      "name": "spot detail/zhongtian",
+      "passed": true
+    },
+    {
+      "name": "spot detail/wudafu",
+      "passed": true
+    },
+    {
+      "name": "spot detail/shibapan",
+      "passed": true
+    },
+    {
+      "name": "spot detail/nantian",
+      "passed": true
+    },
+    {
+      "name": "spot detail/tianjie",
+      "passed": true
+    },
+    {
+      "name": "spot detail/bixia",
+      "passed": true
+    },
+    {
+      "name": "spot detail/yuhuang",
+      "passed": true
+    },
+    {
+      "name": "spot detail/riguan",
+      "passed": true
+    },
+    {
+      "name": "spot detail/tianwai",
+      "passed": true
+    },
+    {
+      "name": "spot detail/taohua",
+      "passed": true
+    },
+    {
+      "name": "spot detail/dongyu",
+      "passed": true
+    },
+    {
+      "name": "spot detail/daguan",
+      "passed": true
+    },
+    {
+      "name": "spot detail/daimiao",
+      "passed": true
+    },
+    {
+      "name": "spot detail/caishixi",
+      "passed": true
+    },
+    {
+      "name": "spot detail/houshiwu",
+      "passed": true
+    },
+    {
+      "name": "route node IDs/hongmen",
+      "passed": true
+    },
+    {
+      "name": "route node IDs/tianwai",
+      "passed": true
+    },
+    {
+      "name": "variant node IDs/tianwai/walk",
+      "passed": true
+    },
+    {
+      "name": "variant node IDs/tianwai/cable",
+      "passed": true
+    },
+    {
+      "name": "route node IDs/taohua",
+      "passed": true
+    },
+    {
+      "name": "route node IDs/dongyu",
+      "passed": true
+    },
+    {
+      "name": "complete annotations/wangyue",
+      "passed": true
+    },
+    {
+      "name": "complete annotations/libai-1",
+      "passed": true
+    },
+    {
+      "name": "complete annotations/libai-2",
+      "passed": true
+    },
+    {
+      "name": "HTML served//",
+      "passed": true
+    },
+    {
+      "name": "security headers//",
+      "passed": true
+    },
+    {
+      "name": "entry asset/style.css",
+      "passed": true
+    },
+    {
+      "name": "entry asset/app.js",
+      "passed": true
+    },
+    {
+      "name": "HTML served//experience/",
+      "passed": true
+    },
+    {
+      "name": "security headers//experience/",
+      "passed": true
+    },
+    {
+      "name": "entry asset//experience/assets/index-BUHA9meJ.js",
+      "passed": true
+    },
+    {
+      "name": "entry asset//experience/assets/index-ChModwj8.css",
+      "passed": true
+    },
+    {
+      "name": "real photo/44131616",
+      "passed": true
+    },
+    {
+      "name": "real photo/4129384",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-44150033",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-44151345",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-44151397",
+      "passed": true
+    },
+    {
+      "name": "real photo/44151030",
+      "passed": true
+    },
+    {
+      "name": "real photo/44174842",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-59699909",
+      "passed": true
+    },
+    {
+      "name": "real photo/54919328",
+      "passed": true
+    },
+    {
+      "name": "real photo/5327850",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-28523713",
+      "passed": true
+    },
+    {
+      "name": "real photo/97594617",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-44283635",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-44283692",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-98954166",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-177263414",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-54918536",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-54919130",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-54919235",
+      "passed": true
+    },
+    {
+      "name": "real photo/1636834",
+      "passed": true
+    },
+    {
+      "name": "real avatar GLB and immutable caching",
+      "passed": true
+    },
+    {
+      "name": "scene empty progress/daimiao",
+      "passed": true
+    },
+    {
+      "name": "scene rejects foreign reading point/daimiao",
+      "passed": true
+    },
+    {
+      "name": "scene point/daimiao/axis",
+      "passed": true
+    },
+    {
+      "name": "scene point/daimiao/mural",
+      "passed": true
+    },
+    {
+      "name": "scene point/daimiao/trees",
+      "passed": true
+    },
+    {
+      "name": "scene progress idempotent/daimiao",
+      "passed": true
+    },
+    {
+      "name": "scene session isolation/daimiao",
+      "passed": true
+    },
+    {
+      "name": "scene model slot truth/daimiao",
+      "passed": true
+    },
+    {
+      "name": "scene empty progress/caishixi",
+      "passed": true
+    },
+    {
+      "name": "scene rejects foreign reading point/caishixi",
+      "passed": true
+    },
+    {
+      "name": "scene point/caishixi/stone",
+      "passed": true
+    },
+    {
+      "name": "scene point/caishixi/water",
+      "passed": true
+    },
+    {
+      "name": "scene point/caishixi/fish",
+      "passed": true
+    },
+    {
+      "name": "scene progress idempotent/caishixi",
+      "passed": true
+    },
+    {
+      "name": "scene session isolation/caishixi",
+      "passed": true
+    },
+    {
+      "name": "scene model slot truth/caishixi",
+      "passed": true
+    },
+    {
+      "name": "scene empty progress/houshiwu",
+      "passed": true
+    },
+    {
+      "name": "scene rejects foreign reading point/houshiwu",
+      "passed": true
+    },
+    {
+      "name": "scene point/houshiwu/pines",
+      "passed": true
+    },
+    {
+      "name": "scene point/houshiwu/temple",
+      "passed": true
+    },
+    {
+      "name": "scene point/houshiwu/legend",
+      "passed": true
+    },
+    {
+      "name": "scene progress idempotent/houshiwu",
+      "passed": true
+    },
+    {
+      "name": "scene session isolation/houshiwu",
+      "passed": true
+    },
+    {
+      "name": "scene model slot truth/houshiwu",
+      "passed": true
+    },
+    {
+      "name": "quiz hides answer keys",
+      "passed": true
+    },
+    {
+      "name": "quiz rejects skipped chapters",
+      "passed": true
+    },
+    {
+      "name": "quiz requires a real visit",
+      "passed": true
+    },
+    {
+      "name": "quiz choice validation/gate",
+      "passed": true
+    },
+    {
+      "name": "quiz choice validation/stone",
+      "passed": true
+    },
+    {
+      "name": "quiz choice validation/memory",
+      "passed": true
+    },
+    {
+      "name": "quiz choice validation/poetry",
+      "passed": true
+    },
+    {
+      "name": "quiz choice validation/heritage",
+      "passed": true
+    },
+    {
+      "name": "all chapters persisted exactly once",
+      "passed": true
+    },
+    {
+      "name": "favorites are persistent and idempotent",
+      "passed": true
+    },
+    {
+      "name": "favorite removal",
+      "passed": true
+    },
+    {
+      "name": "other session journey is empty",
+      "passed": true
+    },
+    {
+      "name": "invalid input/journey/visit/{'spot_id': 'missing'}",
+      "passed": true
+    },
+    {
+      "name": "invalid input/journey/favorite/{'kind': 'spot', 'item_id': 'missing', 'saved': True}",
+      "passed": true
+    },
+    {
+      "name": "invalid input/journey/favorite/{'kind': 'script', 'item_id': 'hongmen', 'saved': True}",
+      "passed": true
+    },
+    {
+      "name": "invalid input/agent/chat/{'message': '   '}",
+      "passed": true
+    },
+    {
+      "name": "invalid input/agent/chat/{'message': 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "passed": true
+    },
+    {
+      "name": "invalid input/agent/chat/{'message': '介绍', 'current_spot': 'missing'}",
+      "passed": true
+    },
+    {
+      "name": "invalid input/agent/chat/{'message': '介绍', 'current_poem': 'missing'}",
+      "passed": true
+    },
+    {
+      "name": "invalid input/agent/chat/{'message': '介绍', 'current_route': 'missing'}",
+      "passed": true
+    },
+    {
+      "name": "invalid input/speech/tts/{'text': ''}",
+      "passed": true
+    },
+    {
+      "name": "cross-origin write rejected",
+      "passed": true
+    },
+    {
+      "name": "invalid photo rejected",
+      "passed": true
+    },
+    {
+      "name": "prediction ownership enforced",
+      "passed": true
+    },
+    {
+      "name": "cookie is HttpOnly and session response not cached",
+      "passed": true
+    },
+    {
+      "name": "clear disposable journey resets progress and favorites",
+      "passed": true
+    },
+    {
+      "name": "clear scene progress/daimiao",
+      "passed": true
+    },
+    {
+      "name": "clear scene progress/caishixi",
+      "passed": true
+    },
+    {
+      "name": "clear scene progress/houshiwu",
+      "passed": true
+    }
+  ],
+  "services": [],
+  "health": {
+    "status": "ok",
+    "version": "1.7.3",
+    "immersive_available": true,
+    "knowledge_documents": 34,
+    "agent_mode": "rag_llm",
+    "agent_provider": "coze",
+    "llm_configured": true,
+    "generation_service": {
+      "state": "configured",
+      "checked_at": null
+    },
+    "tts_available": true,
+    "tts_voice": "zh-CN-XiaoxiaoNeural",
+    "tts_service": {
+      "state": "configured",
+      "checked_at": null
+    },
+    "vision_available": true,
+    "vision_mode": "cloud_visual",
+    "vision_service": {
+      "state": "configured",
+      "checked_at": null
+    },
+    "trained_landmark_model": false,
+    "retrieval_mode": "bge_hybrid",
+    "language_model": "Coze 智能体"
+  },
+  "catalog_counts": {
+    "spots": 19,
+    "routes": 4,
+    "history": 7,
+    "poems": 3,
+    "artifacts": 3,
+    "scenes": 3,
+    "sources": 19
+  },
+  "summary": {
+    "total": 150,
+    "passed": 150,
+    "failed": 0
+  }
+}
