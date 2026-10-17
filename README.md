@@ -1,6 +1,8 @@
 # 一山千年 · 泰山文化交互体验
 
-本分支融合原仓库的沉浸式画卷前端与已上线验证的泰山文化导览后端。原仓库素材、模型与历史保留；当前后端版本为 1.7.1，早期融合与发布记录保留为历史。
+团队私有仓库：[SimonAN01/taishan-cultural-platform](https://github.com/SimonAN01/taishan-cultural-platform)。**Win11 x64：完整拉取/解压后双击 `Start-Windows.cmd`，自动安装环境并启动；另双击 `Check-Windows.cmd` 验收。无需填写 Key。** 详见[部署说明](部署说明.md)与[Windows 说明](docs/windows/README.md)。
+
+本分支融合原仓库的沉浸式画卷前端与已上线验证的泰山文化导览后端。原仓库素材、模型与历史保留；当前后端版本为 1.7.2，早期融合与发布记录保留为历史。
 
 - `/`：完整导览，包含地图、19处景点、实景照片、历史、诗词、文博、五章游历、收藏与足迹、文化问答和云端识景。
 - `/experience/`：原仓库的分层画卷、景点近景、数字人六个动画及索道三维演绎；问答、资料来源和已收录景点的足迹接入同一后端。两种界面共享同源匿名会话。
@@ -11,7 +13,7 @@
 
 **团队直接运行：本分支已包含授权共享的 API 配置，安装依赖并构建后执行 `./taishan/start.sh`。无需成员自行申请或填写服务密钥。**
 
-本分支 `codex/taishan-integration` 包含当前 1.7.1 系统的源码与必要运行素材。克隆本分支后按下文安装依赖并构建；`dist/` 可重新生成，无需另行下载网页素材。
+本分支 `codex/taishan-integration` 包含当前 1.7.2 系统的源码与必要运行素材。克隆本分支后按下文安装依赖并构建；`dist/` 可重新生成，无需另行下载网页素材。
 
 | 内容 | 仓库位置 |
 | --- | --- |
@@ -35,25 +37,38 @@
 需要 Node.js 22+、Python 3.12+ 和可访问云端 API 的网络。不需要本机训练模型或 GPU。首次克隆时指定本分支：
 
 ```sh
-git clone --branch codex/taishan-integration --single-branch https://github.com/xiaozhi0519/digital-media-projects.git
-cd digital-media-projects
+git clone https://github.com/SimonAN01/taishan-cultural-platform.git
+cd taishan-cultural-platform
 ```
 
 ```sh
 npm ci
-npm run build
-python3 -m venv taishan/.venv
-taishan/.venv/bin/pip install -r taishan/requirements.lock.txt
-./taishan/start.sh
+npm start
 ```
 
-**正常团队运行无需复制 `.env.example`，无需填写 Token／Key，也无需手动 `source`。** `start.sh` 先加载已提交的后端 `config/team.env`，再加载可选的本机 `.env` 覆盖；不要从空白模板创建 `.env`，否则其中的空值会覆盖团队凭证。依赖安装、前端构建和云端网络可达仍是必要条件。
+`npm start` 自动创建后端 Python 环境、安装锁定依赖、加载仓库已填好的团队 API 配置、构建前端并启动完整系统。首次安装需要联网，之后复用已安装依赖。终端显示“后端已就绪；历史资料 7 条；问山配置已加载；识景配置已加载”后访问：
 
-Windows 请使用 WSL，在同一 Linux 环境内安装 Python／Node 依赖并运行启动脚本。
+- 历史长卷：`http://127.0.0.1:18605/experience/#history`
+- 完整系统：`http://127.0.0.1:18605/experience/`
+- 问山：`http://127.0.0.1:18605/experience/#agent`
+- AI 识景：`http://127.0.0.1:18605/experience/#vision`
 
-访问 `http://127.0.0.1:18605/` 或 `http://127.0.0.1:18605/experience/`。没有模型密钥时问答会明确采用资料检索，云端识景不可用；不会伪装已调用模型。BGE 权重为可选下载，缺少时自动采用文本检索。未提交本机运行数据库或模型缓存。
+**前端开发请运行 `npm run dev`：现在会同时启动后端 18605 与 Vite 4173。** 访问 `http://127.0.0.1:4173/experience/#history`；终端按 Ctrl+C 退出联动进程。完整导览主站位于 `http://127.0.0.1:18605/`。`npm run dev:frontend` 仅供已有后端的开发者单独启动前端。`npm run preview` 仍需后端已运行。
 
-前端开发可在仓库根目录运行 `npm run dev`，Vite 的 `/api` 代理指向 `127.0.0.1:18605`；联动完整主站请使用上述后端地址。
+**历史长卷来自仓库中的文化资料，不调用大模型。** 截图若显示“暂时未能展开／服务暂不可用”，先查看终端后端是否启动、是否拉取正确分支；不是补一个模型 Key 就能解决。不要直接双击 `index.html` 或只用静态文件服务器。自动启动会验证 `/api/health` 和 `/api/history`；端口已被旧进程占用时会停止并明确提示。
+
+正常团队运行无需复制 `.env.example`，无需填写 Token／Key，也无需手动 `source`。启动器先加载已提交的后端 `config/team.env`，再加载可选本机 `taishan/.env` 覆盖。旧空白 `.env` 可能覆盖团队凭证；启动器会显示配置未加载的提示。云端服务仍依赖服务有效期、额度与网络。缺少 BGE 权重时使用文本检索，不需要训练模型或 GPU。
+
+Win11 x64 优先双击 `Start-Windows.cmd` 自动安装环境；已有环境也可直接使用 npm 命令。Node 启动器支持 macOS、Linux 与 Windows 的 Python 环境路径；本次 macOS 已实测，Win11 原生首次安装仍需团队实机复验。保留 `./taishan/start.sh` 作为 macOS/Linux/WSL 已安装环境下的直接后端入口。
+
+已有项目更新：
+
+```sh
+git switch codex/taishan-integration
+git pull --ff-only
+npm ci
+npm run dev
+```
 
 ## 智能体、AI 识图与语音配置
 
@@ -145,7 +160,7 @@ VISION_BACKEND=cloud
 
 修改端口后，若使用 Vite 开发，须同步调整 `vite.config.js` 中的代理目标。运行时生成的会话与缓存仍写入忽略的 `taishan/runtime/`。
 
-已验证在无本机 `.env`、无继承 API 环境变量的临时项目目录中由 `start.sh` 自动加载团队配置，并实际完成 Coze、识图与 TTS 请求；依赖使用已安装环境，未将此测试描述为所有系统上的全新依赖安装验证。见 [团队启动验收](docs/integration/team-start-verification.json)。
+早期 `start.sh` 配置验收见 [团队启动验收](docs/integration/team-start-verification.json)。本次额外验证新 Python 虚拟环境从锁定文件安装，及 `npm start` 干净代码副本启动；平台覆盖与结果见 [全量验收报告](docs/integration/需求技术方案全量验收报告-20261017.md)。
 
 团队配置与可选 `.env` 均使用 shell 兼容的 `KEY=value` 格式，不在等号两边添加空格；值含空格或特殊字符时加引号。`COZE_PROJECT_ID=` 表示空值。启动脚本中的路径相对于脚本所在目录解析，可从不同工作目录启动。
 
@@ -153,7 +168,7 @@ VISION_BACKEND=cloud
 - 识图：`http://127.0.0.1:18605/experience/#vision`
 - 健康状态：`http://127.0.0.1:18605/api/health`
 
-需要同时启动后端；单独运行 Vite 只提供前端开发页面，默认通过代理访问 `127.0.0.1:18605`。
+`npm run dev` 自动同时启动后端；`npm run dev:frontend` 和 `npm run preview` 只提供前端，需要另有后端运行于 `127.0.0.1:18605`。
 
 ### 4. 不使用 Coze 的配置方式
 
@@ -298,12 +313,13 @@ DATA_DIR=/opt/taishan/runtime
 - 麦克风入口使用有效 HTTPS 或本机 localhost，用户点击授权；公网 HTTP 的文字和 TTS 功能不等于麦克风可用。
 - 浏览器语音识别使用浏览器自身服务，无额外 STT Key 配置；支持情况、硬件权限和网络需在真实设备验证。
 - 数字人根据实际播放音量驱动口型；当前不是音素级唇形模型。
-- 若 Nginx 出现 504，对照实际配置检查 `proxy_read_timeout`。Coze 适配器总等待上限 55 秒，应用层前端等待 65 秒，代理等待建议至少 65 秒。仓库较早的 HTTP 模板可能仍为 50 秒；修改应先执行 `nginx -t` 再重载，并在公网复测。
+- 若 Nginx 出现 504，对照实际配置检查 `proxy_read_timeout`。Coze 适配器总等待上限 55 秒，应用层前端等待 65 秒，代理等待建议至少 65 秒。当前 HTTP 与 HTTPS 模板均设为 70 秒；修改应先执行 `nginx -t` 再重载，并在公网复测。
 
 ### 8. 常见问题排查
 
 | 现象 | 检查与处理 |
 | --- | --- |
+| 历史长卷“暂时未能展开” | 在正确分支运行 `npm ci` 后执行 `npm run dev` 或 `npm start`，等待终端显示历史资料 7 条。历史资料不需要模型 Key；仅启动静态前端无法连接本站 API。 |
 | 克隆后问山只给资料摘录 | 使用 `./taishan/start.sh`，核对团队配置是否存在；检查旧本机 `.env` 的空值是否覆盖团队凭证，然后重启。先看响应 `mode`，不要只看 HTTP 200。 |
 | 只配置 Coze 后识图报未配置 | 补齐独立的 `LLM_BASE_URL`、`LLM_MODEL`、`LLM_API_KEY`，并设 `VISION_BACKEND=cloud`。 |
 | 401／403 或 Token 无效 | 对应服务的 Token／Key、权限或有效期有问题；Key 不带 `Bearer `，不要交换两种凭证。 |
@@ -311,7 +327,7 @@ DATA_DIR=/opt/taishan/runtime
 | Coze 一直回退到资料 | 核对 `/stream_run`、部署是否在线、协议是否为本适配器要求的 SSE，以及是否保留资料引用。日志中 `LLM unavailable or citation invalid` 既可能是网络失败，也可能是返回内容未通过校验。 |
 | 使用了 `/task/{task_id}` | 这是任务状态查询，不是当前代码发起对话的端点。改回部署对应的对话端点。 |
 | `project_id` 错误 | 有要求时填整数 ID；现有部署可留空。不要从 Token、Bot ID 或 URL 猜填项目 ID。 |
-| 修改 `.env` 没生效 | 变量在模块导入时读取；用启动脚本重启旧后端，并确认浏览器访问的确实是该进程。Vite 的代理目标固定为本机 18605。 |
+| 修改 `.env` 没生效 | 变量在模块导入时读取；用启动脚本重启旧后端，并确认浏览器访问的确实是该进程。Vite 的代理目标固定为本机 18605；使用 `npm run dev` 自动联动。 |
 | 语音不出声或数字人不开口 | 先测 `/api/speech/tts`，再检查浏览器播放授权与播放器状态。`tts_available=true` 只检查依赖安装，不能证明网络和播放成功。 |
 | 公网麦克风不可用 | 使用有效 HTTPS，检查浏览器语音识别支持与站点授权；不在 HTTP 上反复申请。 |
 | `retrieval_mode=lexical` | 未安装 BGE 可选权重，系统使用关键词检索，云端生成与识图仍可工作。 |
@@ -369,3 +385,7 @@ IMMERSIVE_FRONTEND_DIR=/opt/taishan/immersive
 ### 文化导读与流程完善（1.7.1）
 
 19 个景点新增观察与文化阅读线索、7 条历史记录新增导读及上下文提问、3 首诗新增三步阅读定位；导读为 AI 辅助编辑稿，沿用原条目的来源并明确待人工复核。首页可以直接进入五章读山，章节状态会随景点和诗词链接保存。详见 [文字与模型协作说明](docs/content/文字与模型协作说明.md)。
+
+## 最新全量核验
+
+需求、当前技术方案、真实功能与待交付项见 [2026-10-17 全量验收报告](docs/integration/需求技术方案全量验收报告-20261017.md)。GitHub 远端静态资源逐文件核验见 [资源清单](docs/integration/full-audit-20261017/github-assets.json)。

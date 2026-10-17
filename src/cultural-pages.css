@@ -15,6 +15,7 @@ body.culture-open{overflow:hidden}.culture-dialog{padding:0;border:1px solid var
 .guide-voice-input{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:12px 0;font:13px/1.7 "PingFang SC",sans-serif}.guide-voice-input button{padding:10px 14px;border:1px solid #b9a68c;min-height:44px;background:#f8f1e5}.guide-voice-input label{display:flex;align-items:center;gap:7px}.guide-voice-input label input{width:18px;height:18px;accent-color:#903c30}.guide-voice-input p{flex-basis:100%;margin:0;color:#75674f;font-size:12px}.guide-voice-input button:disabled{opacity:.6}
 .guide-voice-input audio{display:block;width:100%;height:38px;flex-basis:100%;margin:5px 0}
 .guide-conversation{display:flex;flex-direction:column;overflow:hidden;min-height:0}.guide-conversation header{position:relative;top:auto;flex-shrink:0;background:#f3eee2}.guide-scroll{min-height:0;overflow-y:auto;flex:1;padding-top:16px;padding-right:5px;scrollbar-color:#b9a68c transparent}
+.guide-gestures button,.guide-form button,.guide-controls button,.guide-close{min-width:44px;min-height:44px}
 
 .culture-dialog [hidden]{display:none!important}
 .culture-photo-zoom{display:block;width:100%;padding:0!important;border:0!important;cursor:zoom-in;background:transparent}

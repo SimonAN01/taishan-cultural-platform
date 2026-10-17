@@ -44,7 +44,7 @@ app.innerHTML = `
   <div class="paper-shade" aria-hidden="true"></div>
   <header class="topbar"><div class="brand-cluster"><a href="#journey" class="tiny-brand" aria-label="回到泰山全景"><span class="seal">岱</span>山河未改 · 来者不同</a><button class="welcome-return" id="welcome-return" type="button" title="返回欢迎页"><span aria-hidden="true">↶</span>返回卷首</button></div>
    <nav aria-label="探索内容"><button data-explore="overview" class="current">山水</button><span>／</span><button data-explore="culture">历史</button><span>／</span><button data-explore="poem">诗词</button><span>／</span><button data-explore="travel">路线</button><span>／</span><button data-explore="guide">问山</button><span>／</span><button data-explore="trail">足迹</button><span>／</span><button data-explore="scenes">山境</button><span>／</span><button data-explore="art">图集</button><span>／</span><button data-explore="vision">识景</button></nav>
-   <div class="tools"><a class="full-system-link" href="/">完整导览 ↗</a><button id="motion" aria-pressed="false" title="简化动效">${icon('motion')}<span>动效</span></button><button id="fullscreen" title="切换全屏">${icon('fullscreen')}<span>全屏</span></button></div>
+   <div class="tools"><a class="full-system-link" href="${import.meta.env.DEV ? 'http://127.0.0.1:18605/' : '/'}">完整导览 ↗</a><button id="motion" aria-pressed="false" title="简化动效">${icon('motion')}<span>动效</span></button><button id="fullscreen" title="切换全屏">${icon('fullscreen')}<span>全屏</span></button></div>
   </header>
   <div class="side-script" aria-hidden="true">五岳之首 · 中华泰山<span class="small-seal">山河</span></div>
   <section class="hero" aria-labelledby="title"><p class="eyebrow">A JOURNEY THROUGH TIME</p>
@@ -112,9 +112,10 @@ app.innerHTML = `
    <p class="guide-context" id="guide-context">正在从泰山全景为你讲解</p>
    <div class="guide-answer" id="guide-answer" aria-live="polite"><span class="guide-speaker">碧霞仙子</span><p></p><button class="guide-route-link" id="guide-route-link" hidden></button></div>
    <div class="guide-status" id="guide-status" role="status"><i></i><span>可以开始提问</span></div>
+   <div class="guide-request-controls"><button id="guide-cancel" hidden>停止等待</button><button id="guide-retry" hidden>重试上个问题</button><button id="guide-clear">清空对话</button></div>
    <div id="guide-sources" class="guide-sources"></div><div class="guide-questions" id="guide-questions" aria-label="推荐问题"></div>
    <form class="guide-form" id="guide-form"><label for="guide-input">还想知道什么？</label><div><input id="guide-input" required maxlength="800" autocomplete="off" placeholder="例如：第一次登泰山走哪条路？"><button type="submit" disabled>请讲解</button></div></form>
-   <div class="guide-voice-input" id="guide-voice-input"></div><div class="guide-request-controls"><button id="guide-cancel" hidden>停止等待</button><button id="guide-retry" hidden>重试上个问题</button><button id="guide-clear">清空对话</button></div><details class="guide-transcript"><summary>本次会话记录</summary><div class="guide-transcript-log" id="guide-transcript-log"><p>尚无提问。</p></div></details><div class="guide-controls"><button id="guide-replay">◉ 再听一遍</button><button id="guide-stop">□ 停止朗读</button><span id="guide-voice-label">云端 TTS：晓晓 · 实际音频驱动口型</span></div>
+   <div class="guide-voice-input" id="guide-voice-input"></div><details class="guide-transcript"><summary>本次会话记录</summary><div class="guide-transcript-log" id="guide-transcript-log"><p>尚无提问。</p></div></details><div class="guide-controls"><button id="guide-replay">◉ 再听一遍</button><button id="guide-stop">□ 停止朗读</button><span id="guide-voice-label">云端 TTS：晓晓 · 实际音频驱动口型</span></div>
   </div></div>
  </section>
  <div class="scroll-space" aria-hidden="true"></div>
@@ -180,6 +181,7 @@ let guideAvatarPromise;
 let guidePreviousFocus;
 let guideSceneReturn = null;
 let guideTopic = {};
+let guideHasAsked = false;
 let guideContextId = null;
 let guideLastAnswer = '';
 let guideController;
@@ -850,12 +852,16 @@ async function loadGuideHistory() {
     log.innerHTML=rows.length?rows.map(row=>`<article class="guide-message"><strong>${row.role==='user'?'你':row.mode==='rag_llm'?'碧霞仙子 · AI 生成':'碧霞仙子 · 文化资料'}</strong><p>${escapeHTML(row.text)}</p>${(row.sources||[]).map(source=>`<a href="${escapeHTML(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(source.title)} ↗</a>`).join('')}</article>`).join(''):'<p>尚无提问。</p>';
   } catch(error) { if(token===historyRequest)document.querySelector('#guide-transcript-log').textContent='暂时无法载入记录：'+error.message; }
 }
+function revealGuideAnswer() {
+  document.querySelector('#guide-answer').scrollTop = 0;
+  document.querySelector('.guide-scroll').scrollTop = 0;
+}
 async function askGuide(question) {
   if (!question || guideBusy) return;
   voicePipeline?.unlock();
   voicePipeline?.stopListening();
   stopGuideSpeech();
-  lastGuideQuestion=question;guideWasCancelled=false;
+  lastGuideQuestion=question;guideWasCancelled=false;guideHasAsked=true;
   document.querySelector('#guide-cancel').hidden=false;
   document.querySelector('#guide-retry').hidden=true;
   document.querySelector('#guide-clear').disabled=true;
@@ -871,11 +877,13 @@ async function askGuide(question) {
   guideRouteLink.hidden = true;
   guideAvatar?.setThinking(true);
   setGuideStatus('正在检索资料并请求模型', 'thinking');
+  revealGuideAnswer();
   try {
     const reply = await askApi(question, guideContextId, catalog?.spots.find(s=>s.id===guideContextId)?.name || places[guideContextId]?.name, controller.signal, guideTopic);
     if (request !== guideRequest || !guideScene.classList.contains('is-open')) return;
     guideAvatar?.setThinking(false);
     showGuideAnswer(reply, false);
+    revealGuideAnswer();
     if(voicePipeline?.autoSpeak())speakGuide(reply.answer);
     loadGuideHistory();
     if(!voicePipeline?.autoSpeak())setGuideStatus(reply.mode === 'rag_llm' ? '模型已回答，可对照来源或点击朗读' : '已返回文化资料，请对照来源', 'ready');
@@ -886,6 +894,7 @@ async function askGuide(question) {
     document.querySelector('#guide-input').value = question;
     document.querySelector('#guide-retry').hidden=false;
     setGuideStatus('请求未完成，可重试或打开完整导览', 'ready');
+    revealGuideAnswer();
   } finally {
     clearTimeout(timeout);
     if (request === guideRequest) { guideBusy = false; updateGuideSubmit(); guideController = null; document.querySelector('#guide-cancel').hidden=true; document.querySelector('#guide-clear').disabled=false; }
@@ -936,7 +945,7 @@ function openGuide(placeId = null, update = true, context = {}) {
   if (guideScene.classList.contains('is-open')) return;
   const returnState=readCultureLocation(location.hash);
   guideSceneReturn = returnState&&!['map','agent'].includes(returnState.page) ? location.hash : null;
-  guideTopic=context;
+  guideTopic=context;guideHasAsked=false;
   document.querySelector('#guide-input').value='';updateGuideSubmit();
   closeDialog();
   guidePreviousFocus = document.activeElement;
@@ -1311,7 +1320,14 @@ catalogReady.then(data=>{
   }
   for(const route of routes)syncVerifiedRoute(route.id);
   panoramaControls.setCatalog(catalog);
-  if(guideContextId&&guideScene.classList.contains('is-open')){const current=catalog.spots.find(spot=>spot.id===guideContextId);if(current)document.querySelector('#guide-context').textContent=`正在讲解：${current.name} · 可继续追问此处故事与路线`;}
+  if(guideScene.classList.contains('is-open')){
+    const current=catalog.spots.find(spot=>spot.id===guideContextId);
+    const topic=guideTopic.poem?catalog.poems.find(p=>p.id===guideTopic.poem):guideTopic.route?catalog.routes.find(r=>r.id===guideTopic.route):null;
+    if(topic)document.querySelector('#guide-context').textContent='正在讲解：'+(topic.title||topic.name)+' · 提问会携带当前'+(guideTopic.poem?'诗词':'路线')+'上下文';
+    else if(current)document.querySelector('#guide-context').textContent=`正在讲解：${current.name} · 可继续追问此处故事与路线`;
+    renderGuideQuestions();
+    if(!guideHasAsked)showGuideAnswer({answer:topic?'我们接着读'+(topic.title||topic.name)+'。可以从推荐问题开始，或输入你的问题。':getGuideGreeting(guideContextId,current)},false);
+  }
   routeState();
 });
 

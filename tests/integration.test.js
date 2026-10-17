@@ -30,6 +30,13 @@ test('service failures remain failures instead of returning a scripted answer', 
   finally { globalThis.fetch = original; }
 });
 
+test('missing backend gives the team an actionable startup message',async()=>{
+  const original=globalThis.fetch;
+  globalThis.fetch=async()=>{throw new TypeError('Failed to fetch');};
+  try{await assert.rejects(askApi('泰山有什么景点'),/npm run dev.*npm start/);}
+  finally{globalThis.fetch=original;}
+});
+
 test('image uploads let the browser set multipart boundaries and preserve cancellation', async () => {
   const {requestApi} = await import('../src/integration.js');
   const original=globalThis.fetch, form=new FormData(), controller=new AbortController();

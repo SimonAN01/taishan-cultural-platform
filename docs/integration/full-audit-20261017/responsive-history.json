@@ -1,0 +1,37 @@
+[
+  {
+    "bodyWidth": 320,
+    "clientWidth": 320,
+    "contentWidth": 320,
+    "dialogWidth": 320,
+    "width": 320
+  },
+  {
+    "bodyWidth": 390,
+    "clientWidth": 390,
+    "contentWidth": 390,
+    "dialogWidth": 390,
+    "width": 390
+  },
+  {
+    "bodyWidth": 768,
+    "clientWidth": 718,
+    "contentWidth": 718,
+    "dialogWidth": 720,
+    "width": 768
+  },
+  {
+    "bodyWidth": 1024,
+    "clientWidth": 974,
+    "contentWidth": 974,
+    "dialogWidth": 976,
+    "width": 1024
+  },
+  {
+    "bodyWidth": 1440,
+    "clientWidth": 1390,
+    "contentWidth": 1390,
+    "dialogWidth": 1392,
+    "width": 1440
+  }
+]

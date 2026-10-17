@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --host 127.0.0.1 --port 4173 --strictPort",
+    "start": "node scripts/run.mjs",
+    "dev": "node scripts/run.mjs --dev",
+    "dev:frontend": "vite --host 127.0.0.1 --port 4173 --strictPort",
     "build": "vite build --target esnext",
     "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
     "test": "node --test tests/*.test.js"

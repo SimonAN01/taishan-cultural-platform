@@ -19,6 +19,19 @@ class SystemTests(unittest.TestCase):
  def setUp(self):
   limits.clear();self.client=TestClient(app);self.client.__enter__();self.other=TestClient(app);self.other.__enter__()
  def tearDown(self):self.client.__exit__(None,None,None);self.other.__exit__(None,None,None)
+ def test_health_matches_documented_api_version(self):
+  health=self.client.get('/api/health').json()
+  self.assertEqual(self.client.get('/openapi.json').json()['info']['version'],health['version'])
+ def test_switching_spots_resets_pronoun_query_and_sends_current_place_to_agent(self):
+  from backend import app as service
+  self.client.post('/api/agent/chat',json={'message':'大观峰的石刻有什么文化意义','current_spot':'daguan'})
+  document=dict(CAT['knowledge'][0],relevance=1)
+  with patch.object(service,'AGENT_PROVIDER','coze'),patch.object(service,'COZE_ENABLED',True),patch.object(service,'guide_tools',return_value=([],[])),patch.object(service.RETRIEVER,'search',return_value=[document]) as search,patch.object(service,'run_coze',AsyncMock(return_value='请对照本处文化资料。[1]')) as generate:
+   response=self.client.post('/api/agent/chat',json={'message':'这里有什么故事','current_spot':'daimiao'})
+   self.assertEqual(response.status_code,200)
+   self.assertNotIn('大观峰',search.call_args.args[0])
+   self.assertIn('岱庙',search.call_args.args[0])
+   self.assertIn('当前选中景点：岱庙',generate.call_args.args[2])
  def test_immersive_build_is_served_under_its_own_path(self):
   from backend.app import IMMERSIVE_DIR
   if not (IMMERSIVE_DIR/'index.html').is_file():self.skipTest('Run npm run build at repository root to test the immersive build')

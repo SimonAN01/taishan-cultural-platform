@@ -1,0 +1,1448 @@
+{
+  "base_url": "https://118.89.176.236",
+  "scope": "disposable anonymous HTTP sessions",
+  "external_services_tested": true,
+  "checks": [
+    {
+      "name": "health and OpenAPI use the same version",
+      "passed": true,
+      "detail": {
+        "health": "1.7.2",
+        "openapi": "1.7.2"
+      }
+    },
+    {
+      "name": "at least eight cultural spots",
+      "passed": true
+    },
+    {
+      "name": "four routes",
+      "passed": true
+    },
+    {
+      "name": "spots catalog parity",
+      "passed": true
+    },
+    {
+      "name": "spots/hongmen valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/wanxian valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/doumu valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/jingshi valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/zhongtian valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/wudafu valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/shibapan valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/nantian valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/tianjie valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/bixia valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/yuhuang valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/riguan valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/tianwai valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/taohua valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/dongyu valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/daguan valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/daimiao valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/caishixi valid sources",
+      "passed": true
+    },
+    {
+      "name": "spots/houshiwu valid sources",
+      "passed": true
+    },
+    {
+      "name": "routes catalog parity",
+      "passed": true
+    },
+    {
+      "name": "routes/hongmen valid sources",
+      "passed": true
+    },
+    {
+      "name": "routes/tianwai valid sources",
+      "passed": true
+    },
+    {
+      "name": "routes/taohua valid sources",
+      "passed": true
+    },
+    {
+      "name": "routes/dongyu valid sources",
+      "passed": true
+    },
+    {
+      "name": "history catalog parity",
+      "passed": true
+    },
+    {
+      "name": "history/preqin valid sources",
+      "passed": true
+    },
+    {
+      "name": "history/qin valid sources",
+      "passed": true
+    },
+    {
+      "name": "history/han valid sources",
+      "passed": true
+    },
+    {
+      "name": "history/tang valid sources",
+      "passed": true
+    },
+    {
+      "name": "history/song valid sources",
+      "passed": true
+    },
+    {
+      "name": "history/mingqing valid sources",
+      "passed": true
+    },
+    {
+      "name": "history/modern valid sources",
+      "passed": true
+    },
+    {
+      "name": "poems catalog parity",
+      "passed": true
+    },
+    {
+      "name": "poems/wangyue valid sources",
+      "passed": true
+    },
+    {
+      "name": "poems/libai-1 valid sources",
+      "passed": true
+    },
+    {
+      "name": "poems/libai-2 valid sources",
+      "passed": true
+    },
+    {
+      "name": "spot detail/hongmen",
+      "passed": true
+    },
+    {
+      "name": "spot detail/wanxian",
+      "passed": true
+    },
+    {
+      "name": "spot detail/doumu",
+      "passed": true
+    },
+    {
+      "name": "spot detail/jingshi",
+      "passed": true
+    },
+    {
+      "name": "spot detail/zhongtian",
+      "passed": true
+    },
+    {
+      "name": "spot detail/wudafu",
+      "passed": true
+    },
+    {
+      "name": "spot detail/shibapan",
+      "passed": true
+    },
+    {
+      "name": "spot detail/nantian",
+      "passed": true
+    },
+    {
+      "name": "spot detail/tianjie",
+      "passed": true
+    },
+    {
+      "name": "spot detail/bixia",
+      "passed": true
+    },
+    {
+      "name": "spot detail/yuhuang",
+      "passed": true
+    },
+    {
+      "name": "spot detail/riguan",
+      "passed": true
+    },
+    {
+      "name": "spot detail/tianwai",
+      "passed": true
+    },
+    {
+      "name": "spot detail/taohua",
+      "passed": true
+    },
+    {
+      "name": "spot detail/dongyu",
+      "passed": true
+    },
+    {
+      "name": "spot detail/daguan",
+      "passed": true
+    },
+    {
+      "name": "spot detail/daimiao",
+      "passed": true
+    },
+    {
+      "name": "spot detail/caishixi",
+      "passed": true
+    },
+    {
+      "name": "spot detail/houshiwu",
+      "passed": true
+    },
+    {
+      "name": "route node IDs/hongmen",
+      "passed": true
+    },
+    {
+      "name": "route node IDs/tianwai",
+      "passed": true
+    },
+    {
+      "name": "variant node IDs/tianwai/walk",
+      "passed": true
+    },
+    {
+      "name": "variant node IDs/tianwai/cable",
+      "passed": true
+    },
+    {
+      "name": "route node IDs/taohua",
+      "passed": true
+    },
+    {
+      "name": "route node IDs/dongyu",
+      "passed": true
+    },
+    {
+      "name": "complete annotations/wangyue",
+      "passed": true
+    },
+    {
+      "name": "complete annotations/libai-1",
+      "passed": true
+    },
+    {
+      "name": "complete annotations/libai-2",
+      "passed": true
+    },
+    {
+      "name": "HTML served//",
+      "passed": true
+    },
+    {
+      "name": "security headers//",
+      "passed": true
+    },
+    {
+      "name": "entry asset/style.css",
+      "passed": true
+    },
+    {
+      "name": "entry asset/app.js",
+      "passed": true
+    },
+    {
+      "name": "HTML served//experience/",
+      "passed": true
+    },
+    {
+      "name": "security headers//experience/",
+      "passed": true
+    },
+    {
+      "name": "entry asset//experience/assets/index-xe99r-d3.js",
+      "passed": true
+    },
+    {
+      "name": "entry asset//experience/assets/index-ChModwj8.css",
+      "passed": true
+    },
+    {
+      "name": "real photo/44131616",
+      "passed": true
+    },
+    {
+      "name": "real photo/4129384",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-44150033",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-44151345",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-44151397",
+      "passed": true
+    },
+    {
+      "name": "real photo/44151030",
+      "passed": true
+    },
+    {
+      "name": "real photo/44174842",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-59699909",
+      "passed": true
+    },
+    {
+      "name": "real photo/54919328",
+      "passed": true
+    },
+    {
+      "name": "real photo/5327850",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-28523713",
+      "passed": true
+    },
+    {
+      "name": "real photo/97594617",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-44283635",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-44283692",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-98954166",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-177263414",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-54918536",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-54919130",
+      "passed": true
+    },
+    {
+      "name": "real photo/commons-54919235",
+      "passed": true
+    },
+    {
+      "name": "real photo/1636834",
+      "passed": true
+    },
+    {
+      "name": "real avatar GLB and immutable caching",
+      "passed": true
+    },
+    {
+      "name": "scene empty progress/daimiao",
+      "passed": true
+    },
+    {
+      "name": "scene rejects foreign reading point/daimiao",
+      "passed": true
+    },
+    {
+      "name": "scene point/daimiao/axis",
+      "passed": true
+    },
+    {
+      "name": "scene point/daimiao/mural",
+      "passed": true
+    },
+    {
+      "name": "scene point/daimiao/trees",
+      "passed": true
+    },
+    {
+      "name": "scene progress idempotent/daimiao",
+      "passed": true
+    },
+    {
+      "name": "scene session isolation/daimiao",
+      "passed": true
+    },
+    {
+      "name": "scene model slot truth/daimiao",
+      "passed": true
+    },
+    {
+      "name": "scene empty progress/caishixi",
+      "passed": true
+    },
+    {
+      "name": "scene rejects foreign reading point/caishixi",
+      "passed": true
+    },
+    {
+      "name": "scene point/caishixi/stone",
+      "passed": true
+    },
+    {
+      "name": "scene point/caishixi/water",
+      "passed": true
+    },
+    {
+      "name": "scene point/caishixi/fish",
+      "passed": true
+    },
+    {
+      "name": "scene progress idempotent/caishixi",
+      "passed": true
+    },
+    {
+      "name": "scene session isolation/caishixi",
+      "passed": true
+    },
+    {
+      "name": "scene model slot truth/caishixi",
+      "passed": true
+    },
+    {
+      "name": "scene empty progress/houshiwu",
+      "passed": true
+    },
+    {
+      "name": "scene rejects foreign reading point/houshiwu",
+      "passed": true
+    },
+    {
+      "name": "scene point/houshiwu/pines",
+      "passed": true
+    },
+    {
+      "name": "scene point/houshiwu/temple",
+      "passed": true
+    },
+    {
+      "name": "scene point/houshiwu/legend",
+      "passed": true
+    },
+    {
+      "name": "scene progress idempotent/houshiwu",
+      "passed": true
+    },
+    {
+      "name": "scene session isolation/houshiwu",
+      "passed": true
+    },
+    {
+      "name": "scene model slot truth/houshiwu",
+      "passed": true
+    },
+    {
+      "name": "quiz hides answer keys",
+      "passed": true
+    },
+    {
+      "name": "quiz rejects skipped chapters",
+      "passed": true
+    },
+    {
+      "name": "quiz requires a real visit",
+      "passed": true
+    },
+    {
+      "name": "quiz choice validation/gate",
+      "passed": true
+    },
+    {
+      "name": "quiz choice validation/stone",
+      "passed": true
+    },
+    {
+      "name": "quiz choice validation/memory",
+      "passed": true
+    },
+    {
+      "name": "quiz choice validation/poetry",
+      "passed": true
+    },
+    {
+      "name": "quiz choice validation/heritage",
+      "passed": true
+    },
+    {
+      "name": "all chapters persisted exactly once",
+      "passed": true
+    },
+    {
+      "name": "favorites are persistent and idempotent",
+      "passed": true
+    },
+    {
+      "name": "favorite removal",
+      "passed": true
+    },
+    {
+      "name": "other session journey is empty",
+      "passed": true
+    },
+    {
+      "name": "invalid input/journey/visit/{'spot_id': 'missing'}",
+      "passed": true
+    },
+    {
+      "name": "invalid input/journey/favorite/{'kind': 'spot', 'item_id': 'missing', 'saved': True}",
+      "passed": true
+    },
+    {
+      "name": "invalid input/journey/favorite/{'kind': 'script', 'item_id': 'hongmen', 'saved': True}",
+      "passed": true
+    },
+    {
+      "name": "invalid input/agent/chat/{'message': '   '}",
+      "passed": true
+    },
+    {
+      "name": "invalid input/agent/chat/{'message': 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "passed": true
+    },
+    {
+      "name": "invalid input/agent/chat/{'message': '介绍', 'current_spot': 'missing'}",
+      "passed": true
+    },
+    {
+      "name": "invalid input/agent/chat/{'message': '介绍', 'current_poem': 'missing'}",
+      "passed": true
+    },
+    {
+      "name": "invalid input/agent/chat/{'message': '介绍', 'current_route': 'missing'}",
+      "passed": true
+    },
+    {
+      "name": "invalid input/speech/tts/{'text': ''}",
+      "passed": true
+    },
+    {
+      "name": "cross-origin write rejected",
+      "passed": true
+    },
+    {
+      "name": "invalid photo rejected",
+      "passed": true
+    },
+    {
+      "name": "prediction ownership enforced",
+      "passed": true
+    },
+    {
+      "name": "cookie is HttpOnly and session response not cached",
+      "passed": true
+    },
+    {
+      "name": "real grounded chat/你是谁？",
+      "passed": true
+    },
+    {
+      "name": "citations resolve/你是谁？",
+      "passed": true
+    },
+    {
+      "name": "real grounded chat/泰山有什么景点？",
+      "passed": true
+    },
+    {
+      "name": "citations resolve/泰山有什么景点？",
+      "passed": true
+    },
+    {
+      "name": "real grounded chat/这条路线有哪些站点和交通方式？",
+      "passed": true
+    },
+    {
+      "name": "citations resolve/这条路线有哪些站点和交通方式？",
+      "passed": true
+    },
+    {
+      "name": "real grounded chat/这首诗里的羽人和鸟迹书分别是什么意思？",
+      "passed": true
+    },
+    {
+      "name": "citations resolve/这首诗里的羽人和鸟迹书分别是什么意思？",
+      "passed": true
+    },
+    {
+      "name": "real grounded chat/这里的壁画讲了什么？",
+      "passed": true
+    },
+    {
+      "name": "citations resolve/这里的壁画讲了什么？",
+      "passed": true
+    },
+    {
+      "name": "real grounded chat/后石坞的仙人故事是史实还是传说？",
+      "passed": true
+    },
+    {
+      "name": "citations resolve/后石坞的仙人故事是史实还是传说？",
+      "passed": true
+    },
+    {
+      "name": "realtime or unrelated question refused/今天门票多少钱，几点开门？",
+      "passed": true
+    },
+    {
+      "name": "realtime or unrelated question refused/帮我写一个股票交易机器人",
+      "passed": true
+    },
+    {
+      "name": "real poem cues/wangyue",
+      "passed": true
+    },
+    {
+      "name": "real poem audio/wangyue",
+      "passed": true
+    },
+    {
+      "name": "poem cache/wangyue",
+      "passed": true
+    },
+    {
+      "name": "real poem cues/libai-1",
+      "passed": true
+    },
+    {
+      "name": "real poem audio/libai-1",
+      "passed": true
+    },
+    {
+      "name": "poem cache/libai-1",
+      "passed": true
+    },
+    {
+      "name": "real poem cues/libai-2",
+      "passed": true
+    },
+    {
+      "name": "real poem audio/libai-2",
+      "passed": true
+    },
+    {
+      "name": "poem cache/libai-2",
+      "passed": true
+    },
+    {
+      "name": "real TTS audio",
+      "passed": true
+    },
+    {
+      "name": "real vision/daguan",
+      "passed": true
+    },
+    {
+      "name": "vision candidate confirmation/daguan",
+      "passed": true
+    },
+    {
+      "name": "vision other session cannot confirm/daguan",
+      "passed": true
+    },
+    {
+      "name": "real vision/jingshi",
+      "passed": true
+    },
+    {
+      "name": "vision candidate confirmation/jingshi",
+      "passed": true
+    },
+    {
+      "name": "real vision/nantian",
+      "passed": true
+    },
+    {
+      "name": "vision candidate confirmation/nantian",
+      "passed": true
+    },
+    {
+      "name": "real vision/unknown",
+      "passed": true
+    },
+    {
+      "name": "real conversation persisted with citations",
+      "passed": true
+    },
+    {
+      "name": "clear chat preserves journey",
+      "passed": true
+    },
+    {
+      "name": "clear disposable journey resets progress and favorites",
+      "passed": true
+    },
+    {
+      "name": "clear scene progress/daimiao",
+      "passed": true
+    },
+    {
+      "name": "clear scene progress/caishixi",
+      "passed": true
+    },
+    {
+      "name": "clear scene progress/houshiwu",
+      "passed": true
+    }
+  ],
+  "services": [
+    {
+      "kind": "chat",
+      "request": {
+        "message": "你是谁？"
+      },
+      "seconds": 3.48,
+      "http_status": 200,
+      "result": {
+        "answer": "我是碧霞仙子，是这个泰山文化体验平台的艺术化导览角色哦~我可以为你介绍泰山的景点、游览路线，讲解泰山的历史文化、解读相关诗词，还能帮你识别照片里的泰山景点~不过我既不是真实历史人物，也不是宗教领域的权威哦。你有什么关于泰山的问题都可以问我呀~",
+        "sources": [],
+        "citations": [],
+        "mode": "rag_llm",
+        "model": "Coze 智能体",
+        "provider": "coze",
+        "tool_calls": [
+          "guide_identity"
+        ],
+        "refused": false,
+        "retrieved": [
+          {
+            "id": "guide-identity",
+            "title": "文化导览角色说明",
+            "relevance": 1
+          }
+        ],
+        "suggested_questions": [
+          "封禅是什么？",
+          "为什么说会当凌绝顶？",
+          "红门线怎么走？"
+        ]
+      }
+    },
+    {
+      "kind": "chat",
+      "request": {
+        "message": "泰山有什么景点？"
+      },
+      "seconds": 3.1,
+      "http_status": 200,
+      "result": {
+        "answer": "泰山目前可探索的文化景点有：红门、万仙楼、斗母宫、经石峪、中天门、五大夫松、十八盘、南天门、天街、碧霞祠、玉皇顶、日观峰、天外村、桃花峪、东御道、大观峰、岱庙、彩石溪、后石坞[1]。\n如果是初次来玩，推荐走经典红门路线，能依次打卡多数核心景点哦，你想看哪个景点的详细介绍呀？",
+        "sources": [
+          {
+            "id": "red",
+            "title": "红门游览线 景点介绍",
+            "publisher": "泰山风景名胜区管理委员会",
+            "url": "https://tsgw.taian.gov.cn/art/2021/5/26/art_363479_10320188.html",
+            "verified_at": "2026-10-14",
+            "verification": "官方检索摘要与可访问段落核对；内容待领域专家复核"
+          },
+          {
+            "id": "routes",
+            "title": "第一次来泰山 可以推荐一下游览线路吗",
+            "publisher": "泰安市文化和旅游局",
+            "url": "https://whlyj.taian.gov.cn/art/2026/4/13/art_366342_10312047.html",
+            "verified_at": "2026-10-14",
+            "verification": "官方检索摘要核对；不沿用实时票价和开放状态"
+          },
+          {
+            "id": "jingshi",
+            "title": "经石峪管理所 绘就责任地图",
+            "publisher": "泰山风景名胜区管理委员会",
+            "url": "https://tsgw.taian.gov.cn/art/2025/12/15/art_48271_10319554.html",
+            "verified_at": "2026-10-14",
+            "verification": "官方摘要核对"
+          },
+          {
+            "id": "unesco",
+            "title": "Mount Taishan",
+            "publisher": "联合国教科文组织世界遗产中心",
+            "url": "https://whc.unesco.org/en/list/437/",
+            "verified_at": "2026-10-14",
+            "verification": "已核对世界遗产名录；译写概述"
+          }
+        ],
+        "citations": [
+          {
+            "number": 1,
+            "title": "景点目录与红门文化游览线",
+            "sources": [
+              {
+                "id": "red",
+                "title": "红门游览线 景点介绍",
+                "publisher": "泰山风景名胜区管理委员会",
+                "url": "https://tsgw.taian.gov.cn/art/2021/5/26/art_363479_10320188.html",
+                "verified_at": "2026-10-14",
+                "verification": "官方检索摘要与可访问段落核对；内容待领域专家复核"
+              },
+              {
+                "id": "routes",
+                "title": "第一次来泰山 可以推荐一下游览线路吗",
+                "publisher": "泰安市文化和旅游局",
+                "url": "https://whlyj.taian.gov.cn/art/2026/4/13/art_366342_10312047.html",
+                "verified_at": "2026-10-14",
+                "verification": "官方检索摘要核对；不沿用实时票价和开放状态"
+              },
+              {
+                "id": "jingshi",
+                "title": "经石峪管理所 绘就责任地图",
+                "publisher": "泰山风景名胜区管理委员会",
+                "url": "https://tsgw.taian.gov.cn/art/2025/12/15/art_48271_10319554.html",
+                "verified_at": "2026-10-14",
+                "verification": "官方摘要核对"
+              },
+              {
+                "id": "unesco",
+                "title": "Mount Taishan",
+                "publisher": "联合国教科文组织世界遗产中心",
+                "url": "https://whc.unesco.org/en/list/437/",
+                "verified_at": "2026-10-14",
+                "verification": "已核对世界遗产名录；译写概述"
+              }
+            ]
+          }
+        ],
+        "mode": "rag_llm",
+        "model": "Coze 智能体",
+        "provider": "coze",
+        "tool_calls": [
+          "list_spots",
+          "get_route_info"
+        ],
+        "refused": false,
+        "retrieved": [
+          {
+            "id": "tool-spots",
+            "title": "景点目录与红门文化游览线",
+            "relevance": 1
+          }
+        ],
+        "suggested_questions": [
+          "封禅是什么？",
+          "为什么说会当凌绝顶？",
+          "红门线怎么走？"
+        ]
+      }
+    },
+    {
+      "kind": "chat",
+      "request": {
+        "message": "这条路线有哪些站点和交通方式？",
+        "current_route": "tianwai"
+      },
+      "seconds": 4.34,
+      "http_status": 200,
+      "result": {
+        "answer": "天外村线有两种游览方式哦：\n1. 乘车加徒步：站点依次是天外村、中天门、五大夫松、十八盘、南天门、天街、碧霞祠、玉皇顶，先坐景区交通到中天门，之后徒步上山[1]。\n2. 乘车加索道：站点依次是天外村、中天门、南天门、天街、碧霞祠、玉皇顶，坐景区交通到中天门后换乘索道到岱顶，不经过十八盘[1]。\n出行前记得看好景区官方公告哦~",
+        "sources": [
+          {
+            "id": "routes",
+            "title": "第一次来泰山 可以推荐一下游览线路吗",
+            "publisher": "泰安市文化和旅游局",
+            "url": "https://whlyj.taian.gov.cn/art/2026/4/13/art_366342_10312047.html",
+            "verified_at": "2026-10-14",
+            "verification": "官方检索摘要核对；不沿用实时票价和开放状态"
+          }
+        ],
+        "citations": [
+          {
+            "number": 1,
+            "title": "天外村线",
+            "sources": [
+              {
+                "id": "routes",
+                "title": "第一次来泰山 可以推荐一下游览线路吗",
+                "publisher": "泰安市文化和旅游局",
+                "url": "https://whlyj.taian.gov.cn/art/2026/4/13/art_366342_10312047.html",
+                "verified_at": "2026-10-14",
+                "verification": "官方检索摘要核对；不沿用实时票价和开放状态"
+              }
+            ]
+          }
+        ],
+        "mode": "rag_llm",
+        "model": "Coze 智能体",
+        "provider": "coze",
+        "tool_calls": [
+          "get_route_info"
+        ],
+        "refused": false,
+        "retrieved": [
+          {
+            "id": "tool-route-tianwai",
+            "title": "天外村线",
+            "relevance": 1
+          }
+        ],
+        "suggested_questions": [
+          "封禅是什么？",
+          "为什么说会当凌绝顶？",
+          "红门线怎么走？"
+        ]
+      }
+    },
+    {
+      "kind": "chat",
+      "request": {
+        "message": "这首诗里的羽人和鸟迹书分别是什么意思？",
+        "current_poem": "libai-2"
+      },
+      "seconds": 3.83,
+      "http_status": 200,
+      "result": {
+        "answer": "这首诗里的羽人指的是仙人，方瞳是诗里对仙人外貌的想象描写哦[1]。鸟迹书说的是外形古奥、看起来像鸟走过的痕迹一样的文字，诗里写它从空中飘落到山岩间，是跟着羽人出现的奇幻叙事内容[2]。\n你还想了解李白其他游泰山的诗句吗？",
+        "sources": [
+          {
+            "id": "libai-2",
+            "title": "李白《游泰山》其二 公版原文",
+            "url": "https://zh.wikisource.org/w/index.php?title=遊泰山_(清曉騎白鹿)&oldid=483278",
+            "publisher": "维基文库 · 古典作品转录",
+            "verified_at": "2026-10-14",
+            "verification": "已核对公开原文；公版古诗，简体转写；注释为本项目原创释读，待专家复核"
+          }
+        ],
+        "citations": [
+          {
+            "number": 1,
+            "title": "游泰山·其二 · 山际逢羽人，方瞳好容颜。",
+            "sources": [
+              {
+                "id": "libai-2",
+                "title": "李白《游泰山》其二 公版原文",
+                "url": "https://zh.wikisource.org/w/index.php?title=遊泰山_(清曉騎白鹿)&oldid=483278",
+                "publisher": "维基文库 · 古典作品转录",
+                "verified_at": "2026-10-14",
+                "verification": "已核对公开原文；公版古诗，简体转写；注释为本项目原创释读，待专家复核"
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "title": "游泰山·其二 · 遗我鸟迹书，飘然落岩间。",
+            "sources": [
+              {
+                "id": "libai-2",
+                "title": "李白《游泰山》其二 公版原文",
+                "url": "https://zh.wikisource.org/w/index.php?title=遊泰山_(清曉騎白鹿)&oldid=483278",
+                "publisher": "维基文库 · 古典作品转录",
+                "verified_at": "2026-10-14",
+                "verification": "已核对公开原文；公版古诗，简体转写；注释为本项目原创释读，待专家复核"
+              }
+            ]
+          }
+        ],
+        "mode": "rag_llm",
+        "model": "Coze 智能体",
+        "provider": "coze",
+        "tool_calls": [
+          "get_poem_info"
+        ],
+        "refused": false,
+        "retrieved": [
+          {
+            "id": "poem-line-libai-2-0",
+            "title": "游泰山·其二 · 山际逢羽人，方瞳好容颜。",
+            "relevance": 1
+          },
+          {
+            "id": "poem-line-libai-2-1",
+            "title": "游泰山·其二 · 遗我鸟迹书，飘然落岩间。",
+            "relevance": 1
+          }
+        ],
+        "suggested_questions": [
+          "封禅是什么？",
+          "为什么说会当凌绝顶？",
+          "红门线怎么走？"
+        ]
+      }
+    },
+    {
+      "kind": "chat",
+      "request": {
+        "message": "这里的壁画讲了什么？",
+        "current_spot": "daimiao"
+      },
+      "seconds": 3.32,
+      "http_status": 200,
+      "result": {
+        "answer": "岱庙天贶殿里的这幅壁画是《泰山神启跸回銮图》，讲的是泰山神出巡、回宫的场景哦[1]。它用古代的仪卫形象来组织画中人物，把原本抽象的宗教观念通过绘画具象地展现了出来，很有历史和艺术价值呢。你还想了解岱庙的其他内容吗？",
+        "sources": [
+          {
+            "id": "dai-mural",
+            "title": "山东泰安：一座因山而生的城市",
+            "publisher": "泰安市发展和改革委员会",
+            "url": "https://fgw.taian.gov.cn/art/2026/1/26/art_339298_10312911.html",
+            "verified_at": "2026-10-15",
+            "verification": "官方页面核对并简要改写；天烛峰页面为官方检索摘要核对；仍待专业文化审校"
+          }
+        ],
+        "citations": [
+          {
+            "number": 1,
+            "title": "岱庙 · 天贶殿里，山神走进画卷",
+            "sources": [
+              {
+                "id": "dai-mural",
+                "title": "山东泰安：一座因山而生的城市",
+                "publisher": "泰安市发展和改革委员会",
+                "url": "https://fgw.taian.gov.cn/art/2026/1/26/art_339298_10312911.html",
+                "verified_at": "2026-10-15",
+                "verification": "官方页面核对并简要改写；天烛峰页面为官方检索摘要核对；仍待专业文化审校"
+              }
+            ]
+          }
+        ],
+        "mode": "rag_llm",
+        "model": "Coze 智能体",
+        "provider": "coze",
+        "tool_calls": [
+          "get_scene_culture"
+        ],
+        "refused": false,
+        "retrieved": [
+          {
+            "id": "scene-daimiao-mural",
+            "title": "岱庙 · 天贶殿里，山神走进画卷",
+            "relevance": 1
+          }
+        ],
+        "suggested_questions": [
+          "封禅是什么？",
+          "为什么说会当凌绝顶？",
+          "红门线怎么走？"
+        ]
+      }
+    },
+    {
+      "kind": "chat",
+      "request": {
+        "message": "后石坞的仙人故事是史实还是传说？",
+        "current_spot": "houshiwu"
+      },
+      "seconds": 3.56,
+      "http_status": 200,
+      "result": {
+        "answer": "后石坞流传的碧霞元君在此修炼的仙人故事属于信仰传说哦[1]，这是大家对泰山的浪漫想象，可不能当成能直接证实的真实历史人物生平来看呢~\n你还想了解后石坞的其他相关内容吗？",
+        "sources": [
+          {
+            "id": "houshi-landscape",
+            "title": "天烛峰景区（景点介绍）",
+            "publisher": "泰山风景名胜区管理委员会",
+            "url": "https://tsgw.taian.gov.cn/art/2021/5/26/art_363479_10320185.html",
+            "verified_at": "2026-10-15",
+            "verification": "官方页面核对并简要改写；天烛峰页面为官方检索摘要核对；仍待专业文化审校"
+          }
+        ],
+        "citations": [
+          {
+            "number": 1,
+            "title": "后石坞 · 传说，是理解山的一种方式",
+            "sources": [
+              {
+                "id": "houshi-landscape",
+                "title": "天烛峰景区（景点介绍）",
+                "publisher": "泰山风景名胜区管理委员会",
+                "url": "https://tsgw.taian.gov.cn/art/2021/5/26/art_363479_10320185.html",
+                "verified_at": "2026-10-15",
+                "verification": "官方页面核对并简要改写；天烛峰页面为官方检索摘要核对；仍待专业文化审校"
+              }
+            ]
+          }
+        ],
+        "mode": "rag_llm",
+        "model": "Coze 智能体",
+        "provider": "coze",
+        "tool_calls": [
+          "get_scene_culture"
+        ],
+        "refused": false,
+        "retrieved": [
+          {
+            "id": "scene-houshiwu-legend",
+            "title": "后石坞 · 传说，是理解山的一种方式",
+            "relevance": 1
+          }
+        ],
+        "suggested_questions": [
+          "封禅是什么？",
+          "为什么说会当凌绝顶？",
+          "红门线怎么走？"
+        ]
+      }
+    },
+    {
+      "kind": "refusal",
+      "question": "今天门票多少钱，几点开门？",
+      "result": {
+        "answer": "我无法确认实时票价、天气、开放时间或交通运行状态。请查看泰山景区官方公告，再安排出行。也可以问我景点文化、历史、诗词与路线结构。",
+        "sources": [
+          {
+            "id": "official",
+            "title": "泰山景区官方公告",
+            "publisher": "泰山风景名胜区管理委员会",
+            "url": "https://tsgw.taian.gov.cn/"
+          }
+        ],
+        "citations": [],
+        "mode": "local_knowledge",
+        "model": null,
+        "provider": null,
+        "tool_calls": [],
+        "refused": true,
+        "retrieved": [],
+        "suggested_questions": [
+          "封禅是什么？",
+          "为什么说会当凌绝顶？",
+          "红门线怎么走？"
+        ]
+      }
+    },
+    {
+      "kind": "refusal",
+      "question": "帮我写一个股票交易机器人",
+      "result": {
+        "answer": "现有文化资料还不足以回答这个问题，我不想凭空补充。你可以换一个具体的泰山景点、历史事件或诗句，也可以先在地图上选择景点再提问。",
+        "sources": [],
+        "citations": [],
+        "mode": "local_knowledge",
+        "model": null,
+        "provider": null,
+        "tool_calls": [],
+        "refused": true,
+        "retrieved": [],
+        "suggested_questions": [
+          "封禅是什么？",
+          "为什么说会当凌绝顶？",
+          "红门线怎么走？"
+        ]
+      }
+    },
+    {
+      "kind": "poem_audio",
+      "id": "wangyue",
+      "cues": [
+        {
+          "line": 0,
+          "start": 0.105541,
+          "end": 3.388874
+        },
+        {
+          "line": 1,
+          "start": 4.027791,
+          "end": 6.791666
+        },
+        {
+          "line": 2,
+          "start": 7.430541,
+          "end": 10.277791
+        },
+        {
+          "line": 3,
+          "start": 10.916666,
+          "end": 13.569416
+        }
+      ],
+      "bytes": 85248,
+      "seconds": 0.4
+    },
+    {
+      "kind": "poem_audio",
+      "id": "libai-1",
+      "cues": [
+        {
+          "line": 0,
+          "start": 0.105541,
+          "end": 2.869416
+        },
+        {
+          "line": 1,
+          "start": 3.5,
+          "end": 6.083333
+        },
+        {
+          "line": 2,
+          "start": 6.708333,
+          "end": 9.361125
+        },
+        {
+          "line": 3,
+          "start": 9.986125,
+          "end": 12.736124
+        },
+        {
+          "line": 4,
+          "start": 13.361125,
+          "end": 16.111125
+        },
+        {
+          "line": 5,
+          "start": 16.722208,
+          "end": 19.458333
+        },
+        {
+          "line": 6,
+          "start": 20.097208,
+          "end": 22.708333
+        },
+        {
+          "line": 7,
+          "start": 23.347208,
+          "end": 25.972249
+        },
+        {
+          "line": 8,
+          "start": 26.597208,
+          "end": 29.166666
+        },
+        {
+          "line": 9,
+          "start": 29.805541,
+          "end": 32.430541
+        },
+        {
+          "line": 10,
+          "start": 33.055541,
+          "end": 35.944458
+        },
+        {
+          "line": 11,
+          "start": 36.569458,
+          "end": 39.194416
+        }
+      ],
+      "bytes": 238896,
+      "seconds": 0.65
+    },
+    {
+      "kind": "poem_audio",
+      "id": "libai-2",
+      "cues": [
+        {
+          "line": 0,
+          "start": 0.105541,
+          "end": 2.841666
+        },
+        {
+          "line": 1,
+          "start": 3.472208,
+          "end": 6.25
+        },
+        {
+          "line": 2,
+          "start": 6.875,
+          "end": 9.486083
+        },
+        {
+          "line": 3,
+          "start": 10.125,
+          "end": 12.694458
+        },
+        {
+          "line": 4,
+          "start": 13.319458,
+          "end": 15.916666
+        },
+        {
+          "line": 5,
+          "start": 16.541666,
+          "end": 19.291666
+        }
+      ],
+      "bytes": 119664,
+      "seconds": 0.4
+    },
+    {
+      "kind": "tts",
+      "http_status": 200,
+      "bytes": 38880
+    },
+    {
+      "kind": "vision_smoke_not_accuracy",
+      "expected": "daguan",
+      "seconds": 3.87,
+      "http_status": 200,
+      "result": {
+        "model_version": "deepseek-v4.1-flash · 云端图像理解",
+        "method": "cloud_visual",
+        "status": "needs_confirmation",
+        "confidence": null,
+        "score_type": "visual_evidence",
+        "candidates": [
+          {
+            "spot_id": "daguan",
+            "name": "大观峰",
+            "reason": "崖壁布满大型摩崖石刻，可见《纪泰山铭》式巨幅刻文与“天下大观”等题刻，符合大观峰崖壁石刻特征"
+          }
+        ],
+        "message": "云端模型已给出可能的景点，请对照实景图与画面依据人工确认。候选不代表识别准确率。",
+        "request_id": "15773117b40e4994a325d4d915fbae43"
+      }
+    },
+    {
+      "kind": "vision_smoke_not_accuracy",
+      "expected": "jingshi",
+      "seconds": 5.2,
+      "http_status": 200,
+      "result": {
+        "model_version": "deepseek-v4.1-flash · 云端图像理解",
+        "method": "cloud_visual",
+        "status": "needs_confirmation",
+        "confidence": null,
+        "score_type": "visual_evidence",
+        "candidates": [
+          {
+            "spot_id": "jingshi",
+            "name": "经石峪",
+            "reason": "大面积天然石坪上分布摩崖刻字，符合经石峪摩崖刻经石面特征"
+          }
+        ],
+        "message": "云端模型已给出可能的景点，请对照实景图与画面依据人工确认。候选不代表识别准确率。",
+        "request_id": "77b9ae6e2e6548e5abb27023c44bab05"
+      }
+    },
+    {
+      "kind": "vision_smoke_not_accuracy",
+      "expected": "nantian",
+      "seconds": 3.76,
+      "http_status": 200,
+      "result": {
+        "model_version": "deepseek-v4.1-flash · 云端图像理解",
+        "method": "cloud_visual",
+        "status": "needs_confirmation",
+        "confidence": null,
+        "score_type": "visual_evidence",
+        "candidates": [
+          {
+            "spot_id": "shibapan",
+            "name": "十八盘",
+            "reason": "可见石阶盘道沿两侧山崖陡峭攀升，符合十八盘险峻段落特征"
+          },
+          {
+            "spot_id": "nantian",
+            "name": "南天门",
+            "reason": "盘道顶端山脊处可见标志性门阙建筑，符合沿十八盘仰望南天门的景观"
+          }
+        ],
+        "message": "云端模型已给出可能的景点，请对照实景图与画面依据人工确认。候选不代表识别准确率。",
+        "request_id": "3e43e074a564444884feda930c4c25e1"
+      }
+    },
+    {
+      "kind": "vision_smoke_not_accuracy",
+      "expected": "unknown",
+      "seconds": 3.28,
+      "http_status": 200,
+      "result": {
+        "model_version": "deepseek-v4.1-flash · 云端图像理解",
+        "method": "cloud_visual",
+        "status": "unknown",
+        "confidence": null,
+        "score_type": "visual_evidence",
+        "candidates": [],
+        "message": "画面还不足以确认泰山景点，请补充完整地标照片，或手动浏览景点。",
+        "request_id": "26179a18ae064873ac13b2c4732814ee"
+      }
+    }
+  ],
+  "health": {
+    "status": "ok",
+    "version": "1.7.2",
+    "immersive_available": true,
+    "knowledge_documents": 34,
+    "agent_mode": "rag_llm",
+    "agent_provider": "coze",
+    "llm_configured": true,
+    "generation_service": {
+      "state": "configured",
+      "checked_at": null
+    },
+    "tts_available": true,
+    "tts_voice": "zh-CN-XiaoxiaoNeural",
+    "tts_service": {
+      "state": "configured",
+      "checked_at": null
+    },
+    "vision_available": true,
+    "vision_mode": "cloud_visual",
+    "vision_service": {
+      "state": "configured",
+      "checked_at": null
+    },
+    "trained_landmark_model": false,
+    "retrieval_mode": "bge_hybrid",
+    "language_model": "Coze 智能体"
+  },
+  "catalog_counts": {
+    "spots": 19,
+    "routes": 4,
+    "history": 7,
+    "poems": 3,
+    "artifacts": 3,
+    "scenes": 3,
+    "sources": 18
+  },
+  "summary": {
+    "total": 184,
+    "passed": 184,
+    "failed": 0
+  }
+}

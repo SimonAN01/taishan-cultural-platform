@@ -3,4 +3,5 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   base: '/experience/',
   server: { proxy: { '/api': { target: 'http://127.0.0.1:18605', changeOrigin: false }, '/assets/photos': 'http://127.0.0.1:18605' } },
+  preview: { proxy: { '/api': { target: 'http://127.0.0.1:18605', changeOrigin: false }, '/assets/photos': 'http://127.0.0.1:18605' } },
 });

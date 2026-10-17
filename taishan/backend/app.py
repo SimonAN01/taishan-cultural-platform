@@ -90,7 +90,8 @@ async def lifespan(app):
     init_db()
     yield
 
-app=FastAPI(title='一山千年 泰山文化导览 API',version='1.7.0',lifespan=lifespan)
+VERSION='1.7.2'
+app=FastAPI(title='一山千年 泰山文化导览 API',version=VERSION,lifespan=lifespan)
 limits=defaultdict(deque)
 
 @app.middleware('http')
@@ -148,7 +149,7 @@ def enriched_scene(s):
     return enriched(s) | {'points':[enriched(p) for p in s['points']],'model_available':(IMMERSIVE_DIR/model_file).is_file(),'model_url':'/experience/'+model_file}
 
 @app.get('/api/health')
-def health():return {'status':'ok','version':'1.7.1','immersive_available':(IMMERSIVE_DIR/'index.html').is_file(),'knowledge_documents':len(CAT['knowledge']),'agent_mode':'rag_llm' if agent_enabled() else 'local_knowledge','agent_provider':AGENT_PROVIDER,'llm_configured':agent_enabled(),'generation_service':dict(COZE_STATUS if AGENT_PROVIDER=='coze' else LLM_STATUS),'tts_available':TTS_AVAILABLE,'tts_voice':TTS_VOICE,'tts_service':dict(TTS_STATUS),'vision_available':LLM_ENABLED if VISION_BACKEND=='cloud' else VISION.available(),'vision_mode':'cloud_visual' if VISION_BACKEND=='cloud' else 'zero_shot_clip','vision_service':dict(VISION_STATUS),'trained_landmark_model':False,'retrieval_mode':'bge_hybrid' if RETRIEVER.available() else 'lexical','language_model':agent_model() if agent_enabled() else None}
+def health():return {'status':'ok','version':VERSION,'immersive_available':(IMMERSIVE_DIR/'index.html').is_file(),'knowledge_documents':len(CAT['knowledge']),'agent_mode':'rag_llm' if agent_enabled() else 'local_knowledge','agent_provider':AGENT_PROVIDER,'llm_configured':agent_enabled(),'generation_service':dict(COZE_STATUS if AGENT_PROVIDER=='coze' else LLM_STATUS),'tts_available':TTS_AVAILABLE,'tts_voice':TTS_VOICE,'tts_service':dict(TTS_STATUS),'vision_available':LLM_ENABLED if VISION_BACKEND=='cloud' else VISION.available(),'vision_mode':'cloud_visual' if VISION_BACKEND=='cloud' else 'zero_shot_clip','vision_service':dict(VISION_STATUS),'trained_landmark_model':False,'retrieval_mode':'bge_hybrid' if RETRIEVER.available() else 'lexical','language_model':agent_model() if agent_enabled() else None}
 
 @app.get('/api/catalog')
 def catalog():
@@ -291,10 +292,10 @@ async def chat(body:Chat,request:Request):
         revision=con.execute('SELECT revision FROM sessions WHERE id=?',(sid,)).fetchone()[0]
     current=body.current_spot or (previous[-1]['spot_id'] if previous and not (poem or selected_route) else None)
     query=message
-    if any(t in message for t in ['它','这里','这个景点','那首诗','这首诗','继续讲']) and previous and not (poem or selected_route):
+    if any(t in message for t in ['它','这里','这个景点','那首诗','这首诗','继续讲']) and previous and not (poem or selected_route) and (not body.current_spot or body.current_spot==previous[-1]['spot_id']):
         last_user=next((x['text'] for x in reversed(previous) if x['role']=='user'),'')
         query=last_user+' '+message
-    context=''
+    context=('当前选中景点：'+SPOTS[current]['name']+'。用户说“这里”“此处”“这个景点”时指此景点；若明确提问其他景点，则以问题为准。') if current else ''
     normalized=re.sub(r'[\s·《》，。！？?]','',message)
     named_poems=[p for p in CAT['poems'] if re.sub(r'[·《》]','',p['title']) in normalized]
     if poem and not named_poems and re.search('这首|此诗|诗中|诗里|这句|它|继续讲|介绍一下|讲解一下|羽人|鸟迹书|白鹿',message):

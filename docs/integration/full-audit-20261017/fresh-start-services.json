@@ -1,0 +1,109 @@
+{
+  "health": {
+    "status": "ok",
+    "version": "1.7.2",
+    "immersive_available": true,
+    "knowledge_documents": 34,
+    "agent_mode": "rag_llm",
+    "agent_provider": "coze",
+    "llm_configured": true,
+    "generation_service": {
+      "state": "configured",
+      "checked_at": null
+    },
+    "tts_available": true,
+    "tts_voice": "zh-CN-XiaoxiaoNeural",
+    "tts_service": {
+      "state": "configured",
+      "checked_at": null
+    },
+    "vision_available": true,
+    "vision_mode": "cloud_visual",
+    "vision_service": {
+      "state": "configured",
+      "checked_at": null
+    },
+    "trained_landmark_model": false,
+    "retrieval_mode": "lexical",
+    "language_model": "Coze 智能体"
+  },
+  "chat": {
+    "seconds": 5.3,
+    "result": {
+      "answer": "岱庙天贶殿内的壁画是《泰山神启跸回銮图》，描绘的是泰山神出巡、回宫的场景，它以古代仪卫形象组织人物，将宗教观念通过绘画的形式具象展现出来哦~[1]",
+      "sources": [
+        {
+          "id": "dai-mural",
+          "title": "山东泰安：一座因山而生的城市",
+          "publisher": "泰安市发展和改革委员会",
+          "url": "https://fgw.taian.gov.cn/art/2026/1/26/art_339298_10312911.html",
+          "verified_at": "2026-10-15",
+          "verification": "官方页面核对并简要改写；天烛峰页面为官方检索摘要核对；仍待专业文化审校"
+        }
+      ],
+      "citations": [
+        {
+          "number": 1,
+          "title": "岱庙 · 天贶殿里，山神走进画卷",
+          "sources": [
+            {
+              "id": "dai-mural",
+              "title": "山东泰安：一座因山而生的城市",
+              "publisher": "泰安市发展和改革委员会",
+              "url": "https://fgw.taian.gov.cn/art/2026/1/26/art_339298_10312911.html",
+              "verified_at": "2026-10-15",
+              "verification": "官方页面核对并简要改写；天烛峰页面为官方检索摘要核对；仍待专业文化审校"
+            }
+          ]
+        }
+      ],
+      "mode": "rag_llm",
+      "model": "Coze 智能体",
+      "provider": "coze",
+      "tool_calls": [
+        "get_scene_culture"
+      ],
+      "refused": false,
+      "retrieved": [
+        {
+          "id": "scene-daimiao-mural",
+          "title": "岱庙 · 天贶殿里，山神走进画卷",
+          "relevance": 1
+        }
+      ],
+      "suggested_questions": [
+        "封禅是什么？",
+        "为什么说会当凌绝顶？",
+        "红门线怎么走？"
+      ]
+    }
+  },
+  "vision": {
+    "seconds": 3.67,
+    "result": {
+      "model_version": "deepseek-v4.1-flash · 云端图像理解",
+      "method": "cloud_visual",
+      "status": "needs_confirmation",
+      "confidence": null,
+      "score_type": "visual_evidence",
+      "candidates": [
+        {
+          "spot_id": "daguan",
+          "name": "大观峰",
+          "reason": "崖壁大面积摩崖石刻，可见《纪泰山铭》风格的大字刻文与题刻群"
+        },
+        {
+          "spot_id": "jingshi",
+          "name": "经石峪",
+          "reason": "大面积摩崖刻石与石面文字，但缺少经石峪典型的大字《金刚经》石坪特征"
+        }
+      ],
+      "message": "云端模型已给出可能的景点，请对照实景图与画面依据人工确认。候选不代表识别准确率。",
+      "request_id": "383e68517d254218a68b4b5d581c6896"
+    }
+  },
+  "tts": {
+    "bytes": 13248,
+    "type": "audio/mpeg"
+  }
+}
