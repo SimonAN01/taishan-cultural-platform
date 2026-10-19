@@ -7,9 +7,9 @@ import {fileURLToPath} from 'node:url';
 const root=fileURLToPath(new URL('../',import.meta.url)),windows=process.platform==='win32';
 const port=Number(process.env.TAISHAN_TEST_PORT||18625),base=`http://127.0.0.1:${port}`;
 const env={...process.env,TAISHAN_PORT:String(port),TAISHAN_NO_OPEN:'1',PYTHONUTF8:'1'};
-const child=spawn(windows?'cmd.exe':process.execPath,windows?['/d','/c','Start-Windows.cmd']:['scripts/run.mjs'],{cwd:root,env,stdio:'inherit',detached:!windows});
+const child=spawn(windows?'cmd.exe':'bash',windows?['/d','/c','Start-Windows.cmd']:['Start.sh'],{cwd:root,env,stdio:'inherit',detached:!windows});
 let exited=false;child.once('exit',()=>exited=true);
-const report={platform:process.platform,launcher:windows?'Start-Windows.cmd':'scripts/run.mjs',checks:[]};
+const report={platform:process.platform,launcher:windows?'Start-Windows.cmd':'Start.sh',checks:[]};
 try{
  let ready=false;
  for(let i=0;i<600;i++){

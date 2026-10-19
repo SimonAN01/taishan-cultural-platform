@@ -11,10 +11,6 @@ FROM python:3.12-slim
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 \
     DATA_DIR=/app/taishan/runtime IMMERSIVE_FRONTEND_DIR=/app/dist
 WORKDIR /app
-RUN sed -i 's|http://deb.debian.org|https://deb.debian.org|g' /etc/apt/sources.list.d/debian.sources \
-    && apt-get -o Acquire::https::Timeout=30 -o Acquire::Retries=1 update \
-    && apt-get -o Acquire::https::Timeout=30 -o Acquire::Retries=1 install -y --no-install-recommends libgomp1 \
-    && rm -rf /var/lib/apt/lists/*
 COPY taishan/requirements.lock.txt /app/taishan/requirements.lock.txt
 RUN pip install --no-cache-dir -r taishan/requirements.lock.txt && pip check
 COPY --from=frontend /build/dist ./dist

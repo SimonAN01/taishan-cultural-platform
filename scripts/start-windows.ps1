@@ -43,7 +43,10 @@ try {
     # ONNX Runtime's optional CPU modules may require Microsoft's C++ runtime.
     $vcRuntime = Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x64' -ErrorAction SilentlyContinue
     if (-not $vcRuntime -or $vcRuntime.Installed -ne 1) { Install-Tool 'Microsoft.VCRedist.2015+.x64' }
-    $lock = (Get-FileHash 'package-lock.json' -Algorithm SHA256).Hash
+    # .NET works in Windows PowerShell even when the caller's module path is restricted.
+    $sha = [Security.Cryptography.SHA256]::Create()
+    try { $lock = [BitConverter]::ToString($sha.ComputeHash([IO.File]::ReadAllBytes((Join-Path (Get-Location) 'package-lock.json')))).Replace('-', '') }
+    finally { $sha.Dispose() }
     $marker = 'node_modules\.taishan-node-lock'
     if (-not (Test-Path $marker) -or (Get-Content $marker -Raw) -ne $lock) {
         Write-Host 'Installing the locked frontend dependencies...'
