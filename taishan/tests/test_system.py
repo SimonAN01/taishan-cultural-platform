@@ -42,6 +42,13 @@ class SystemTests(unittest.TestCase):
   self.assertTrue(self.client.get('/api/health').json()['immersive_available'])
   model=self.client.get('/experience/models/princess-agent.glb')
   self.assertEqual(model.content[:4],b'glTF')
+ def test_all_entrypoints_use_latest_interface_and_legacy_bundles_are_retired(self):
+  for path in ['/', '/index.html', '/classic', '/classic/map']:
+   response=self.client.get(path+'?ui=latest',follow_redirects=False)
+   self.assertEqual(response.status_code,302)
+   self.assertEqual(response.headers['location'],'/experience/?ui=latest')
+  for name in ['app.js','map.js','ui.js','assistant.js','style.css']:
+   self.assertEqual(self.client.get('/'+name).status_code,410)
  def test_scene_artist_slots_only_enable_when_a_local_file_exists(self):
   from backend import app as service
   with tempfile.TemporaryDirectory() as tmp:

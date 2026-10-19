@@ -41,3 +41,16 @@ test('first audio waits for the model, replay reuses TTS, and cancel prevents la
     for(const [key,descriptor] of saved)if(descriptor)Object.defineProperty(globalThis,key,descriptor);else delete globalThis[key];
   }
 });
+
+test('a recognized voice question waits for the editable confirmation step',()=>{
+  const keys=['window','cancelAnimationFrame'];const saved=new Map(keys.map(k=>[k,Object.getOwnPropertyDescriptor(globalThis,k)]));
+  try{
+    let recognition,submissions=0;const states=[];globalThis.cancelAnimationFrame=()=>{};
+    globalThis.window={isSecureContext:true,SpeechRecognition:class{constructor(){recognition=this;}start(){}abort(){}}};
+    const nodes=Object.fromEntries(['#guide-mic','#guide-mic-note','#guide-autospeak','#guide-device-voice'].map(k=>[k,{textContent:'',disabled:false,checked:true,hidden:false}]));
+    const host={innerHTML:'',querySelector:k=>nodes[k],append(){}};const input={value:'尚未发送的草稿'};
+    const voice=createVoicePipeline({host,input,onSubmit:()=>submissions++,getAvatar:()=>null,onStatus(){},isOpen:()=>true,isBusy:()=>false,onState:(...state)=>states.push(state)});
+    nodes['#guide-mic'].onclick();const result=[{transcript:'红门有什么故事？'}];result.isFinal=true;recognition.onresult({results:[result]});recognition.onend();
+    assert.equal(submissions,0);assert.equal(input.value,'尚未发送的草稿');assert.deepEqual(states.at(-1),['confirm','红门有什么故事？']);voice.destroy();
+  }finally{for(const [key,descriptor] of saved)if(descriptor)Object.defineProperty(globalThis,key,descriptor);else delete globalThis[key];}
+});

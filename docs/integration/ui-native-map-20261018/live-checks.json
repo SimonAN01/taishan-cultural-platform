@@ -1,0 +1,60 @@
+{
+  "verified_at": "2026-10-18T13:11:38.834656+00:00",
+  "http": {
+    "checked_at": "2026-10-18T13:07:25.872659+00:00",
+    "checks": [
+      {
+        "requested": "https://118.89.176.236/#map",
+        "final_url": "https://118.89.176.236/experience/",
+        "index_matches_release": true
+      },
+      {
+        "requested": "https://118.89.176.236/?classic=1",
+        "final_url": "https://118.89.176.236/experience/?classic=1",
+        "index_matches_release": true
+      },
+      {
+        "asset": "/experience/assets/index-D7KaP17c.js",
+        "release_hash_matches": true
+      },
+      {
+        "asset": "/experience/assets/index-tsX4Tfyl.css",
+        "release_hash_matches": true
+      },
+      {
+        "legacy": "/app.js",
+        "status": 410
+      },
+      {
+        "legacy": "/map.js",
+        "status": 410
+      },
+      {
+        "legacy": "/style.css",
+        "status": 410
+      },
+      {
+        "catalogue_spots": 19
+      }
+    ]
+  },
+  "browser": {
+    "root_requested": "https://118.89.176.236/#map",
+    "root_observed": "https://118.89.176.236/experience/#map",
+    "release_url": "https://118.89.176.236/experience/?ui=20261018-native-map-v6c#map",
+    "main_trail_markers_visible": [
+      "hongmen",
+      "zhongtian",
+      "shibapan",
+      "tianjie",
+      "nantianmen"
+    ],
+    "directory_count": 19,
+    "last_entry_visible": "后石坞",
+    "last_entry_opens": "#spot?id=houshiwu",
+    "full_art_overview": "public-checks/overview.png",
+    "root_proof": "public-checks/root-redirect.png",
+    "directory_bottom_proof": "public-checks/directory-bottom.png"
+  },
+  "limitations": "Word 30-state coverage and native UI asset checks do not certify pixel-identical reproduction; the terrain remains artistic imagery."
+}

@@ -1,0 +1,85 @@
+{
+  "checks": [
+    {
+      "width": 390,
+      "feature": "favorite",
+      "failedReadRetry": true,
+      "failedSaveRetry": true
+    },
+    {
+      "width": 390,
+      "feature": "audio",
+      "errorRestoresButtons": true,
+      "cancelPreventsLatePlayer": true
+    },
+    {
+      "width": 390,
+      "feature": "scene",
+      "failedSaveDoesNotAdvance": true,
+      "retryAdvances": true
+    },
+    {
+      "width": 390,
+      "feature": "guide",
+      "questionRestoredOnError": true,
+      "retry": true,
+      "cancelIgnoresLateReply": true
+    },
+    {
+      "width": 390,
+      "feature": "vision",
+      "browserTestCameraCapture": true,
+      "tracksStopped": true,
+      "analysisErrorRetainsPhotoAndRetry": true
+    },
+    {
+      "width": 390,
+      "feature": "records-settings",
+      "recordReadRetry": true,
+      "settingsApply": true,
+      "escapeCloses": true
+    },
+    {
+      "width": 1211,
+      "feature": "favorite",
+      "failedReadRetry": true,
+      "failedSaveRetry": true
+    },
+    {
+      "width": 1211,
+      "feature": "audio",
+      "errorRestoresButtons": true,
+      "cancelPreventsLatePlayer": true
+    },
+    {
+      "width": 1211,
+      "feature": "scene",
+      "failedSaveDoesNotAdvance": true,
+      "retryAdvances": true
+    },
+    {
+      "width": 1211,
+      "feature": "guide",
+      "questionRestoredOnError": true,
+      "retry": true,
+      "cancelIgnoresLateReply": true
+    },
+    {
+      "width": 1211,
+      "feature": "vision",
+      "browserTestCameraCapture": true,
+      "tracksStopped": true,
+      "analysisErrorRetainsPhotoAndRetry": true
+    },
+    {
+      "width": 1211,
+      "feature": "records-settings",
+      "recordReadRetry": true,
+      "settingsApply": true,
+      "escapeCloses": true
+    }
+  ],
+  "errors": [],
+  "fixtures": true,
+  "scope": "Explicit API error/success fixtures and Chrome fake camera; no real microphone/camera permission or AI/media provider is invoked."
+}

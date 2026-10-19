@@ -29,9 +29,12 @@ try {
     }
     if (-not $nodeOK) { Install-Tool 'OpenJS.NodeJS.LTS' }
     $pythonOK = $false
-    if (Get-Command py.exe -ErrorAction SilentlyContinue) {
-        & py.exe -3.12 -c 'import sys; sys.exit(sys.version_info[:2] != (3,12))'
-        $pythonOK = $LASTEXITCODE -eq 0
+    foreach ($candidate in @(@('py.exe', '-3.12'), @('python.exe'), @('python3.exe'))) {
+        if (Get-Command $candidate[0] -ErrorAction SilentlyContinue) {
+            $pythonArgs = @($candidate | Select-Object -Skip 1) + @('-c', 'import sys; sys.exit(sys.version_info[:2] != (3,12))')
+            & $candidate[0] @pythonArgs
+            if ($LASTEXITCODE -eq 0) { $pythonOK = $true; break }
+        }
     }
     if (-not $pythonOK) { Install-Tool 'Python.Python.3.12' }
     if (-not (Get-Command npm.cmd -ErrorAction SilentlyContinue)) {
@@ -50,7 +53,7 @@ try {
     }
     Write-Host 'Starting the complete system. Keep this window open; press Ctrl+C to stop.'
     Write-Host 'When READY appears, open http://127.0.0.1:18605/experience/'
-    & npm.cmd start
+    & npm.cmd start -- --open
     if ($LASTEXITCODE -ne 0) { throw 'The system could not start. Check the backend error above; API keys are already provided.' }
 } catch {
     Write-Host ('ERROR: ' + $_.Exception.Message) -ForegroundColor Red

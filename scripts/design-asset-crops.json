@@ -1,0 +1,3888 @@
+[
+  {
+    "file": "bottom-agent.webp",
+    "size": [
+      309,
+      70
+    ],
+    "sha256": "45f2c770026c3dfee2144c57c334fb6dd200ca998eded433c58fe68b478945f6",
+    "source_image": 22,
+    "box": [
+      1261,
+      857,
+      1570,
+      927
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "bottom-cableway.webp",
+    "size": [
+      309,
+      78
+    ],
+    "sha256": "c73e53c2b6828333381e14634820df326ed91f659cb52dad583d346d3358529c",
+    "source_image": 11,
+    "box": [
+      1261,
+      849,
+      1570,
+      927
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "bottom-caishixi.webp",
+    "size": [
+      309,
+      89
+    ],
+    "sha256": "8d28e52389c4dd22d4ef8932c4ffbc665072289f7c37fd56e126ede5d9291fce",
+    "source_image": 9,
+    "box": [
+      1261,
+      838,
+      1570,
+      927
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "bottom-gallery.webp",
+    "size": [
+      309,
+      76
+    ],
+    "sha256": "9cb88eb04ce8dd41955d1bb3b2caf9e6da06b2cc585f1c8b21a246db77b1d99f",
+    "source_image": 8,
+    "box": [
+      1261,
+      851,
+      1570,
+      927
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "bottom-history.webp",
+    "size": [
+      309,
+      58
+    ],
+    "sha256": "605a05db3a91f214451e2d503f958200c2274ba93f8e47b4b1461ac4e6847810",
+    "source_image": 17,
+    "box": [
+      1261,
+      869,
+      1570,
+      927
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "bottom-houshiwu.webp",
+    "size": [
+      309,
+      76
+    ],
+    "sha256": "1770455ff05a1a60c115028ea72524bbfbe9d1c6d1c40946d4972703f9b5e9fb",
+    "source_image": 10,
+    "box": [
+      1261,
+      851,
+      1570,
+      927
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "bottom-map.webp",
+    "size": [
+      309,
+      78
+    ],
+    "sha256": "adebb2c5fe1fa271b081f7f3458f26a6a34d9a7f55f98c1da8a78ed269fb2cb0",
+    "source_image": 3,
+    "box": [
+      1261,
+      849,
+      1570,
+      927
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "bottom-museum.webp",
+    "size": [
+      309,
+      42
+    ],
+    "sha256": "14592629281bd3ec894c9ecd8da355596d024cf1979aaae7948c3051293c7317",
+    "source_image": 19,
+    "box": [
+      1261,
+      885,
+      1570,
+      927
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "bottom-poetry.webp",
+    "size": [
+      309,
+      81
+    ],
+    "sha256": "f9bb06c37cc5a4c5e428d5acd438c428d618d0da6ec09e62d2114ff5a3b3f869",
+    "source_image": 18,
+    "box": [
+      1261,
+      846,
+      1570,
+      927
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "bottom-read.webp",
+    "size": [
+      309,
+      58
+    ],
+    "sha256": "9ea0838f693f66bd64364df14256fec6383981cc89956443a1b8e1d881a98e88",
+    "source_image": 16,
+    "box": [
+      1261,
+      869,
+      1570,
+      927
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "bottom-review.webp",
+    "size": [
+      309,
+      50
+    ],
+    "sha256": "e601efb62ad759a8183f4894be9462f87b10223ecbab2a656ff13780129305e8",
+    "source_image": 12,
+    "box": [
+      1261,
+      889,
+      1570,
+      939
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "bottom-scene.webp",
+    "size": [
+      309,
+      72
+    ],
+    "sha256": "488b44634f8b0dc7a0ac4efade908ff775ed37733da17233a34bd6e838898504",
+    "source_image": 6,
+    "box": [
+      1261,
+      855,
+      1570,
+      927
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "bottom-scenes.webp",
+    "size": [
+      309,
+      78
+    ],
+    "sha256": "1676139d76d346b95fa01cfd76620ee1d9afeb97cb9a41caf68e49b19c0fe631",
+    "source_image": 21,
+    "box": [
+      1261,
+      849,
+      1570,
+      927
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "bottom-spot.webp",
+    "size": [
+      309,
+      58
+    ],
+    "sha256": "3606f65a325db3a1fa900b7425c42efdd776bf8feffaa25ce2739dca2b4ee954",
+    "source_image": 7,
+    "box": [
+      1261,
+      869,
+      1570,
+      927
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "bottom-study.webp",
+    "size": [
+      309,
+      58
+    ],
+    "sha256": "689677e028176a0377836193dfb528f81057b8ac0f4f157f6d35171a6b1b4bc0",
+    "source_image": 20,
+    "box": [
+      1261,
+      869,
+      1570,
+      927
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "bottom-trail.webp",
+    "size": [
+      309,
+      58
+    ],
+    "sha256": "1d046229d4cae3f4861f7d2fb2f7dfd793763f225e3897edab3c283f4fde099c",
+    "source_image": 27,
+    "box": [
+      1261,
+      869,
+      1570,
+      927
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "bottom-vision.webp",
+    "size": [
+      309,
+      58
+    ],
+    "sha256": "b1439e335039b256e803ebbd10da1d2dea4bd3798fd271f871abdec2b7a2ad41",
+    "source_image": 23,
+    "box": [
+      1261,
+      869,
+      1570,
+      927
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "brand.webp",
+    "size": [
+      224,
+      38
+    ],
+    "sha256": "7424cc95b7210eda14bc6526c0dbc8abcbe2de9a15cde4cd2e9a7a85694b4f5a",
+    "source_image": 3,
+    "box": [
+      46,
+      128,
+      270,
+      166
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "cableway-desktop.webp",
+    "size": [
+      1211,
+      749
+    ],
+    "sha256": "aacef376d12a81d73c7103fd3022ff4af459d3f835abca2ac235d5c38a7357b0",
+    "source_image": 11,
+    "box": [
+      24,
+      179,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "cableway-mobile.webp",
+    "size": [
+      309,
+      645
+    ],
+    "sha256": "68ac7be2d40b0582009eb3ad7d7246164022b8952848c1c04329cf05c3ae9e0f",
+    "source_image": 11,
+    "box": [
+      1261,
+      204,
+      1570,
+      849
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "caishixi-desktop.webp",
+    "size": [
+      1211,
+      749
+    ],
+    "sha256": "fd26a2502f97e0b8211dbe2271e1b784ebcbdffd402ee40fb260e2605332efd1",
+    "source_image": 9,
+    "box": [
+      24,
+      179,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "caishixi-mobile.webp",
+    "size": [
+      309,
+      634
+    ],
+    "sha256": "3748a420130e8e7b15bacb5806bd73c75b7aae6abbe189ad1db75e160d53450f",
+    "source_image": 9,
+    "box": [
+      1261,
+      204,
+      1570,
+      838
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "daimiao-desktop.webp",
+    "size": [
+      1211,
+      749
+    ],
+    "sha256": "3fcd303df476d3173badfe8cd59e5fdfdfb5f235b3a9653d0ddb130cd47708cc",
+    "source_image": 6,
+    "box": [
+      24,
+      179,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "daimiao-inspector-mobile.webp",
+    "size": [
+      309,
+      189
+    ],
+    "sha256": "ec0795e06edabd1eb01c730b6ecbead1867318491214926086017d52573e56cf",
+    "source_image": 6,
+    "box": [
+      1261,
+      666,
+      1570,
+      855
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "daimiao-inspector.webp",
+    "size": [
+      349,
+      735
+    ],
+    "sha256": "6cab0a1fa2eeca911e18a1ecc303179134b2681b11811afad7e258816c0b1bb8",
+    "source_image": 6,
+    "box": [
+      870,
+      184,
+      1219,
+      919
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "daimiao-reader-photo.webp",
+    "size": [
+      322,
+      214
+    ],
+    "sha256": "1ddc02e8534d4f91acbc678c624146abb59637b793490c514fabb0ef630a9375",
+    "source_image": 6,
+    "box": [
+      878,
+      309,
+      1200,
+      523
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "daimiao-stage-mobile.webp",
+    "size": [
+      309,
+      422
+    ],
+    "sha256": "f7eb8b7667b5695303a2767cf896ecc158153a29186f5b5b8fdf5c3c18093427",
+    "source_image": 6,
+    "box": [
+      1261,
+      244,
+      1570,
+      666
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "daimiao-stage.webp",
+    "size": [
+      845,
+      749
+    ],
+    "sha256": "dc220f9d2134c9261755481e4ae1d3c04ba414e702d378576f1ef69570b01db5",
+    "source_image": 6,
+    "box": [
+      24,
+      179,
+      869,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "feedback-already.webp",
+    "size": [
+      752,
+      363
+    ],
+    "sha256": "861c58c5666d97768484a6edd98a79944f0f053f736919679b1d18a0161ef16c",
+    "source_image": 29,
+    "box": [
+      30,
+      588,
+      782,
+      951
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "feedback-camera-permission.webp",
+    "size": [
+      482,
+      337
+    ],
+    "sha256": "50ed4d3708ed8067bf08fd607514075e7aae04a04f78a0d09e96094045d3502f",
+    "source_image": 14,
+    "box": [
+      589,
+      623,
+      1071,
+      960
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "feedback-empty.webp",
+    "size": [
+      765,
+      348
+    ],
+    "sha256": "b1244397413c8cd3e52735f14172a57b0ccea26b5863bfd0a73301952ab5d7e9",
+    "source_image": 30,
+    "box": [
+      801,
+      610,
+      1566,
+      958
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "feedback-image-error.webp",
+    "size": [
+      765,
+      382
+    ],
+    "sha256": "4aa823022bc0c8c652e9edae0474e1b029813a745499b3d90b06b12359dc1719",
+    "source_image": 30,
+    "box": [
+      801,
+      158,
+      1566,
+      540
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "feedback-mic-error.webp",
+    "size": [
+      465,
+      337
+    ],
+    "sha256": "a49746646cb9bf8d43a71698cf68ef6faf804700ae1e7e0fa352ab54ebf143cd",
+    "source_image": 14,
+    "box": [
+      1092,
+      623,
+      1557,
+      960
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "feedback-save-error.webp",
+    "size": [
+      752,
+      363
+    ],
+    "sha256": "c31e1a8d0ebb6a319fb85719d4509cdfe7639f8eb307ac796f6817459510ed06",
+    "source_image": 29,
+    "box": [
+      804,
+      588,
+      1556,
+      951
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "feedback-saved.webp",
+    "size": [
+      752,
+      376
+    ],
+    "sha256": "c5cc0a5c9e57d443f2aae8780247d543f4c9fcfa6d20b0d1289b9c3dab7fab39",
+    "source_image": 29,
+    "box": [
+      804,
+      194,
+      1556,
+      570
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "feedback-saving.webp",
+    "size": [
+      752,
+      376
+    ],
+    "sha256": "456f74f643944f4545710f920541b867bc05c888235d51e932d74cbea3b7db3c",
+    "source_image": 29,
+    "box": [
+      30,
+      194,
+      782,
+      570
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "feedback-scene-error.webp",
+    "size": [
+      465,
+      415
+    ],
+    "sha256": "01830482f60ff41731181dd705866f8d698d59c700181b139968ef8978418a71",
+    "source_image": 14,
+    "box": [
+      1092,
+      186,
+      1557,
+      601
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "feedback-scene-loading.webp",
+    "size": [
+      482,
+      415
+    ],
+    "sha256": "9e2df1d8baf07f26f5084a3a81d1b346e3c3df974b8f30216f8ea0e34c67124e",
+    "source_image": 14,
+    "box": [
+      589,
+      186,
+      1071,
+      601
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "feedback-skeleton.webp",
+    "size": [
+      763,
+      349
+    ],
+    "sha256": "f15692b8d8e0e8c7420389bc0befaf4e73cf3396194c30c20c97693d04444751",
+    "source_image": 30,
+    "box": [
+      24,
+      610,
+      787,
+      959
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "feedback-sound-choice.webp",
+    "size": [
+      535,
+      337
+    ],
+    "sha256": "e3594d9b41d4d1aa532e90129c87f9d7720c6ceadff528aa39c9f0351ecb0a7b",
+    "source_image": 14,
+    "box": [
+      30,
+      623,
+      565,
+      960
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "feedback-sunrise-loading.webp",
+    "size": [
+      535,
+      415
+    ],
+    "sha256": "a5773d8051a6876fe64f1fa58dd7c589de7df48ace5d6a2ddedd334c68af19e8",
+    "source_image": 14,
+    "box": [
+      30,
+      186,
+      565,
+      601
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "feedback-vision-analyzing.webp",
+    "size": [
+      274,
+      345
+    ],
+    "sha256": "9c12f9c59cf1e059f5433d4500e2d2b0a27253d5be555594a0dcce20e37036ef",
+    "source_image": 26,
+    "box": [
+      352,
+      311,
+      626,
+      656
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "feedback-vision-unknown.webp",
+    "size": [
+      261,
+      164
+    ],
+    "sha256": "8cfdb8652a4f46716443fbb6409a1f7b84bb31c286153b627ba8dbca73317b3d",
+    "source_image": 26,
+    "box": [
+      1293,
+      510,
+      1554,
+      674
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "feedback-voice-avatar.webp",
+    "size": [
+      91,
+      91
+    ],
+    "sha256": "4eb1bb8b9f598f3076c23a26101585eec5e287aaa4e2fc26eeca1218bd1aafb5",
+    "source_image": 25,
+    "box": [
+      750,
+      269,
+      841,
+      360
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "feedback-voice-listening.webp",
+    "size": [
+      311,
+      198
+    ],
+    "sha256": "39c208b397da88f2500c0b70e60c2f71b7f8a5821ce74630bc9828098a9be212",
+    "source_image": 25,
+    "box": [
+      639,
+      310,
+      950,
+      508
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "gallery-art-0.webp",
+    "size": [
+      388,
+      405
+    ],
+    "sha256": "1f9dc337d3ca605f67b8e16b13b0e1820018ae9263da3922a4f5795504ff7377",
+    "source_image": 8,
+    "box": [
+      39,
+      448,
+      427,
+      853
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "gallery-art-1.webp",
+    "size": [
+      432,
+      170
+    ],
+    "sha256": "15974c6f4ed6d6f54727910a9da7ca95cf339aea9d250db35dbf90ef9b9b7c95",
+    "source_image": 8,
+    "box": [
+      440,
+      448,
+      872,
+      618
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "gallery-art-2.webp",
+    "size": [
+      333,
+      170
+    ],
+    "sha256": "04b8a18d24b3ef57cc66e8388d7a559e08cc05e8029ba243b406bce19a30a556",
+    "source_image": 8,
+    "box": [
+      886,
+      448,
+      1219,
+      618
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "gallery-art-3.webp",
+    "size": [
+      386,
+      172
+    ],
+    "sha256": "06d2b75c27cf51f761347fb07e450695875109a8fa41563fe72c1cbc67279e11",
+    "source_image": 8,
+    "box": [
+      440,
+      686,
+      826,
+      858
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "gallery-art-4.webp",
+    "size": [
+      380,
+      172
+    ],
+    "sha256": "2f7f36afefa4a9a509acb660aa54548e21e1ce569262197b5a2743599ef81ccf",
+    "source_image": 8,
+    "box": [
+      839,
+      686,
+      1219,
+      858
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "gallery-desktop.webp",
+    "size": [
+      1211,
+      749
+    ],
+    "sha256": "851fb34bab113f673ff46315de627aeb2ace180e1688836ca1107d1920eb72a9",
+    "source_image": 8,
+    "box": [
+      24,
+      179,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "gallery-hero-full.webp",
+    "size": [
+      1211,
+      269
+    ],
+    "sha256": "7c3cffd4153395b670b26d347af6f48694583156b897965769764d8f202ec439",
+    "source_image": 8,
+    "box": [
+      24,
+      179,
+      1235,
+      448
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "gallery-hero-mobile.webp",
+    "size": [
+      309,
+      146
+    ],
+    "sha256": "87de535a8d2d0b9feba3966e78cd0f6d1b5b81f0646231342b124a785fa9939b",
+    "source_image": 8,
+    "box": [
+      1261,
+      204,
+      1570,
+      350
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "gallery-hero.webp",
+    "size": [
+      1211,
+      181
+    ],
+    "sha256": "65256a01299e8139674e7e7c5211669457ffd7a8e3018628982986946594ca00",
+    "source_image": 8,
+    "box": [
+      24,
+      179,
+      1235,
+      360
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "gallery-tile-0-mobile.webp",
+    "size": [
+      293,
+      321
+    ],
+    "sha256": "8e6390df01236e2204e73a9d498648f993cb8ca335080fe9eeab91b5a0ac40fc",
+    "source_image": 8,
+    "box": [
+      1270,
+      350,
+      1563,
+      671
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "gallery-tile-0.webp",
+    "size": [
+      388,
+      465
+    ],
+    "sha256": "f34ba12e5f34a43cfa1c3afab92bfbe879bfa07a766a49b38db0a9fbe94f41df",
+    "source_image": 8,
+    "box": [
+      39,
+      448,
+      427,
+      913
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "gallery-tile-1-mobile.webp",
+    "size": [
+      293,
+      170
+    ],
+    "sha256": "5c469c88c9a7b64b051a846f68f2e8894f64ccdb87b51dde72dd1da69400ee7c",
+    "source_image": 8,
+    "box": [
+      1270,
+      681,
+      1563,
+      851
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "gallery-tile-1.webp",
+    "size": [
+      432,
+      226
+    ],
+    "sha256": "b3c9efe822287e227713783a140ea0c70b01f4cacf9de8cad7e8bc0a945d7664",
+    "source_image": 8,
+    "box": [
+      440,
+      448,
+      872,
+      674
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "gallery-tile-2.webp",
+    "size": [
+      333,
+      226
+    ],
+    "sha256": "ea94eab83491643d65b36ce825d8ebf0d56dde957574d08186fdbf8e5c9b9896",
+    "source_image": 8,
+    "box": [
+      886,
+      448,
+      1219,
+      674
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "gallery-tile-3.webp",
+    "size": [
+      386,
+      227
+    ],
+    "sha256": "01fa4b190af0d72993f93c6a9887161cb705aaf754a29601fee00d8b15891a05",
+    "source_image": 8,
+    "box": [
+      440,
+      686,
+      826,
+      913
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "gallery-tile-4.webp",
+    "size": [
+      380,
+      227
+    ],
+    "sha256": "33c68238b97f807032b1812e3465f33932a6deb43da7867a254174f5b063bc4c",
+    "source_image": 8,
+    "box": [
+      839,
+      686,
+      1219,
+      913
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "guide-avatar-orb.webp",
+    "size": [
+      97,
+      83
+    ],
+    "sha256": "acb08e3e8213d33c3e809bba5952e30b85a7fa3ca17268ac758927b34a93cbb9",
+    "source_image": 22,
+    "box": [
+      1130,
+      769,
+      1227,
+      852
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "guide-avatar.webp",
+    "size": [
+      72,
+      70
+    ],
+    "sha256": "5020e45533948123f68e12398103d99fbaf40b61d0b7957eebfac27a05fe46cd",
+    "source_image": 22,
+    "box": [
+      454,
+      498,
+      526,
+      568
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "guide-context-hongmen.webp",
+    "size": [
+      201,
+      42
+    ],
+    "sha256": "6cc102bd4aa8791f10ad7a94ef1c6ab23411440727a55689cc2d8d4c19d1e8dc",
+    "source_image": 22,
+    "box": [
+      382,
+      330,
+      583,
+      372
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "guide-hongmen-background.webp",
+    "size": [
+      915,
+      749
+    ],
+    "sha256": "3d01282efe2464fe4123e28ac1478723919c3031e3e7ef26e6cd6d58b0b87fea",
+    "source_image": 22,
+    "box": [
+      320,
+      179,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "guide-initial-answer.webp",
+    "size": [
+      467,
+      73
+    ],
+    "sha256": "37ec2a585b79b022f3c85a688e9489d4055e4ab3b6d5a1617428ffbcc369c11a",
+    "source_image": 22,
+    "box": [
+      454,
+      498,
+      921,
+      571
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "guide-mobile-actions.webp",
+    "size": [
+      309,
+      61
+    ],
+    "sha256": "3754fbd48929cc298b19761c77150be56cda60511954587d690b116996801873",
+    "source_image": 22,
+    "box": [
+      1261,
+      724,
+      1570,
+      785
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "guide-mobile-answer.webp",
+    "size": [
+      309,
+      76
+    ],
+    "sha256": "f22f91d07219ed2293ae3440bd56cd804e85c4a179a97ee571aeeaea8b10eed6",
+    "source_image": 22,
+    "box": [
+      1261,
+      509,
+      1570,
+      585
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "guide-mobile-composer.webp",
+    "size": [
+      309,
+      72
+    ],
+    "sha256": "3cd0d5c6b123d0c4536dafd8b3eae025166dfee16e39474b0c016e6ece169200",
+    "source_image": 22,
+    "box": [
+      1261,
+      785,
+      1570,
+      857
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "guide-mobile-related.webp",
+    "size": [
+      309,
+      139
+    ],
+    "sha256": "8c31182767f6221425bcca0314e7020bfab0cc545331198c9d5abb56c1a3e682",
+    "source_image": 22,
+    "box": [
+      1261,
+      585,
+      1570,
+      724
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "guide-mobile-starter.webp",
+    "size": [
+      309,
+      57
+    ],
+    "sha256": "5b33b72d665074cc6f65d119db4f7727be3ce3a92466631a55f220c9bde4c63c",
+    "source_image": 22,
+    "box": [
+      1261,
+      452,
+      1570,
+      509
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "guide-mobile-top.webp",
+    "size": [
+      309,
+      208
+    ],
+    "sha256": "41e52f76adb758eff97d894b5b11bd37e33b74de25bad854eefecef3f55045bd",
+    "source_image": 22,
+    "box": [
+      1261,
+      244,
+      1570,
+      452
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "guide-photo.webp",
+    "size": [
+      192,
+      124
+    ],
+    "sha256": "3645e3a8daf5ec2a9b862444d30bc619a36b0ca168d04bab8df6165aac8e221d",
+    "source_image": 22,
+    "box": [
+      548,
+      592,
+      740,
+      716
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "guide-related-card.webp",
+    "size": [
+      596,
+      155
+    ],
+    "sha256": "584cc92ac8638b762ec7948506195f8c49d65074b51fd513623fb9065e70604b",
+    "source_image": 22,
+    "box": [
+      528,
+      576,
+      1124,
+      731
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "guide-sidebar-landscape.webp",
+    "size": [
+      296,
+      248
+    ],
+    "sha256": "9c546bbb78ffe4d00ce1f0ce1de59549b6efbdc18502d000e573bc98c8e39e08",
+    "source_image": 22,
+    "box": [
+      24,
+      680,
+      320,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "guide-sidebar.webp",
+    "size": [
+      296,
+      749
+    ],
+    "sha256": "87a2e77f1a0e1e90113bc7f6e77258b30d2a0c903d3f6bdf0bf18f9f66f21927",
+    "source_image": 22,
+    "box": [
+      24,
+      179,
+      320,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "guide-starter.webp",
+    "size": [
+      310,
+      70
+    ],
+    "sha256": "3dbd0df37d955b512ad1e0bc21c9322707a789398bc8b6ffd49b9913cdbc336f",
+    "source_image": 22,
+    "box": [
+      895,
+      418,
+      1205,
+      488
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "guide-title.webp",
+    "size": [
+      385,
+      76
+    ],
+    "sha256": "a96d51c6350aa3742dd2f149f12b2b31ceba08053840ca564f56f75ddb417a36",
+    "source_image": 22,
+    "box": [
+      370,
+      244,
+      755,
+      320
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "handbook-continue-mobile.webp",
+    "size": [
+      293,
+      119
+    ],
+    "sha256": "4467b45e7734e2e74a64cfd31e775d6b6e498b428f825a6cad0032dd090cc7eb",
+    "source_image": 27,
+    "box": [
+      1269,
+      429,
+      1562,
+      548
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "handbook-continue.webp",
+    "size": [
+      402,
+      188
+    ],
+    "sha256": "d9bada2d760357c284cbc6c9b405383f154c9371097cfa65004a4cb1a159bd6b",
+    "source_image": 27,
+    "box": [
+      802,
+      286,
+      1204,
+      474
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "handbook-hero-mobile.webp",
+    "size": [
+      309,
+      357
+    ],
+    "sha256": "8c10b55aa58091c3cc5c920e9105fefe3b3878c8f0dce880763eeb0e69da014d",
+    "source_image": 27,
+    "box": [
+      1261,
+      204,
+      1570,
+      561
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "handbook-hero.webp",
+    "size": [
+      1211,
+      323
+    ],
+    "sha256": "6f1ad10d087ddd80d61509ea93333f92297b5912eb65af14efd34d97432cbe51",
+    "source_image": 27,
+    "box": [
+      24,
+      179,
+      1235,
+      502
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-agent-mobile.webp",
+    "size": [
+      309,
+      84
+    ],
+    "sha256": "fa695ba81f3e2292b115b2e5cd13188e7fe7545a2cd0a0db3b10cd7c24675208",
+    "source_image": 22,
+    "box": [
+      1261,
+      160,
+      1570,
+      244
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-agent.webp",
+    "size": [
+      1211,
+      61
+    ],
+    "sha256": "ad8d92a8f6ff5ee2096d04d75d4085c0938d5d8c30e30bc7ca8cc91b5badb9ab",
+    "source_image": 22,
+    "box": [
+      24,
+      118,
+      1235,
+      179
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-cableway-mobile.webp",
+    "size": [
+      309,
+      44
+    ],
+    "sha256": "b3dd4a094287b023b2a2690150fcb7477ed990898f66fc53403bd3ae66ba9ba4",
+    "source_image": 11,
+    "box": [
+      1261,
+      160,
+      1570,
+      204
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-cableway.webp",
+    "size": [
+      1211,
+      61
+    ],
+    "sha256": "134478273a11e06d64bebbeb8c8668ee361b26c303cc7dd50151c8a34f88ffbc",
+    "source_image": 11,
+    "box": [
+      24,
+      118,
+      1235,
+      179
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-caishixi-mobile.webp",
+    "size": [
+      309,
+      44
+    ],
+    "sha256": "d52e4f5c58fbb310c97c2979f0f47acca86fd5737ce6ad698c36c2a79ca13585",
+    "source_image": 9,
+    "box": [
+      1261,
+      160,
+      1570,
+      204
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-caishixi.webp",
+    "size": [
+      1211,
+      61
+    ],
+    "sha256": "1b3fa949d1612f48615cbb8714959c966da567dd52813bb0990fd89f095db218",
+    "source_image": 9,
+    "box": [
+      24,
+      118,
+      1235,
+      179
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-gallery-mobile.webp",
+    "size": [
+      309,
+      44
+    ],
+    "sha256": "38d44bbf35a0ae2804528a8966bb3df266de962d11e8fe8d4f221a28402ea7ba",
+    "source_image": 8,
+    "box": [
+      1261,
+      160,
+      1570,
+      204
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-gallery.webp",
+    "size": [
+      1211,
+      61
+    ],
+    "sha256": "de45d7bf1c4e78e51f8b4312979bd3ebb6da922100e2f983e65ad9768b3bffe7",
+    "source_image": 8,
+    "box": [
+      24,
+      118,
+      1235,
+      179
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-history-mobile.webp",
+    "size": [
+      309,
+      44
+    ],
+    "sha256": "76008eb26226c37f615a678cf2b0d125249fc8175ddbda325d007d592a3e6968",
+    "source_image": 17,
+    "box": [
+      1261,
+      160,
+      1570,
+      204
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-history.webp",
+    "size": [
+      1211,
+      61
+    ],
+    "sha256": "d493c0332be8cd0511203e33aae5648ada1ed7a324a9513a93c948b9ffb6cd47",
+    "source_image": 17,
+    "box": [
+      24,
+      118,
+      1235,
+      179
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-houshiwu-mobile.webp",
+    "size": [
+      309,
+      44
+    ],
+    "sha256": "1e2a9952063ff79bbd93f1231294533cacdc4aa0b146adfdc27a60823f912ac3",
+    "source_image": 10,
+    "box": [
+      1261,
+      160,
+      1570,
+      204
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-houshiwu.webp",
+    "size": [
+      1211,
+      61
+    ],
+    "sha256": "5d1ea9dec0db2ccc90781da31976e648f248c2c654872cb46a37c42378d4a6f6",
+    "source_image": 10,
+    "box": [
+      24,
+      118,
+      1235,
+      179
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-map-mobile.webp",
+    "size": [
+      309,
+      44
+    ],
+    "sha256": "de96ddeb7a0cafd0e9173858e48079320fbbcaf826c4d68e93ae431c9f28252b",
+    "source_image": 3,
+    "box": [
+      1261,
+      160,
+      1570,
+      204
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-map.webp",
+    "size": [
+      1211,
+      61
+    ],
+    "sha256": "600201e03f0b660176a7ff2f4668d16f26d8d33f47efe7d21981cbe303edee00",
+    "source_image": 3,
+    "box": [
+      24,
+      118,
+      1235,
+      179
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-museum-mobile.webp",
+    "size": [
+      309,
+      44
+    ],
+    "sha256": "43bf0c8144218adec9ce2b8dfcb645d0d0dda0409f7d875c4b031cbe75c88dbd",
+    "source_image": 19,
+    "box": [
+      1261,
+      160,
+      1570,
+      204
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-museum.webp",
+    "size": [
+      1211,
+      61
+    ],
+    "sha256": "24ff5b3855f5a14a02f92824c6bb1b838db9cb4703724853173a937db264ae2b",
+    "source_image": 19,
+    "box": [
+      24,
+      118,
+      1235,
+      179
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-paper.webp",
+    "size": [
+      130,
+      57
+    ],
+    "sha256": "20c0b934fe8f1520f07f564fbecee8b6e9a82b36d6f95475ed38c6721c4e1cd1",
+    "source_image": 3,
+    "box": [
+      300,
+      120,
+      430,
+      177
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-poetry-mobile.webp",
+    "size": [
+      309,
+      44
+    ],
+    "sha256": "00d5d9b72def189344319b8df54952b1cec309181af0d1d4e956efee15c00a6d",
+    "source_image": 18,
+    "box": [
+      1261,
+      160,
+      1570,
+      204
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-poetry.webp",
+    "size": [
+      1211,
+      61
+    ],
+    "sha256": "f76a624c23ed874658030f799698e0cb450351d42ea699470dbd5ced61e5b935",
+    "source_image": 18,
+    "box": [
+      24,
+      118,
+      1235,
+      179
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-read-mobile.webp",
+    "size": [
+      309,
+      44
+    ],
+    "sha256": "258f013aff3d92c79c265fa13f87581709d55324b9d79db17acecdb2a9ca1145",
+    "source_image": 16,
+    "box": [
+      1261,
+      160,
+      1570,
+      204
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-read.webp",
+    "size": [
+      1211,
+      61
+    ],
+    "sha256": "0968f463aa6d746f3ff283686b80b562e22494159bb5a70a72fd67c6f3a9104b",
+    "source_image": 16,
+    "box": [
+      24,
+      118,
+      1235,
+      179
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-review-mobile.webp",
+    "size": [
+      309,
+      39
+    ],
+    "sha256": "1c2dd8d2f5914d25f71b0994352d8efa52466dadf672452dedac60791f171e09",
+    "source_image": 12,
+    "box": [
+      1261,
+      160,
+      1570,
+      199
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-review.webp",
+    "size": [
+      1211,
+      61
+    ],
+    "sha256": "3ad8dbf6532ab52107be3199bb1286b1da298405b79e19cb5e1aae65d4292779",
+    "source_image": 12,
+    "box": [
+      24,
+      118,
+      1235,
+      179
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-routes-mobile.webp",
+    "size": [
+      309,
+      84
+    ],
+    "sha256": "44c7b202b5be128cd382521911c72668c3732f78a2304054ddeeced506cf5919",
+    "source_image": 5,
+    "box": [
+      1261,
+      160,
+      1570,
+      244
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-scene-mobile.webp",
+    "size": [
+      309,
+      84
+    ],
+    "sha256": "b10fbf36f371aca97f6d827723aaf14c2556ac37ba3034925e1eb352246578a5",
+    "source_image": 6,
+    "box": [
+      1261,
+      160,
+      1570,
+      244
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-scene.webp",
+    "size": [
+      1211,
+      61
+    ],
+    "sha256": "fdc74b5bb341c7dc4626719f322f8691df2b897afdfad1b1373bad6c5ef35010",
+    "source_image": 6,
+    "box": [
+      24,
+      118,
+      1235,
+      179
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-scenes-mobile.webp",
+    "size": [
+      309,
+      44
+    ],
+    "sha256": "bb96b0c63357ae27c7ac46964bcc2234760541809bb490cd90680fcf4652aa89",
+    "source_image": 21,
+    "box": [
+      1261,
+      160,
+      1570,
+      204
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-scenes.webp",
+    "size": [
+      1211,
+      61
+    ],
+    "sha256": "e7a9360862ae071fa67af89ed9b2128f38022a36cd7db0094b84863303c5cf61",
+    "source_image": 21,
+    "box": [
+      24,
+      118,
+      1235,
+      179
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-spot.webp",
+    "size": [
+      1211,
+      61
+    ],
+    "sha256": "64bee947b0d101f123932487044a53a959dd1fd5e09bddf081a2e83a869803f0",
+    "source_image": 7,
+    "box": [
+      24,
+      118,
+      1235,
+      179
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-study-mobile.webp",
+    "size": [
+      309,
+      44
+    ],
+    "sha256": "cc0043feb0246bcd8f186f3aec054191716aa9332019a060f8ac27f3ef114d49",
+    "source_image": 20,
+    "box": [
+      1261,
+      160,
+      1570,
+      204
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-study.webp",
+    "size": [
+      1211,
+      61
+    ],
+    "sha256": "e9108f026cc81f697b706c386c70ef057a1cef2c31a90585f8651983a21db524",
+    "source_image": 20,
+    "box": [
+      24,
+      118,
+      1235,
+      179
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-trail-mobile.webp",
+    "size": [
+      309,
+      44
+    ],
+    "sha256": "ec69da344f0ea10f87951f98e8319b1f6b9668bf7cef0d5d08f9adaa9cb6f21a",
+    "source_image": 27,
+    "box": [
+      1261,
+      160,
+      1570,
+      204
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-trail.webp",
+    "size": [
+      1211,
+      61
+    ],
+    "sha256": "bba8c5756316c794a47b9554717bef3e9203c88bc5dd290d2a19c752f3c2d850",
+    "source_image": 27,
+    "box": [
+      24,
+      118,
+      1235,
+      179
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-vision-mobile.webp",
+    "size": [
+      309,
+      44
+    ],
+    "sha256": "e86889294e9931be5cca191669b92fd56f037d9b06a63e8897ce669d205c674d",
+    "source_image": 23,
+    "box": [
+      1261,
+      160,
+      1570,
+      204
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "header-vision.webp",
+    "size": [
+      1211,
+      61
+    ],
+    "sha256": "68a7d9f29c39032159aa973abb823e2b2fd4aabdd14c3d58011fb3d8a7b49caf",
+    "source_image": 23,
+    "box": [
+      24,
+      118,
+      1235,
+      179
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "history-card-art.webp",
+    "size": [
+      227,
+      210
+    ],
+    "sha256": "b3f26a77322140dfcdc681e77cd943a7092a4d85e777830637217185a8ac7567",
+    "source_image": 17,
+    "box": [
+      371,
+      459,
+      598,
+      669
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "history-card-initial-mobile.webp",
+    "size": [
+      298,
+      215
+    ],
+    "sha256": "c3c39c1207f4df67a5326d6f5629284e9d39a2f10fc2ea8eeb6e5a1aa6d4e179",
+    "source_image": 17,
+    "box": [
+      1267,
+      564,
+      1565,
+      779
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "history-card-initial.webp",
+    "size": [
+      548,
+      307
+    ],
+    "sha256": "0ed5b3ad47ccbc144762af8459530d00405ac3d8d5df9e3d49be161252f42f90",
+    "source_image": 17,
+    "box": [
+      55,
+      450,
+      603,
+      757
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "history-desktop.webp",
+    "size": [
+      1211,
+      749
+    ],
+    "sha256": "4708e286dc39711f82da106c10e8e94c11965dd50cbbea63528fce7e9dbd2617",
+    "source_image": 17,
+    "box": [
+      24,
+      179,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "history-heading-mobile.webp",
+    "size": [
+      309,
+      111
+    ],
+    "sha256": "0671f77837699c97bc7080fee950b60a2e8045ae826ae4b28084ee93f9fafbb2",
+    "source_image": 17,
+    "box": [
+      1261,
+      204,
+      1570,
+      315
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "history-heading.webp",
+    "size": [
+      616,
+      174
+    ],
+    "sha256": "eff7e0040b66983432071d401e26f9d3346048ab122ebe55f27729a4aeffb40d",
+    "source_image": 17,
+    "box": [
+      24,
+      179,
+      640,
+      353
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "history-hero.webp",
+    "size": [
+      1211,
+      597
+    ],
+    "sha256": "0fd30e0959647e62cb26a72f31ba3b0c1fe41004e53cf6e57e25a805b4f63959",
+    "source_image": 17,
+    "box": [
+      24,
+      179,
+      1235,
+      776
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "history-main-art.webp",
+    "size": [
+      622,
+      597
+    ],
+    "sha256": "ec7a00098d0a7a5cf3146ae8ce578a631c2641506ce76639dc677a200c297a9c",
+    "source_image": 17,
+    "box": [
+      613,
+      179,
+      1235,
+      776
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "history-mountains-mobile.webp",
+    "size": [
+      309,
+      202
+    ],
+    "sha256": "e531e52a10774c72f309305b33259ee16237407179fae1f89bf6bfeec3798f1e",
+    "source_image": 17,
+    "box": [
+      1261,
+      362,
+      1570,
+      564
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "history-related.webp",
+    "size": [
+      1211,
+      149
+    ],
+    "sha256": "273398a0d0161029cb81455b157c6af6bdc2baca72f059ff4428a295a60605f2",
+    "source_image": 17,
+    "box": [
+      24,
+      779,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "hongmen-detail-desktop.webp",
+    "size": [
+      1211,
+      749
+    ],
+    "sha256": "83aac4cf52dcda5abdceb0e63551ba141361f18c293832ef7504c866510bcda4",
+    "source_image": 7,
+    "box": [
+      24,
+      179,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "hongmen-detail-mobile.webp",
+    "size": [
+      309,
+      665
+    ],
+    "sha256": "0a3a9fb4a69762455ac01c25b482b710bf9753387711e73a5b03b35b83f0ba6e",
+    "source_image": 7,
+    "box": [
+      1261,
+      204,
+      1570,
+      869
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "hongmen-highlight-0.webp",
+    "size": [
+      216,
+      118
+    ],
+    "sha256": "033ab4e9603e70cb6a09286436c4328269a4dc94f003b0c1324e468862f56559",
+    "source_image": 7,
+    "box": [
+      546,
+      795,
+      762,
+      913
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "hongmen-highlight-1.webp",
+    "size": [
+      213,
+      118
+    ],
+    "sha256": "520bcb5c8538ef00cb8a4d3dcb997da64a1c3f04a7b72ff170c0e9e4ff1f6a6a",
+    "source_image": 7,
+    "box": [
+      772,
+      795,
+      985,
+      913
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "hongmen-highlight-2.webp",
+    "size": [
+      221,
+      118
+    ],
+    "sha256": "202990820c932f80b5e28175af06bbd429e4ac5511ad3ef9781d62c62b33e9fc",
+    "source_image": 7,
+    "box": [
+      995,
+      795,
+      1216,
+      913
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "hongmen-lower-paper.webp",
+    "size": [
+      1211,
+      186
+    ],
+    "sha256": "ecf4c72a07209d894e5b79c28695f1dac4afd73f2f47dd807938e3410f7b06b2",
+    "source_image": 7,
+    "box": [
+      24,
+      742,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "hongmen-title.webp",
+    "size": [
+      113,
+      45
+    ],
+    "sha256": "7397cc3fe46f4b26d96d9898cf0fd0ea10c9ecad75a1252c363dcfc39443ff4e",
+    "source_image": 7,
+    "box": [
+      972,
+      249,
+      1085,
+      294
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "houshiwu-desktop.webp",
+    "size": [
+      1211,
+      749
+    ],
+    "sha256": "862096bffed0452243541cda5d07d5e188f0f5131926cb5a0f92a72251c6cb2a",
+    "source_image": 10,
+    "box": [
+      24,
+      179,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "houshiwu-mobile.webp",
+    "size": [
+      309,
+      647
+    ],
+    "sha256": "c6a29db149c70ebfde082dd7d0f229d771adcb46be2a949ab0208f257f29bec1",
+    "source_image": 10,
+    "box": [
+      1261,
+      204,
+      1570,
+      851
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "map-desktop.webp",
+    "size": [
+      1211,
+      749
+    ],
+    "sha256": "cfb23c33cedac7f470915a1770bc9d2c270a438c71c3efb33c8756baf29ccdf3",
+    "source_image": 3,
+    "box": [
+      24,
+      179,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "map-hud-goal-mobile.webp",
+    "size": [
+      291,
+      134
+    ],
+    "sha256": "75d0c6e3a5036c16ab14316eb3522f176b511827b3e69385cd1db3213f490b2c",
+    "source_image": 3,
+    "box": [
+      1269,
+      206,
+      1560,
+      340
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "map-hud-goal.webp",
+    "size": [
+      312,
+      198
+    ],
+    "sha256": "44d8691766f0d071fb955257a58b236a2132d85bc525b9976e982bc87421e36c",
+    "source_image": 3,
+    "box": [
+      39,
+      204,
+      351,
+      402
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "map-hud-guide-mobile.webp",
+    "size": [
+      71,
+      85
+    ],
+    "sha256": "2785a98e0304418ebd178bdb425de015bd48c8bbcddd085f880a83699174c923",
+    "source_image": 3,
+    "box": [
+      1499,
+      665,
+      1570,
+      750
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "map-hud-guide.webp",
+    "size": [
+      182,
+      87
+    ],
+    "sha256": "8c427aa6b954707fccc6412c7db0ebb92d4f4887eebfc06b5b859227647afac5",
+    "source_image": 3,
+    "box": [
+      1041,
+      829,
+      1223,
+      916
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "map-hud-search-mobile.webp",
+    "size": [
+      290,
+      96
+    ],
+    "sha256": "18cc8b511f38dfef766683d522c126532c44bfa37e718e063ce048e1c51a5a90",
+    "source_image": 3,
+    "box": [
+      1270,
+      753,
+      1560,
+      849
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "map-hud-search.webp",
+    "size": [
+      278,
+      94
+    ],
+    "sha256": "2d131a0e094d747192483f8858a29b76c81e3ad5769a02e7189bfeb3cfde7437",
+    "source_image": 3,
+    "box": [
+      945,
+      731,
+      1223,
+      825
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "map-mobile.webp",
+    "size": [
+      309,
+      645
+    ],
+    "sha256": "79b6144123016de65c714ec1730ebb819f867e9a5ae38a02bc1458c60fb8c617",
+    "source_image": 3,
+    "box": [
+      1261,
+      204,
+      1570,
+      849
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "museum-art.webp",
+    "size": [
+      583,
+      571
+    ],
+    "sha256": "d3e0f22bfb6bc1d833777af8d4bfae5e6ef92b8f239bece79be7e9b79cef6bcd",
+    "source_image": 19,
+    "box": [
+      262,
+      208,
+      845,
+      779
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "museum-desktop.webp",
+    "size": [
+      1211,
+      749
+    ],
+    "sha256": "6764b574735125113616d92439eb3b08260b2db83e3290aceec4352a6ed0dd5a",
+    "source_image": 19,
+    "box": [
+      24,
+      179,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "museum-detail-1.webp",
+    "size": [
+      420,
+      480
+    ],
+    "sha256": "0771c555ed7faa67fc4b451344f64d5298d17e78bad7e59a46bd2158cf8d83d2",
+    "source_image": 19,
+    "box": [
+      322,
+      208,
+      742,
+      688
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "museum-detail-2.webp",
+    "size": [
+      350,
+      350
+    ],
+    "sha256": "f1a41e7050370af2a9a80003bed7c3ebb0cb22a793723477ab07c3a15fc88bd0",
+    "source_image": 19,
+    "box": [
+      352,
+      298,
+      702,
+      648
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "museum-detail-3.webp",
+    "size": [
+      300,
+      370
+    ],
+    "sha256": "3a442461f596194ec79608ed0ab4d5102ddafc6e6ece2a5574e76d594ded051b",
+    "source_image": 19,
+    "box": [
+      442,
+      388,
+      742,
+      758
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "museum-detail-4.webp",
+    "size": [
+      350,
+      411
+    ],
+    "sha256": "432320328e5bd50a4dc27a72ffd1076b7c051ab957672407ffe1581f8e29db3a",
+    "source_image": 19,
+    "box": [
+      262,
+      368,
+      612,
+      779
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "museum-inspector-mobile.webp",
+    "size": [
+      309,
+      218
+    ],
+    "sha256": "b1c1477c532074ea4e489fda555d80334d375fce14a6dde8b8cf95b72b11410d",
+    "source_image": 19,
+    "box": [
+      1261,
+      667,
+      1570,
+      885
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "museum-inspector.webp",
+    "size": [
+      361,
+      723
+    ],
+    "sha256": "01d46557b5299b024e5a3055b8d2f07313d773d35a59fb3e7d157bb78f8a0bef",
+    "source_image": 19,
+    "box": [
+      860,
+      205,
+      1221,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "museum-mobile-art.webp",
+    "size": [
+      291,
+      286
+    ],
+    "sha256": "251d7826cdfb7473416a7e2f02253f525020ef7e460be4c03b6d33664de595e1",
+    "source_image": 19,
+    "box": [
+      1267,
+      329,
+      1558,
+      615
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "museum-mobile-title.webp",
+    "size": [
+      309,
+      81
+    ],
+    "sha256": "7fc78ebce423448fe52b90d8f91f74274a35050626e381aafb2b7f8465e0d8e7",
+    "source_image": 19,
+    "box": [
+      1261,
+      204,
+      1570,
+      285
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "museum-nav-mobile.webp",
+    "size": [
+      309,
+      48
+    ],
+    "sha256": "1eddd2b00948f6121c9f70db23d6f759c41482a36b69419f315f8c835bbe3b18",
+    "source_image": 19,
+    "box": [
+      1261,
+      204,
+      1570,
+      252
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "museum-nav.webp",
+    "size": [
+      210,
+      724
+    ],
+    "sha256": "e41d8f90f77888089e43eac7d0b92a2449b1889927fe7197dc1181b5e00c03ce",
+    "source_image": 19,
+    "box": [
+      36,
+      204,
+      246,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "museum-sidebar-art.webp",
+    "size": [
+      209,
+      427
+    ],
+    "sha256": "88571bc4a8bad48dabffcf34aea2eb5623b702bfd378eb83d7a2115118838cc3",
+    "source_image": 19,
+    "box": [
+      34,
+      500,
+      243,
+      927
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "museum-thumb-0.webp",
+    "size": [
+      109,
+      65
+    ],
+    "sha256": "99ae0d186d4e76375f89eb26c98d04d83b6f55d938fbdfbcf1c3a4dc9833d91e",
+    "source_image": 19,
+    "box": [
+      317,
+      793,
+      426,
+      858
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "museum-thumb-1.webp",
+    "size": [
+      100,
+      65
+    ],
+    "sha256": "3cb49a58d5640663c09b4d35438be319b17de4a72dbf8ce5b61614b630e4795f",
+    "source_image": 19,
+    "box": [
+      436,
+      793,
+      536,
+      858
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "museum-thumb-2.webp",
+    "size": [
+      95,
+      65
+    ],
+    "sha256": "a9b02e6f46ed9e38a792c6082a73e90cc0b767432af3733882956040ff8b4568",
+    "source_image": 19,
+    "box": [
+      546,
+      793,
+      641,
+      858
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "museum-thumb-3.webp",
+    "size": [
+      90,
+      65
+    ],
+    "sha256": "7ee882a906fa42a62d10ef054c2dffc1d1baab6822dfe870e0c6f9b47cbb67ed",
+    "source_image": 19,
+    "box": [
+      651,
+      793,
+      741,
+      858
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "museum-thumb-4.webp",
+    "size": [
+      52,
+      65
+    ],
+    "sha256": "5917f2041ac88d9ff7021b8d98025d5aabc7747d5428be0afc6f7bbcbe110d70",
+    "source_image": 19,
+    "box": [
+      751,
+      793,
+      803,
+      858
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "nantian-detail.webp",
+    "size": [
+      516,
+      327
+    ],
+    "sha256": "e69a4c4a2ff20cc8d1b32066beb887443034e4f76b55bf480e8720de6a57fbfb",
+    "source_image": 13,
+    "box": [
+      1025,
+      618,
+      1541,
+      945
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "nantian-dialogue.webp",
+    "size": [
+      723,
+      145
+    ],
+    "sha256": "c03e340484aa327355cf761c813efa391399c357d03d6b912536f88d7acb4560",
+    "source_image": 13,
+    "box": [
+      41,
+      800,
+      764,
+      945
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "nantian-observe.webp",
+    "size": [
+      754,
+      302
+    ],
+    "sha256": "ec49f11f72c6c35312988cdd0cb534b85803252a7d87c6d25dcacffd63fa8efe",
+    "source_image": 13,
+    "box": [
+      27,
+      230,
+      781,
+      532
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "nantian-observed.webp",
+    "size": [
+      753,
+      302
+    ],
+    "sha256": "88a93d40839efbb4c3a79e7cb78b872572b905d1350d66446a3c8a36ad2ccec4",
+    "source_image": 13,
+    "box": [
+      808,
+      230,
+      1561,
+      532
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "poetry-desktop.webp",
+    "size": [
+      1211,
+      749
+    ],
+    "sha256": "657b990b74eef0c3cedbd29024916d6f2d38839b227f58ad6bd7a3442605c573",
+    "source_image": 18,
+    "box": [
+      24,
+      179,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "poetry-main-art.webp",
+    "size": [
+      1211,
+      665
+    ],
+    "sha256": "cadbbc182e09fa88841e1747e2908d2e3c0f2a0193306a33464a16ad2a5df679",
+    "source_image": 18,
+    "box": [
+      24,
+      179,
+      1235,
+      844
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "poetry-mobile.webp",
+    "size": [
+      309,
+      642
+    ],
+    "sha256": "e28443d994199b44b689d5b92df116eaac609b6a043b539bd7da5abd5c3a48cc",
+    "source_image": 18,
+    "box": [
+      1261,
+      204,
+      1570,
+      846
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "read-card-0-desktop.webp",
+    "size": [
+      227,
+      357
+    ],
+    "sha256": "d88bfd645ef9e9736a1a0ae82ff627ac0392365c9e3b26e41ce5586167c32e72",
+    "source_image": 16,
+    "box": [
+      42,
+      390,
+      269,
+      747
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "read-card-0-mobile.webp",
+    "size": [
+      291,
+      79
+    ],
+    "sha256": "de07098f90c9f5e5f1913b292994a1bc26ee10acd1c019f58ed3831965034b01",
+    "source_image": 16,
+    "box": [
+      1270,
+      382,
+      1561,
+      461
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "read-card-1-desktop.webp",
+    "size": [
+      228,
+      357
+    ],
+    "sha256": "6bd88356e9cdfcc8aa59d1c01df0ff7c9f8a875f301fab0601ffa92ffb10ad52",
+    "source_image": 16,
+    "box": [
+      279,
+      390,
+      507,
+      747
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "read-card-1-mobile.webp",
+    "size": [
+      291,
+      79
+    ],
+    "sha256": "33494c8d14e25685c890aa503d958bd0342798a793f814ae4c76dbc142b8b283",
+    "source_image": 16,
+    "box": [
+      1270,
+      461,
+      1561,
+      540
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "read-card-2-desktop.webp",
+    "size": [
+      228,
+      357
+    ],
+    "sha256": "672a0f9e019bdb1ee94b15ebb94a3b0ba1a2a8ad01d6d4845e2395749d3d5fc8",
+    "source_image": 16,
+    "box": [
+      517,
+      390,
+      745,
+      747
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "read-card-2-mobile.webp",
+    "size": [
+      291,
+      79
+    ],
+    "sha256": "ae018fb88637ef902fd4ce33edf65a6aa64c4b4eb04d5699e5dfb2dadc8bc894",
+    "source_image": 16,
+    "box": [
+      1270,
+      541,
+      1561,
+      620
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "read-card-3-desktop.webp",
+    "size": [
+      229,
+      357
+    ],
+    "sha256": "41c732f3465c784a99b34671f1155f87210371c4691e3355d064fac3bc35c55f",
+    "source_image": 16,
+    "box": [
+      755,
+      390,
+      984,
+      747
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "read-card-3-mobile.webp",
+    "size": [
+      291,
+      79
+    ],
+    "sha256": "6283ec8035f31d98c8968eaef49232ed31b71823982ff83989ae41905a5875e8",
+    "source_image": 16,
+    "box": [
+      1270,
+      620,
+      1561,
+      699
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "read-card-4-desktop.webp",
+    "size": [
+      226,
+      357
+    ],
+    "sha256": "d1d7342a4bda607e1c07a61fd78eeccbdabe4888d50d66494d95064e6aa28dbd",
+    "source_image": 16,
+    "box": [
+      994,
+      390,
+      1220,
+      747
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "read-card-4-mobile.webp",
+    "size": [
+      291,
+      79
+    ],
+    "sha256": "6cda3b28d71600650d8a632f0a7e038774b2ab78c87977467b5921e8b85f79b1",
+    "source_image": 16,
+    "box": [
+      1270,
+      700,
+      1561,
+      779
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "read-continue-desktop.webp",
+    "size": [
+      1178,
+      145
+    ],
+    "sha256": "5431439e665ff7d188c3356bd774037b95f43f0c781b180bff1cbee24e6f4cae",
+    "source_image": 16,
+    "box": [
+      42,
+      768,
+      1220,
+      913
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "read-continue-mobile.webp",
+    "size": [
+      291,
+      77
+    ],
+    "sha256": "53e61f18ce2ad31f59ae07268071607f8b9e033dced03aae1120582db8218070",
+    "source_image": 16,
+    "box": [
+      1270,
+      791,
+      1561,
+      868
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "read-hero-desktop.webp",
+    "size": [
+      1211,
+      211
+    ],
+    "sha256": "28e4327710f1683ade2608c0c5ae1802dad6bb08a665f9d1a308dd1a0a087487",
+    "source_image": 16,
+    "box": [
+      24,
+      179,
+      1235,
+      390
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "read-hero-mobile.webp",
+    "size": [
+      309,
+      178
+    ],
+    "sha256": "8c2fa883769bb1eabacd156be62a7a725c0f0d451f150da73273c53bdeeb453a",
+    "source_image": 16,
+    "box": [
+      1261,
+      204,
+      1570,
+      382
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "read-paper.webp",
+    "size": [
+      1209,
+      749
+    ],
+    "sha256": "eac1dd4f87551c4333e93948ae935ed946cda8a114e018b47cb8eb762290c735",
+    "source_image": 16,
+    "box": [
+      25,
+      179,
+      1234,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "review-desktop.webp",
+    "size": [
+      1211,
+      749
+    ],
+    "sha256": "65d59fd271acdb573083fb9bfb305dada6e3b31f924fd5be5fd7761e89bc3d0c",
+    "source_image": 12,
+    "box": [
+      24,
+      179,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "review-mobile.webp",
+    "size": [
+      309,
+      690
+    ],
+    "sha256": "57b1c6b2cfc667fac4bf04101bddbc239e40c3cba1e93a52253215bb7682cd2f",
+    "source_image": 12,
+    "box": [
+      1261,
+      199,
+      1570,
+      889
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "route-0.webp",
+    "size": [
+      146,
+      122
+    ],
+    "sha256": "7450468dd8e2b7c031770661e8513886783e5d9187614e7446051928a89a3858",
+    "source_image": 5,
+    "box": [
+      50,
+      308,
+      196,
+      430
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "route-1.webp",
+    "size": [
+      146,
+      123
+    ],
+    "sha256": "cd6007ec805848a8fcdecc888b692eaa732699c9d8ae86da13e778448796f0ae",
+    "source_image": 5,
+    "box": [
+      50,
+      462,
+      196,
+      585
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "route-2.webp",
+    "size": [
+      146,
+      122
+    ],
+    "sha256": "dd7de6676f476fd42da8414b10f86290815f272f3621ce327b024c7d80facb0c",
+    "source_image": 5,
+    "box": [
+      50,
+      617,
+      196,
+      739
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "route-3.webp",
+    "size": [
+      146,
+      124
+    ],
+    "sha256": "d7fc8416b092d26953a6276efd9bb82b6cb6763134eb4e616816b06b2533e000",
+    "source_image": 5,
+    "box": [
+      50,
+      774,
+      196,
+      898
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "route-background.webp",
+    "size": [
+      413,
+      749
+    ],
+    "sha256": "c9eca698e672317eae626d8135fc83149887b73935f94bf3041265798016b220",
+    "source_image": 5,
+    "box": [
+      822,
+      179,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "route-detail-title.webp",
+    "size": [
+      286,
+      170
+    ],
+    "sha256": "d595f4fac3efe8e5908a77c39fc7b8bb178f5f6a0c29d74a271bfb0a507c7446",
+    "source_image": 5,
+    "box": [
+      570,
+      291,
+      856,
+      461
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "route-gold-paper.webp",
+    "size": [
+      278,
+      604
+    ],
+    "sha256": "90145f13520898bde0eb830e43b1db4c31d2fa2b42e4182abb7b1ccdfa43590b",
+    "source_image": 5,
+    "box": [
+      547,
+      305,
+      825,
+      909
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "route-hero.webp",
+    "size": [
+      1211,
+      111
+    ],
+    "sha256": "bf4375faa721da26d14b41c3b233f3bff996cc2eeb404f5dc3172a09ab91e442",
+    "source_image": 5,
+    "box": [
+      24,
+      179,
+      1235,
+      290
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "route-selector.webp",
+    "size": [
+      485,
+      610
+    ],
+    "sha256": "6c04e291da046ae3eafbdebd844688a2f0ecc878817668cf84a10bad72901dd7",
+    "source_image": 5,
+    "box": [
+      40,
+      298,
+      525,
+      908
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "routes-desktop.webp",
+    "size": [
+      1211,
+      749
+    ],
+    "sha256": "fa99156a2386e16d3d89744579298be420e569e78de0f6f301bebb3672192289",
+    "source_image": 5,
+    "box": [
+      24,
+      179,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "routes-mobile.webp",
+    "size": [
+      309,
+      605
+    ],
+    "sha256": "03e04c6349548b70560bf219aab5cf462af72525e57a0d588fe0894982041bac",
+    "source_image": 5,
+    "box": [
+      1261,
+      244,
+      1570,
+      849
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "scene-card-0-desktop.webp",
+    "size": [
+      382,
+      516
+    ],
+    "sha256": "26568473c4a804166b14337169b7e7108b0a6cf0e66c02e7e8a8163dab222ebc",
+    "source_image": 21,
+    "box": [
+      50,
+      365,
+      432,
+      881
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "scene-card-0-mobile.webp",
+    "size": [
+      297,
+      166
+    ],
+    "sha256": "8940ea371681af1dd5ec2232742b4ddc1ecd64a41d17267935d7364c48312890",
+    "source_image": 21,
+    "box": [
+      1268,
+      320,
+      1565,
+      486
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "scene-card-1-desktop.webp",
+    "size": [
+      375,
+      516
+    ],
+    "sha256": "2f1d1be7aaa90ce12e84dd4a520f2a250cdc3d25dfa65a7512410d9c532183d9",
+    "source_image": 21,
+    "box": [
+      449,
+      365,
+      824,
+      881
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "scene-card-1-mobile.webp",
+    "size": [
+      297,
+      165
+    ],
+    "sha256": "a7985fed45af379b05b9726f4e4dfa56e0327bedbd67c7bda113680482e50b15",
+    "source_image": 21,
+    "box": [
+      1268,
+      492,
+      1565,
+      657
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "scene-card-2-desktop.webp",
+    "size": [
+      368,
+      516
+    ],
+    "sha256": "98e03271f6aa7967cac68be1890d2d0d963fcddd0eab7afd3af94b88b77b85e9",
+    "source_image": 21,
+    "box": [
+      841,
+      365,
+      1209,
+      881
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "scene-card-2-mobile.webp",
+    "size": [
+      297,
+      165
+    ],
+    "sha256": "ab64135ad5e5f86868e00907c52568bbf9265c563f58042122822b78cb258b49",
+    "source_image": 21,
+    "box": [
+      1268,
+      664,
+      1565,
+      829
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "scene-footer.webp",
+    "size": [
+      1211,
+      47
+    ],
+    "sha256": "d9d65b31c8063b1dd31649cec88a207efbf1c390358fe14f018939b15e58ea2b",
+    "source_image": 21,
+    "box": [
+      24,
+      881,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "scenes-hero-desktop.webp",
+    "size": [
+      1211,
+      185
+    ],
+    "sha256": "5e59a9fc7fc11c6e14ac6a2a631f247fba25ae966b43cf87889a9994531928e4",
+    "source_image": 21,
+    "box": [
+      24,
+      179,
+      1235,
+      364
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "scenes-hero-mobile.webp",
+    "size": [
+      309,
+      114
+    ],
+    "sha256": "05d5072c830396a074e306b200baa875491edc097084b1954441a35527cb0f01",
+    "source_image": 21,
+    "box": [
+      1261,
+      204,
+      1570,
+      318
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "scenes-paper.webp",
+    "size": [
+      1211,
+      749
+    ],
+    "sha256": "3ea785c3b95fe296ba007b879c052782827c473f2e1238027ba4bb5e100368d5",
+    "source_image": 21,
+    "box": [
+      24,
+      179,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "search-paper.webp",
+    "size": [
+      370,
+      262
+    ],
+    "sha256": "6a6f1b730aeba43bb56a106c8ac98d686aadeadead4b2f4328b9c02f6c925bf1",
+    "source_image": 15,
+    "box": [
+      415,
+      288,
+      785,
+      550
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "settings-banner-mobile.webp",
+    "size": [
+      302,
+      87
+    ],
+    "sha256": "66c942f13ee4e9ae89f35169e3f38bf1cca29c4ec4c22e0b8279670848c68d97",
+    "source_image": 28,
+    "box": [
+      1265,
+      406,
+      1567,
+      493
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "settings-banner.webp",
+    "size": [
+      578,
+      173
+    ],
+    "sha256": "2da314c86acbdd6fc3c550974a713113bc04dc897c0c75b9da137a06c3fcd25d",
+    "source_image": 28,
+    "box": [
+      373,
+      194,
+      951,
+      367
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "spot-hongmen-aside-mobile.webp",
+    "size": [
+      309,
+      316
+    ],
+    "sha256": "d38ab646ac7e78e7590f018537d48533b86cbae7f8d387ec2576d77d088a19d1",
+    "source_image": 7,
+    "box": [
+      1261,
+      399,
+      1570,
+      715
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "spot-hongmen-aside.webp",
+    "size": [
+      269,
+      476
+    ],
+    "sha256": "6343c6ce0d75b6c2eabc620279f60ad5b24711a8343920673feda03c441bd665",
+    "source_image": 7,
+    "box": [
+      952,
+      196,
+      1221,
+      672
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "spot-hongmen-mobile.webp",
+    "size": [
+      309,
+      195
+    ],
+    "sha256": "8e3715f5ce76b44f2dc803a413686cc71567caadc77d8db5a160685eba4d21d7",
+    "source_image": 7,
+    "box": [
+      1261,
+      204,
+      1570,
+      399
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "spot-hongmen.webp",
+    "size": [
+      928,
+      506
+    ],
+    "sha256": "5c8cfac31220cdc6263c564785f986d1727047d0c4517aa1bbc53293d9effc64",
+    "source_image": 7,
+    "box": [
+      24,
+      179,
+      952,
+      685
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "stamp-art-hongmen.webp",
+    "size": [
+      170,
+      86
+    ],
+    "sha256": "7ce335c90866895f6f3b8b056c70204cc00b99bb411b3db501947c3e697ecbed",
+    "source_image": 27,
+    "box": [
+      83,
+      638,
+      253,
+      724
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "stamp-art-nantian.webp",
+    "size": [
+      141,
+      86
+    ],
+    "sha256": "8e7e322fca33e2588da95ed574b82d354ceb7d6a730ac24b2020f6250ce66435",
+    "source_image": 27,
+    "box": [
+      528,
+      638,
+      669,
+      724
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "stamp-art-zhongtian.webp",
+    "size": [
+      169,
+      86
+    ],
+    "sha256": "bf678998e34a5260687723dc6fc798360786e48467cc7ef6fdee054989ab7f63",
+    "source_image": 27,
+    "box": [
+      310,
+      638,
+      479,
+      724
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "stamp-hongmen.webp",
+    "size": [
+      92,
+      94
+    ],
+    "sha256": "fbfaef5ab66258581ce6a0452603c95f1c2d8aad630c11aaaa2085a17f3e7aac",
+    "source_image": 27,
+    "box": [
+      98,
+      804,
+      190,
+      898
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "stamp-nantian.webp",
+    "size": [
+      98,
+      98
+    ],
+    "sha256": "35685316bd1f904cd20b26be1bf538aa7cfd3205db67a8eec2ebd35a70d4cbbe",
+    "source_image": 27,
+    "box": [
+      544,
+      802,
+      642,
+      900
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "stamp-zhongtian.webp",
+    "size": [
+      100,
+      98
+    ],
+    "sha256": "c41b88c658b34cde8beee635c9a5069609dc87658791a69a418fbd5ac1dbbc07",
+    "source_image": 27,
+    "box": [
+      322,
+      802,
+      422,
+      900
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "study-desktop.webp",
+    "size": [
+      1211,
+      749
+    ],
+    "sha256": "c9edb3cb52ee519dc480fcc83b186b32c42a2c01ef9a8cdc306ce99fb2e50ef5",
+    "source_image": 20,
+    "box": [
+      24,
+      179,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "study-illustration.webp",
+    "size": [
+      283,
+      749
+    ],
+    "sha256": "b5d658499eec85bacb651f6a23b47c36dd443171d461e7acff256ba0172c333f",
+    "source_image": 20,
+    "box": [
+      180,
+      179,
+      463,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "study-mobile.webp",
+    "size": [
+      309,
+      665
+    ],
+    "sha256": "ccf76e8c5c0b9d2440755bde166a507245ca4199666dcb1bb97229c44684ad21",
+    "source_image": 20,
+    "box": [
+      1261,
+      204,
+      1570,
+      869
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "sunrise-landscape.webp",
+    "size": [
+      534,
+      239
+    ],
+    "sha256": "523f4d0d0479a7a20c75837173fca7ef59ea88bd4b071ef6ad18b078d0c8921a",
+    "source_image": 14,
+    "box": [
+      31,
+      362,
+      565,
+      601
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "tour-card-0.webp",
+    "size": [
+      481,
+      611
+    ],
+    "sha256": "9f880a962eb89ea823a8f799261a43574786b48be0c8d15bd177b82f2e48f7ba",
+    "source_image": 2,
+    "box": [
+      20,
+      233,
+      501,
+      844
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "tour-card-1.webp",
+    "size": [
+      492,
+      611
+    ],
+    "sha256": "89928c4e5efce7f3a493d24ab86bfb02656697cf48790cc90674f2d9d9efa1c9",
+    "source_image": 2,
+    "box": [
+      539,
+      233,
+      1031,
+      844
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "tour-card-2.webp",
+    "size": [
+      496,
+      611
+    ],
+    "sha256": "8a0615d052896bce57004cff040ead2410013aea78ba6f045ff08b54fba5166e",
+    "source_image": 2,
+    "box": [
+      1071,
+      233,
+      1567,
+      844
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "tour-start.webp",
+    "size": [
+      337,
+      65
+    ],
+    "sha256": "4db1ddbcbe47548a07696c157263977abce502e61c6a80c896231f0e87fa57c1",
+    "source_image": 2,
+    "box": [
+      624,
+      870,
+      961,
+      935
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "viewer-nantian.webp",
+    "size": [
+      764,
+      381
+    ],
+    "sha256": "7ce985b43fa4b274556b3af07846255f107ad6d950c282398f828f408c3c4add",
+    "source_image": 30,
+    "box": [
+      24,
+      158,
+      788,
+      539
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "vision-art.webp",
+    "size": [
+      439,
+      749
+    ],
+    "sha256": "01222a68b6da9bc70311709ecff02b99b6867cfcc471d78a757d8e8abd27722e",
+    "source_image": 20,
+    "box": [
+      24,
+      179,
+      463,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "vision-camera-mobile.webp",
+    "size": [
+      309,
+      665
+    ],
+    "sha256": "23f7e3fb1f8cfe6b66b574d4c4f19e82dc820e3b5fcd290293551e310d0030aa",
+    "source_image": 23,
+    "box": [
+      1261,
+      204,
+      1570,
+      869
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "vision-camera.webp",
+    "size": [
+      1211,
+      749
+    ],
+    "sha256": "8e7a95b85ad753fe15059b59e5ea39af86f18cb76c65ad07db6307be0fec359c",
+    "source_image": 23,
+    "box": [
+      24,
+      179,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "vision-desktop.webp",
+    "size": [
+      1211,
+      749
+    ],
+    "sha256": "c156fdd3d227d3949885ff52107bf32d9f269b03fc60891d5cba59d0a35bacbb",
+    "source_image": 20,
+    "box": [
+      24,
+      179,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "vision-example.webp",
+    "size": [
+      511,
+      252
+    ],
+    "sha256": "d91ceb039ba428eba0789e6ec2259dd59df37b706b0b498b3d51c4b3167ffa72",
+    "source_image": 24,
+    "box": [
+      558,
+      371,
+      1069,
+      623
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "vision-upload-banner.webp",
+    "size": [
+      351,
+      77
+    ],
+    "sha256": "e2fc937c0a5eb800592c6204b0de9c7dc975e4ca0ac7c7a2f9391832b7c0171f",
+    "source_image": 24,
+    "box": [
+      756,
+      278,
+      1107,
+      355
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "vision-upload-title.webp",
+    "size": [
+      542,
+      133
+    ],
+    "sha256": "c72e62ae2fb3139a981b483d00fb11caed8ee2a7e60a1165c46f12442e34851d",
+    "source_image": 24,
+    "box": [
+      527,
+      228,
+      1069,
+      361
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "visit-hongmen-hud.webp",
+    "size": [
+      1211,
+      218
+    ],
+    "sha256": "d2dd346e0968fd4a506dec675c5b3545a2ebf4cbe7556035c1ba2ee6e906a360",
+    "source_image": 4,
+    "box": [
+      24,
+      710,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "visit-hongmen-mobile.webp",
+    "size": [
+      309,
+      665
+    ],
+    "sha256": "d12c670cedde0bfc93a1fb1fdd12a5f961e7884e02ed25710dca75a3582cb57c",
+    "source_image": 4,
+    "box": [
+      1261,
+      204,
+      1570,
+      869
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "visit-hongmen.webp",
+    "size": [
+      1211,
+      749
+    ],
+    "sha256": "bdc6329fb4baecd6dca19a76bebfc0fb70fc15e3527f22899e1891f5f363e244",
+    "source_image": 4,
+    "box": [
+      24,
+      179,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "welcome-desktop.webp",
+    "size": [
+      1211,
+      810
+    ],
+    "sha256": "19c378712b0edf12e14f1a99ffae2154271d77ab313ad2e14cf120fead8afae8",
+    "source_image": 1,
+    "box": [
+      24,
+      118,
+      1235,
+      928
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "welcome-mobile.webp",
+    "size": [
+      309,
+      767
+    ],
+    "sha256": "bc7e68b254527764aa7f042a858e0dfd3d5f4038a75468f5e146829c0f0546cf",
+    "source_image": 1,
+    "box": [
+      1261,
+      160,
+      1570,
+      927
+    ],
+    "kind": "word-crop"
+  },
+  {
+    "file": "vision-camera-mobile-full.webp",
+    "source_image": 23,
+    "box": [
+      1261,
+      160,
+      1570,
+      927
+    ]
+  },
+  {
+    "file": "museum-thumbs-desktop.webp",
+    "source_image": 19,
+    "box": [
+      262,
+      785,
+      845,
+      864
+    ]
+  },
+  {
+    "file": "museum-thumbs-mobile.webp",
+    "source_image": 19,
+    "box": [
+      1261,
+      615,
+      1570,
+      667
+    ]
+  }
+]

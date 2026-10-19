@@ -1,0 +1,533 @@
+{
+  "evidence": [
+    {
+      "file": "desktop-01.png",
+      "design": 1,
+      "fixture": true
+    },
+    {
+      "file": "desktop-03.png",
+      "design": 3,
+      "fixture": true
+    },
+    {
+      "file": "desktop-05.png",
+      "design": 5,
+      "fixture": true
+    },
+    {
+      "file": "desktop-06.png",
+      "design": 6,
+      "fixture": true
+    },
+    {
+      "file": "desktop-07.png",
+      "design": 7,
+      "fixture": true
+    },
+    {
+      "file": "desktop-08.png",
+      "design": 8,
+      "fixture": true
+    },
+    {
+      "file": "desktop-09.png",
+      "design": 9,
+      "fixture": true
+    },
+    {
+      "file": "desktop-10.png",
+      "design": 10,
+      "fixture": true
+    },
+    {
+      "file": "desktop-12.png",
+      "design": 12,
+      "fixture": true
+    },
+    {
+      "file": "desktop-16.png",
+      "design": 16,
+      "fixture": true
+    },
+    {
+      "file": "desktop-17.png",
+      "design": 17,
+      "fixture": true
+    },
+    {
+      "file": "desktop-18.png",
+      "design": 18,
+      "fixture": true
+    },
+    {
+      "file": "desktop-19.png",
+      "design": 19,
+      "fixture": true
+    },
+    {
+      "file": "desktop-20.png",
+      "design": 20,
+      "fixture": true
+    },
+    {
+      "file": "desktop-21.png",
+      "design": 21,
+      "fixture": true
+    },
+    {
+      "file": "desktop-22.png",
+      "design": 22,
+      "fixture": true
+    },
+    {
+      "file": "desktop-23.png",
+      "design": 23,
+      "fixture": true
+    },
+    {
+      "file": "desktop-27.png",
+      "design": 27,
+      "fixture": true
+    },
+    {
+      "file": "desktop-28.png",
+      "design": 28,
+      "fixture": true
+    },
+    {
+      "file": "desktop-02.png",
+      "design": 2,
+      "fixture": true
+    },
+    {
+      "file": "desktop-04.png",
+      "design": 4,
+      "fixture": true
+    },
+    {
+      "file": "desktop-15-results.png",
+      "design": 15,
+      "fixture": true
+    },
+    {
+      "file": "desktop-15-detail.png",
+      "design": 15,
+      "fixture": true
+    },
+    {
+      "file": "desktop-15-empty.png",
+      "design": 15,
+      "fixture": true
+    },
+    {
+      "file": "desktop-15-route.png",
+      "design": 15,
+      "fixture": true
+    },
+    {
+      "file": "desktop-13-unseen.png",
+      "design": 13,
+      "fixture": true
+    },
+    {
+      "file": "desktop-13-observed-dialogue.png",
+      "design": 13,
+      "fixture": true
+    },
+    {
+      "file": "desktop-13-observed.png",
+      "design": 13,
+      "fixture": true
+    },
+    {
+      "file": "desktop-13-detail.png",
+      "design": 13,
+      "fixture": true
+    },
+    {
+      "file": "desktop-11.png",
+      "design": 11,
+      "fixture": true
+    },
+    {
+      "file": "desktop-30-viewer.png",
+      "design": 30,
+      "fixture": true
+    },
+    {
+      "file": "desktop-30-viewer-zoom.png",
+      "design": 30,
+      "fixture": true
+    },
+    {
+      "file": "desktop-30-image-error.png",
+      "design": 30,
+      "fixture": true
+    },
+    {
+      "file": "desktop-29-saving.png",
+      "design": 29,
+      "fixture": true
+    },
+    {
+      "file": "desktop-29-saved.png",
+      "design": 29,
+      "fixture": true
+    },
+    {
+      "file": "desktop-29-already.png",
+      "design": 29,
+      "fixture": true
+    },
+    {
+      "file": "desktop-29-error.png",
+      "design": 29,
+      "fixture": true
+    },
+    {
+      "file": "desktop-30-empty.png",
+      "design": 30,
+      "fixture": true
+    },
+    {
+      "file": "desktop-24.png",
+      "design": 24,
+      "fixture": true
+    },
+    {
+      "file": "desktop-26-analyzing.png",
+      "design": 26,
+      "fixture": true
+    },
+    {
+      "file": "desktop-26-candidates.png",
+      "design": 26,
+      "fixture": true
+    },
+    {
+      "file": "desktop-26-unknown.png",
+      "design": 26,
+      "fixture": true
+    },
+    {
+      "file": "desktop-26-error.png",
+      "design": 26,
+      "fixture": true
+    },
+    {
+      "file": "mobile-01.png",
+      "design": 1,
+      "fixture": true
+    },
+    {
+      "file": "mobile-03.png",
+      "design": 3,
+      "fixture": true
+    },
+    {
+      "file": "mobile-05.png",
+      "design": 5,
+      "fixture": true
+    },
+    {
+      "file": "mobile-06.png",
+      "design": 6,
+      "fixture": true
+    },
+    {
+      "file": "mobile-07.png",
+      "design": 7,
+      "fixture": true
+    },
+    {
+      "file": "mobile-08.png",
+      "design": 8,
+      "fixture": true
+    },
+    {
+      "file": "mobile-09.png",
+      "design": 9,
+      "fixture": true
+    },
+    {
+      "file": "mobile-10.png",
+      "design": 10,
+      "fixture": true
+    },
+    {
+      "file": "mobile-12.png",
+      "design": 12,
+      "fixture": true
+    },
+    {
+      "file": "mobile-16.png",
+      "design": 16,
+      "fixture": true
+    },
+    {
+      "file": "mobile-17.png",
+      "design": 17,
+      "fixture": true
+    },
+    {
+      "file": "mobile-18.png",
+      "design": 18,
+      "fixture": true
+    },
+    {
+      "file": "mobile-19.png",
+      "design": 19,
+      "fixture": true
+    },
+    {
+      "file": "mobile-20.png",
+      "design": 20,
+      "fixture": true
+    },
+    {
+      "file": "mobile-21.png",
+      "design": 21,
+      "fixture": true
+    },
+    {
+      "file": "mobile-22.png",
+      "design": 22,
+      "fixture": true
+    },
+    {
+      "file": "mobile-23.png",
+      "design": 23,
+      "fixture": true
+    },
+    {
+      "file": "mobile-27.png",
+      "design": 27,
+      "fixture": true
+    },
+    {
+      "file": "mobile-28.png",
+      "design": 28,
+      "fixture": true
+    },
+    {
+      "file": "mobile-02.png",
+      "design": 2,
+      "fixture": true
+    },
+    {
+      "file": "mobile-04.png",
+      "design": 4,
+      "fixture": true
+    },
+    {
+      "file": "mobile-15-results.png",
+      "design": 15,
+      "fixture": true
+    },
+    {
+      "file": "mobile-15-detail.png",
+      "design": 15,
+      "fixture": true
+    },
+    {
+      "file": "mobile-15-empty.png",
+      "design": 15,
+      "fixture": true
+    },
+    {
+      "file": "mobile-15-route.png",
+      "design": 15,
+      "fixture": true
+    },
+    {
+      "file": "mobile-13-unseen.png",
+      "design": 13,
+      "fixture": true
+    },
+    {
+      "file": "mobile-13-observed-dialogue.png",
+      "design": 13,
+      "fixture": true
+    },
+    {
+      "file": "mobile-13-observed.png",
+      "design": 13,
+      "fixture": true
+    },
+    {
+      "file": "mobile-13-detail.png",
+      "design": 13,
+      "fixture": true
+    },
+    {
+      "file": "mobile-11.png",
+      "design": 11,
+      "fixture": true
+    },
+    {
+      "file": "mobile-30-viewer.png",
+      "design": 30,
+      "fixture": true
+    },
+    {
+      "file": "mobile-30-viewer-zoom.png",
+      "design": 30,
+      "fixture": true
+    },
+    {
+      "file": "mobile-30-image-error.png",
+      "design": 30,
+      "fixture": true
+    },
+    {
+      "file": "mobile-29-saving.png",
+      "design": 29,
+      "fixture": true
+    },
+    {
+      "file": "mobile-29-saved.png",
+      "design": 29,
+      "fixture": true
+    },
+    {
+      "file": "mobile-29-already.png",
+      "design": 29,
+      "fixture": true
+    },
+    {
+      "file": "mobile-29-error.png",
+      "design": 29,
+      "fixture": true
+    },
+    {
+      "file": "mobile-30-empty.png",
+      "design": 30,
+      "fixture": true
+    },
+    {
+      "file": "mobile-24.png",
+      "design": 24,
+      "fixture": true
+    },
+    {
+      "file": "mobile-26-analyzing.png",
+      "design": 26,
+      "fixture": true
+    },
+    {
+      "file": "mobile-26-candidates.png",
+      "design": 26,
+      "fixture": true
+    },
+    {
+      "file": "mobile-26-unknown.png",
+      "design": 26,
+      "fixture": true
+    },
+    {
+      "file": "mobile-26-error.png",
+      "design": 26,
+      "fixture": true
+    },
+    {
+      "file": "component-14-sunrise-loading.png",
+      "design": 14,
+      "fixture": true
+    },
+    {
+      "file": "component-14-scene-loading.png",
+      "design": 14,
+      "fixture": true
+    },
+    {
+      "file": "component-14-scene-error.png",
+      "design": 14,
+      "fixture": true
+    },
+    {
+      "file": "component-14-sound-choice.png",
+      "design": 14,
+      "fixture": true
+    },
+    {
+      "file": "component-14-camera-permission.png",
+      "design": 14,
+      "fixture": true
+    },
+    {
+      "file": "component-14-mic-error.png",
+      "design": 14,
+      "fixture": true
+    },
+    {
+      "file": "desktop-30-skeleton.png",
+      "design": 30,
+      "fixture": true
+    },
+    {
+      "file": "desktop-25-listening.png",
+      "design": 25,
+      "fixture": true
+    },
+    {
+      "file": "desktop-25-transcript.png",
+      "design": 25,
+      "fixture": true
+    },
+    {
+      "file": "desktop-25-thinking.png",
+      "design": 25,
+      "fixture": true
+    },
+    {
+      "file": "desktop-25-ready.png",
+      "design": 25,
+      "fixture": true
+    },
+    {
+      "file": "desktop-25-speaking.png",
+      "design": 25,
+      "fixture": true
+    },
+    {
+      "file": "desktop-25-request-error.png",
+      "design": 25,
+      "fixture": true
+    }
+  ],
+  "errors": [],
+  "designs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "fixtureNote": "AI/ASR/save/failure states use controlled responses; they do not prove live provider output."
+}

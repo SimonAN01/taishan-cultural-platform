@@ -1,0 +1,126 @@
+{
+  "checked_at": "2026-10-18T11:56:08.878457+00:00",
+  "checks": [
+    {
+      "url": "https://118.89.176.236/",
+      "status": 302,
+      "location": "https://118.89.176.236/experience/"
+    },
+    {
+      "url": "https://118.89.176.236/?classic=1",
+      "status": 302,
+      "location": "https://118.89.176.236/experience/?classic=1"
+    },
+    {
+      "url": "https://118.89.176.236/index.html",
+      "status": 302,
+      "location": "https://118.89.176.236/experience/"
+    },
+    {
+      "url": "https://118.89.176.236/app.js",
+      "status": 410,
+      "location": null
+    },
+    {
+      "url": "https://118.89.176.236/map.js",
+      "status": 410,
+      "location": null
+    },
+    {
+      "url": "https://118.89.176.236/ui.js",
+      "status": 410,
+      "location": null
+    },
+    {
+      "url": "https://118.89.176.236/assistant.js",
+      "status": 410,
+      "location": null
+    },
+    {
+      "url": "https://118.89.176.236/style.css",
+      "status": 410,
+      "location": null
+    },
+    {
+      "url": "http://118.89.176.236/",
+      "status": 302,
+      "location": "http://118.89.176.236/experience/"
+    },
+    {
+      "url": "http://118.89.176.236/?classic=1",
+      "status": 302,
+      "location": "http://118.89.176.236/experience/?classic=1"
+    },
+    {
+      "url": "http://118.89.176.236/index.html",
+      "status": 302,
+      "location": "http://118.89.176.236/experience/"
+    },
+    {
+      "url": "http://118.89.176.236/app.js",
+      "status": 410,
+      "location": null
+    },
+    {
+      "url": "http://118.89.176.236/map.js",
+      "status": 410,
+      "location": null
+    },
+    {
+      "url": "http://118.89.176.236/ui.js",
+      "status": 410,
+      "location": null
+    },
+    {
+      "url": "http://118.89.176.236/assistant.js",
+      "status": 410,
+      "location": null
+    },
+    {
+      "url": "http://118.89.176.236/style.css",
+      "status": 410,
+      "location": null
+    },
+    {
+      "url": "http://118.89.176.236:8037/",
+      "status": 302,
+      "location": "http://118.89.176.236:8037/experience/"
+    },
+    {
+      "url": "http://118.89.176.236:8037/?classic=1",
+      "status": 302,
+      "location": "http://118.89.176.236:8037/experience/?classic=1"
+    },
+    {
+      "url": "http://118.89.176.236:8037/index.html",
+      "status": 302,
+      "location": "http://118.89.176.236:8037/experience/"
+    },
+    {
+      "url": "http://118.89.176.236:8037/app.js",
+      "status": 410,
+      "location": null
+    },
+    {
+      "url": "http://118.89.176.236:8037/map.js",
+      "status": 410,
+      "location": null
+    },
+    {
+      "url": "http://118.89.176.236:8037/ui.js",
+      "status": 410,
+      "location": null
+    },
+    {
+      "url": "http://118.89.176.236:8037/assistant.js",
+      "status": 410,
+      "location": null
+    },
+    {
+      "url": "http://118.89.176.236:8037/style.css",
+      "status": 410,
+      "location": null
+    }
+  ],
+  "all_passed": true
+}

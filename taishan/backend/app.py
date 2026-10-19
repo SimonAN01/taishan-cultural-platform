@@ -16,7 +16,7 @@ from urllib.parse import urlparse
 
 import httpx
 from fastapi import FastAPI, HTTPException, Request, Response, UploadFile
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import FileResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from PIL import Image, UnidentifiedImageError
 from pydantic import BaseModel, Field
@@ -461,7 +461,16 @@ def confirm_prediction(prediction_id:str,body:Confirmation,request:Request):
     return {'confirmed':True,'spot_id':body.spot_id,'confirmation_type':'user_selected'}
 
 @app.get('/')
-def index():return FileResponse(ROOT/'frontend/index.html')
+@app.get('/index.html')
+@app.get('/classic')
+@app.get('/classic/{path:path}')
+def index(request:Request,path:str=''):
+    query='?'+request.url.query if request.url.query else ''
+    return RedirectResponse('/experience/'+query,status_code=302,headers={'Cache-Control':'no-store'})
+
+def legacy_asset():return Response(status_code=410,headers={'Cache-Control':'no-store'})
+for legacy_file in ['app.js','map.js','ui.js','assistant.js','style.css']:
+    app.add_api_route('/'+legacy_file,legacy_asset,methods=['GET'],include_in_schema=False)
 if (IMMERSIVE_DIR/'index.html').is_file():
     app.mount('/experience',StaticFiles(directory=IMMERSIVE_DIR,html=True),name='immersive')
 app.mount('/',StaticFiles(directory=ROOT/'frontend',html=True),name='frontend')

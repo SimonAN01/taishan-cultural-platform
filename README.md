@@ -2,12 +2,26 @@
 
 团队私有仓库：[SimonAN01/taishan-cultural-platform](https://github.com/SimonAN01/taishan-cultural-platform)。**Win11 x64：完整拉取/解压后双击 `Start-Windows.cmd`，自动安装环境并启动；另双击 `Check-Windows.cmd` 验收。无需填写 Key。** 详见[部署说明](部署说明.md)与[Windows 说明](docs/windows/README.md)。
 
+**最新交付：2026-10-19，前后端完整源码及当前 UI。** 默认 `main` 与 `codex/taishan-integration` 同步更新。Win11 双击 `Start-Windows.cmd` 后自动检查/安装 Node、Python、C++ 运行库和项目依赖，构建并启动，健康检查通过后自动打开最新版网页。首次安装需要联网并处理系统安装授权。
+
+已安装 Docker Engine / Docker Desktop 与 Compose 2.24+ 时，可在仓库根目录执行一条命令（不用另装 Node/Python）：
+
+```sh
+docker compose up -d --build --wait
+```
+
+访问 `http://127.0.0.1:18605/experience/`。查看日志：`docker compose logs -f app`；停止：`docker compose down`。匿名记录持久化在命名卷中，普通停止/升级保留数据。容器镜像不内置团队凭证，启动时读取仓库的后端配置。macOS/Linux 已有 Node 22+、Python 3.12 时，也可运行 `./Start.sh`。完整说明、服务器开放方式及验收边界见[部署说明](部署说明.md)。
+
 本分支融合原仓库的沉浸式画卷前端与已上线验证的泰山文化导览后端。原仓库素材、模型与历史保留；当前后端版本为 1.7.3，早期融合与发布记录保留为历史。
 
-- `/`：完整导览，包含地图、19处景点、实景照片、历史、诗词、文博、五章游历、收藏与足迹、文化问答和云端识景。
-- `/experience/`：原仓库的分层画卷、景点近景、数字人六个动画及索道三维演绎；问答、资料来源和已收录景点的足迹接入同一后端。两种界面共享同源匿名会话。
+- 公网 `/`：统一跳转到 `/experience/` 的 Word 设计画卷。旧版完整导览页面及旧脚本已下线；原接口、实景照片和游历记录继续供新版使用。
+- `/experience/`：原仓库的分层画卷、景点近景、数字人六个动画及索道三维演绎；问答、资料来源和已收录景点的足迹接入同一后端。新版继续使用同源匿名会话。旧版前端源码仅作历史保留。
 
 复用范围、修复内容和限制见 [融合审查与验收](docs/integration/融合审查与验收.md)。使用和部署文档见 [原导览说明](taishan/README.md)。素材与代码未获得统一开源许可，保持团队私有仓库协作，保留各文件来源；实景照片按各自许可署名。
+
+本次方向键、手机按钮、真实索道／天街交互、红门断层和山境重叠修复见 [交互与公网验收记录](docs/integration/ui-functional-controls-20261018/README.md)。
+
+索道场景穿帮修复、主入口统一与旧导览下线记录见 [本轮发布验收](docs/integration/ui-cableway-scene-20261018/README.md)。
 
 ## 当前系统交付入口
 
@@ -49,11 +63,11 @@ npm start
 `npm start` 自动创建后端 Python 环境、安装锁定依赖、加载仓库已填好的团队 API 配置、构建前端并启动完整系统。首次安装需要联网，之后复用已安装依赖。终端显示“后端已就绪；历史资料 7 条；问山配置已加载；识景配置已加载”后访问：
 
 - 历史长卷：`http://127.0.0.1:18605/experience/#history`
-- 完整系统：`http://127.0.0.1:18605/experience/`
+- 完整系统：`http://127.0.0.1:18605/experience/`（`/` 自动跳转到这里）
 - 问山：`http://127.0.0.1:18605/experience/#agent`
 - AI 识景：`http://127.0.0.1:18605/experience/#vision`
 
-**前端开发请运行 `npm run dev`：现在会同时启动后端 18605 与 Vite 4173。** 访问 `http://127.0.0.1:4173/experience/#history`；终端按 Ctrl+C 退出联动进程。完整导览主站位于 `http://127.0.0.1:18605/`。`npm run dev:frontend` 仅供已有后端的开发者单独启动前端。`npm run preview` 仍需后端已运行。
+**前端开发请运行 `npm run dev`：现在会同时启动后端 18605 与 Vite 4173。** 访问 `http://127.0.0.1:4173/experience/#history`；终端按 Ctrl+C 退出联动进程。根地址统一跳转到最新 `/experience/`；旧导览脚本返回 410。`npm run dev:frontend` 仅供已有后端的开发者单独启动前端。`npm run preview` 仍需后端已运行。
 
 **历史长卷来自仓库中的文化资料，不调用大模型。** 截图若显示“暂时未能展开／服务暂不可用”，先查看终端后端是否启动、是否拉取正确分支；不是补一个模型 Key 就能解决。不要直接双击 `index.html` 或只用静态文件服务器。自动启动会验证 `/api/health` 和 `/api/history`；端口已被旧进程占用时会停止并明确提示。
 
@@ -367,7 +381,7 @@ IMMERSIVE_FRONTEND_DIR=/opt/taishan/immersive
 
 ### Coze 语音数字人（1.4.0）
 
-推荐入口：<https://118.89.176.236/experience/#agent>。点击“语音提问”授权麦克风；浏览器转写后提交 Coze，回答自动合成晓晓语音并驱动3D口型。可关闭自动朗读、暂停/重播或使用文字提问。识别支持情况取决于浏览器和网络，首次麦克风使用需在真实设备验证。详情见 [Coze语音接入记录](docs/integration/Coze语音数字人接入记录.md)。
+推荐入口：<https://118.89.176.236/experience/#agent>。点击“语音提问”授权麦克风；浏览器转写后可编辑确认，再提交 Coze，回答自动合成晓晓语音并驱动3D口型。可关闭自动朗读、暂停/重播或使用文字提问。识别支持情况取决于浏览器和网络，首次麦克风使用需在真实设备验证。详情见 [Coze语音接入记录](docs/integration/Coze语音数字人接入记录.md)。
 
 
 ### 功能与素材复审（2026-10-15）
@@ -395,3 +409,9 @@ IMMERSIVE_FRONTEND_DIR=/opt/taishan/immersive
 云端识景目前对照 17 处景点目录（含岱庙及天贶殿）；彩石溪、后石坞暂未纳入识景对照，仍可浏览其文化内容。玉皇顶周边目录补充“五岳独尊石刻”，依据景区官方石刻资料建立关联；石刻、玉皇庙本体和大观峰《纪泰山铭》不是同一地标。
 
 识景接口现在返回 `observation`、`uncertainty_reason`、`suggestion`。`unknown` 表示云端已分析但缺乏可靠地标依据；503 才表示本次服务未能完成。截图、游客、水印不再是单独的拒识理由；画面包含清晰题字时可识别其呈现的地标，同时提示合成图不能证明实际拍摄位置。通用亭子素材仍不能凭风格强行归属。所有候选仍需人工确认；没有声称已训练模型或通过独立准确率测试。
+
+### Word UI 逐图复刻（2026-10-18）
+
+已按用户提供的 Word 中 30 张设计图接入桌面、手机及加载、语音、识景、保存等状态，并发布到腾讯云 `/experience/`。逐图入口、截图、真实数据差异和发布校验见 [Word UI 逐图核对与发布记录](docs/integration/ui-design-20261018/README.md)。
+
+后续已修正地图拼接、路线单选、手札叠印，并重建图集、文博、学习、回顾的主要文字与控件。最新六视口验证、30 图状态截图、素材限制与腾讯云发布记录见 [界面展示精修](docs/integration/ui-display-review-20261018/README.md)。

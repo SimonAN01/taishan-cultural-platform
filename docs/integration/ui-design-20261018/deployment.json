@@ -1,0 +1,9 @@
+{
+  "published_at": "2026-10-17T18:29:30.877205+00:00",
+  "verified_files": 393,
+  "backup": "/opt/taishan/runtime/ui-word-before-20261018-022118",
+  "index_sha256": "0d80625e12cd68fd02bb7efb975a4785206dc0ca77071db088af60dbc518bea1",
+  "frontend_only": true,
+  "database_changed": false,
+  "service_restarted": false
+}

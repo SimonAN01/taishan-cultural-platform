@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-10-18T13:47:59.174807+00:00",
+  "checks": [
+    {
+      "path": "/experience/?ui=20261018-avatar-v7",
+      "final_url": "https://118.89.176.236/experience/?ui=20261018-avatar-v7",
+      "status": 200,
+      "sha256": "fe0b284d6ddd430b384f4cb7d62ebf68db413cee4fc898ffb2a4d3913505ddbb",
+      "matches_build": true
+    },
+    {
+      "path": "/?ui=20261018-avatar-v7",
+      "final_url": "https://118.89.176.236/experience/?ui=20261018-avatar-v7",
+      "status": 200,
+      "sha256": "fe0b284d6ddd430b384f4cb7d62ebf68db413cee4fc898ffb2a4d3913505ddbb",
+      "matches_build": true
+    },
+    {
+      "path": "/experience/assets/index-C5E57RYC.js",
+      "final_url": "https://118.89.176.236/experience/assets/index-C5E57RYC.js",
+      "status": 200,
+      "sha256": "f8185669857d093473eaa701d719a647492670e2f3726cc9ddd536e42e2834d2",
+      "matches_build": true
+    },
+    {
+      "path": "/experience/assets/index-B7Y0yC8e.css",
+      "final_url": "https://118.89.176.236/experience/assets/index-B7Y0yC8e.css",
+      "status": 200,
+      "sha256": "3090f3c0c4aee823142e08f538f82c4eb4740a1b7a37979d489e4fde401a59b0",
+      "matches_build": true
+    },
+    {
+      "path": "/app.js",
+      "status": 410
+    }
+  ]
+}

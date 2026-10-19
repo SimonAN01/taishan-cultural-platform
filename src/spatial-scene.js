@@ -7,7 +7,7 @@ import {artworkCameraDistance} from './scene-framing.js';
 
 // A real perspective viewport for layered art today and artist-authored GLB scenes later.
 // Artwork layers remain explicitly distinct from a reconstructed architectural model.
-export function createSpatialScene(host,{scene,controlsHost,onPoint,onStatus,reducedMotion=false}){
+export function createSpatialScene(host,{scene,controlsHost,onPoint,onStatus,reducedMotion=false,inputHost=host}){
   let alive=true,frame=0,tween=null,tour=false,tourStart=0,tourIndex=0,modelLoaded=false,homeDistance=0;
   const resources=[],textures=[],markers=new Map();
   const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true,powerPreference:'low-power'});
@@ -34,16 +34,20 @@ export function createSpatialScene(host,{scene,controlsHost,onPoint,onStatus,red
   function stopTour(){tour=false;const button=toolbar.querySelector('.space-tour');button.setAttribute('aria-pressed','false');button.textContent='依次导读';}
   controls.addEventListener('change',render);controls.addEventListener('start',()=>{tween=null;stopTour();});
   for(const p of scene.points)markers.set(p.id,new THREE.Vector3((p.x/100-.5)*8,(.5-p.y/100)*5,.3));
-  const toolbar=document.createElement('div');toolbar.className='space-tools';toolbar.innerHTML='<button class="space-in" aria-label="拉近空间画境">＋</button><button class="space-out" aria-label="拉远空间画境">−</button><button class="space-reset">复位视角</button><button class="space-tour" aria-pressed="false">依次导读</button>';
+  const toolbar=document.createElement('div');toolbar.className='space-tools';toolbar.innerHTML='<button class="space-in" aria-label="拉近空间画境">＋</button><button class="space-out" aria-label="拉远空间画境">−</button><button class="space-left">← 左看</button><button class="space-right">右看 →</button><button class="space-reset">复位视角</button><button class="space-tour" aria-pressed="false">依次导读</button>';
   controlsHost.append(toolbar);
-  const hint=document.createElement('p');hint.className='space-hint';hint.textContent='拖动观察画境 · 双指或按钮拉近';controlsHost.append(hint);
+  const hint=document.createElement('p');hint.className='space-hint';hint.textContent='←→ 转视角 · ↑↓ 拉近拉远 · 手机可用按钮或拖动';controlsHost.append(hint);
   const reset=()=>{tween=null;stopTour();controls.target.set(0,0,0);if(!scene.background&&!modelLoaded){controls.target.set(0,-.7,0);camera.position.set(0,-.7,homeDistance);}else camera.position.set(0,1.6,9);controls.update();render();};
   function zoom(factor){stopTour();tween=null;const offset=camera.position.clone().sub(controls.target);offset.setLength(THREE.MathUtils.clamp(offset.length()*factor,controls.minDistance,controls.maxDistance));camera.position.copy(controls.target).add(offset);controls.update();render();}
   toolbar.querySelector('.space-in').onclick=()=>zoom(.82);toolbar.querySelector('.space-out').onclick=()=>zoom(1.22);toolbar.querySelector('.space-reset').onclick=reset;
   toolbar.querySelector('.space-tour').onclick=e=>{tour=!tour;e.currentTarget.setAttribute('aria-pressed',String(tour));e.currentTarget.textContent=tour?'停止导读':'依次导读';if(tour){tourIndex=0;tourStart=performance.now();onPoint(scene.points[0].id);schedule();}};
-  host.tabIndex=0;host.onkeydown=e=>{if(['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();stopTour();tween=null;camera.position.applyAxisAngle(new THREE.Vector3(0,1,0),e.key==='ArrowLeft'?.06:-.06);controls.update();render();}else if(e.key==='Escape')reset();};
+  function rotate(amount){stopTour();tween=null;camera.position.sub(controls.target).applyAxisAngle(new THREE.Vector3(0,1,0),amount).add(controls.target);controls.update();render();}
+  toolbar.querySelector('.space-left').onclick=()=>rotate(.06);toolbar.querySelector('.space-right').onclick=()=>rotate(-.06);
+  host.tabIndex=0;host.setAttribute('aria-label',scene.name+'空间画境，左右键转视角，上下键缩放');const onKey=e=>{if(e.defaultPrevented||e.altKey||e.metaKey||e.ctrlKey||e.target.closest('input,textarea,select,[contenteditable=true]'))return;if(['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();rotate(e.key==='ArrowLeft'?.06:-.06);}else if(['ArrowUp','ArrowDown'].includes(e.key)){e.preventDefault();zoom(e.key==='ArrowUp'?.82:1.22);}};inputHost.addEventListener('keydown',onKey);
+  renderer.domElement.tabIndex=0;renderer.domElement.addEventListener('pointerdown',()=>renderer.domElement.focus({preventScroll:true}));
+
   function setPoint(id,{fromTour=false}={}){if(!fromTour)stopTour();if(!modelLoaded)return;const p=markers.get(id);if(!p)return;const look=new THREE.Vector3(p.x*.25,p.y*.25,0),target=new THREE.Vector3(p.x*.32,1+p.y*.18,7.7);if(reducedMotion){controls.target.copy(look);camera.position.copy(target);controls.update();render();}else{tween={start:performance.now(),from:camera.position.clone(),to:target,lookFrom:controls.target.clone(),lookTo:look};schedule();}}
-  const api={representation:'concept',setPoint,destroy(){alive=false;cancelAnimationFrame(frame);observer.disconnect();controls.dispose();for(const resource of new Set(resources))resource.dispose();for(const texture of new Set(textures))texture.dispose();renderer.dispose();renderer.domElement.remove();toolbar.remove();hint.remove();}};
+  const api={representation:'concept',setPoint,destroy(){alive=false;cancelAnimationFrame(frame);inputHost.removeEventListener('keydown',onKey);observer.disconnect();controls.dispose();for(const resource of new Set(resources))resource.dispose();for(const texture of new Set(textures))texture.dispose();renderer.dispose();renderer.domElement.remove();toolbar.remove();hint.remove();}};
   async function load(){
   resize();onStatus('正在展开空间画境…');
   // Keep the base visual while textures are loading; no invented building backsides.

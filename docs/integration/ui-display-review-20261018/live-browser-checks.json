@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-10-18T07:38:13.255684+00:00",
+  "url": "https://118.89.176.236/experience/?ui=20261018-display-v3b#routes?id=hongmen",
+  "observations": [
+    "Final version loaded cultural data without retry",
+    "All four route thumbnails and native captions visible",
+    "Exactly one route card selected",
+    "Learning Next Chapter opens #study?id=poetry",
+    "Gallery exposes native heading, filters, captions and visit button"
+  ],
+  "earlier_issue": "Initial cold-load API timeout recovered with existing retry; recorded separately, not counted as successful first load.",
+  "screenshot": "live-browser.png"
+}

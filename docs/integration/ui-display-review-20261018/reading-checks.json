@@ -1,0 +1,72 @@
+{
+  "checks": [
+    {
+      "width": 309,
+      "height": 767,
+      "dpr": 2,
+      "nativeHeadings": true,
+      "galleryFilterAndViewer": true,
+      "museumTabsZoomAndSelection": true,
+      "learningRadioAndNextChapter": true,
+      "realRecapCounts": true,
+      "noHorizontalOverflow": true
+    },
+    {
+      "width": 508,
+      "height": 752,
+      "dpr": 2,
+      "nativeHeadings": true,
+      "galleryFilterAndViewer": true,
+      "museumTabsZoomAndSelection": true,
+      "learningRadioAndNextChapter": true,
+      "realRecapCounts": true,
+      "noHorizontalOverflow": true
+    },
+    {
+      "width": 532,
+      "height": 752,
+      "dpr": 2,
+      "nativeHeadings": true,
+      "galleryFilterAndViewer": true,
+      "museumTabsZoomAndSelection": true,
+      "learningRadioAndNextChapter": true,
+      "realRecapCounts": true,
+      "noHorizontalOverflow": true
+    },
+    {
+      "width": 1024,
+      "height": 600,
+      "dpr": 2,
+      "nativeHeadings": true,
+      "galleryFilterAndViewer": true,
+      "museumTabsZoomAndSelection": true,
+      "learningRadioAndNextChapter": true,
+      "realRecapCounts": true,
+      "noHorizontalOverflow": true
+    },
+    {
+      "width": 1211,
+      "height": 810,
+      "dpr": 2,
+      "nativeHeadings": true,
+      "galleryFilterAndViewer": true,
+      "museumTabsZoomAndSelection": true,
+      "learningRadioAndNextChapter": true,
+      "realRecapCounts": true,
+      "noHorizontalOverflow": true
+    },
+    {
+      "width": 1900,
+      "height": 900,
+      "dpr": 2,
+      "nativeHeadings": true,
+      "galleryFilterAndViewer": true,
+      "museumTabsZoomAndSelection": true,
+      "learningRadioAndNextChapter": true,
+      "realRecapCounts": true,
+      "noHorizontalOverflow": true
+    }
+  ],
+  "errors": [],
+  "fixtureNote": "Session progress uses controlled responses. No real records are written."
+}

@@ -1,0 +1,12 @@
+{
+  "updated_at": "2026-10-18T11:55:02.486284+00:00",
+  "root_redirect": "/experience/",
+  "legacy_ui_retired": true,
+  "legacy_bundles_status": 410,
+  "query_preserved": true,
+  "backup": "/opt/taishan/runtime/entrypoint-before-20261018-115502",
+  "nginx_config_test": true,
+  "nginx_reloaded": true,
+  "backend_changed": false,
+  "database_changed": false
+}

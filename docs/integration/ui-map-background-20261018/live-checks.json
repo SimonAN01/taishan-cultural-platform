@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-10-18T06:54:24.822989+00:00",
+  "https_hash_matches": {
+    "index.html": true,
+    "design-assets/map-art-mobile-v2.webp": true,
+    "design-assets/map-art-desktop-v2.webp": true
+  },
+  "health_status": "ok",
+  "health_version": "1.7.3"
+}

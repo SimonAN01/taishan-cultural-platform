@@ -1,0 +1,60 @@
+{
+  "checks": [
+    {
+      "width": 390,
+      "scene": "daimiao",
+      "representation": "layered-concept",
+      "realWebGL": true,
+      "buttonsAndKeyboard": true,
+      "modifierPreserved": true,
+      "rendererReleased": true
+    },
+    {
+      "width": 390,
+      "scene": "caishixi",
+      "representation": "layered-concept",
+      "realWebGL": true,
+      "buttonsAndKeyboard": true,
+      "modifierPreserved": true,
+      "rendererReleased": true
+    },
+    {
+      "width": 390,
+      "scene": "houshiwu",
+      "representation": "layered-concept",
+      "realWebGL": true,
+      "buttonsAndKeyboard": true,
+      "modifierPreserved": true,
+      "rendererReleased": true
+    },
+    {
+      "width": 1211,
+      "scene": "daimiao",
+      "representation": "layered-concept",
+      "realWebGL": true,
+      "buttonsAndKeyboard": true,
+      "modifierPreserved": true,
+      "rendererReleased": true
+    },
+    {
+      "width": 1211,
+      "scene": "caishixi",
+      "representation": "layered-concept",
+      "realWebGL": true,
+      "buttonsAndKeyboard": true,
+      "modifierPreserved": true,
+      "rendererReleased": true
+    },
+    {
+      "width": 1211,
+      "scene": "houshiwu",
+      "representation": "layered-concept",
+      "realWebGL": true,
+      "buttonsAndKeyboard": true,
+      "modifierPreserved": true,
+      "rendererReleased": true
+    }
+  ],
+  "errors": [],
+  "scope": "Real WebGL art rendering and normal-motion guided turn; record responses are controlled fixtures. Layered artwork is not an architectural model."
+}

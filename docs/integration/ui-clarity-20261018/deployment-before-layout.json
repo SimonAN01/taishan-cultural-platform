@@ -1,0 +1,9 @@
+{
+  "published_at": "2026-10-18T05:00:20.020310+00:00",
+  "verified_files": 405,
+  "backup": "/opt/taishan/runtime/ui-clarity-before-20261018-050020",
+  "index_sha256": "d56313750014289af54abdb232292f5b6b35740ba931e1fbd6433ecd27043a22",
+  "frontend_only": true,
+  "database_changed": false,
+  "service_restarted": false
+}

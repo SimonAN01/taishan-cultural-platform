@@ -1,0 +1,71 @@
+{
+  "checked_at": "2026-10-18T10:32:39.676684+00:00",
+  "tls_verification": true,
+  "files": [
+    {
+      "file": "index.html",
+      "bytes": 1553,
+      "sha256_matches_release": true
+    },
+    {
+      "file": "assets/cableway-experience-Dw3OqCZX.js",
+      "bytes": 5826,
+      "sha256_matches_release": true
+    },
+    {
+      "file": "assets/index-CXtX3zcx.css",
+      "bytes": 433696,
+      "sha256_matches_release": true
+    },
+    {
+      "file": "assets/index-DNcAegC1.js",
+      "bytes": 866655,
+      "sha256_matches_release": true
+    },
+    {
+      "file": "assets/spatial-scene-DA5FZxD8.js",
+      "bytes": 7231,
+      "sha256_matches_release": true
+    },
+    {
+      "file": "assets/street-experience-JCkpINlg.js",
+      "bytes": 5472,
+      "sha256_matches_release": true
+    },
+    {
+      "file": "models/cable-car-optimized.glb",
+      "bytes": 1613652,
+      "sha256_matches_release": true
+    },
+    {
+      "file": "design-assets/visit-hongmen-art-desktop-v2.webp",
+      "bytes": 2581082,
+      "sha256_matches_release": true
+    },
+    {
+      "file": "design-assets/visit-hongmen-art-mobile-v2.webp",
+      "bytes": 2536196,
+      "sha256_matches_release": true
+    },
+    {
+      "file": "design-assets/scene-card-art-0-v2.webp",
+      "bytes": 182304,
+      "sha256_matches_release": true
+    },
+    {
+      "file": "design-assets/scene-card-art-1-v2.webp",
+      "bytes": 190366,
+      "sha256_matches_release": true
+    },
+    {
+      "file": "design-assets/scene-card-art-2-v2.webp",
+      "bytes": 175570,
+      "sha256_matches_release": true
+    }
+  ],
+  "health": {
+    "status": "ok",
+    "version": "1.7.3"
+  },
+  "all_assets_match": true
+}

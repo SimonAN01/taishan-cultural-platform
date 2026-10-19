@@ -1,0 +1,109 @@
+{
+  "checks": [
+    {
+      "width": 320,
+      "height": 568,
+      "canonicalSpot": true,
+      "curatedGallery": 5,
+      "studyForm": 1,
+      "avatarLayout": {
+        "model": {
+          "x": 10,
+          "y": 91.5625,
+          "right": 310,
+          "bottom": 221.875,
+          "width": 300,
+          "height": 130.3125
+        },
+        "overlap": false,
+        "composerVisible": true,
+        "overflow": false
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "canonicalSpot": true,
+      "curatedGallery": 5,
+      "studyForm": 1,
+      "avatarLayout": {
+        "model": {
+          "x": 10,
+          "y": 101.53125,
+          "right": 380,
+          "bottom": 295.53125,
+          "width": 370,
+          "height": 194
+        },
+        "overlap": false,
+        "composerVisible": true,
+        "overflow": false
+      }
+    },
+    {
+      "width": 508,
+      "height": 752,
+      "canonicalSpot": true,
+      "curatedGallery": 5,
+      "studyForm": 1,
+      "avatarLayout": {
+        "model": {
+          "x": 10,
+          "y": 102,
+          "right": 498,
+          "bottom": 276.46875,
+          "width": 488,
+          "height": 174.46875
+        },
+        "overlap": false,
+        "composerVisible": true,
+        "overflow": false
+      }
+    },
+    {
+      "width": 1024,
+      "height": 600,
+      "canonicalSpot": true,
+      "curatedGallery": 5,
+      "studyForm": 1,
+      "avatarLayout": {
+        "model": {
+          "x": 768,
+          "y": 79,
+          "right": 1006,
+          "bottom": 582,
+          "width": 238,
+          "height": 503
+        },
+        "overlap": false,
+        "composerVisible": true,
+        "overflow": false
+      }
+    },
+    {
+      "width": 1211,
+      "height": 810,
+      "canonicalSpot": true,
+      "curatedGallery": 5,
+      "studyForm": 1,
+      "avatarLayout": {
+        "model": {
+          "x": 908.25,
+          "y": 79,
+          "right": 1193,
+          "bottom": 792,
+          "width": 284.75,
+          "height": 713
+        },
+        "overlap": false,
+        "composerVisible": true,
+        "overflow": false
+      }
+    },
+    {
+      "avatarFailureFallback": true,
+      "avatarRetryRecovers": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,9 @@
+{
+  "verified_at": "2026-10-18T12:45:26.438099+00:00",
+  "legacy_http_checks": "legacy-retirement-checks.json",
+  "legacy_http_passed": 24,
+  "browser_root_requested": "https://118.89.176.236/#map",
+  "browser_root_observed": "https://118.89.176.236/experience/#map",
+  "browser_proof": "public-checks/root-redirect.png",
+  "note": "Browser root redirect captured before the subsequent native-map release; current release proof is recorded in ui-native-map-20261018."
+}

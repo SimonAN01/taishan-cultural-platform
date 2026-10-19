@@ -1,0 +1,22 @@
+name: taishan
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "${TAISHAN_BIND:-127.0.0.1}:${TAISHAN_PORT:-18605}:18605"
+    env_file:
+      - path: ./taishan/config/team.env
+        required: true
+      - path: ./taishan/.env
+        required: false
+    environment:
+      DATA_DIR: /app/taishan/runtime
+      IMMERSIVE_FRONTEND_DIR: /app/dist
+    volumes:
+      - runtime:/app/taishan/runtime
+    init: true
+    security_opt:
+      - no-new-privileges:true
+volumes:
+  runtime:

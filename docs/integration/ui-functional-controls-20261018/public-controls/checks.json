@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "width": 508,
+      "height": 752,
+      "realWebGLVisible": true,
+      "pauseResumeAndSeek": true,
+      "realAudioStartedAndStopped": true,
+      "keyboardAndTouchCommands": true,
+      "gateSinglePaintingAndPanel": true,
+      "streetPositionChanges": true,
+      "sceneTitlesHaveNoBitmapUnderlay": true,
+      "museumSwitchesRecordAndPhoto": true
+    }
+  ],
+  "errors": [],
+  "loadFailureRetry": true,
+  "note": "Real WebGL, WebAudio and anonymous backend sessions; no simulated 3D, clock or audio results."
+}

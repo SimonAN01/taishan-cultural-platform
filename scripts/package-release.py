@@ -5,6 +5,7 @@ import json
 import re
 import subprocess
 import zipfile
+from datetime import datetime, timezone
 from pathlib import Path
 
 root = Path(__file__).resolve().parent.parent
@@ -19,7 +20,11 @@ paths.update({p.relative_to(root).as_posix(): p for p in (root / 'dist').rglob('
 assert all(not any(part in {'.git', 'runtime', 'node_modules', '.venv'} for part in Path(name).parts) for name in paths)
 assert 'taishan/config/team.env' in paths
 version = re.search(r"^VERSION='([^']+)'", (root / 'taishan/backend/app.py').read_text(), re.M)[1]
-manifest = {'version': version, 'date': '2026-10-17', 'files': {}}
+dirty = bool(subprocess.check_output(['git', 'status', '--porcelain'], cwd=root))
+if dirty:
+    raise SystemExit('Commit the complete source first; release archives must match a Git commit.')
+manifest = {'version': version, 'date': datetime.now(timezone.utc).isoformat(),
+            'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root).decode().strip(), 'files': {}}
 for name, path in sorted(paths.items()):
     data = path.read_bytes()
     manifest['files'][name] = {'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()}

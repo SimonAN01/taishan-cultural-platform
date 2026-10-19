@@ -1,0 +1,67 @@
+{
+  "checks": [
+    {
+      "width": 309,
+      "height": 767,
+      "realWebGLVisible": true,
+      "pauseResumeAndSeek": true,
+      "realAudioStartedAndStopped": true,
+      "keyboardAndTouchCommands": true,
+      "gateSinglePaintingAndPanel": true,
+      "streetPositionChanges": true,
+      "sceneTitlesHaveNoBitmapUnderlay": true,
+      "museumSwitchesRecordAndPhoto": true
+    },
+    {
+      "width": 508,
+      "height": 752,
+      "realWebGLVisible": true,
+      "pauseResumeAndSeek": true,
+      "realAudioStartedAndStopped": true,
+      "keyboardAndTouchCommands": true,
+      "gateSinglePaintingAndPanel": true,
+      "streetPositionChanges": true,
+      "sceneTitlesHaveNoBitmapUnderlay": true,
+      "museumSwitchesRecordAndPhoto": true
+    },
+    {
+      "width": 1024,
+      "height": 600,
+      "realWebGLVisible": true,
+      "pauseResumeAndSeek": true,
+      "realAudioStartedAndStopped": true,
+      "keyboardAndTouchCommands": true,
+      "gateSinglePaintingAndPanel": true,
+      "streetPositionChanges": true,
+      "sceneTitlesHaveNoBitmapUnderlay": true,
+      "museumSwitchesRecordAndPhoto": true
+    },
+    {
+      "width": 1211,
+      "height": 810,
+      "realWebGLVisible": true,
+      "pauseResumeAndSeek": true,
+      "realAudioStartedAndStopped": true,
+      "keyboardAndTouchCommands": true,
+      "gateSinglePaintingAndPanel": true,
+      "streetPositionChanges": true,
+      "sceneTitlesHaveNoBitmapUnderlay": true,
+      "museumSwitchesRecordAndPhoto": true
+    },
+    {
+      "width": 1900,
+      "height": 900,
+      "realWebGLVisible": true,
+      "pauseResumeAndSeek": true,
+      "realAudioStartedAndStopped": true,
+      "keyboardAndTouchCommands": true,
+      "gateSinglePaintingAndPanel": true,
+      "streetPositionChanges": true,
+      "sceneTitlesHaveNoBitmapUnderlay": true,
+      "museumSwitchesRecordAndPhoto": true
+    }
+  ],
+  "errors": [],
+  "loadFailureRetry": true,
+  "note": "Real WebGL, WebAudio and anonymous backend sessions; no simulated 3D, clock or audio results."
+}

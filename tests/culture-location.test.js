@@ -8,6 +8,7 @@ test('content links retain route transport, era, poem and spot reading state', (
   assert.equal(readCultureLocation(route).variant,'cable');
   const era=cultureHash('history',{era:'唐宋'});
   assert.equal(readCultureLocation(era).era,'唐宋');
+  assert.equal(readCultureLocation(cultureHash('history',{era:'秦汉',id:'han'})).id,'han');
   assert.equal(readCultureLocation(cultureHash('poetry',{id:'libai-2'})).id,'libai-2');
   assert.deepEqual(readCultureLocation(cultureHash('spot',{id:'nantian',tab:'poetry',point:'',photo:1,line:0,panel:'note',poem:'',route:'',chapter:'',mode:'space'})),
     {page:'spot',id:'nantian',variant:'walk',era:'先秦',tab:'poetry',point:'',photo:1,line:0,panel:'note',poem:'',route:'',chapter:'',mode:'space'});
@@ -27,4 +28,14 @@ test('poem line and reading panel, study chapter and guide topic survive deep li
   const poem=readCultureLocation(cultureHash('poetry',{id:'libai-1',line:9,panel:'author'}));assert.equal(poem.line,9);assert.equal(poem.panel,'author');
   assert.equal(readCultureLocation(cultureHash('study',{id:'memory'})).id,'memory');
   assert.equal(readCultureLocation(cultureHash('agent',{poem:'libai-2'})).poem,'libai-2');assert.equal(readCultureLocation(cultureHash('agent',{route:'tianwai'})).route,'tianwai');
+});
+
+test('gallery, museum and handbook preserve validated reading selections',()=>{
+  for(const [page,state] of [['gallery',{tab:'实景'}],['trail',{tab:'favorites'}],['museum',{id:'yuhuang',tab:'text',photo:1}]]){
+    const result=readCultureLocation(cultureHash(page,state));
+    for(const [key,value] of Object.entries(state))assert.equal(result[key],value);
+  }
+  assert.equal(readCultureLocation('#gallery?tab=missing').tab,'画境');
+  assert.equal(readCultureLocation('#museum?tab=missing&photo=-3').tab,'original');
+  assert.equal(readCultureLocation('#trail?tab=missing').tab,'footprints');
 });

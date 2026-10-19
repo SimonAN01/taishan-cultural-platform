@@ -102,13 +102,15 @@ export function createDigitalHuman(host, { onReady, onError, onProgress, reduced
     };
   }
 
+  let modelAspect=.65;
   function resize() {
     const width = Math.max(1, host.clientWidth);
     const height = Math.max(1, host.clientHeight);
     renderer.setSize(width, height, false);
     // A short phone stage needs an upper-body view for the mouth to be readable.
     const compact = height < 340;
-    camera.fov = compact ? 21 : 27;
+    const aspect=width/height;
+    camera.fov = compact ? 21 : Math.max(27,THREE.MathUtils.radToDeg(2*Math.atan(3.35*modelAspect*1.12/(2*7.6*aspect))));
     camera.position.y = compact ? 0.55 : 0.08;
     controls.target.y = compact ? 0.55 : 0.2;
     camera.aspect = width / height;
@@ -190,6 +192,7 @@ export function createDigitalHuman(host, { onReady, onError, onProgress, reduced
     const bounds = new THREE.Box3().setFromObject(model);
     const size = bounds.getSize(new THREE.Vector3());
     const center = bounds.getCenter(new THREE.Vector3());
+    modelAspect=size.x/Math.max(.001,size.y);
     const scale = 3.35 / Math.max(0.001, size.y);
     model.scale.setScalar(scale);
     model.position.set(-center.x * scale, -center.y * scale - 0.02, -center.z * scale);

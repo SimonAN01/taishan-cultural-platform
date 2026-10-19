@@ -1,0 +1,34 @@
+{
+  "checks": [
+    {
+      "width": 309,
+      "height": 767,
+      "mapCoversAfterWheelDragZoom": true,
+      "ordinaryWheelDoesNotZoom": true,
+      "longAnswerNoOverlap": true
+    },
+    {
+      "width": 532,
+      "height": 752,
+      "mapCoversAfterWheelDragZoom": true,
+      "ordinaryWheelDoesNotZoom": true,
+      "longAnswerNoOverlap": true
+    },
+    {
+      "width": 1024,
+      "height": 600,
+      "mapCoversAfterWheelDragZoom": true,
+      "ordinaryWheelDoesNotZoom": true,
+      "longAnswerNoOverlap": true
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "mapCoversAfterWheelDragZoom": true,
+      "ordinaryWheelDoesNotZoom": true,
+      "longAnswerNoOverlap": true
+    }
+  ],
+  "errors": [],
+  "fixtureNote": "Long replies and history use explicit browser fixtures."
+}

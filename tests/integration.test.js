@@ -19,7 +19,7 @@ test('immersive IDs map to valid backend IDs without inventing unsupported visit
     assert.equal(calls[2].url, '/api/journey/visit');
     await askApi('有什么故事', 'stone', '五岳独尊');
     assert.deepEqual(JSON.parse(calls[3].options.body),{message:'五岳独尊：有什么故事',current_spot:null});
-    assert.equal(fullSite('spot-full','nantianmen'), '/#spot-full?spot=nantian');
+    assert.equal(fullSite('spot-full','nantianmen'), '/experience/#spot?id=nantian');
   } finally { globalThis.fetch = original; }
 });
 
@@ -30,10 +30,10 @@ test('service failures remain failures instead of returning a scripted answer', 
   finally { globalThis.fetch = original; }
 });
 
-test('missing backend gives the team an actionable startup message',async()=>{
+test('network failures give visitors a readable retry message',async()=>{
   const original=globalThis.fetch;
   globalThis.fetch=async()=>{throw new TypeError('Failed to fetch');};
-  try{await assert.rejects(askApi('泰山有什么景点'),/npm run dev.*npm start/);}
+  try{await assert.rejects(askApi('泰山有什么景点'),/资料服务.*重试/);}
   finally{globalThis.fetch=original;}
 });
 

@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-10-19T10:56:35.952976+00:00",
+  "checks": [
+    {
+      "path": "/experience/?ui=20261019-refine-v8",
+      "final_url": "https://118.89.176.236/experience/?ui=20261019-refine-v8",
+      "status": 200,
+      "sha256": "fead5a16ced8c071927c8132dff6e4b531312949b31b6abafaf9c2ed68e6b53a",
+      "matches_build": true
+    },
+    {
+      "path": "/?ui=20261019-refine-v8",
+      "final_url": "https://118.89.176.236/experience/?ui=20261019-refine-v8",
+      "status": 200,
+      "sha256": "fead5a16ced8c071927c8132dff6e4b531312949b31b6abafaf9c2ed68e6b53a",
+      "matches_build": true
+    },
+    {
+      "path": "/experience/assets/index-Cez1EPr9.js",
+      "final_url": "https://118.89.176.236/experience/assets/index-Cez1EPr9.js",
+      "status": 200,
+      "sha256": "24a41cefea0176030de1c74d6b352c14db6706e1a4690bfe4c58e2991db904f7",
+      "matches_build": true
+    },
+    {
+      "path": "/experience/assets/index-DVtqE22u.css",
+      "final_url": "https://118.89.176.236/experience/assets/index-DVtqE22u.css",
+      "status": 200,
+      "sha256": "634cbb47d7078db9d92edac70f5ff37ea4df660cc115ae6f7fe6829e0d6989ad",
+      "matches_build": true
+    },
+    {
+      "path": "/app.js",
+      "status": 410
+    }
+  ]
+}

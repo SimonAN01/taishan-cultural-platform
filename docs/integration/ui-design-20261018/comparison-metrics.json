@@ -1,0 +1,233 @@
+{
+  "note": "Raw full-frame RGB differences include genuine state, data, text, audio timing and native browser controls. They are not a claim that all pixels match.",
+  "metrics": [
+    {
+      "device": "desktop",
+      "design": 1,
+      "MAE_0_255": 0.0,
+      "pixels_within_10_percent": 100.0
+    },
+    {
+      "device": "desktop",
+      "design": 3,
+      "MAE_0_255": 0.001,
+      "pixels_within_10_percent": 99.996
+    },
+    {
+      "device": "desktop",
+      "design": 5,
+      "MAE_0_255": 0.523,
+      "pixels_within_10_percent": 99.504
+    },
+    {
+      "device": "desktop",
+      "design": 6,
+      "MAE_0_255": 5.723,
+      "pixels_within_10_percent": 90.049
+    },
+    {
+      "device": "desktop",
+      "design": 7,
+      "MAE_0_255": 5.825,
+      "pixels_within_10_percent": 90.13
+    },
+    {
+      "device": "desktop",
+      "design": 8,
+      "MAE_0_255": 0.251,
+      "pixels_within_10_percent": 99.575
+    },
+    {
+      "device": "desktop",
+      "design": 9,
+      "MAE_0_255": 0.221,
+      "pixels_within_10_percent": 99.754
+    },
+    {
+      "device": "desktop",
+      "design": 10,
+      "MAE_0_255": 0.718,
+      "pixels_within_10_percent": 99.222
+    },
+    {
+      "device": "desktop",
+      "design": 11,
+      "MAE_0_255": 0.26,
+      "pixels_within_10_percent": 99.286
+    },
+    {
+      "device": "desktop",
+      "design": 12,
+      "MAE_0_255": 3.574,
+      "pixels_within_10_percent": 93.891
+    },
+    {
+      "device": "desktop",
+      "design": 16,
+      "MAE_0_255": 0.081,
+      "pixels_within_10_percent": 99.745
+    },
+    {
+      "device": "desktop",
+      "design": 17,
+      "MAE_0_255": 2.347,
+      "pixels_within_10_percent": 94.674
+    },
+    {
+      "device": "desktop",
+      "design": 18,
+      "MAE_0_255": 5.515,
+      "pixels_within_10_percent": 91.416
+    },
+    {
+      "device": "desktop",
+      "design": 19,
+      "MAE_0_255": 0.887,
+      "pixels_within_10_percent": 98.104
+    },
+    {
+      "device": "desktop",
+      "design": 20,
+      "MAE_0_255": 0.0,
+      "pixels_within_10_percent": 100.0
+    },
+    {
+      "device": "desktop",
+      "design": 21,
+      "MAE_0_255": 1.039,
+      "pixels_within_10_percent": 98.373
+    },
+    {
+      "device": "desktop",
+      "design": 22,
+      "MAE_0_255": 8.674,
+      "pixels_within_10_percent": 85.196
+    },
+    {
+      "device": "desktop",
+      "design": 23,
+      "MAE_0_255": 0.0,
+      "pixels_within_10_percent": 100.0
+    },
+    {
+      "device": "desktop",
+      "design": 27,
+      "MAE_0_255": 15.062,
+      "pixels_within_10_percent": 76.388
+    },
+    {
+      "device": "mobile",
+      "design": 1,
+      "MAE_0_255": 0.0,
+      "pixels_within_10_percent": 100.0
+    },
+    {
+      "device": "mobile",
+      "design": 3,
+      "MAE_0_255": 0.004,
+      "pixels_within_10_percent": 99.991
+    },
+    {
+      "device": "mobile",
+      "design": 5,
+      "MAE_0_255": 0.852,
+      "pixels_within_10_percent": 98.936
+    },
+    {
+      "device": "mobile",
+      "design": 6,
+      "MAE_0_255": 7.136,
+      "pixels_within_10_percent": 89.501
+    },
+    {
+      "device": "mobile",
+      "design": 7,
+      "MAE_0_255": 5.024,
+      "pixels_within_10_percent": 92.947
+    },
+    {
+      "device": "mobile",
+      "design": 8,
+      "MAE_0_255": 0.238,
+      "pixels_within_10_percent": 99.287
+    },
+    {
+      "device": "mobile",
+      "design": 9,
+      "MAE_0_255": 0.419,
+      "pixels_within_10_percent": 99.473
+    },
+    {
+      "device": "mobile",
+      "design": 10,
+      "MAE_0_255": 1.431,
+      "pixels_within_10_percent": 97.961
+    },
+    {
+      "device": "mobile",
+      "design": 11,
+      "MAE_0_255": 0.709,
+      "pixels_within_10_percent": 98.069
+    },
+    {
+      "device": "mobile",
+      "design": 12,
+      "MAE_0_255": 5.51,
+      "pixels_within_10_percent": 89.338
+    },
+    {
+      "device": "mobile",
+      "design": 16,
+      "MAE_0_255": 0.256,
+      "pixels_within_10_percent": 99.469
+    },
+    {
+      "device": "mobile",
+      "design": 17,
+      "MAE_0_255": 7.125,
+      "pixels_within_10_percent": 88.999
+    },
+    {
+      "device": "mobile",
+      "design": 18,
+      "MAE_0_255": 2.666,
+      "pixels_within_10_percent": 96.082
+    },
+    {
+      "device": "mobile",
+      "design": 19,
+      "MAE_0_255": 1.338,
+      "pixels_within_10_percent": 97.052
+    },
+    {
+      "device": "mobile",
+      "design": 20,
+      "MAE_0_255": 0.0,
+      "pixels_within_10_percent": 100.0
+    },
+    {
+      "device": "mobile",
+      "design": 21,
+      "MAE_0_255": 3.209,
+      "pixels_within_10_percent": 90.558
+    },
+    {
+      "device": "mobile",
+      "design": 22,
+      "MAE_0_255": 0.06,
+      "pixels_within_10_percent": 100.0
+    },
+    {
+      "device": "mobile",
+      "design": 23,
+      "MAE_0_255": 0.0,
+      "pixels_within_10_percent": 100.0
+    },
+    {
+      "device": "mobile",
+      "design": 27,
+      "MAE_0_255": 11.441,
+      "pixels_within_10_percent": 82.872
+    }
+  ]
+}

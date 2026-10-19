@@ -1,0 +1,39 @@
+{
+  "base_url": "https://118.89.176.236",
+  "scope": "isolated anonymous session; real providers, not browser fixtures",
+  "checks": [
+    {
+      "kind": "agent",
+      "http_status": 200,
+      "mode": "rag_llm",
+      "answer_characters": 110,
+      "sources": 1,
+      "seconds": 15.85,
+      "passed": true
+    },
+    {
+      "kind": "tts",
+      "http_status": 200,
+      "content_type": "audio/mpeg",
+      "bytes": 33264,
+      "seconds": 1.33,
+      "passed": true
+    },
+    {
+      "kind": "vision_catalog_photo_smoke_not_accuracy",
+      "http_status": 200,
+      "status": "needs_confirmation",
+      "candidates": [
+        "jingshi"
+      ],
+      "seconds": 6.24,
+      "passed": true
+    },
+    {
+      "kind": "vision_confirmation_persisted",
+      "http_status": 200,
+      "passed": true
+    }
+  ],
+  "all_passed": true
+}

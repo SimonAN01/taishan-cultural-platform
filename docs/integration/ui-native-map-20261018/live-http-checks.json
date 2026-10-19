@@ -1,0 +1,38 @@
+{
+  "checked_at": "2026-10-18T13:07:25.872659+00:00",
+  "checks": [
+    {
+      "requested": "https://118.89.176.236/#map",
+      "final_url": "https://118.89.176.236/experience/",
+      "index_matches_release": true
+    },
+    {
+      "requested": "https://118.89.176.236/?classic=1",
+      "final_url": "https://118.89.176.236/experience/?classic=1",
+      "index_matches_release": true
+    },
+    {
+      "asset": "/experience/assets/index-D7KaP17c.js",
+      "release_hash_matches": true
+    },
+    {
+      "asset": "/experience/assets/index-tsX4Tfyl.css",
+      "release_hash_matches": true
+    },
+    {
+      "legacy": "/app.js",
+      "status": 410
+    },
+    {
+      "legacy": "/map.js",
+      "status": 410
+    },
+    {
+      "legacy": "/style.css",
+      "status": 410
+    },
+    {
+      "catalogue_spots": 19
+    }
+  ]
+}

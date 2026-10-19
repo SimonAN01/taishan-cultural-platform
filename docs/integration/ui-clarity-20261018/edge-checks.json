@@ -1,0 +1,14 @@
+{
+  "checks": [
+    "320×568 六个入口无横向溢出",
+    "390×844 六个入口无横向溢出",
+    "768×1024 六个入口无横向溢出",
+    "1024×600 六个入口无横向溢出",
+    "1920×1080 六个入口无横向溢出",
+    "浏览器测试摄像头真实采集、生成照片预览并停止媒体轨道",
+    "离开拍照页面停止摄像头",
+    "离开日出加载提示后，迟到的图片不会弹出"
+  ],
+  "errors": [],
+  "fixtureNote": "Camera uses Chrome fake-device media; production hardware permissions still depend on the device."
+}

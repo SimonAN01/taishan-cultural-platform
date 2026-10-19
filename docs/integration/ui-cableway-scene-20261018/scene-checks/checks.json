@@ -1,0 +1,112 @@
+{
+  "checks": [
+    {
+      "width": 320,
+      "height": 568,
+      "progressSamples": [
+        0,
+        25,
+        56,
+        75,
+        100
+      ],
+      "bothViewLimits": true,
+      "continuousLandscape": true,
+      "keyboardAfterButtonFocus": true,
+      "nativeRangeKeys": true
+    },
+    {
+      "width": 309,
+      "height": 767,
+      "progressSamples": [
+        0,
+        25,
+        56,
+        75,
+        100
+      ],
+      "bothViewLimits": true,
+      "continuousLandscape": true,
+      "keyboardAfterButtonFocus": true,
+      "nativeRangeKeys": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "progressSamples": [
+        0,
+        25,
+        56,
+        75,
+        100
+      ],
+      "bothViewLimits": true,
+      "continuousLandscape": true,
+      "keyboardAfterButtonFocus": true,
+      "nativeRangeKeys": true
+    },
+    {
+      "width": 508,
+      "height": 752,
+      "progressSamples": [
+        0,
+        25,
+        56,
+        75,
+        100
+      ],
+      "bothViewLimits": true,
+      "continuousLandscape": true,
+      "keyboardAfterButtonFocus": true,
+      "nativeRangeKeys": true
+    },
+    {
+      "width": 1024,
+      "height": 600,
+      "progressSamples": [
+        0,
+        25,
+        56,
+        75,
+        100
+      ],
+      "bothViewLimits": true,
+      "continuousLandscape": true,
+      "keyboardAfterButtonFocus": true,
+      "nativeRangeKeys": true
+    },
+    {
+      "width": 1211,
+      "height": 810,
+      "progressSamples": [
+        0,
+        25,
+        56,
+        75,
+        100
+      ],
+      "bothViewLimits": true,
+      "continuousLandscape": true,
+      "keyboardAfterButtonFocus": true,
+      "nativeRangeKeys": true
+    },
+    {
+      "width": 1900,
+      "height": 1080,
+      "progressSamples": [
+        0,
+        25,
+        56,
+        75,
+        100
+      ],
+      "bothViewLimits": true,
+      "continuousLandscape": true,
+      "keyboardAfterButtonFocus": true,
+      "nativeRangeKeys": true
+    }
+  ],
+  "errors": [],
+  "landscapeFailureRetry": true,
+  "scope": "Actual WebGL and UI events. Screenshots cover five journey positions and both bounded camera limits; scenic painting is a single background, not mountain geometry."
+}

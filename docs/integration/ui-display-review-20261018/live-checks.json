@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-10-18T07:36:33.065454+00:00",
+  "files": [
+    {
+      "file": "index.html",
+      "status": 200,
+      "sha256": "63c5bc92eacbbe70ce8fb3ac77a1a78604d8034d784f53647467ab5b451b6f48",
+      "matches": true
+    },
+    {
+      "file": "assets/index-CCUx4-9R.js",
+      "status": 200,
+      "sha256": "3746570349e9c2a2fe6327c5e7291440735b9892c0fd2a30acad8461aa199789",
+      "matches": true
+    },
+    {
+      "file": "assets/index-0xTBN5PH.css",
+      "status": 200,
+      "sha256": "6bace5691b28ac744d5d7f671575914d72e46f616e75f2096aad61411641a4d9",
+      "matches": true
+    }
+  ],
+  "health": {
+    "status": "ok",
+    "version": "1.7.3"
+  },
+  "unchanged_artwork_evidence": "live-checks-before-caption-correction.json",
+  "note": "Final publish only corrects gallery captions; artwork and font bytes retain their previously verified hashes. All 432 server-side frontend files verified again."
+}

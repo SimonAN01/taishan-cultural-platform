@@ -1,0 +1,452 @@
+{
+  "checks": [
+    {
+      "width": 320,
+      "area": "map",
+      "directory": 19,
+      "searchEmptyRecovery": true,
+      "keyboardAndZoom": true
+    },
+    {
+      "width": 320,
+      "area": "spots",
+      "details": 19,
+      "tabs": true,
+      "photoSources": true,
+      "directoryResets": true
+    },
+    {
+      "width": 320,
+      "area": "routes",
+      "routes": 4,
+      "allVariants": true,
+      "selectionAndCancellation": true
+    },
+    {
+      "width": 320,
+      "area": "history",
+      "sourcedRecords": 7,
+      "previousNext": true,
+      "reload": true
+    },
+    {
+      "width": 320,
+      "area": "poetry",
+      "poems": 3,
+      "allVerses": true,
+      "analysisReloadAndResume": true
+    },
+    {
+      "width": 320,
+      "area": "gallery",
+      "filterReload": true,
+      "keyboardImageTurn": true,
+      "zoomReset": true
+    },
+    {
+      "width": 320,
+      "area": "museum",
+      "entries": 6,
+      "selectionPhotoAndModeReload": true,
+      "keyboardTabs": true,
+      "uncroppedImage": true
+    },
+    {
+      "width": 320,
+      "area": "scenes",
+      "scenes": 3,
+      "topics": 9,
+      "realSavedProgressReload": true
+    },
+    {
+      "width": 320,
+      "area": "study-and-trail",
+      "chapters": 5,
+      "handbookTabs": 4,
+      "tabReload": true,
+      "keyboard": true
+    },
+    {
+      "width": 320,
+      "area": "review-sources-vision",
+      "realReview": true,
+      "sourceLinks": true,
+      "invalidImageRecovery": true
+    },
+    {
+      "width": 320,
+      "area": "agent",
+      "realGLB": true,
+      "contextCorrect": true,
+      "expandCollapse": true
+    },
+    {
+      "width": 390,
+      "area": "map",
+      "directory": 19,
+      "searchEmptyRecovery": true,
+      "keyboardAndZoom": true
+    },
+    {
+      "width": 390,
+      "area": "spots",
+      "details": 19,
+      "tabs": true,
+      "photoSources": true,
+      "directoryResets": true
+    },
+    {
+      "width": 390,
+      "area": "routes",
+      "routes": 4,
+      "allVariants": true,
+      "selectionAndCancellation": true
+    },
+    {
+      "width": 390,
+      "area": "history",
+      "sourcedRecords": 7,
+      "previousNext": true,
+      "reload": true
+    },
+    {
+      "width": 390,
+      "area": "poetry",
+      "poems": 3,
+      "allVerses": true,
+      "analysisReloadAndResume": true
+    },
+    {
+      "width": 390,
+      "area": "gallery",
+      "filterReload": true,
+      "keyboardImageTurn": true,
+      "zoomReset": true
+    },
+    {
+      "width": 390,
+      "area": "museum",
+      "entries": 6,
+      "selectionPhotoAndModeReload": true,
+      "keyboardTabs": true,
+      "uncroppedImage": true
+    },
+    {
+      "width": 390,
+      "area": "scenes",
+      "scenes": 3,
+      "topics": 9,
+      "realSavedProgressReload": true
+    },
+    {
+      "width": 390,
+      "area": "study-and-trail",
+      "chapters": 5,
+      "handbookTabs": 4,
+      "tabReload": true,
+      "keyboard": true
+    },
+    {
+      "width": 390,
+      "area": "review-sources-vision",
+      "realReview": true,
+      "sourceLinks": true,
+      "invalidImageRecovery": true
+    },
+    {
+      "width": 390,
+      "area": "agent",
+      "realGLB": true,
+      "contextCorrect": true,
+      "expandCollapse": true
+    },
+    {
+      "width": 1211,
+      "area": "map",
+      "directory": 19,
+      "searchEmptyRecovery": true,
+      "keyboardAndZoom": true
+    },
+    {
+      "width": 1211,
+      "area": "spots",
+      "details": 19,
+      "tabs": true,
+      "photoSources": true,
+      "directoryResets": true
+    },
+    {
+      "width": 1211,
+      "area": "routes",
+      "routes": 4,
+      "allVariants": true,
+      "selectionAndCancellation": true
+    },
+    {
+      "width": 1211,
+      "area": "history",
+      "sourcedRecords": 7,
+      "previousNext": true,
+      "reload": true
+    },
+    {
+      "width": 1211,
+      "area": "poetry",
+      "poems": 3,
+      "allVerses": true,
+      "analysisReloadAndResume": true
+    },
+    {
+      "width": 1211,
+      "area": "gallery",
+      "filterReload": true,
+      "keyboardImageTurn": true,
+      "zoomReset": true
+    },
+    {
+      "width": 1211,
+      "area": "museum",
+      "entries": 6,
+      "selectionPhotoAndModeReload": true,
+      "keyboardTabs": true,
+      "uncroppedImage": true
+    },
+    {
+      "width": 1211,
+      "area": "scenes",
+      "scenes": 3,
+      "topics": 9,
+      "realSavedProgressReload": true
+    },
+    {
+      "width": 1211,
+      "area": "study-and-trail",
+      "chapters": 5,
+      "handbookTabs": 4,
+      "tabReload": true,
+      "keyboard": true
+    },
+    {
+      "width": 1211,
+      "area": "review-sources-vision",
+      "realReview": true,
+      "sourceLinks": true,
+      "invalidImageRecovery": true
+    },
+    {
+      "width": 1211,
+      "area": "agent",
+      "realGLB": true,
+      "contextCorrect": true,
+      "expandCollapse": true
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    {
+      "width": 320,
+      "name": "spot-directory"
+    },
+    {
+      "width": 320,
+      "name": "read"
+    },
+    {
+      "width": 320,
+      "name": "routes"
+    },
+    {
+      "width": 320,
+      "name": "history"
+    },
+    {
+      "width": 320,
+      "name": "poetry"
+    },
+    {
+      "width": 320,
+      "name": "gallery"
+    },
+    {
+      "width": 320,
+      "name": "museum"
+    },
+    {
+      "width": 320,
+      "name": "scenes"
+    },
+    {
+      "width": 320,
+      "name": "scene-daimiao"
+    },
+    {
+      "width": 320,
+      "name": "scene-caishixi"
+    },
+    {
+      "width": 320,
+      "name": "scene-houshiwu"
+    },
+    {
+      "width": 320,
+      "name": "study"
+    },
+    {
+      "width": 320,
+      "name": "trail"
+    },
+    {
+      "width": 320,
+      "name": "review"
+    },
+    {
+      "width": 320,
+      "name": "sources"
+    },
+    {
+      "width": 320,
+      "name": "vision"
+    },
+    {
+      "width": 320,
+      "name": "agent"
+    },
+    {
+      "width": 390,
+      "name": "spot-directory"
+    },
+    {
+      "width": 390,
+      "name": "read"
+    },
+    {
+      "width": 390,
+      "name": "routes"
+    },
+    {
+      "width": 390,
+      "name": "history"
+    },
+    {
+      "width": 390,
+      "name": "poetry"
+    },
+    {
+      "width": 390,
+      "name": "gallery"
+    },
+    {
+      "width": 390,
+      "name": "museum"
+    },
+    {
+      "width": 390,
+      "name": "scenes"
+    },
+    {
+      "width": 390,
+      "name": "scene-daimiao"
+    },
+    {
+      "width": 390,
+      "name": "scene-caishixi"
+    },
+    {
+      "width": 390,
+      "name": "scene-houshiwu"
+    },
+    {
+      "width": 390,
+      "name": "study"
+    },
+    {
+      "width": 390,
+      "name": "trail"
+    },
+    {
+      "width": 390,
+      "name": "review"
+    },
+    {
+      "width": 390,
+      "name": "sources"
+    },
+    {
+      "width": 390,
+      "name": "vision"
+    },
+    {
+      "width": 390,
+      "name": "agent"
+    },
+    {
+      "width": 1211,
+      "name": "spot-directory"
+    },
+    {
+      "width": 1211,
+      "name": "read"
+    },
+    {
+      "width": 1211,
+      "name": "routes"
+    },
+    {
+      "width": 1211,
+      "name": "history"
+    },
+    {
+      "width": 1211,
+      "name": "poetry"
+    },
+    {
+      "width": 1211,
+      "name": "gallery"
+    },
+    {
+      "width": 1211,
+      "name": "museum"
+    },
+    {
+      "width": 1211,
+      "name": "scenes"
+    },
+    {
+      "width": 1211,
+      "name": "scene-daimiao"
+    },
+    {
+      "width": 1211,
+      "name": "scene-caishixi"
+    },
+    {
+      "width": 1211,
+      "name": "scene-houshiwu"
+    },
+    {
+      "width": 1211,
+      "name": "study"
+    },
+    {
+      "width": 1211,
+      "name": "trail"
+    },
+    {
+      "width": 1211,
+      "name": "review"
+    },
+    {
+      "width": 1211,
+      "name": "sources"
+    },
+    {
+      "width": 1211,
+      "name": "vision"
+    },
+    {
+      "width": 1211,
+      "name": "agent"
+    }
+  ],
+  "scope": "Actual isolated anonymous catalogue, favorites and scene records. No AI or media provider response is simulated in this main sweep; no provider is invoked."
+}

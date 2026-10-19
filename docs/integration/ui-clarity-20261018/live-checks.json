@@ -1,0 +1,41 @@
+{
+  "https_index_matches": true,
+  "asset_hashes": [
+    "assets/index-CfPllwDW.js",
+    "assets/index-HPApVVyM.css",
+    "fonts/ma-shan-zheng-ui.ttf",
+    "design-assets/welcome-art-expanded.webp"
+  ],
+  "health_status": "ok",
+  "health_version": "1.7.3",
+  "actual_user_browser": "live-browser.png",
+  "completed_public_interaction_viewports": [
+    [
+      309,
+      767
+    ],
+    [
+      532,
+      752
+    ]
+  ],
+  "local_interaction_viewports": [
+    [
+      309,
+      767
+    ],
+    [
+      532,
+      752
+    ],
+    [
+      1024,
+      600
+    ],
+    [
+      1920,
+      1080
+    ]
+  ],
+  "automation_note": "Public batch completed phone and current-pane cases. Larger-view browser input automation stalled and was stopped; desktop layout assertions and interaction checks passed locally against the same verified build."
+}

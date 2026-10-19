@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-10-17T18:31:37.012Z",
+  "checks": [
+    "公网 HTTPS 首页与本地构建 SHA-256 一致",
+    "公网入口 JS、CSS 和关键设计图素材校验一致",
+    "原服务健康，沉浸式入口可用",
+    "desktop 公网页面与五项主入口检查通过",
+    "mobile 公网页面与五项主入口检查通过",
+    "8037 兼容入口与 HTTPS 为同一前端构建"
+  ],
+  "errors": [],
+  "failed": [],
+  "health": {
+    "status": "ok",
+    "version": "1.7.3",
+    "immersive_available": true
+  }
+}

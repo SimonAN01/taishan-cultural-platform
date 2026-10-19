@@ -8,5 +8,6 @@ powershell.exe -NoLogo -NoProfile -Command "& ([scriptblock]::Create([System.IO.
 if errorlevel 1 (
   echo.
   echo Startup failed. See the message above and docs/windows/README.md.
-  pause
+  if not defined CI pause
+  exit /b 1
 )

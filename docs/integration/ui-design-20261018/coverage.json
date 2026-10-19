@@ -1,0 +1,538 @@
+{
+  "evidence": [
+    {
+      "file": "screens/desktop-01.webp",
+      "design": 1,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-03.webp",
+      "design": 3,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-05.webp",
+      "design": 5,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-06.webp",
+      "design": 6,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-07.webp",
+      "design": 7,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-08.webp",
+      "design": 8,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-09.webp",
+      "design": 9,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-10.webp",
+      "design": 10,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-12.webp",
+      "design": 12,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-16.webp",
+      "design": 16,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-17.webp",
+      "design": 17,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-18.webp",
+      "design": 18,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-19.webp",
+      "design": 19,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-20.webp",
+      "design": 20,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-21.webp",
+      "design": 21,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-22.webp",
+      "design": 22,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-23.webp",
+      "design": 23,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-27.webp",
+      "design": 27,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-28.webp",
+      "design": 28,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-02.webp",
+      "design": 2,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-04.webp",
+      "design": 4,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-15-results.webp",
+      "design": 15,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-15-detail.webp",
+      "design": 15,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-15-empty.webp",
+      "design": 15,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-15-route.webp",
+      "design": 15,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-13-unseen.webp",
+      "design": 13,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-13-observed-dialogue.webp",
+      "design": 13,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-13-observed.webp",
+      "design": 13,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-13-detail.webp",
+      "design": 13,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-11.webp",
+      "design": 11,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-30-viewer.webp",
+      "design": 30,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-30-viewer-zoom.webp",
+      "design": 30,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-30-image-error.webp",
+      "design": 30,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-29-saving.webp",
+      "design": 29,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-29-saved.webp",
+      "design": 29,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-29-already.webp",
+      "design": 29,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-29-error.webp",
+      "design": 29,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-30-empty.webp",
+      "design": 30,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-24.webp",
+      "design": 24,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-26-analyzing.webp",
+      "design": 26,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-26-candidates.webp",
+      "design": 26,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-26-unknown.webp",
+      "design": 26,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-26-error.webp",
+      "design": 26,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-01.webp",
+      "design": 1,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-03.webp",
+      "design": 3,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-05.webp",
+      "design": 5,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-06.webp",
+      "design": 6,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-07.webp",
+      "design": 7,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-08.webp",
+      "design": 8,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-09.webp",
+      "design": 9,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-10.webp",
+      "design": 10,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-12.webp",
+      "design": 12,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-16.webp",
+      "design": 16,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-17.webp",
+      "design": 17,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-18.webp",
+      "design": 18,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-19.webp",
+      "design": 19,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-20.webp",
+      "design": 20,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-21.webp",
+      "design": 21,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-22.webp",
+      "design": 22,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-23.webp",
+      "design": 23,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-27.webp",
+      "design": 27,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-28.webp",
+      "design": 28,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-02.webp",
+      "design": 2,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-04.webp",
+      "design": 4,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-15-results.webp",
+      "design": 15,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-15-detail.webp",
+      "design": 15,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-15-empty.webp",
+      "design": 15,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-15-route.webp",
+      "design": 15,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-13-unseen.webp",
+      "design": 13,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-13-observed-dialogue.webp",
+      "design": 13,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-13-observed.webp",
+      "design": 13,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-13-detail.webp",
+      "design": 13,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-11.webp",
+      "design": 11,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-30-viewer.webp",
+      "design": 30,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-30-viewer-zoom.webp",
+      "design": 30,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-30-image-error.webp",
+      "design": 30,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-29-saving.webp",
+      "design": 29,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-29-saved.webp",
+      "design": 29,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-29-already.webp",
+      "design": 29,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-29-error.webp",
+      "design": 29,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-30-empty.webp",
+      "design": 30,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-24.webp",
+      "design": 24,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-26-analyzing.webp",
+      "design": 26,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-26-candidates.webp",
+      "design": 26,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-26-unknown.webp",
+      "design": 26,
+      "fixture": true
+    },
+    {
+      "file": "screens/mobile-26-error.webp",
+      "design": 26,
+      "fixture": true
+    },
+    {
+      "file": "screens/component-14-sunrise-loading.webp",
+      "design": 14,
+      "fixture": true
+    },
+    {
+      "file": "screens/component-14-scene-loading.webp",
+      "design": 14,
+      "fixture": true
+    },
+    {
+      "file": "screens/component-14-scene-error.webp",
+      "design": 14,
+      "fixture": true
+    },
+    {
+      "file": "screens/component-14-sound-choice.webp",
+      "design": 14,
+      "fixture": true
+    },
+    {
+      "file": "screens/component-14-camera-permission.webp",
+      "design": 14,
+      "fixture": true
+    },
+    {
+      "file": "screens/component-14-mic-error.webp",
+      "design": 14,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-30-skeleton.webp",
+      "design": 30,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-25-listening.webp",
+      "design": 25,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-25-transcript.webp",
+      "design": 25,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-25-thinking.webp",
+      "design": 25,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-25-ready.webp",
+      "design": 25,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-25-request-error.webp",
+      "design": 25,
+      "fixture": true
+    },
+    {
+      "file": "screens/desktop-25-speaking.webp",
+      "design": 25,
+      "fixture": true
+    }
+  ],
+  "errors": [],
+  "designs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "fixtureNote": "AI/ASR/save/failure states use controlled responses; they do not prove live provider output.",
+  "supplemental_checks": [
+    "实际浏览器 WAV 播放事件触发讲解状态，停止按钮结束播放并回到就绪；该音频为测试响应。",
+    "最后的目录与石刻间距修正分别完成桌面、手机和窄屏复核。",
+    "索道页品牌按钮返回地图，页面关闭后不保留索道覆盖层。"
+  ]
+}

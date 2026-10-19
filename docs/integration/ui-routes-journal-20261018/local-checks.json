@@ -1,0 +1,72 @@
+{
+  "checks": [
+    {
+      "width": 309,
+      "height": 767,
+      "dpr": 2,
+      "nativeCaptions": true,
+      "oneSelectedRoute": true,
+      "transportVariants": true,
+      "routeStarts": true,
+      "journalFlow": true,
+      "journalEmptyAndTabs": true
+    },
+    {
+      "width": 508,
+      "height": 752,
+      "dpr": 2,
+      "nativeCaptions": true,
+      "oneSelectedRoute": true,
+      "transportVariants": true,
+      "routeStarts": true,
+      "journalFlow": true,
+      "journalEmptyAndTabs": true
+    },
+    {
+      "width": 532,
+      "height": 752,
+      "dpr": 2,
+      "nativeCaptions": true,
+      "oneSelectedRoute": true,
+      "transportVariants": true,
+      "routeStarts": true,
+      "journalFlow": true,
+      "journalEmptyAndTabs": true
+    },
+    {
+      "width": 1024,
+      "height": 600,
+      "dpr": 2,
+      "nativeCaptions": true,
+      "oneSelectedRoute": true,
+      "transportVariants": true,
+      "routeStarts": true,
+      "journalFlow": true,
+      "journalEmptyAndTabs": true
+    },
+    {
+      "width": 1211,
+      "height": 810,
+      "dpr": 2,
+      "nativeCaptions": true,
+      "oneSelectedRoute": true,
+      "transportVariants": true,
+      "routeStarts": true,
+      "journalFlow": true,
+      "journalEmptyAndTabs": true
+    },
+    {
+      "width": 1900,
+      "height": 900,
+      "dpr": 2,
+      "nativeCaptions": true,
+      "oneSelectedRoute": true,
+      "transportVariants": true,
+      "routeStarts": true,
+      "journalFlow": true,
+      "journalEmptyAndTabs": true
+    }
+  ],
+  "errors": [],
+  "fixtureNote": "Journey records use browser fixtures; no real user records are written."
+}

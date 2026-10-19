@@ -1,0 +1,111 @@
+{
+  "checked_at": "2026-10-18T07:28:31.205719+00:00",
+  "files": [
+    {
+      "file": "index.html",
+      "status": 200,
+      "sha256": "3ea33fd9ce8ef3e1b8d36ae16e8c602d6435fdd46b46527f712d8e0623418c14",
+      "matches": true
+    },
+    {
+      "file": "assets/index-BytHgZYS.js",
+      "status": 200,
+      "sha256": "7b22a023bb5ef40d97629cb4ca254d567f4baadb4c6e8ef156f058ded8fd7f51",
+      "matches": true
+    },
+    {
+      "file": "assets/index-0xTBN5PH.css",
+      "status": 200,
+      "sha256": "6bace5691b28ac744d5d7f671575914d72e46f616e75f2096aad61411641a4d9",
+      "matches": true
+    },
+    {
+      "file": "fonts/ma-shan-zheng-ui-v3.ttf",
+      "status": 200,
+      "sha256": "fb9692ad213a3603551fb8b29c80b46f5c9302ba881b52b7d0fc28cb96f5b74b",
+      "matches": true
+    },
+    {
+      "file": "design-assets/map-art-desktop-v2.webp",
+      "status": 200,
+      "sha256": "df0136de2eb7a627b79a2a294c13641b1efdae8385577d66c471894e8accaef2",
+      "matches": true
+    },
+    {
+      "file": "design-assets/map-art-mobile-v2.webp",
+      "status": 200,
+      "sha256": "64396105cab984c1d3e99290c50e9f6d20d379283d2619220f82445ff2ed1d2b",
+      "matches": true
+    },
+    {
+      "file": "design-assets/route-landscape-art-v2.webp",
+      "status": 200,
+      "sha256": "c57798b688efedb72ac1342f5771be620a1d00241565c442c075d3071ebb7ccb",
+      "matches": true
+    },
+    {
+      "file": "design-assets/route-paper-art-v2.webp",
+      "status": 200,
+      "sha256": "35a3a4444d573af1019026775a8e9977648f1b7e297e4e74e04f1cdc28f496ac",
+      "matches": true
+    },
+    {
+      "file": "design-assets/handbook-art-desktop-v2.webp",
+      "status": 200,
+      "sha256": "46b25220b47a2c3b5d70fb3771157e0ca6fd38ec91633075f96c5ac7641cb9ee",
+      "matches": true
+    },
+    {
+      "file": "design-assets/handbook-art-mobile-v2.webp",
+      "status": 200,
+      "sha256": "7db04559e6029f9a88a515aa59efd78339f438da1813d7741da5490313063432",
+      "matches": true
+    },
+    {
+      "file": "design-assets/handbook-girl-v2.webp",
+      "status": 200,
+      "sha256": "49456faf3ff0afab8215fc613e0670b4bddb6627b0e592e58ffe2f98f3f0fce8",
+      "matches": true
+    },
+    {
+      "file": "design-assets/study-art-desktop-v2.webp",
+      "status": 200,
+      "sha256": "6f30757f0b0cc013e86719cf0913eedcd67e8fded66d8d10ad8f243c559d13cd",
+      "matches": true
+    },
+    {
+      "file": "design-assets/study-art-mobile-v2.webp",
+      "status": 200,
+      "sha256": "08cb6a8565ddd554f89fb28e40c0545767477317b68cf23354e2d2e59dafe798",
+      "matches": true
+    },
+    {
+      "file": "design-assets/review-art-desktop-v2.webp",
+      "status": 200,
+      "sha256": "b893214c25bff98cb199e50ec51b18b1a2fbfddc89a19122d9df242042e8c316",
+      "matches": true
+    },
+    {
+      "file": "design-assets/review-art-mobile-v2.webp",
+      "status": 200,
+      "sha256": "a6bd07cb3ff47c40d7f02cad739052f8fe63543897493683fe50d3f32ee8d616",
+      "matches": true
+    },
+    {
+      "file": "design-assets/museum-art-clean-v2.webp",
+      "status": 200,
+      "sha256": "0d49706d928152013f7b158b854eae49bbf7015c584e6731b93b92547630a06d",
+      "matches": true
+    },
+    {
+      "file": "design-assets/museum-nav-art-v2.webp",
+      "status": 200,
+      "sha256": "4235fb6291eaa3a34ceddc026f530420505c86f0d9d4231dd79c3d88cb77bd21",
+      "matches": true
+    }
+  ],
+  "health": {
+    "status": "ok",
+    "version": "1.7.3"
+  }
+}

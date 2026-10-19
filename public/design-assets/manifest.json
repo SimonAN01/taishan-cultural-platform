@@ -1,0 +1,4724 @@
+{
+  "source_file": "UI设计图.docx",
+  "source_sha256": "723e94b7722d0423d49ab4b6d5b98f8aedc64ecd99a04a62f1fdeca4c207a062",
+  "assets": [
+    {
+      "file": "bottom-agent.webp",
+      "size": [
+        309,
+        70
+      ],
+      "sha256": "45f2c770026c3dfee2144c57c334fb6dd200ca998eded433c58fe68b478945f6",
+      "kind": "word-crop",
+      "source_image": 22,
+      "box": [
+        1261,
+        857,
+        1570,
+        927
+      ]
+    },
+    {
+      "file": "bottom-cableway.webp",
+      "size": [
+        309,
+        78
+      ],
+      "sha256": "b5c1acdc5c015eb0f4286302a1a6cd2abb6322cb504c73781f6f24c712f43cc2",
+      "kind": "word-crop",
+      "source_image": 11,
+      "box": [
+        1261,
+        849,
+        1570,
+        927
+      ]
+    },
+    {
+      "file": "bottom-caishixi.webp",
+      "size": [
+        309,
+        89
+      ],
+      "sha256": "e24b6fdc54575b49f3613a15ecd41738cd217bb98a391268b6b8134b325584c6",
+      "kind": "word-crop",
+      "source_image": 9,
+      "box": [
+        1261,
+        838,
+        1570,
+        927
+      ]
+    },
+    {
+      "file": "bottom-gallery.webp",
+      "size": [
+        309,
+        76
+      ],
+      "sha256": "c011061fbb9bef76754606b792b509645feaaee1569493418406f0cf34254ccd",
+      "kind": "word-crop",
+      "source_image": 8,
+      "box": [
+        1261,
+        851,
+        1570,
+        927
+      ]
+    },
+    {
+      "file": "bottom-history.webp",
+      "size": [
+        309,
+        58
+      ],
+      "sha256": "c7854a0ff1ea98702874d97a4cf38144d8a9743d4b8942186e75c375403edef9",
+      "kind": "word-crop",
+      "source_image": 17,
+      "box": [
+        1261,
+        869,
+        1570,
+        927
+      ]
+    },
+    {
+      "file": "bottom-houshiwu.webp",
+      "size": [
+        309,
+        76
+      ],
+      "sha256": "efaac297cd53b098fba001a123dada799711c27ec085e179a8a142d2537c9e6c",
+      "kind": "word-crop",
+      "source_image": 10,
+      "box": [
+        1261,
+        851,
+        1570,
+        927
+      ]
+    },
+    {
+      "file": "bottom-map.webp",
+      "size": [
+        309,
+        78
+      ],
+      "sha256": "adebb2c5fe1fa271b081f7f3458f26a6a34d9a7f55f98c1da8a78ed269fb2cb0",
+      "kind": "word-crop",
+      "source_image": 3,
+      "box": [
+        1261,
+        849,
+        1570,
+        927
+      ]
+    },
+    {
+      "file": "bottom-museum.webp",
+      "size": [
+        309,
+        42
+      ],
+      "sha256": "dac3b898337f117278059f273c190ad8aef2f72577fcb02924979b925b8f0bcf",
+      "kind": "word-crop",
+      "source_image": 19,
+      "box": [
+        1261,
+        885,
+        1570,
+        927
+      ]
+    },
+    {
+      "file": "bottom-poetry.webp",
+      "size": [
+        309,
+        81
+      ],
+      "sha256": "69473daed1189b824746438f8b2b3a86ec11813dc967295baaf1ed1c60c6d9d5",
+      "kind": "word-crop",
+      "source_image": 18,
+      "box": [
+        1261,
+        846,
+        1570,
+        927
+      ]
+    },
+    {
+      "file": "bottom-read.webp",
+      "size": [
+        309,
+        58
+      ],
+      "sha256": "9ea0838f693f66bd64364df14256fec6383981cc89956443a1b8e1d881a98e88",
+      "kind": "word-crop",
+      "source_image": 16,
+      "box": [
+        1261,
+        869,
+        1570,
+        927
+      ]
+    },
+    {
+      "file": "bottom-review.webp",
+      "size": [
+        309,
+        50
+      ],
+      "sha256": "4375d3f0c872faef951f7cdbf5ee3b08aa341dd6733697f4394c6da7b513b82e",
+      "kind": "word-crop",
+      "source_image": 12,
+      "box": [
+        1261,
+        889,
+        1570,
+        939
+      ]
+    },
+    {
+      "file": "bottom-scene.webp",
+      "size": [
+        309,
+        72
+      ],
+      "sha256": "5fed9f872ffc2e03ed49059c0a79d02048a6d3388a335a4f48ad0c9ac8a4560e",
+      "kind": "word-crop",
+      "source_image": 6,
+      "box": [
+        1261,
+        855,
+        1570,
+        927
+      ]
+    },
+    {
+      "file": "bottom-scenes.webp",
+      "size": [
+        309,
+        78
+      ],
+      "sha256": "1676139d76d346b95fa01cfd76620ee1d9afeb97cb9a41caf68e49b19c0fe631",
+      "kind": "word-crop",
+      "source_image": 21,
+      "box": [
+        1261,
+        849,
+        1570,
+        927
+      ]
+    },
+    {
+      "file": "bottom-spot.webp",
+      "size": [
+        309,
+        58
+      ],
+      "sha256": "ba33c62d194b6d05c6d87647eac82b42e85764b74c662ec68663e182688bbebe",
+      "kind": "word-crop",
+      "source_image": 7,
+      "box": [
+        1261,
+        869,
+        1570,
+        927
+      ]
+    },
+    {
+      "file": "bottom-study.webp",
+      "size": [
+        309,
+        58
+      ],
+      "sha256": "56517eed5e1bc3afbdb3e2fecc42ec646bffec8df21bcce9998eeaac4035453e",
+      "kind": "word-crop",
+      "source_image": 20,
+      "box": [
+        1261,
+        869,
+        1570,
+        927
+      ]
+    },
+    {
+      "file": "bottom-trail.webp",
+      "size": [
+        309,
+        58
+      ],
+      "sha256": "1d046229d4cae3f4861f7d2fb2f7dfd793763f225e3897edab3c283f4fde099c",
+      "kind": "word-crop",
+      "source_image": 27,
+      "box": [
+        1261,
+        869,
+        1570,
+        927
+      ]
+    },
+    {
+      "file": "bottom-vision.webp",
+      "size": [
+        309,
+        58
+      ],
+      "sha256": "f6f081453347c0225d8b27aba2f88bab51399de803b90401aaa0bf6e98fcdc2d",
+      "kind": "word-crop",
+      "source_image": 23,
+      "box": [
+        1261,
+        869,
+        1570,
+        927
+      ]
+    },
+    {
+      "file": "brand.webp",
+      "size": [
+        224,
+        38
+      ],
+      "sha256": "7424cc95b7210eda14bc6526c0dbc8abcbe2de9a15cde4cd2e9a7a85694b4f5a",
+      "kind": "word-crop",
+      "source_image": 3,
+      "box": [
+        46,
+        128,
+        270,
+        166
+      ]
+    },
+    {
+      "file": "cableway-desktop.webp",
+      "size": [
+        1211,
+        749
+      ],
+      "sha256": "aacef376d12a81d73c7103fd3022ff4af459d3f835abca2ac235d5c38a7357b0",
+      "kind": "word-crop",
+      "source_image": 11,
+      "box": [
+        24,
+        179,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "cableway-mobile.webp",
+      "size": [
+        309,
+        645
+      ],
+      "sha256": "800d705c2282d6121b753d4b063baac42d0d61964c78b0debc55ea35d7c831ab",
+      "kind": "word-crop",
+      "source_image": 11,
+      "box": [
+        1261,
+        204,
+        1570,
+        849
+      ]
+    },
+    {
+      "file": "caishixi-desktop.webp",
+      "size": [
+        1211,
+        749
+      ],
+      "sha256": "fd26a2502f97e0b8211dbe2271e1b784ebcbdffd402ee40fb260e2605332efd1",
+      "kind": "word-crop",
+      "source_image": 9,
+      "box": [
+        24,
+        179,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "caishixi-mobile.webp",
+      "size": [
+        309,
+        634
+      ],
+      "sha256": "a454683c7efc036e812d7513b521f292ec5cdf7b5f4bfd540783c343a002807b",
+      "kind": "word-crop",
+      "source_image": 9,
+      "box": [
+        1261,
+        204,
+        1570,
+        838
+      ]
+    },
+    {
+      "file": "daimiao-desktop.webp",
+      "size": [
+        1211,
+        749
+      ],
+      "sha256": "3fcd303df476d3173badfe8cd59e5fdfdfb5f235b3a9653d0ddb130cd47708cc",
+      "kind": "word-crop",
+      "source_image": 6,
+      "box": [
+        24,
+        179,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "daimiao-inspector-mobile.webp",
+      "size": [
+        309,
+        189
+      ],
+      "sha256": "541956283c3c2e7900bce06c76b52803d32d6e562110a552be4614fa27acac5d",
+      "kind": "word-crop",
+      "source_image": 6,
+      "box": [
+        1261,
+        666,
+        1570,
+        855
+      ]
+    },
+    {
+      "file": "daimiao-inspector.webp",
+      "size": [
+        349,
+        735
+      ],
+      "sha256": "9e3a9d59da506bc412c721916088fde79418698e8131bd8d5eed3cbac9597ede",
+      "kind": "word-crop",
+      "source_image": 6,
+      "box": [
+        870,
+        184,
+        1219,
+        919
+      ]
+    },
+    {
+      "file": "daimiao-reader-photo.webp",
+      "size": [
+        322,
+        214
+      ],
+      "sha256": "5746fc60d0e0a562bd8efefe9a2eb2ee7d0dbfb6e4fdd57e00ac8ddc382e2d98",
+      "kind": "word-crop",
+      "source_image": 6,
+      "box": [
+        878,
+        309,
+        1200,
+        523
+      ]
+    },
+    {
+      "file": "daimiao-stage-mobile.webp",
+      "size": [
+        309,
+        422
+      ],
+      "sha256": "52f7fd798054ee8acb2a8a672cff0c0b269c329f911360f53cc25455194ce01e",
+      "kind": "word-crop",
+      "source_image": 6,
+      "box": [
+        1261,
+        244,
+        1570,
+        666
+      ]
+    },
+    {
+      "file": "daimiao-stage.webp",
+      "size": [
+        845,
+        749
+      ],
+      "sha256": "8e6e309123e14bd49add964882edb327c02971126d6a611de53c0ae5bcaa1f11",
+      "kind": "word-crop",
+      "source_image": 6,
+      "box": [
+        24,
+        179,
+        869,
+        928
+      ]
+    },
+    {
+      "file": "feedback-already.webp",
+      "size": [
+        752,
+        363
+      ],
+      "sha256": "13c642ddafd5452890fd7b331f9e78fcc5d99af85dc82353de59bc295b36f5d8",
+      "kind": "word-crop",
+      "source_image": 29,
+      "box": [
+        30,
+        588,
+        782,
+        951
+      ]
+    },
+    {
+      "file": "feedback-camera-permission.webp",
+      "size": [
+        482,
+        337
+      ],
+      "sha256": "db5408748924faafd7e3e7fd4886d5e2c3c6b4389bcb63e893e3a88b790defdd",
+      "kind": "word-crop",
+      "source_image": 14,
+      "box": [
+        589,
+        623,
+        1071,
+        960
+      ]
+    },
+    {
+      "file": "feedback-empty.webp",
+      "size": [
+        765,
+        348
+      ],
+      "sha256": "b2ea59a9fb2a3edf5ae5458b4e5f018448acf5010872f52575864041a07199a1",
+      "kind": "word-crop",
+      "source_image": 30,
+      "box": [
+        801,
+        610,
+        1566,
+        958
+      ]
+    },
+    {
+      "file": "feedback-image-error.webp",
+      "size": [
+        765,
+        382
+      ],
+      "sha256": "38b2fda7c136b45345ad5793368cce6df4b8c92269986f198a0ec79a2cba8315",
+      "kind": "word-crop",
+      "source_image": 30,
+      "box": [
+        801,
+        158,
+        1566,
+        540
+      ]
+    },
+    {
+      "file": "feedback-mic-error.webp",
+      "size": [
+        465,
+        337
+      ],
+      "sha256": "b5210732e6cdbf38922a5cc8a913c1ba0b5e46651b58546df06207a02fd37092",
+      "kind": "word-crop",
+      "source_image": 14,
+      "box": [
+        1092,
+        623,
+        1557,
+        960
+      ]
+    },
+    {
+      "file": "feedback-save-error.webp",
+      "size": [
+        752,
+        363
+      ],
+      "sha256": "389967975a5e4e15f68be0654d26054580a7a93a4cb32bae97287f47c9ddd063",
+      "kind": "word-crop",
+      "source_image": 29,
+      "box": [
+        804,
+        588,
+        1556,
+        951
+      ]
+    },
+    {
+      "file": "feedback-saved.webp",
+      "size": [
+        752,
+        376
+      ],
+      "sha256": "0b9094121a3550b183bb16dcf229ca7c1281fd5b6e08512209ee0732faf28ae2",
+      "kind": "word-crop",
+      "source_image": 29,
+      "box": [
+        804,
+        194,
+        1556,
+        570
+      ]
+    },
+    {
+      "file": "feedback-saving.webp",
+      "size": [
+        752,
+        376
+      ],
+      "sha256": "d6eb47d3ef3a8c8f3ced5807695216ba51dabf4e0312f2b0aaa51c4593027fc8",
+      "kind": "word-crop",
+      "source_image": 29,
+      "box": [
+        30,
+        194,
+        782,
+        570
+      ]
+    },
+    {
+      "file": "feedback-scene-error.webp",
+      "size": [
+        465,
+        415
+      ],
+      "sha256": "b916c8a209af558d3e693b0c140d57662370df6b3a041a4616b882cb3feb78b1",
+      "kind": "word-crop",
+      "source_image": 14,
+      "box": [
+        1092,
+        186,
+        1557,
+        601
+      ]
+    },
+    {
+      "file": "feedback-scene-loading.webp",
+      "size": [
+        482,
+        415
+      ],
+      "sha256": "06c4643893865be53d6a1e76c4a4623bdb93668d888b32b578bdd15668dbb73a",
+      "kind": "word-crop",
+      "source_image": 14,
+      "box": [
+        589,
+        186,
+        1071,
+        601
+      ]
+    },
+    {
+      "file": "feedback-skeleton.webp",
+      "size": [
+        763,
+        349
+      ],
+      "sha256": "edb8b2064235eaadfeea132e969511136df662bae00c8e4dbdf35c99c354acd6",
+      "kind": "word-crop",
+      "source_image": 30,
+      "box": [
+        24,
+        610,
+        787,
+        959
+      ]
+    },
+    {
+      "file": "feedback-sound-choice.webp",
+      "size": [
+        535,
+        337
+      ],
+      "sha256": "25ece4de7db98cb2d580aa80274f424f53a74e2b937982f90afa930170b546ff",
+      "kind": "word-crop",
+      "source_image": 14,
+      "box": [
+        30,
+        623,
+        565,
+        960
+      ]
+    },
+    {
+      "file": "feedback-sunrise-loading.webp",
+      "size": [
+        535,
+        415
+      ],
+      "sha256": "14cbcdfcf68e8886e705f6512c5d831ab2467ba9406f7a9701a9e150ba57886d",
+      "kind": "word-crop",
+      "source_image": 14,
+      "box": [
+        30,
+        186,
+        565,
+        601
+      ]
+    },
+    {
+      "file": "feedback-vision-analyzing.webp",
+      "size": [
+        274,
+        345
+      ],
+      "sha256": "87f44fce98be7a4a51029893cc3e9aa20a1ab27ae5b811777e064fc6bdc1fbdd",
+      "kind": "word-crop",
+      "source_image": 26,
+      "box": [
+        352,
+        311,
+        626,
+        656
+      ]
+    },
+    {
+      "file": "feedback-vision-unknown.webp",
+      "size": [
+        261,
+        164
+      ],
+      "sha256": "3975af490747e5f226a034701efffa4a3651e367fdc3103c34d423b849c095bb",
+      "kind": "word-crop",
+      "source_image": 26,
+      "box": [
+        1293,
+        510,
+        1554,
+        674
+      ]
+    },
+    {
+      "file": "feedback-voice-avatar.webp",
+      "size": [
+        91,
+        91
+      ],
+      "sha256": "c1237b7b76f1e4eeb44d3371161963da32e7b205825f60a21876f8eca46ed9d7",
+      "kind": "word-crop",
+      "source_image": 25,
+      "box": [
+        750,
+        269,
+        841,
+        360
+      ]
+    },
+    {
+      "file": "feedback-voice-listening.webp",
+      "size": [
+        311,
+        198
+      ],
+      "sha256": "1a49ff42fda2cb4ee69c05cfd96626f3015cd7e8f08810a784062c17fcaaa2c2",
+      "kind": "word-crop",
+      "source_image": 25,
+      "box": [
+        639,
+        310,
+        950,
+        508
+      ]
+    },
+    {
+      "file": "gallery-art-0.webp",
+      "size": [
+        388,
+        405
+      ],
+      "sha256": "b25ddf13e932f90d2a21354891b9d9930f1e5e606f43100af6c559663104eda1",
+      "kind": "word-crop",
+      "source_image": 8,
+      "box": [
+        39,
+        448,
+        427,
+        853
+      ]
+    },
+    {
+      "file": "gallery-art-1.webp",
+      "size": [
+        432,
+        170
+      ],
+      "sha256": "9072de69995eee011a27434d39fa00ea01f5cbaa9a5636dfe62d954704d6b137",
+      "kind": "word-crop",
+      "source_image": 8,
+      "box": [
+        440,
+        448,
+        872,
+        618
+      ]
+    },
+    {
+      "file": "gallery-art-2.webp",
+      "size": [
+        333,
+        170
+      ],
+      "sha256": "04b8a18d24b3ef57cc66e8388d7a559e08cc05e8029ba243b406bce19a30a556",
+      "kind": "word-crop",
+      "source_image": 8,
+      "box": [
+        886,
+        448,
+        1219,
+        618
+      ]
+    },
+    {
+      "file": "gallery-art-3.webp",
+      "size": [
+        386,
+        172
+      ],
+      "sha256": "e1ebc729fc01d3880e824b88aacbd6f579b7450f6ddf640215dc6e3fd275b404",
+      "kind": "word-crop",
+      "source_image": 8,
+      "box": [
+        440,
+        686,
+        826,
+        858
+      ]
+    },
+    {
+      "file": "gallery-art-4.webp",
+      "size": [
+        380,
+        172
+      ],
+      "sha256": "2f7f36afefa4a9a509acb660aa54548e21e1ce569262197b5a2743599ef81ccf",
+      "kind": "word-crop",
+      "source_image": 8,
+      "box": [
+        839,
+        686,
+        1219,
+        858
+      ]
+    },
+    {
+      "file": "gallery-desktop.webp",
+      "size": [
+        1211,
+        749
+      ],
+      "sha256": "851fb34bab113f673ff46315de627aeb2ace180e1688836ca1107d1920eb72a9",
+      "kind": "word-crop",
+      "source_image": 8,
+      "box": [
+        24,
+        179,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "gallery-hero-full.webp",
+      "size": [
+        1211,
+        269
+      ],
+      "sha256": "24d573ecbd98fd202f020d8a52373548cedf37e7755a796ff8e8654d82f06dd6",
+      "kind": "word-crop",
+      "source_image": 8,
+      "box": [
+        24,
+        179,
+        1235,
+        448
+      ]
+    },
+    {
+      "file": "gallery-hero-mobile.webp",
+      "size": [
+        309,
+        146
+      ],
+      "sha256": "68044b2c850cf54e28a614ea7c06f4b22168a6e86ec1c2fad8aefe54dfd27d3b",
+      "kind": "word-crop",
+      "source_image": 8,
+      "box": [
+        1261,
+        204,
+        1570,
+        350
+      ]
+    },
+    {
+      "file": "gallery-hero.webp",
+      "size": [
+        1211,
+        181
+      ],
+      "sha256": "4556235eb05b38d93f99ac93bf7cf3fe1fa7dacaa6e284b000bf9099446d272a",
+      "kind": "word-crop",
+      "source_image": 8,
+      "box": [
+        24,
+        179,
+        1235,
+        360
+      ]
+    },
+    {
+      "file": "gallery-tile-0-mobile.webp",
+      "size": [
+        293,
+        321
+      ],
+      "sha256": "673458dd954dceaf5f777fae0f1b6d19c97a05e9fd3a8cd0e723ac48f7c293b3",
+      "kind": "word-crop",
+      "source_image": 8,
+      "box": [
+        1270,
+        350,
+        1563,
+        671
+      ]
+    },
+    {
+      "file": "gallery-tile-0.webp",
+      "size": [
+        388,
+        465
+      ],
+      "sha256": "583009b3c2ce29c1cd7dbfb087d9f16ede8dc30b436f2446303152b75868890b",
+      "kind": "word-crop",
+      "source_image": 8,
+      "box": [
+        39,
+        448,
+        427,
+        913
+      ]
+    },
+    {
+      "file": "gallery-tile-1-mobile.webp",
+      "size": [
+        293,
+        170
+      ],
+      "sha256": "aea8d1ded54bd4ee488972af37c934bbf961c9c84a5cefba0f35c0e299cbbf53",
+      "kind": "word-crop",
+      "source_image": 8,
+      "box": [
+        1270,
+        681,
+        1563,
+        851
+      ]
+    },
+    {
+      "file": "gallery-tile-1.webp",
+      "size": [
+        432,
+        226
+      ],
+      "sha256": "88d7f811a80d95d4476db9a9b17ad7dd7ceca552388b12648e8e18d3c886a464",
+      "kind": "word-crop",
+      "source_image": 8,
+      "box": [
+        440,
+        448,
+        872,
+        674
+      ]
+    },
+    {
+      "file": "gallery-tile-2.webp",
+      "size": [
+        333,
+        226
+      ],
+      "sha256": "ea94eab83491643d65b36ce825d8ebf0d56dde957574d08186fdbf8e5c9b9896",
+      "kind": "word-crop",
+      "source_image": 8,
+      "box": [
+        886,
+        448,
+        1219,
+        674
+      ]
+    },
+    {
+      "file": "gallery-tile-3.webp",
+      "size": [
+        386,
+        227
+      ],
+      "sha256": "5ef05d05e594bab194cdb6ddd691ac75e68574f2d54ed5c3f5b329dd3bcf15ce",
+      "kind": "word-crop",
+      "source_image": 8,
+      "box": [
+        440,
+        686,
+        826,
+        913
+      ]
+    },
+    {
+      "file": "gallery-tile-4.webp",
+      "size": [
+        380,
+        227
+      ],
+      "sha256": "33c68238b97f807032b1812e3465f33932a6deb43da7867a254174f5b063bc4c",
+      "kind": "word-crop",
+      "source_image": 8,
+      "box": [
+        839,
+        686,
+        1219,
+        913
+      ]
+    },
+    {
+      "file": "guide-avatar-orb.webp",
+      "size": [
+        97,
+        83
+      ],
+      "sha256": "db959264d6dabed5d7a7fb068e964fe21e90558d9d1f1978744ebed704b17c5d",
+      "kind": "word-crop",
+      "source_image": 22,
+      "box": [
+        1130,
+        769,
+        1227,
+        852
+      ]
+    },
+    {
+      "file": "guide-avatar.webp",
+      "size": [
+        72,
+        70
+      ],
+      "sha256": "8fb950d77c1ddcf4d7e94131f5f1a953949d295de6c3b46594623a63bf273ebb",
+      "kind": "word-crop",
+      "source_image": 22,
+      "box": [
+        454,
+        498,
+        526,
+        568
+      ]
+    },
+    {
+      "file": "guide-clean.webp",
+      "size": [
+        915,
+        749
+      ],
+      "sha256": "f370683b3493b8dc152ffefe20328f54005b5d0cd5efcb80eeb7a46653077889",
+      "kind": "derived-backdrop",
+      "source_image": 22,
+      "generated_source": "guide-erased-source.png",
+      "patches": [
+        [
+          44,
+          60,
+          443,
+          145
+        ],
+        [
+          44,
+          143,
+          276,
+          203
+        ],
+        [
+          569,
+          235,
+          890,
+          314
+        ],
+        [
+          124,
+          313,
+          614,
+          401
+        ],
+        [
+          202,
+          392,
+          811,
+          558
+        ],
+        [
+          200,
+          567,
+          500,
+          626
+        ],
+        [
+          802,
+          591,
+          915,
+          680
+        ],
+        [
+          20,
+          665,
+          899,
+          744
+        ]
+      ],
+      "feather_radius": 3
+    },
+    {
+      "file": "guide-context-hongmen.webp",
+      "size": [
+        201,
+        42
+      ],
+      "sha256": "3ee6695fabc3e9bdd8a5738da335ed9b5e8178a9089f52fe6061589e22a0404c",
+      "kind": "word-crop",
+      "source_image": 22,
+      "box": [
+        382,
+        330,
+        583,
+        372
+      ]
+    },
+    {
+      "file": "guide-erased-source.png",
+      "size": [
+        1386,
+        1135
+      ],
+      "sha256": "4d79fa8d40050ba1433b9fc1c1502017d9843538448d4a56fa57001e2c6c6a2e",
+      "kind": "generated-ui-removal-source",
+      "source_image": 22,
+      "purpose": "Only fill areas behind movable native controls; original visible art is retained outside the listed patches."
+    },
+    {
+      "file": "guide-hongmen-background.webp",
+      "size": [
+        915,
+        749
+      ],
+      "sha256": "3d01282efe2464fe4123e28ac1478723919c3031e3e7ef26e6cd6d58b0b87fea",
+      "kind": "word-crop",
+      "source_image": 22,
+      "box": [
+        320,
+        179,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "guide-initial-answer.webp",
+      "size": [
+        467,
+        73
+      ],
+      "sha256": "1822a94214c8c85abb93842d0acb9b381d30a14c9580a29774c3ca10538a556e",
+      "kind": "word-crop",
+      "source_image": 22,
+      "box": [
+        454,
+        498,
+        921,
+        571
+      ]
+    },
+    {
+      "file": "guide-mobile-actions.webp",
+      "size": [
+        309,
+        61
+      ],
+      "sha256": "dd4e2f733e58bd2243df7d75e343480fde0001475460cd58ff47d9b013f3349f",
+      "kind": "word-crop",
+      "source_image": 22,
+      "box": [
+        1261,
+        724,
+        1570,
+        785
+      ]
+    },
+    {
+      "file": "guide-mobile-answer.webp",
+      "size": [
+        309,
+        76
+      ],
+      "sha256": "794fb0b71f8217eedb03d554fa542623738ba291db1361f53f5b56181bf4bef1",
+      "kind": "word-crop",
+      "source_image": 22,
+      "box": [
+        1261,
+        509,
+        1570,
+        585
+      ]
+    },
+    {
+      "file": "guide-mobile-composer.webp",
+      "size": [
+        309,
+        72
+      ],
+      "sha256": "b8da6f6d107a89005fe5254542b4c0abbbd5eac2ca0c2d678cf6effba5abda44",
+      "kind": "word-crop",
+      "source_image": 22,
+      "box": [
+        1261,
+        785,
+        1570,
+        857
+      ]
+    },
+    {
+      "file": "guide-mobile-related.webp",
+      "size": [
+        309,
+        139
+      ],
+      "sha256": "f59349ec8eea225fe35a68d62ccbf988f15c51e16b433977bfc982861e1b4d83",
+      "kind": "word-crop",
+      "source_image": 22,
+      "box": [
+        1261,
+        585,
+        1570,
+        724
+      ]
+    },
+    {
+      "file": "guide-mobile-starter.webp",
+      "size": [
+        309,
+        57
+      ],
+      "sha256": "a18875bd662ed0ee1283e1860dbc977bdf892a9652c2f127abb7281d053696d4",
+      "kind": "word-crop",
+      "source_image": 22,
+      "box": [
+        1261,
+        452,
+        1570,
+        509
+      ]
+    },
+    {
+      "file": "guide-mobile-top.webp",
+      "size": [
+        309,
+        208
+      ],
+      "sha256": "1d053f7650df7c734a39ac81d50a7b81e41ff0b547d2aaec068baa79282b5bce",
+      "kind": "word-crop",
+      "source_image": 22,
+      "box": [
+        1261,
+        244,
+        1570,
+        452
+      ]
+    },
+    {
+      "file": "guide-photo.webp",
+      "size": [
+        192,
+        124
+      ],
+      "sha256": "3645e3a8daf5ec2a9b862444d30bc619a36b0ca168d04bab8df6165aac8e221d",
+      "kind": "word-crop",
+      "source_image": 22,
+      "box": [
+        548,
+        592,
+        740,
+        716
+      ]
+    },
+    {
+      "file": "guide-related-card.webp",
+      "size": [
+        596,
+        155
+      ],
+      "sha256": "214a3e8a4e5894c2fe5fd6c2234aec51c629e5b99e259af9718304faba59f5b0",
+      "kind": "word-crop",
+      "source_image": 22,
+      "box": [
+        528,
+        576,
+        1124,
+        731
+      ]
+    },
+    {
+      "file": "guide-sidebar-landscape.webp",
+      "size": [
+        296,
+        248
+      ],
+      "sha256": "1e2d895eef19dc4684c6c28fa5f0254c69a4dfa091b30704f2c74a18cdbc1f4b",
+      "kind": "word-crop",
+      "source_image": 22,
+      "box": [
+        24,
+        680,
+        320,
+        928
+      ]
+    },
+    {
+      "file": "guide-sidebar.webp",
+      "size": [
+        296,
+        749
+      ],
+      "sha256": "a51a0e6920a50efa3d670160222b562d112188d09db85f6c0fd7092b81d27c78",
+      "kind": "word-crop",
+      "source_image": 22,
+      "box": [
+        24,
+        179,
+        320,
+        928
+      ]
+    },
+    {
+      "file": "guide-starter.webp",
+      "size": [
+        310,
+        70
+      ],
+      "sha256": "5d1e90805d665e079cfc99cefd10830a071fd1801efdde09e52bae198f9ca4df",
+      "kind": "word-crop",
+      "source_image": 22,
+      "box": [
+        895,
+        418,
+        1205,
+        488
+      ]
+    },
+    {
+      "file": "guide-title.webp",
+      "size": [
+        385,
+        76
+      ],
+      "sha256": "b46d05ca0ce83677657616e83c502bd5513f5ab47e29e4efb140097916bd937a",
+      "kind": "word-crop",
+      "source_image": 22,
+      "box": [
+        370,
+        244,
+        755,
+        320
+      ]
+    },
+    {
+      "file": "handbook-art-desktop-v2.webp",
+      "size": [
+        2170,
+        725
+      ],
+      "sha256": "46b25220b47a2c3b5d70fb3771157e0ca6fd38ec91633075f96c5ac7641cb9ee",
+      "kind": "generated-ui-removal-background",
+      "source_image": 27,
+      "source_asset": "handbook-hero.webp",
+      "generated_source": "docs/integration/ui-clarity-20261018/sources/handbook-desktop-clean-v2.png",
+      "composition": "continuous landscape without journal UI"
+    },
+    {
+      "file": "handbook-art-mobile-v2.webp",
+      "size": [
+        1167,
+        1348
+      ],
+      "sha256": "7db04559e6029f9a88a515aa59efd78339f438da1813d7741da5490313063432",
+      "kind": "generated-ui-removal-background",
+      "source_image": 27,
+      "source_asset": "handbook-hero-mobile.webp",
+      "generated_source": "docs/integration/ui-clarity-20261018/sources/handbook-mobile-clean-v2.png",
+      "composition": "continuous landscape without journal UI"
+    },
+    {
+      "file": "handbook-continue-mobile.webp",
+      "size": [
+        293,
+        119
+      ],
+      "sha256": "4467b45e7734e2e74a64cfd31e775d6b6e498b428f825a6cad0032dd090cc7eb",
+      "kind": "word-crop",
+      "source_image": 27,
+      "box": [
+        1269,
+        429,
+        1562,
+        548
+      ]
+    },
+    {
+      "file": "handbook-continue.webp",
+      "size": [
+        402,
+        188
+      ],
+      "sha256": "d9bada2d760357c284cbc6c9b405383f154c9371097cfa65004a4cb1a159bd6b",
+      "kind": "word-crop",
+      "source_image": 27,
+      "box": [
+        802,
+        286,
+        1204,
+        474
+      ]
+    },
+    {
+      "file": "handbook-girl-v2.webp",
+      "size": [
+        512,
+        768
+      ],
+      "sha256": "49456faf3ff0afab8215fc613e0670b4bddb6627b0e592e58ffe2f98f3f0fce8",
+      "kind": "generated-character-isolation",
+      "source_image": 27,
+      "generated_source": "docs/integration/ui-clarity-20261018/sources/handbook-girl-v2.png",
+      "transparent": true
+    },
+    {
+      "file": "handbook-hero-mobile.webp",
+      "size": [
+        309,
+        357
+      ],
+      "sha256": "8c10b55aa58091c3cc5c920e9105fefe3b3878c8f0dce880763eeb0e69da014d",
+      "kind": "word-crop",
+      "source_image": 27,
+      "box": [
+        1261,
+        204,
+        1570,
+        561
+      ]
+    },
+    {
+      "file": "handbook-hero.webp",
+      "size": [
+        1211,
+        323
+      ],
+      "sha256": "6f1ad10d087ddd80d61509ea93333f92297b5912eb65af14efd34d97432cbe51",
+      "kind": "word-crop",
+      "source_image": 27,
+      "box": [
+        24,
+        179,
+        1235,
+        502
+      ]
+    },
+    {
+      "file": "header-agent-mobile.webp",
+      "size": [
+        309,
+        84
+      ],
+      "sha256": "cb19d7a74c8fad503b3094037eb4dd765640fd6f84425d6ab6c8e4380592fe5c",
+      "kind": "word-crop",
+      "source_image": 22,
+      "box": [
+        1261,
+        160,
+        1570,
+        244
+      ]
+    },
+    {
+      "file": "header-agent.webp",
+      "size": [
+        1211,
+        61
+      ],
+      "sha256": "ad8d92a8f6ff5ee2096d04d75d4085c0938d5d8c30e30bc7ca8cc91b5badb9ab",
+      "kind": "word-crop",
+      "source_image": 22,
+      "box": [
+        24,
+        118,
+        1235,
+        179
+      ]
+    },
+    {
+      "file": "header-cableway-mobile.webp",
+      "size": [
+        309,
+        44
+      ],
+      "sha256": "6e9dc83e0bf4cf1572cbf7c492c1a3f000ba212b81ecaa92720aad2f29d927ea",
+      "kind": "word-crop",
+      "source_image": 11,
+      "box": [
+        1261,
+        160,
+        1570,
+        204
+      ]
+    },
+    {
+      "file": "header-cableway.webp",
+      "size": [
+        1211,
+        61
+      ],
+      "sha256": "134478273a11e06d64bebbeb8c8668ee361b26c303cc7dd50151c8a34f88ffbc",
+      "kind": "word-crop",
+      "source_image": 11,
+      "box": [
+        24,
+        118,
+        1235,
+        179
+      ]
+    },
+    {
+      "file": "header-caishixi-mobile.webp",
+      "size": [
+        309,
+        44
+      ],
+      "sha256": "1f3742049498f8793cee2ba9d280c8eb7d03c4b923263cfc1d64f475fd7347f8",
+      "kind": "word-crop",
+      "source_image": 9,
+      "box": [
+        1261,
+        160,
+        1570,
+        204
+      ]
+    },
+    {
+      "file": "header-caishixi.webp",
+      "size": [
+        1211,
+        61
+      ],
+      "sha256": "d8eeb59636b94ccaeddfd16a7ed427d03fd9de2d487e73de0a43f246f294a7ec",
+      "kind": "word-crop",
+      "source_image": 9,
+      "box": [
+        24,
+        118,
+        1235,
+        179
+      ]
+    },
+    {
+      "file": "header-gallery-mobile.webp",
+      "size": [
+        309,
+        44
+      ],
+      "sha256": "657222b1f524b378e68afddeccd128c4451a02d95f6e3176207e5462be7c23fd",
+      "kind": "word-crop",
+      "source_image": 8,
+      "box": [
+        1261,
+        160,
+        1570,
+        204
+      ]
+    },
+    {
+      "file": "header-gallery.webp",
+      "size": [
+        1211,
+        61
+      ],
+      "sha256": "de45d7bf1c4e78e51f8b4312979bd3ebb6da922100e2f983e65ad9768b3bffe7",
+      "kind": "word-crop",
+      "source_image": 8,
+      "box": [
+        24,
+        118,
+        1235,
+        179
+      ]
+    },
+    {
+      "file": "header-history-mobile.webp",
+      "size": [
+        309,
+        44
+      ],
+      "sha256": "7fcced5c44bd24661df9c7353e4040a0ed4a9eb4f8187c2d1e2d503dfa9f50a0",
+      "kind": "word-crop",
+      "source_image": 17,
+      "box": [
+        1261,
+        160,
+        1570,
+        204
+      ]
+    },
+    {
+      "file": "header-history.webp",
+      "size": [
+        1211,
+        61
+      ],
+      "sha256": "8422dda843e60372253342119198dff9c836fbda849b4c84633d590b044e004b",
+      "kind": "word-crop",
+      "source_image": 17,
+      "box": [
+        24,
+        118,
+        1235,
+        179
+      ]
+    },
+    {
+      "file": "header-houshiwu-mobile.webp",
+      "size": [
+        309,
+        44
+      ],
+      "sha256": "ce25a088fa292f39a0f5da48cb273e5084ac193b02d358206a07067844ed9130",
+      "kind": "word-crop",
+      "source_image": 10,
+      "box": [
+        1261,
+        160,
+        1570,
+        204
+      ]
+    },
+    {
+      "file": "header-houshiwu.webp",
+      "size": [
+        1211,
+        61
+      ],
+      "sha256": "e57fc0f54cc947fca88a74a4615801bbcde1000e7e3306ec65c2599e5e1a0319",
+      "kind": "word-crop",
+      "source_image": 10,
+      "box": [
+        24,
+        118,
+        1235,
+        179
+      ]
+    },
+    {
+      "file": "header-map-mobile.webp",
+      "size": [
+        309,
+        44
+      ],
+      "sha256": "de96ddeb7a0cafd0e9173858e48079320fbbcaf826c4d68e93ae431c9f28252b",
+      "kind": "word-crop",
+      "source_image": 3,
+      "box": [
+        1261,
+        160,
+        1570,
+        204
+      ]
+    },
+    {
+      "file": "header-map.webp",
+      "size": [
+        1211,
+        61
+      ],
+      "sha256": "600201e03f0b660176a7ff2f4668d16f26d8d33f47efe7d21981cbe303edee00",
+      "kind": "word-crop",
+      "source_image": 3,
+      "box": [
+        24,
+        118,
+        1235,
+        179
+      ]
+    },
+    {
+      "file": "header-museum-mobile.webp",
+      "size": [
+        309,
+        44
+      ],
+      "sha256": "33a43c3d59b7ef0ca9c6dc7201b1ade133f04f00d3a6d88626e7b55d551a9a87",
+      "kind": "word-crop",
+      "source_image": 19,
+      "box": [
+        1261,
+        160,
+        1570,
+        204
+      ]
+    },
+    {
+      "file": "header-museum.webp",
+      "size": [
+        1211,
+        61
+      ],
+      "sha256": "1b6e4a244e7e4e523192b10bcf551e43505826ecfa94721d23f938b2991366a2",
+      "kind": "word-crop",
+      "source_image": 19,
+      "box": [
+        24,
+        118,
+        1235,
+        179
+      ]
+    },
+    {
+      "file": "header-paper.webp",
+      "size": [
+        130,
+        57
+      ],
+      "sha256": "20c0b934fe8f1520f07f564fbecee8b6e9a82b36d6f95475ed38c6721c4e1cd1",
+      "kind": "word-crop",
+      "source_image": 3,
+      "box": [
+        300,
+        120,
+        430,
+        177
+      ]
+    },
+    {
+      "file": "header-poetry-mobile.webp",
+      "size": [
+        309,
+        44
+      ],
+      "sha256": "4483412b933836927f6bb72eda21585cf06052f368f3db39240af5376814ab3a",
+      "kind": "word-crop",
+      "source_image": 18,
+      "box": [
+        1261,
+        160,
+        1570,
+        204
+      ]
+    },
+    {
+      "file": "header-poetry.webp",
+      "size": [
+        1211,
+        61
+      ],
+      "sha256": "f76a624c23ed874658030f799698e0cb450351d42ea699470dbd5ced61e5b935",
+      "kind": "word-crop",
+      "source_image": 18,
+      "box": [
+        24,
+        118,
+        1235,
+        179
+      ]
+    },
+    {
+      "file": "header-read-mobile.webp",
+      "size": [
+        309,
+        44
+      ],
+      "sha256": "258f013aff3d92c79c265fa13f87581709d55324b9d79db17acecdb2a9ca1145",
+      "kind": "word-crop",
+      "source_image": 16,
+      "box": [
+        1261,
+        160,
+        1570,
+        204
+      ]
+    },
+    {
+      "file": "header-read.webp",
+      "size": [
+        1211,
+        61
+      ],
+      "sha256": "0968f463aa6d746f3ff283686b80b562e22494159bb5a70a72fd67c6f3a9104b",
+      "kind": "word-crop",
+      "source_image": 16,
+      "box": [
+        24,
+        118,
+        1235,
+        179
+      ]
+    },
+    {
+      "file": "header-review-mobile.webp",
+      "size": [
+        309,
+        39
+      ],
+      "sha256": "754dd348d48c7e63c619a181d5ece2b9420b4d83ef036082edad23c460d38b82",
+      "kind": "word-crop",
+      "source_image": 12,
+      "box": [
+        1261,
+        160,
+        1570,
+        199
+      ]
+    },
+    {
+      "file": "header-review.webp",
+      "size": [
+        1211,
+        61
+      ],
+      "sha256": "3ad8dbf6532ab52107be3199bb1286b1da298405b79e19cb5e1aae65d4292779",
+      "kind": "word-crop",
+      "source_image": 12,
+      "box": [
+        24,
+        118,
+        1235,
+        179
+      ]
+    },
+    {
+      "file": "header-routes-mobile.webp",
+      "size": [
+        309,
+        84
+      ],
+      "sha256": "70f18df1e9414361a5f53b784801f03d541acabc0ad9274d973b384229388dc3",
+      "kind": "word-crop",
+      "source_image": 5,
+      "box": [
+        1261,
+        160,
+        1570,
+        244
+      ]
+    },
+    {
+      "file": "header-scene-mobile.webp",
+      "size": [
+        309,
+        84
+      ],
+      "sha256": "649d59dd46311ca480b372161070eaf8f1213051e7c3a183e6a430bf43f814b7",
+      "kind": "word-crop",
+      "source_image": 6,
+      "box": [
+        1261,
+        160,
+        1570,
+        244
+      ]
+    },
+    {
+      "file": "header-scene.webp",
+      "size": [
+        1211,
+        61
+      ],
+      "sha256": "a66c1cac012213b3a39fc1e97c84d2d33aa11f508dd6f375f26b40e076f0077a",
+      "kind": "word-crop",
+      "source_image": 6,
+      "box": [
+        24,
+        118,
+        1235,
+        179
+      ]
+    },
+    {
+      "file": "header-scenes-mobile.webp",
+      "size": [
+        309,
+        44
+      ],
+      "sha256": "bb96b0c63357ae27c7ac46964bcc2234760541809bb490cd90680fcf4652aa89",
+      "kind": "word-crop",
+      "source_image": 21,
+      "box": [
+        1261,
+        160,
+        1570,
+        204
+      ]
+    },
+    {
+      "file": "header-scenes.webp",
+      "size": [
+        1211,
+        61
+      ],
+      "sha256": "e7a9360862ae071fa67af89ed9b2128f38022a36cd7db0094b84863303c5cf61",
+      "kind": "word-crop",
+      "source_image": 21,
+      "box": [
+        24,
+        118,
+        1235,
+        179
+      ]
+    },
+    {
+      "file": "header-spot.webp",
+      "size": [
+        1211,
+        61
+      ],
+      "sha256": "64bee947b0d101f123932487044a53a959dd1fd5e09bddf081a2e83a869803f0",
+      "kind": "word-crop",
+      "source_image": 7,
+      "box": [
+        24,
+        118,
+        1235,
+        179
+      ]
+    },
+    {
+      "file": "header-study-mobile.webp",
+      "size": [
+        309,
+        44
+      ],
+      "sha256": "2f3e72d33b0280c4f834d7845fdb62efe01c8adfb2075214264de67f0a04dd25",
+      "kind": "word-crop",
+      "source_image": 20,
+      "box": [
+        1261,
+        160,
+        1570,
+        204
+      ]
+    },
+    {
+      "file": "header-study.webp",
+      "size": [
+        1211,
+        61
+      ],
+      "sha256": "e9108f026cc81f697b706c386c70ef057a1cef2c31a90585f8651983a21db524",
+      "kind": "word-crop",
+      "source_image": 20,
+      "box": [
+        24,
+        118,
+        1235,
+        179
+      ]
+    },
+    {
+      "file": "header-trail-mobile.webp",
+      "size": [
+        309,
+        44
+      ],
+      "sha256": "ec69da344f0ea10f87951f98e8319b1f6b9668bf7cef0d5d08f9adaa9cb6f21a",
+      "kind": "word-crop",
+      "source_image": 27,
+      "box": [
+        1261,
+        160,
+        1570,
+        204
+      ]
+    },
+    {
+      "file": "header-trail.webp",
+      "size": [
+        1211,
+        61
+      ],
+      "sha256": "bba8c5756316c794a47b9554717bef3e9203c88bc5dd290d2a19c752f3c2d850",
+      "kind": "word-crop",
+      "source_image": 27,
+      "box": [
+        24,
+        118,
+        1235,
+        179
+      ]
+    },
+    {
+      "file": "header-vision-mobile.webp",
+      "size": [
+        309,
+        44
+      ],
+      "sha256": "98d9af41574e1d9252229fb6ca80771ba444d156875524a868875831d8d3ebc3",
+      "kind": "word-crop",
+      "source_image": 23,
+      "box": [
+        1261,
+        160,
+        1570,
+        204
+      ]
+    },
+    {
+      "file": "header-vision.webp",
+      "size": [
+        1211,
+        61
+      ],
+      "sha256": "80cbfc90814035fef50dd624ceb2d30a83341acf654d8763a052ab99a4176fe6",
+      "kind": "word-crop",
+      "source_image": 23,
+      "box": [
+        24,
+        118,
+        1235,
+        179
+      ]
+    },
+    {
+      "file": "history-card-art.webp",
+      "size": [
+        227,
+        210
+      ],
+      "sha256": "b3f26a77322140dfcdc681e77cd943a7092a4d85e777830637217185a8ac7567",
+      "kind": "word-crop",
+      "source_image": 17,
+      "box": [
+        371,
+        459,
+        598,
+        669
+      ]
+    },
+    {
+      "file": "history-card-initial-mobile.webp",
+      "size": [
+        298,
+        215
+      ],
+      "sha256": "4977d301b378ce8a763f5166e6c4c329ea09d7e7c0823c14b0077c4faed8c4ad",
+      "kind": "word-crop",
+      "source_image": 17,
+      "box": [
+        1267,
+        564,
+        1565,
+        779
+      ]
+    },
+    {
+      "file": "history-card-initial.webp",
+      "size": [
+        548,
+        307
+      ],
+      "sha256": "1ef6ba7666435982878f7c725b2de24094c3c72eb4ef6bddab68ee5e865d6588",
+      "kind": "word-crop",
+      "source_image": 17,
+      "box": [
+        55,
+        450,
+        603,
+        757
+      ]
+    },
+    {
+      "file": "history-desktop.webp",
+      "size": [
+        1211,
+        749
+      ],
+      "sha256": "4708e286dc39711f82da106c10e8e94c11965dd50cbbea63528fce7e9dbd2617",
+      "kind": "word-crop",
+      "source_image": 17,
+      "box": [
+        24,
+        179,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "history-heading-mobile.webp",
+      "size": [
+        309,
+        111
+      ],
+      "sha256": "9e6f11b50d5a4f6ad6156251e228053eab06021ddadbc5c718f01cf355acc884",
+      "kind": "word-crop",
+      "source_image": 17,
+      "box": [
+        1261,
+        204,
+        1570,
+        315
+      ]
+    },
+    {
+      "file": "history-heading.webp",
+      "size": [
+        616,
+        174
+      ],
+      "sha256": "b980e349949c421d5e5d062b536e7101579646bc7867dab445b0d9bea974fa36",
+      "kind": "word-crop",
+      "source_image": 17,
+      "box": [
+        24,
+        179,
+        640,
+        353
+      ]
+    },
+    {
+      "file": "history-hero.webp",
+      "size": [
+        1211,
+        597
+      ],
+      "sha256": "402668413fec85bd37978fba8a962bcdfd6cd301b8ced718146082e13e6b8e53",
+      "kind": "word-crop",
+      "source_image": 17,
+      "box": [
+        24,
+        179,
+        1235,
+        776
+      ]
+    },
+    {
+      "file": "history-main-art.webp",
+      "size": [
+        622,
+        597
+      ],
+      "sha256": "daf8174158da6025a92bdea4b41ce881733f464ea224e2bcd140ce63bee647ba",
+      "kind": "word-crop",
+      "source_image": 17,
+      "box": [
+        613,
+        179,
+        1235,
+        776
+      ]
+    },
+    {
+      "file": "history-mountains-mobile.webp",
+      "size": [
+        309,
+        202
+      ],
+      "sha256": "848406e45b283f1509a5abb9916816e2b8d3ef5b8aa4766732e90b299922aec8",
+      "kind": "word-crop",
+      "source_image": 17,
+      "box": [
+        1261,
+        362,
+        1570,
+        564
+      ]
+    },
+    {
+      "file": "history-related.webp",
+      "size": [
+        1211,
+        149
+      ],
+      "sha256": "51e14d6ef5992c59f4ec8a7d0a58327d3304d85c172c762bed1af9199a8eb316",
+      "kind": "word-crop",
+      "source_image": 17,
+      "box": [
+        24,
+        779,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "hongmen-detail-desktop.webp",
+      "size": [
+        1211,
+        749
+      ],
+      "sha256": "c0d71476535bbc8709cc5cfa93bb3981dadb516635c206d0aef21af819fb5807",
+      "kind": "word-crop",
+      "source_image": 7,
+      "box": [
+        24,
+        179,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "hongmen-detail-mobile.webp",
+      "size": [
+        309,
+        665
+      ],
+      "sha256": "3d0b0b2c13763fbed4061e76e2a7e426d2f7c84ffffce493a31cda68542e1ca8",
+      "kind": "word-crop",
+      "source_image": 7,
+      "box": [
+        1261,
+        204,
+        1570,
+        869
+      ]
+    },
+    {
+      "file": "hongmen-highlight-0.webp",
+      "size": [
+        216,
+        118
+      ],
+      "sha256": "92121f0cedf72a7c3b1b0e09ae4b5a9f8203864f596a12db6b0305c2ec4597b8",
+      "kind": "word-crop",
+      "source_image": 7,
+      "box": [
+        546,
+        795,
+        762,
+        913
+      ]
+    },
+    {
+      "file": "hongmen-highlight-1.webp",
+      "size": [
+        213,
+        118
+      ],
+      "sha256": "8addb708106a123a98cc5d78f385ebc9478f3ce6a91a9afcc5ea8ca039128ed1",
+      "kind": "word-crop",
+      "source_image": 7,
+      "box": [
+        772,
+        795,
+        985,
+        913
+      ]
+    },
+    {
+      "file": "hongmen-highlight-2.webp",
+      "size": [
+        221,
+        118
+      ],
+      "sha256": "87f1ace43ea121886c574fab6721582b1129a2e12978720a56d76c098e95766a",
+      "kind": "word-crop",
+      "source_image": 7,
+      "box": [
+        995,
+        795,
+        1216,
+        913
+      ]
+    },
+    {
+      "file": "hongmen-lower-paper.webp",
+      "size": [
+        1211,
+        186
+      ],
+      "sha256": "a314fc98b9b8cf203b34790ab73c2ac9ce496d9258a40c723a483f40ea1e23ba",
+      "kind": "word-crop",
+      "source_image": 7,
+      "box": [
+        24,
+        742,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "hongmen-title.webp",
+      "size": [
+        113,
+        45
+      ],
+      "sha256": "c1ff6de768e03cdea2c407f375298134f26679988bddcd07cae929d4b8208794",
+      "kind": "word-crop",
+      "source_image": 7,
+      "box": [
+        972,
+        249,
+        1085,
+        294
+      ]
+    },
+    {
+      "file": "houshiwu-desktop.webp",
+      "size": [
+        1211,
+        749
+      ],
+      "sha256": "862096bffed0452243541cda5d07d5e188f0f5131926cb5a0f92a72251c6cb2a",
+      "kind": "word-crop",
+      "source_image": 10,
+      "box": [
+        24,
+        179,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "houshiwu-mobile.webp",
+      "size": [
+        309,
+        647
+      ],
+      "sha256": "44561867bc41806f05271fad4f0420aedef274d73a1b7045c6f594c0a55a167c",
+      "kind": "word-crop",
+      "source_image": 10,
+      "box": [
+        1261,
+        204,
+        1570,
+        851
+      ]
+    },
+    {
+      "file": "map-art-desktop-v2.webp",
+      "size": [
+        1595,
+        986
+      ],
+      "sha256": "df0136de2eb7a627b79a2a294c13641b1efdae8385577d66c471894e8accaef2",
+      "kind": "generated-ui-removal-background",
+      "source_image": 3,
+      "source_asset": "map-desktop.webp",
+      "generated_source": "docs/integration/ui-clarity-20261018/sources/map-desktop-clean-v2.png",
+      "composition": "one continuous image; no pasted patches or UI labels"
+    },
+    {
+      "file": "map-art-mobile-v2.webp",
+      "size": [
+        868,
+        1812
+      ],
+      "sha256": "64396105cab984c1d3e99290c50e9f6d20d379283d2619220f82445ff2ed1d2b",
+      "kind": "generated-ui-removal-background",
+      "source_image": 3,
+      "source_asset": "map-mobile.webp",
+      "generated_source": "docs/integration/ui-clarity-20261018/sources/map-mobile-clean-v2.png",
+      "composition": "one continuous image; no pasted patches or UI labels"
+    },
+    {
+      "file": "map-clean-desktop.webp",
+      "size": [
+        1211,
+        749
+      ],
+      "sha256": "b7443cbc8470bf887a77b1c7f3d8df13141699415a73c8051739d712f4c0a088",
+      "kind": "legacy-derived-backdrop",
+      "source_image": 3,
+      "generated_source": "map-erased-source.webp",
+      "patches": [
+        [
+          15,
+          25,
+          327,
+          223
+        ],
+        [
+          921,
+          552,
+          1199,
+          646
+        ],
+        [
+          1017,
+          650,
+          1199,
+          737
+        ]
+      ],
+      "deprecated": true,
+      "replacement": "map-art-desktop-v2.webp"
+    },
+    {
+      "file": "map-clean-mobile.webp",
+      "size": [
+        309,
+        645
+      ],
+      "sha256": "750f7f2373107c087041b6978bfe0fac8c25deb76b26718b166a5340e0449bef",
+      "kind": "legacy-derived-backdrop",
+      "source_image": 3,
+      "generated_source": "map-erased-source.webp",
+      "patches": [
+        [
+          8,
+          2,
+          299,
+          136
+        ],
+        [
+          9,
+          549,
+          299,
+          645
+        ],
+        [
+          238,
+          461,
+          309,
+          546
+        ]
+      ],
+      "deprecated": true,
+      "replacement": "map-art-mobile-v2.webp"
+    },
+    {
+      "file": "map-desktop.webp",
+      "size": [
+        1211,
+        749
+      ],
+      "sha256": "cfb23c33cedac7f470915a1770bc9d2c270a438c71c3efb33c8756baf29ccdf3",
+      "kind": "word-crop",
+      "source_image": 3,
+      "box": [
+        24,
+        179,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "map-erased-source.webp",
+      "size": [
+        1595,
+        986
+      ],
+      "sha256": "4fb28c526909772f3701972779d197d1d98be15668a6ca1e052df458e1a48fcd",
+      "kind": "generated-ui-removal-source",
+      "source_image": 3,
+      "purpose": "Only fill areas behind movable native controls; original visible art is retained outside the listed patches."
+    },
+    {
+      "file": "map-hud-goal-mobile.webp",
+      "size": [
+        291,
+        134
+      ],
+      "sha256": "4788590d2e1f57c74849d99d3319ca0cf655e95159b5f73a1f10d87a1b2e5723",
+      "kind": "word-crop",
+      "source_image": 3,
+      "box": [
+        1269,
+        206,
+        1560,
+        340
+      ]
+    },
+    {
+      "file": "map-hud-goal.webp",
+      "size": [
+        312,
+        198
+      ],
+      "sha256": "1e696aa540f3ab8e5343c0ca86ecbf8043fde2cc0681d6bd37fa95a697d2652d",
+      "kind": "word-crop",
+      "source_image": 3,
+      "box": [
+        39,
+        204,
+        351,
+        402
+      ]
+    },
+    {
+      "file": "map-hud-guide-mobile.webp",
+      "size": [
+        71,
+        85
+      ],
+      "sha256": "a867236ee8db7f1cbe0f8bfde0a97b664492e57da012a8e07684a7691d7d479e",
+      "kind": "word-crop",
+      "source_image": 3,
+      "box": [
+        1499,
+        665,
+        1570,
+        750
+      ]
+    },
+    {
+      "file": "map-hud-guide.webp",
+      "size": [
+        182,
+        87
+      ],
+      "sha256": "ffde7275ff530d971242004d17e22c92bf0d8e73ad0a1480a5b2eda948757882",
+      "kind": "word-crop",
+      "source_image": 3,
+      "box": [
+        1041,
+        829,
+        1223,
+        916
+      ]
+    },
+    {
+      "file": "map-hud-search-mobile.webp",
+      "size": [
+        290,
+        96
+      ],
+      "sha256": "f965b871d7d19b170a058a0d7cf44b7dad74efccca395a78c26825f9d63c280c",
+      "kind": "word-crop",
+      "source_image": 3,
+      "box": [
+        1270,
+        753,
+        1560,
+        849
+      ]
+    },
+    {
+      "file": "map-hud-search.webp",
+      "size": [
+        278,
+        94
+      ],
+      "sha256": "902f8d4a9e6327bd81c44428149db8eeb42e1c7933c5fb3bd807ca23f7bf2523",
+      "kind": "word-crop",
+      "source_image": 3,
+      "box": [
+        945,
+        731,
+        1223,
+        825
+      ]
+    },
+    {
+      "file": "map-mobile.webp",
+      "size": [
+        309,
+        645
+      ],
+      "sha256": "79b6144123016de65c714ec1730ebb819f867e9a5ae38a02bc1458c60fb8c617",
+      "kind": "word-crop",
+      "source_image": 3,
+      "box": [
+        1261,
+        204,
+        1570,
+        849
+      ]
+    },
+    {
+      "file": "museum-art-clean-v2.webp",
+      "size": [
+        583,
+        510
+      ],
+      "sha256": "0d49706d928152013f7b158b854eae49bbf7015c584e6731b93b92547630a06d",
+      "kind": "derived-word-crop",
+      "source_asset": "museum-art.webp",
+      "box": [
+        0,
+        0,
+        583,
+        510
+      ]
+    },
+    {
+      "file": "museum-art.webp",
+      "size": [
+        583,
+        571
+      ],
+      "sha256": "b679435f10ecb5b5e08d255905ee75c2f43ac2b6cedeeb6592bdc8fc6ef77ac5",
+      "kind": "word-crop",
+      "source_image": 19,
+      "box": [
+        262,
+        208,
+        845,
+        779
+      ]
+    },
+    {
+      "file": "museum-desktop.webp",
+      "size": [
+        1211,
+        749
+      ],
+      "sha256": "6764b574735125113616d92439eb3b08260b2db83e3290aceec4352a6ed0dd5a",
+      "kind": "word-crop",
+      "source_image": 19,
+      "box": [
+        24,
+        179,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "museum-detail-1.webp",
+      "size": [
+        420,
+        480
+      ],
+      "sha256": "c798aabe4354ecd3617b66a0b1339d21916979199c636ac951b524f1ce8e2456",
+      "kind": "word-crop",
+      "source_image": 19,
+      "box": [
+        322,
+        208,
+        742,
+        688
+      ]
+    },
+    {
+      "file": "museum-detail-2.webp",
+      "size": [
+        350,
+        350
+      ],
+      "sha256": "f1a41e7050370af2a9a80003bed7c3ebb0cb22a793723477ab07c3a15fc88bd0",
+      "kind": "word-crop",
+      "source_image": 19,
+      "box": [
+        352,
+        298,
+        702,
+        648
+      ]
+    },
+    {
+      "file": "museum-detail-3.webp",
+      "size": [
+        300,
+        370
+      ],
+      "sha256": "3a442461f596194ec79608ed0ab4d5102ddafc6e6ece2a5574e76d594ded051b",
+      "kind": "word-crop",
+      "source_image": 19,
+      "box": [
+        442,
+        388,
+        742,
+        758
+      ]
+    },
+    {
+      "file": "museum-detail-4.webp",
+      "size": [
+        350,
+        411
+      ],
+      "sha256": "432320328e5bd50a4dc27a72ffd1076b7c051ab957672407ffe1581f8e29db3a",
+      "kind": "word-crop",
+      "source_image": 19,
+      "box": [
+        262,
+        368,
+        612,
+        779
+      ]
+    },
+    {
+      "file": "museum-inspector-mobile.webp",
+      "size": [
+        309,
+        218
+      ],
+      "sha256": "35a49af1071370c24cc0419759666e8bcdc605535ed50bc272b9cea7338e56b3",
+      "kind": "word-crop",
+      "source_image": 19,
+      "box": [
+        1261,
+        667,
+        1570,
+        885
+      ]
+    },
+    {
+      "file": "museum-inspector.webp",
+      "size": [
+        361,
+        723
+      ],
+      "sha256": "9c3f3175d82e76264fa49b523bc6c713c5410236ea85c243e66ca28ef2da29d7",
+      "kind": "word-crop",
+      "source_image": 19,
+      "box": [
+        860,
+        205,
+        1221,
+        928
+      ]
+    },
+    {
+      "file": "museum-mobile-art.webp",
+      "size": [
+        291,
+        286
+      ],
+      "sha256": "251d7826cdfb7473416a7e2f02253f525020ef7e460be4c03b6d33664de595e1",
+      "kind": "word-crop",
+      "source_image": 19,
+      "box": [
+        1267,
+        329,
+        1558,
+        615
+      ]
+    },
+    {
+      "file": "museum-mobile-title.webp",
+      "size": [
+        309,
+        81
+      ],
+      "sha256": "49dc9599a5cd52d73ce27420be23cebfc6dfe9a26ff27e1ef616c76009447c0f",
+      "kind": "word-crop",
+      "source_image": 19,
+      "box": [
+        1261,
+        204,
+        1570,
+        285
+      ]
+    },
+    {
+      "file": "museum-nav-art-v2.webp",
+      "size": [
+        210,
+        362
+      ],
+      "sha256": "4235fb6291eaa3a34ceddc026f530420505c86f0d9d4231dd79c3d88cb77bd21",
+      "kind": "derived-word-crop",
+      "source_asset": "museum-nav.webp",
+      "box": [
+        0,
+        362,
+        210,
+        724
+      ]
+    },
+    {
+      "file": "museum-nav-mobile.webp",
+      "size": [
+        309,
+        48
+      ],
+      "sha256": "76ab3b18056f16c42d097f77ac6891f162d1a4a47c352c1734998a2b5b41bdca",
+      "kind": "word-crop",
+      "source_image": 19,
+      "box": [
+        1261,
+        204,
+        1570,
+        252
+      ]
+    },
+    {
+      "file": "museum-nav.webp",
+      "size": [
+        210,
+        724
+      ],
+      "sha256": "3e8864271fc5f6b726b7d10af6dd8bd199f8bacacc95e3de750abc4022ed5278",
+      "kind": "word-crop",
+      "source_image": 19,
+      "box": [
+        36,
+        204,
+        246,
+        928
+      ]
+    },
+    {
+      "file": "museum-sidebar-art.webp",
+      "size": [
+        209,
+        427
+      ],
+      "sha256": "0b1f95469a1c2a4d47b2db30b6802bebf3e96cce5c60193ee1e3d9221ac9cdc3",
+      "kind": "word-crop",
+      "source_image": 19,
+      "box": [
+        34,
+        500,
+        243,
+        927
+      ]
+    },
+    {
+      "file": "museum-thumb-0.webp",
+      "size": [
+        109,
+        65
+      ],
+      "sha256": "60e60b499bcfad3ad98cf562de481bec01403a8e7e38c89a8084f920b2134b2c",
+      "kind": "word-crop",
+      "source_image": 19,
+      "box": [
+        317,
+        793,
+        426,
+        858
+      ]
+    },
+    {
+      "file": "museum-thumb-1.webp",
+      "size": [
+        100,
+        65
+      ],
+      "sha256": "d605f6b500a788570218a3b79f0cdc98b476c55e6e1fffa247b3424171a5243c",
+      "kind": "word-crop",
+      "source_image": 19,
+      "box": [
+        436,
+        793,
+        536,
+        858
+      ]
+    },
+    {
+      "file": "museum-thumb-2.webp",
+      "size": [
+        95,
+        65
+      ],
+      "sha256": "e03e048c9f06eba1ef69647ebeeea328311a6c4faab34ca3c50e1375a790350d",
+      "kind": "word-crop",
+      "source_image": 19,
+      "box": [
+        546,
+        793,
+        641,
+        858
+      ]
+    },
+    {
+      "file": "museum-thumb-3.webp",
+      "size": [
+        90,
+        65
+      ],
+      "sha256": "8615b5c4119d5a4316a1dcafeff7d24c085723401aa08ce62f77b6a4f6a0f44e",
+      "kind": "word-crop",
+      "source_image": 19,
+      "box": [
+        651,
+        793,
+        741,
+        858
+      ]
+    },
+    {
+      "file": "museum-thumb-4.webp",
+      "size": [
+        52,
+        65
+      ],
+      "sha256": "32e452ac8312d7cfb9f849de8993cecf0126c2534162d9f4448cb56303165699",
+      "kind": "word-crop",
+      "source_image": 19,
+      "box": [
+        751,
+        793,
+        803,
+        858
+      ]
+    },
+    {
+      "file": "museum-thumbs-desktop.webp",
+      "source_image": 19,
+      "box": [
+        262,
+        785,
+        845,
+        864
+      ],
+      "kind": "word-crop",
+      "size": [
+        583,
+        79
+      ],
+      "sha256": "af51df1d5c1e74e3817f9f1799af5caeaa72c54327c8a47e288f4f01a478f046"
+    },
+    {
+      "file": "museum-thumbs-mobile.webp",
+      "source_image": 19,
+      "box": [
+        1261,
+        615,
+        1570,
+        667
+      ],
+      "kind": "word-crop",
+      "size": [
+        309,
+        52
+      ],
+      "sha256": "6bfc2222c2fe2d89d7749f9e6521ad74e62edbd8ff6c74cfdc554a5515b0740b"
+    },
+    {
+      "file": "nantian-detail.webp",
+      "size": [
+        516,
+        327
+      ],
+      "sha256": "f06e850d6bc39804ba7922396eff1b06bd5df019075d15a967fc47162b08bbdb",
+      "kind": "word-crop",
+      "source_image": 13,
+      "box": [
+        1025,
+        618,
+        1541,
+        945
+      ]
+    },
+    {
+      "file": "nantian-dialogue.webp",
+      "size": [
+        723,
+        145
+      ],
+      "sha256": "9f53cd14c2718ca8f80ce37b9342d389c70e21503f654756e75fb752d556baef",
+      "kind": "word-crop",
+      "source_image": 13,
+      "box": [
+        41,
+        800,
+        764,
+        945
+      ]
+    },
+    {
+      "file": "nantian-observe.webp",
+      "size": [
+        754,
+        302
+      ],
+      "sha256": "f0638ad584b9c999862dad160384712c1407713ce9a12dc0353cd45726c60e2f",
+      "kind": "word-crop",
+      "source_image": 13,
+      "box": [
+        27,
+        230,
+        781,
+        532
+      ]
+    },
+    {
+      "file": "nantian-observed.webp",
+      "size": [
+        753,
+        302
+      ],
+      "sha256": "14864630ba4faadcd6dfc1d420473f6e07b3d5f9bc781c91fcedde704e50b1a3",
+      "kind": "word-crop",
+      "source_image": 13,
+      "box": [
+        808,
+        230,
+        1561,
+        532
+      ]
+    },
+    {
+      "file": "poetry-desktop.webp",
+      "size": [
+        1211,
+        749
+      ],
+      "sha256": "657b990b74eef0c3cedbd29024916d6f2d38839b227f58ad6bd7a3442605c573",
+      "kind": "word-crop",
+      "source_image": 18,
+      "box": [
+        24,
+        179,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "poetry-main-art.webp",
+      "size": [
+        1211,
+        665
+      ],
+      "sha256": "e143c503826621e4488a2416d34db44c4e82242cbd6b61fd9819a3f0e817e986",
+      "kind": "word-crop",
+      "source_image": 18,
+      "box": [
+        24,
+        179,
+        1235,
+        844
+      ]
+    },
+    {
+      "file": "poetry-mobile.webp",
+      "size": [
+        309,
+        642
+      ],
+      "sha256": "17c7bc79851e788d6765d3572c37a90bc921e260060ee7ac036bc9aba264c973",
+      "kind": "word-crop",
+      "source_image": 18,
+      "box": [
+        1261,
+        204,
+        1570,
+        846
+      ]
+    },
+    {
+      "file": "read-art-0.webp",
+      "size": [
+        209,
+        242
+      ],
+      "sha256": "3249d61cc013c66370b4d45f2f779205afde2b410428caea95769d5e113f246c",
+      "kind": "derived-word-crop",
+      "source_asset": "read-card-0-desktop.webp",
+      "box": [
+        9,
+        10,
+        218,
+        252
+      ]
+    },
+    {
+      "file": "read-art-1.webp",
+      "size": [
+        209,
+        242
+      ],
+      "sha256": "636a8dda00ee0d0892f5171d90f128832ddbdb398b955e43b1007f27ce6ae9dd",
+      "kind": "derived-word-crop",
+      "source_asset": "read-card-1-desktop.webp",
+      "box": [
+        9,
+        10,
+        218,
+        252
+      ]
+    },
+    {
+      "file": "read-art-2.webp",
+      "size": [
+        209,
+        242
+      ],
+      "sha256": "558c1d521e1e2012b443e66026503577a7d57f9d69e8ec12889e4ea2ce577169",
+      "kind": "derived-word-crop",
+      "source_asset": "read-card-2-desktop.webp",
+      "box": [
+        9,
+        10,
+        218,
+        252
+      ]
+    },
+    {
+      "file": "read-art-3.webp",
+      "size": [
+        209,
+        242
+      ],
+      "sha256": "c9ec08a1b04721d6f793b1c7848cec400570656cd28addc66188ca46cba98e41",
+      "kind": "derived-word-crop",
+      "source_asset": "read-card-3-desktop.webp",
+      "box": [
+        9,
+        10,
+        218,
+        252
+      ]
+    },
+    {
+      "file": "read-art-4.webp",
+      "size": [
+        209,
+        242
+      ],
+      "sha256": "a9ed6463aa652c7068a08e54bbca757c0875dd5e7cf1a1c0a6392d27bd965d4e",
+      "kind": "derived-word-crop",
+      "source_asset": "read-card-4-desktop.webp",
+      "box": [
+        9,
+        10,
+        218,
+        252
+      ]
+    },
+    {
+      "file": "read-card-0-desktop.webp",
+      "size": [
+        227,
+        357
+      ],
+      "sha256": "d88bfd645ef9e9736a1a0ae82ff627ac0392365c9e3b26e41ce5586167c32e72",
+      "kind": "word-crop",
+      "source_image": 16,
+      "box": [
+        42,
+        390,
+        269,
+        747
+      ]
+    },
+    {
+      "file": "read-card-0-mobile.webp",
+      "size": [
+        291,
+        79
+      ],
+      "sha256": "de07098f90c9f5e5f1913b292994a1bc26ee10acd1c019f58ed3831965034b01",
+      "kind": "word-crop",
+      "source_image": 16,
+      "box": [
+        1270,
+        382,
+        1561,
+        461
+      ]
+    },
+    {
+      "file": "read-card-1-desktop.webp",
+      "size": [
+        228,
+        357
+      ],
+      "sha256": "6bd88356e9cdfcc8aa59d1c01df0ff7c9f8a875f301fab0601ffa92ffb10ad52",
+      "kind": "word-crop",
+      "source_image": 16,
+      "box": [
+        279,
+        390,
+        507,
+        747
+      ]
+    },
+    {
+      "file": "read-card-1-mobile.webp",
+      "size": [
+        291,
+        79
+      ],
+      "sha256": "33494c8d14e25685c890aa503d958bd0342798a793f814ae4c76dbc142b8b283",
+      "kind": "word-crop",
+      "source_image": 16,
+      "box": [
+        1270,
+        461,
+        1561,
+        540
+      ]
+    },
+    {
+      "file": "read-card-2-desktop.webp",
+      "size": [
+        228,
+        357
+      ],
+      "sha256": "672a0f9e019bdb1ee94b15ebb94a3b0ba1a2a8ad01d6d4845e2395749d3d5fc8",
+      "kind": "word-crop",
+      "source_image": 16,
+      "box": [
+        517,
+        390,
+        745,
+        747
+      ]
+    },
+    {
+      "file": "read-card-2-mobile.webp",
+      "size": [
+        291,
+        79
+      ],
+      "sha256": "ae018fb88637ef902fd4ce33edf65a6aa64c4b4eb04d5699e5dfb2dadc8bc894",
+      "kind": "word-crop",
+      "source_image": 16,
+      "box": [
+        1270,
+        541,
+        1561,
+        620
+      ]
+    },
+    {
+      "file": "read-card-3-desktop.webp",
+      "size": [
+        229,
+        357
+      ],
+      "sha256": "41c732f3465c784a99b34671f1155f87210371c4691e3355d064fac3bc35c55f",
+      "kind": "word-crop",
+      "source_image": 16,
+      "box": [
+        755,
+        390,
+        984,
+        747
+      ]
+    },
+    {
+      "file": "read-card-3-mobile.webp",
+      "size": [
+        291,
+        79
+      ],
+      "sha256": "6283ec8035f31d98c8968eaef49232ed31b71823982ff83989ae41905a5875e8",
+      "kind": "word-crop",
+      "source_image": 16,
+      "box": [
+        1270,
+        620,
+        1561,
+        699
+      ]
+    },
+    {
+      "file": "read-card-4-desktop.webp",
+      "size": [
+        226,
+        357
+      ],
+      "sha256": "d1d7342a4bda607e1c07a61fd78eeccbdabe4888d50d66494d95064e6aa28dbd",
+      "kind": "word-crop",
+      "source_image": 16,
+      "box": [
+        994,
+        390,
+        1220,
+        747
+      ]
+    },
+    {
+      "file": "read-card-4-mobile.webp",
+      "size": [
+        291,
+        79
+      ],
+      "sha256": "6cda3b28d71600650d8a632f0a7e038774b2ab78c87977467b5921e8b85f79b1",
+      "kind": "word-crop",
+      "source_image": 16,
+      "box": [
+        1270,
+        700,
+        1561,
+        779
+      ]
+    },
+    {
+      "file": "read-continue-art.webp",
+      "size": [
+        510,
+        145
+      ],
+      "sha256": "6d577d0c1e8354feb8addb69fb49192223722376391829e792df4ac5191f89b6",
+      "kind": "derived-word-crop",
+      "source_asset": "read-continue-desktop.webp",
+      "box": [
+        490,
+        0,
+        1000,
+        145
+      ]
+    },
+    {
+      "file": "read-continue-desktop.webp",
+      "size": [
+        1178,
+        145
+      ],
+      "sha256": "5431439e665ff7d188c3356bd774037b95f43f0c781b180bff1cbee24e6f4cae",
+      "kind": "word-crop",
+      "source_image": 16,
+      "box": [
+        42,
+        768,
+        1220,
+        913
+      ]
+    },
+    {
+      "file": "read-continue-mobile.webp",
+      "size": [
+        291,
+        77
+      ],
+      "sha256": "53e61f18ce2ad31f59ae07268071607f8b9e033dced03aae1120582db8218070",
+      "kind": "word-crop",
+      "source_image": 16,
+      "box": [
+        1270,
+        791,
+        1561,
+        868
+      ]
+    },
+    {
+      "file": "read-hero-art.webp",
+      "size": [
+        611,
+        211
+      ],
+      "sha256": "5e7179777f1aa702f54eae758151d60a02f458d71113f3cb37b2301b246aecab",
+      "kind": "derived-word-crop",
+      "source_asset": "read-hero-desktop.webp",
+      "box": [
+        600,
+        0,
+        1211,
+        211
+      ]
+    },
+    {
+      "file": "read-hero-desktop.webp",
+      "size": [
+        1211,
+        211
+      ],
+      "sha256": "28e4327710f1683ade2608c0c5ae1802dad6bb08a665f9d1a308dd1a0a087487",
+      "kind": "word-crop",
+      "source_image": 16,
+      "box": [
+        24,
+        179,
+        1235,
+        390
+      ]
+    },
+    {
+      "file": "read-hero-mobile.webp",
+      "size": [
+        309,
+        178
+      ],
+      "sha256": "8c2fa883769bb1eabacd156be62a7a725c0f0d451f150da73273c53bdeeb453a",
+      "kind": "word-crop",
+      "source_image": 16,
+      "box": [
+        1261,
+        204,
+        1570,
+        382
+      ]
+    },
+    {
+      "file": "read-paper.webp",
+      "size": [
+        1209,
+        749
+      ],
+      "sha256": "eac1dd4f87551c4333e93948ae935ed946cda8a114e018b47cb8eb762290c735",
+      "kind": "word-crop",
+      "source_image": 16,
+      "box": [
+        25,
+        179,
+        1234,
+        928
+      ]
+    },
+    {
+      "file": "review-art-desktop-v2.webp",
+      "size": [
+        1594,
+        986
+      ],
+      "sha256": "b893214c25bff98cb199e50ec51b18b1a2fbfddc89a19122d9df242042e8c316",
+      "kind": "generated-ui-removal-background",
+      "source_image": 12,
+      "source_asset": "review-desktop.webp",
+      "generated_source": "docs/integration/ui-clarity-20261018/sources/review-desktop-clean-v2.png",
+      "composition": "continuous landscape without page UI"
+    },
+    {
+      "file": "review-art-mobile-v2.webp",
+      "size": [
+        839,
+        1875
+      ],
+      "sha256": "a6bd07cb3ff47c40d7f02cad739052f8fe63543897493683fe50d3f32ee8d616",
+      "kind": "generated-ui-removal-background",
+      "source_image": 12,
+      "source_asset": "review-mobile.webp",
+      "generated_source": "docs/integration/ui-clarity-20261018/sources/review-mobile-clean-v2.png",
+      "composition": "continuous landscape without page UI"
+    },
+    {
+      "file": "review-card-art-0-v2.webp",
+      "size": [
+        141,
+        124
+      ],
+      "sha256": "97ff3fdd6f9d320b75b37758623d7ff0c54fd09a50fa8e1d80c673a49d88c453",
+      "kind": "derived-word-crop",
+      "source_asset": "review-desktop.webp",
+      "box": [
+        203,
+        468,
+        344,
+        592
+      ]
+    },
+    {
+      "file": "review-card-art-1-v2.webp",
+      "size": [
+        105,
+        124
+      ],
+      "sha256": "4c31c99dc063f06b60f132ebb0c787a307d9a0da57b585f2b5defa663fe74ea2",
+      "kind": "derived-word-crop",
+      "source_asset": "review-desktop.webp",
+      "box": [
+        547,
+        468,
+        652,
+        592
+      ]
+    },
+    {
+      "file": "review-card-art-2-v2.webp",
+      "size": [
+        112,
+        124
+      ],
+      "sha256": "d1b504a051398513370269b3dddbceac02fc42d29702f97bcf642307ee1e4e5d",
+      "kind": "derived-word-crop",
+      "source_asset": "review-desktop.webp",
+      "box": [
+        880,
+        468,
+        992,
+        592
+      ]
+    },
+    {
+      "file": "review-desktop.webp",
+      "size": [
+        1211,
+        749
+      ],
+      "sha256": "2cddee7e27b35d6dfc582c175019534dcba8eb5109d33c320242a8f36c6994c7",
+      "kind": "word-crop",
+      "source_image": 12,
+      "box": [
+        24,
+        179,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "review-mobile.webp",
+      "size": [
+        309,
+        690
+      ],
+      "sha256": "7d7cc595cf091aa0c3d5f5937bc246814523aa33fa8272d79257447f32dfde42",
+      "kind": "word-crop",
+      "source_image": 12,
+      "box": [
+        1261,
+        199,
+        1570,
+        889
+      ]
+    },
+    {
+      "file": "review-stamp-hongmen-v2.webp",
+      "size": [
+        143,
+        151
+      ],
+      "sha256": "45cf3859013fd20bf4d4c9541ecc7a8d022257556ce70e88d4219171800e86d4",
+      "kind": "derived-word-crop",
+      "source_asset": "review-desktop.webp",
+      "box": [
+        294,
+        271,
+        437,
+        422
+      ]
+    },
+    {
+      "file": "review-stamp-nantian-v2.webp",
+      "size": [
+        143,
+        151
+      ],
+      "sha256": "8676240783de4bf89f941938146dfeb9c3f183b8201e24f4c3f78ddbd3833bd8",
+      "kind": "derived-word-crop",
+      "source_asset": "review-desktop.webp",
+      "box": [
+        702,
+        271,
+        845,
+        422
+      ]
+    },
+    {
+      "file": "review-stamp-zhongtian-v2.webp",
+      "size": [
+        143,
+        151
+      ],
+      "sha256": "1bce1f20a55d80a33e186882c05e47b3c2e5cc84fd1dbc5123a45f7bc8446a6f",
+      "kind": "derived-word-crop",
+      "source_asset": "review-desktop.webp",
+      "box": [
+        498,
+        271,
+        641,
+        422
+      ]
+    },
+    {
+      "file": "route-0.webp",
+      "size": [
+        146,
+        122
+      ],
+      "sha256": "7450468dd8e2b7c031770661e8513886783e5d9187614e7446051928a89a3858",
+      "kind": "word-crop",
+      "source_image": 5,
+      "box": [
+        50,
+        308,
+        196,
+        430
+      ]
+    },
+    {
+      "file": "route-1.webp",
+      "size": [
+        146,
+        123
+      ],
+      "sha256": "cd6007ec805848a8fcdecc888b692eaa732699c9d8ae86da13e778448796f0ae",
+      "kind": "word-crop",
+      "source_image": 5,
+      "box": [
+        50,
+        462,
+        196,
+        585
+      ]
+    },
+    {
+      "file": "route-2.webp",
+      "size": [
+        146,
+        122
+      ],
+      "sha256": "dd7de6676f476fd42da8414b10f86290815f272f3621ce327b024c7d80facb0c",
+      "kind": "word-crop",
+      "source_image": 5,
+      "box": [
+        50,
+        617,
+        196,
+        739
+      ]
+    },
+    {
+      "file": "route-3.webp",
+      "size": [
+        146,
+        124
+      ],
+      "sha256": "d7fc8416b092d26953a6276efd9bb82b6cb6763134eb4e616816b06b2533e000",
+      "kind": "word-crop",
+      "source_image": 5,
+      "box": [
+        50,
+        774,
+        196,
+        898
+      ]
+    },
+    {
+      "file": "route-art-0.webp",
+      "size": [
+        146,
+        123
+      ],
+      "sha256": "91c512881a89f97a91f3d1870eabe208f71b410eb08e13bc1e2570e5c2cd90fa",
+      "kind": "derived-word-crop",
+      "source_asset": "routes-desktop.webp",
+      "box": [
+        26,
+        128,
+        172,
+        251
+      ]
+    },
+    {
+      "file": "route-art-1.webp",
+      "size": [
+        146,
+        123
+      ],
+      "sha256": "08856a6c72f5e1de66a44b6acaf50aa9c3940f8c32854858f1168054389bed27",
+      "kind": "derived-word-crop",
+      "source_asset": "routes-desktop.webp",
+      "box": [
+        26,
+        282,
+        172,
+        405
+      ]
+    },
+    {
+      "file": "route-art-2.webp",
+      "size": [
+        146,
+        123
+      ],
+      "sha256": "a8c0874bb819bb7fd1be01a6d57681fd4fb9529c78a563e791e5de6b7da94d65",
+      "kind": "derived-word-crop",
+      "source_asset": "routes-desktop.webp",
+      "box": [
+        26,
+        437,
+        172,
+        560
+      ]
+    },
+    {
+      "file": "route-art-3.webp",
+      "size": [
+        146,
+        123
+      ],
+      "sha256": "864207cf9ea50713fc1c5f72e14ecc4e52379f20fe923a846623e4c6a0adb8c0",
+      "kind": "derived-word-crop",
+      "source_asset": "routes-desktop.webp",
+      "box": [
+        26,
+        594,
+        172,
+        717
+      ]
+    },
+    {
+      "file": "route-background.webp",
+      "size": [
+        413,
+        749
+      ],
+      "sha256": "c9eca698e672317eae626d8135fc83149887b73935f94bf3041265798016b220",
+      "kind": "word-crop",
+      "source_image": 5,
+      "box": [
+        822,
+        179,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "route-detail-title.webp",
+      "size": [
+        286,
+        170
+      ],
+      "sha256": "ea5d59bd6c3e2d2e32aa6d922f19f0e4e58fd7f823f6379939a85745b1257e5f",
+      "kind": "word-crop",
+      "source_image": 5,
+      "box": [
+        570,
+        291,
+        856,
+        461
+      ]
+    },
+    {
+      "file": "route-gold-paper.webp",
+      "size": [
+        278,
+        604
+      ],
+      "sha256": "008903e12e9a434c258c6299963c4a2d36e31105a3493ee83e2147365396c3d9",
+      "kind": "word-crop",
+      "source_image": 5,
+      "box": [
+        547,
+        305,
+        825,
+        909
+      ]
+    },
+    {
+      "file": "route-hero.webp",
+      "size": [
+        1211,
+        111
+      ],
+      "sha256": "bf4375faa721da26d14b41c3b233f3bff996cc2eeb404f5dc3172a09ab91e442",
+      "kind": "word-crop",
+      "source_image": 5,
+      "box": [
+        24,
+        179,
+        1235,
+        290
+      ]
+    },
+    {
+      "file": "route-landscape-art-v2.webp",
+      "size": [
+        526,
+        986
+      ],
+      "sha256": "c57798b688efedb72ac1342f5771be620a1d00241565c442c075d3071ebb7ccb",
+      "kind": "generated-ui-removal-background",
+      "source_image": 5,
+      "generated_source": "docs/integration/ui-clarity-20261018/sources/routes-background-clean-v2.png",
+      "box": [
+        1069,
+        0,
+        1595,
+        986
+      ],
+      "composition": "mountain only, without pins or lettering"
+    },
+    {
+      "file": "route-paper-art-v2.webp",
+      "size": [
+        1069,
+        444
+      ],
+      "sha256": "35a3a4444d573af1019026775a8e9977648f1b7e297e4e74e04f1cdc28f496ac",
+      "kind": "generated-ui-removal-background",
+      "source_image": 5,
+      "generated_source": "docs/integration/ui-clarity-20261018/sources/routes-background-clean-v2.png",
+      "box": [
+        0,
+        0,
+        1069,
+        444
+      ],
+      "composition": "quiet sky and distant mountains behind live text"
+    },
+    {
+      "file": "route-selector.webp",
+      "size": [
+        485,
+        610
+      ],
+      "sha256": "d08898cbb5ddc267f9fe1f7299ec8f52753c7ef71c5339e77cdf7acd61696203",
+      "kind": "word-crop",
+      "source_image": 5,
+      "box": [
+        40,
+        298,
+        525,
+        908
+      ]
+    },
+    {
+      "file": "routes-desktop.webp",
+      "size": [
+        1211,
+        749
+      ],
+      "sha256": "7dcc2926cb0ec46d9672689875ce413adeaa5fda29038df821fb7dccb40b32d1",
+      "kind": "word-crop",
+      "source_image": 5,
+      "box": [
+        24,
+        179,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "routes-mobile.webp",
+      "size": [
+        309,
+        605
+      ],
+      "sha256": "6724616aece0a78db03153be4ff6e149e6f64346287046736e952ee32dcf3430",
+      "kind": "word-crop",
+      "source_image": 5,
+      "box": [
+        1261,
+        244,
+        1570,
+        849
+      ]
+    },
+    {
+      "file": "scene-card-0-desktop.webp",
+      "size": [
+        382,
+        516
+      ],
+      "sha256": "26568473c4a804166b14337169b7e7108b0a6cf0e66c02e7e8a8163dab222ebc",
+      "kind": "word-crop",
+      "source_image": 21,
+      "box": [
+        50,
+        365,
+        432,
+        881
+      ]
+    },
+    {
+      "file": "scene-card-0-mobile.webp",
+      "size": [
+        297,
+        166
+      ],
+      "sha256": "8940ea371681af1dd5ec2232742b4ddc1ecd64a41d17267935d7364c48312890",
+      "kind": "word-crop",
+      "source_image": 21,
+      "box": [
+        1268,
+        320,
+        1565,
+        486
+      ]
+    },
+    {
+      "file": "scene-card-1-desktop.webp",
+      "size": [
+        375,
+        516
+      ],
+      "sha256": "2f1d1be7aaa90ce12e84dd4a520f2a250cdc3d25dfa65a7512410d9c532183d9",
+      "kind": "word-crop",
+      "source_image": 21,
+      "box": [
+        449,
+        365,
+        824,
+        881
+      ]
+    },
+    {
+      "file": "scene-card-1-mobile.webp",
+      "size": [
+        297,
+        165
+      ],
+      "sha256": "a7985fed45af379b05b9726f4e4dfa56e0327bedbd67c7bda113680482e50b15",
+      "kind": "word-crop",
+      "source_image": 21,
+      "box": [
+        1268,
+        492,
+        1565,
+        657
+      ]
+    },
+    {
+      "file": "scene-card-2-desktop.webp",
+      "size": [
+        368,
+        516
+      ],
+      "sha256": "98e03271f6aa7967cac68be1890d2d0d963fcddd0eab7afd3af94b88b77b85e9",
+      "kind": "word-crop",
+      "source_image": 21,
+      "box": [
+        841,
+        365,
+        1209,
+        881
+      ]
+    },
+    {
+      "file": "scene-card-2-mobile.webp",
+      "size": [
+        297,
+        165
+      ],
+      "sha256": "ab64135ad5e5f86868e00907c52568bbf9265c563f58042122822b78cb258b49",
+      "kind": "word-crop",
+      "source_image": 21,
+      "box": [
+        1268,
+        664,
+        1565,
+        829
+      ]
+    },
+    {
+      "file": "scene-card-art-0-v2.webp",
+      "size": [
+        368,
+        298
+      ],
+      "sha256": "6b8416891b44495b5ad95d18c9644476e6de92e509e187f000d0acb0783949b7",
+      "kind": "derived-word-crop",
+      "source_asset": "scene-card-0-desktop.webp",
+      "box": [
+        7,
+        109,
+        375,
+        407
+      ]
+    },
+    {
+      "file": "scene-card-art-1-v2.webp",
+      "size": [
+        361,
+        298
+      ],
+      "sha256": "41bb6e36f16059b083bbcd09504a4269595dd7acb2714a6c0a906caf2b489e05",
+      "kind": "derived-word-crop",
+      "source_asset": "scene-card-1-desktop.webp",
+      "box": [
+        7,
+        109,
+        368,
+        407
+      ]
+    },
+    {
+      "file": "scene-card-art-2-v2.webp",
+      "size": [
+        354,
+        298
+      ],
+      "sha256": "9043dce2277043ffa0604c2b7ca90a592036aa22bd5d9e7ff1e4ad06345ed8cd",
+      "kind": "derived-word-crop",
+      "source_asset": "scene-card-2-desktop.webp",
+      "box": [
+        7,
+        109,
+        361,
+        407
+      ]
+    },
+    {
+      "file": "scene-footer.webp",
+      "size": [
+        1211,
+        47
+      ],
+      "sha256": "d9d65b31c8063b1dd31649cec88a207efbf1c390358fe14f018939b15e58ea2b",
+      "kind": "word-crop",
+      "source_image": 21,
+      "box": [
+        24,
+        881,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "scenes-hero-desktop.webp",
+      "size": [
+        1211,
+        185
+      ],
+      "sha256": "5e59a9fc7fc11c6e14ac6a2a631f247fba25ae966b43cf87889a9994531928e4",
+      "kind": "word-crop",
+      "source_image": 21,
+      "box": [
+        24,
+        179,
+        1235,
+        364
+      ]
+    },
+    {
+      "file": "scenes-hero-mobile.webp",
+      "size": [
+        309,
+        114
+      ],
+      "sha256": "05d5072c830396a074e306b200baa875491edc097084b1954441a35527cb0f01",
+      "kind": "word-crop",
+      "source_image": 21,
+      "box": [
+        1261,
+        204,
+        1570,
+        318
+      ]
+    },
+    {
+      "file": "scenes-paper.webp",
+      "size": [
+        1211,
+        749
+      ],
+      "sha256": "3ea785c3b95fe296ba007b879c052782827c473f2e1238027ba4bb5e100368d5",
+      "kind": "word-crop",
+      "source_image": 21,
+      "box": [
+        24,
+        179,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "search-paper.webp",
+      "size": [
+        370,
+        262
+      ],
+      "sha256": "020c8a94633c317302c38f6210b0e74b5680fe6cdef67bf3ec690b4959261b57",
+      "kind": "word-crop",
+      "source_image": 15,
+      "box": [
+        415,
+        288,
+        785,
+        550
+      ]
+    },
+    {
+      "file": "settings-banner-mobile.webp",
+      "size": [
+        302,
+        87
+      ],
+      "sha256": "66c942f13ee4e9ae89f35169e3f38bf1cca29c4ec4c22e0b8279670848c68d97",
+      "kind": "word-crop",
+      "source_image": 28,
+      "box": [
+        1265,
+        406,
+        1567,
+        493
+      ]
+    },
+    {
+      "file": "settings-banner.webp",
+      "size": [
+        578,
+        173
+      ],
+      "sha256": "2da314c86acbdd6fc3c550974a713113bc04dc897c0c75b9da137a06c3fcd25d",
+      "kind": "word-crop",
+      "source_image": 28,
+      "box": [
+        373,
+        194,
+        951,
+        367
+      ]
+    },
+    {
+      "file": "spot-hongmen-aside-mobile.webp",
+      "size": [
+        309,
+        316
+      ],
+      "sha256": "467d7cde8f89256a29fa4bc85d1277d80c5f82a0becfa3bcdab45aa3e1011218",
+      "kind": "word-crop",
+      "source_image": 7,
+      "box": [
+        1261,
+        399,
+        1570,
+        715
+      ]
+    },
+    {
+      "file": "spot-hongmen-aside.webp",
+      "size": [
+        269,
+        476
+      ],
+      "sha256": "27afab5a0f9686a8a4064b768d99301fcf4f82b61c90d26cc1cc712f22abbcfa",
+      "kind": "word-crop",
+      "source_image": 7,
+      "box": [
+        952,
+        196,
+        1221,
+        672
+      ]
+    },
+    {
+      "file": "spot-hongmen-mobile.webp",
+      "size": [
+        309,
+        195
+      ],
+      "sha256": "77d7112822d21a2379d84f7e50da0051475562f7641fedb95dbcd486a871be95",
+      "kind": "word-crop",
+      "source_image": 7,
+      "box": [
+        1261,
+        204,
+        1570,
+        399
+      ]
+    },
+    {
+      "file": "spot-hongmen.webp",
+      "size": [
+        928,
+        506
+      ],
+      "sha256": "6ecf1c2c13ddd2f4eee32d0029b01bbca1c9957465ffee01d25bee5b6f989b9f",
+      "kind": "word-crop",
+      "source_image": 7,
+      "box": [
+        24,
+        179,
+        952,
+        685
+      ]
+    },
+    {
+      "file": "stamp-art-hongmen.webp",
+      "size": [
+        170,
+        86
+      ],
+      "sha256": "7ce335c90866895f6f3b8b056c70204cc00b99bb411b3db501947c3e697ecbed",
+      "kind": "word-crop",
+      "source_image": 27,
+      "box": [
+        83,
+        638,
+        253,
+        724
+      ]
+    },
+    {
+      "file": "stamp-art-nantian.webp",
+      "size": [
+        141,
+        86
+      ],
+      "sha256": "8e7e322fca33e2588da95ed574b82d354ceb7d6a730ac24b2020f6250ce66435",
+      "kind": "word-crop",
+      "source_image": 27,
+      "box": [
+        528,
+        638,
+        669,
+        724
+      ]
+    },
+    {
+      "file": "stamp-art-zhongtian.webp",
+      "size": [
+        169,
+        86
+      ],
+      "sha256": "bf678998e34a5260687723dc6fc798360786e48467cc7ef6fdee054989ab7f63",
+      "kind": "word-crop",
+      "source_image": 27,
+      "box": [
+        310,
+        638,
+        479,
+        724
+      ]
+    },
+    {
+      "file": "stamp-hongmen.webp",
+      "size": [
+        92,
+        94
+      ],
+      "sha256": "fbfaef5ab66258581ce6a0452603c95f1c2d8aad630c11aaaa2085a17f3e7aac",
+      "kind": "word-crop",
+      "source_image": 27,
+      "box": [
+        98,
+        804,
+        190,
+        898
+      ]
+    },
+    {
+      "file": "stamp-nantian.webp",
+      "size": [
+        98,
+        98
+      ],
+      "sha256": "35685316bd1f904cd20b26be1bf538aa7cfd3205db67a8eec2ebd35a70d4cbbe",
+      "kind": "word-crop",
+      "source_image": 27,
+      "box": [
+        544,
+        802,
+        642,
+        900
+      ]
+    },
+    {
+      "file": "stamp-zhongtian.webp",
+      "size": [
+        100,
+        98
+      ],
+      "sha256": "c41b88c658b34cde8beee635c9a5069609dc87658791a69a418fbd5ac1dbbc07",
+      "kind": "word-crop",
+      "source_image": 27,
+      "box": [
+        322,
+        802,
+        422,
+        900
+      ]
+    },
+    {
+      "file": "study-art-desktop-v2.webp",
+      "size": [
+        1595,
+        986
+      ],
+      "sha256": "6f30757f0b0cc013e86719cf0913eedcd67e8fded66d8d10ad8f243c559d13cd",
+      "kind": "generated-ui-removal-background",
+      "source_image": 20,
+      "source_asset": "study-desktop.webp",
+      "generated_source": "docs/integration/ui-clarity-20261018/sources/study-desktop-clean-v2.png",
+      "composition": "continuous landscape without page UI"
+    },
+    {
+      "file": "study-art-mobile-v2.webp",
+      "size": [
+        854,
+        1842
+      ],
+      "sha256": "08cb6a8565ddd554f89fb28e40c0545767477317b68cf23354e2d2e59dafe798",
+      "kind": "generated-ui-removal-background",
+      "source_image": 20,
+      "source_asset": "study-mobile.webp",
+      "generated_source": "docs/integration/ui-clarity-20261018/sources/study-mobile-clean-v2.png",
+      "composition": "continuous landscape without page UI"
+    },
+    {
+      "file": "study-desktop.webp",
+      "size": [
+        1211,
+        749
+      ],
+      "sha256": "c156fdd3d227d3949885ff52107bf32d9f269b03fc60891d5cba59d0a35bacbb",
+      "kind": "word-crop",
+      "source_image": 20,
+      "box": [
+        24,
+        179,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "study-illustration.webp",
+      "size": [
+        283,
+        749
+      ],
+      "sha256": "9b66e7c730b70e8c8cb0d82dbf741ab33ceac610ef2fc84c2c217c612a405fd1",
+      "kind": "word-crop",
+      "source_image": 20,
+      "box": [
+        180,
+        179,
+        463,
+        928
+      ]
+    },
+    {
+      "file": "study-mobile.webp",
+      "size": [
+        309,
+        665
+      ],
+      "sha256": "6fda3d7deb6442a732ce3f678aa15654ed4e54698686e58c2060758d95d5b5b1",
+      "kind": "word-crop",
+      "source_image": 20,
+      "box": [
+        1261,
+        204,
+        1570,
+        869
+      ]
+    },
+    {
+      "file": "study-stone-art-v2.webp",
+      "size": [
+        216,
+        173
+      ],
+      "sha256": "a62c13741c831f9f82b83321314eff37a08e705487599ede7eab80a8215fec6c",
+      "kind": "derived-word-crop",
+      "source_asset": "study-desktop.webp",
+      "box": [
+        959,
+        107,
+        1175,
+        280
+      ]
+    },
+    {
+      "file": "sunrise-landscape.webp",
+      "size": [
+        534,
+        239
+      ],
+      "sha256": "61ff6e423497d8dd8dce1e8b3d345ac4662dd89eb57f004bb223305c0b2af26b",
+      "kind": "word-crop",
+      "source_image": 14,
+      "box": [
+        31,
+        362,
+        565,
+        601
+      ]
+    },
+    {
+      "file": "tour-body.webp",
+      "size": [
+        1586,
+        907
+      ],
+      "sha256": "4e183ab27b8f5c388ddd14f2cd71c2bbbfe32f27051b556822c671dc83ebc0d4",
+      "kind": "word-crop",
+      "source_image": 2,
+      "box": [
+        0,
+        85,
+        1586,
+        992
+      ]
+    },
+    {
+      "file": "tour-card-0.webp",
+      "size": [
+        481,
+        611
+      ],
+      "sha256": "b9c4404b4097af4b73888138a77eff9f8fe4329488c89d24697c111508bc42f1",
+      "kind": "word-crop",
+      "source_image": 2,
+      "box": [
+        20,
+        233,
+        501,
+        844
+      ]
+    },
+    {
+      "file": "tour-card-1.webp",
+      "size": [
+        492,
+        611
+      ],
+      "sha256": "1282a631d76ab742d1f8d6e7b6b7b7115f3203a942774872ddb7960525c8aa34",
+      "kind": "word-crop",
+      "source_image": 2,
+      "box": [
+        539,
+        233,
+        1031,
+        844
+      ]
+    },
+    {
+      "file": "tour-card-2.webp",
+      "size": [
+        496,
+        611
+      ],
+      "sha256": "5f8cffab977c72d4269f984861289b6da3e20e956f1462292de78a201a5f944e",
+      "kind": "word-crop",
+      "source_image": 2,
+      "box": [
+        1071,
+        233,
+        1567,
+        844
+      ]
+    },
+    {
+      "file": "tour-start.webp",
+      "size": [
+        337,
+        65
+      ],
+      "sha256": "b1b8a45466272a250927099b5c68b82fdeec97cbdeeab21cbff54096592f1d97",
+      "kind": "word-crop",
+      "source_image": 2,
+      "box": [
+        624,
+        870,
+        961,
+        935
+      ]
+    },
+    {
+      "file": "viewer-nantian.webp",
+      "size": [
+        764,
+        381
+      ],
+      "sha256": "de7c51e5958ea017351951a415ed8af408ae7a15d5bdaeb254b56cb03b1a9013",
+      "kind": "word-crop",
+      "source_image": 30,
+      "box": [
+        24,
+        158,
+        788,
+        539
+      ]
+    },
+    {
+      "file": "vision-art.webp",
+      "size": [
+        439,
+        749
+      ],
+      "sha256": "82a4e66890c67df8c4fb96ed74c6a867263f23f709c8849cc317e1809f7e306d",
+      "kind": "word-crop",
+      "source_image": 20,
+      "box": [
+        24,
+        179,
+        463,
+        928
+      ]
+    },
+    {
+      "file": "vision-camera-mobile-full.webp",
+      "source_image": 23,
+      "box": [
+        1261,
+        160,
+        1570,
+        927
+      ],
+      "size": [
+        309,
+        767
+      ],
+      "kind": "word-crop",
+      "sha256": "9c34d38c7d211835bb1e7ba61907b4d380829e8bdfee3a6f919ab32c6abf502c"
+    },
+    {
+      "file": "vision-camera-mobile.webp",
+      "size": [
+        309,
+        665
+      ],
+      "sha256": "0e6a9ef0ba98f1f477f1899e00fdec1be7ea1a4cca9e7b430a40f13d8f884591",
+      "kind": "word-crop",
+      "source_image": 23,
+      "box": [
+        1261,
+        204,
+        1570,
+        869
+      ]
+    },
+    {
+      "file": "vision-camera.webp",
+      "size": [
+        1211,
+        749
+      ],
+      "sha256": "aecd853f42aef9cae5465e67eb86491c1349cd34f5b71c8888eae0f5bc688e47",
+      "kind": "word-crop",
+      "source_image": 23,
+      "box": [
+        24,
+        179,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "vision-desktop.webp",
+      "size": [
+        1211,
+        749
+      ],
+      "sha256": "c156fdd3d227d3949885ff52107bf32d9f269b03fc60891d5cba59d0a35bacbb",
+      "kind": "word-crop",
+      "source_image": 20,
+      "box": [
+        24,
+        179,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "vision-example.webp",
+      "size": [
+        511,
+        252
+      ],
+      "sha256": "95451cfe14599aeb3f16a900680019ea9040780b6087506fd57fb9b71912e2c9",
+      "kind": "word-crop",
+      "source_image": 24,
+      "box": [
+        558,
+        371,
+        1069,
+        623
+      ]
+    },
+    {
+      "file": "vision-upload-banner.webp",
+      "size": [
+        351,
+        77
+      ],
+      "sha256": "ddd8c87746506bb5bdbb9a48d0d02db8b5e9e62e3772cc687ed2321e7ce7573c",
+      "kind": "word-crop",
+      "source_image": 24,
+      "box": [
+        756,
+        278,
+        1107,
+        355
+      ]
+    },
+    {
+      "file": "vision-upload-title.webp",
+      "size": [
+        542,
+        133
+      ],
+      "sha256": "ebe3d7157786db8d49f19302b64f864f6aeb6c08d96e936ce3408dd4ee2a6a37",
+      "kind": "word-crop",
+      "source_image": 24,
+      "box": [
+        527,
+        228,
+        1069,
+        361
+      ]
+    },
+    {
+      "file": "visit-hongmen-art-desktop-v2.webp",
+      "size": [
+        1595,
+        986
+      ],
+      "sha256": "3feb8c0716dbb6b533540accc7216c153428ccf5afb2bcce7ae301747f6a8388",
+      "kind": "generated-ui-removal-background",
+      "source_image": 4,
+      "source_asset": "visit-hongmen-desktop.webp",
+      "generated_source": "docs/integration/ui-clarity-20261018/sources/visit-hongmen-desktop-clean-v2.png",
+      "composition": "continuous landscape without page UI"
+    },
+    {
+      "file": "visit-hongmen-art-mobile-v2.webp",
+      "size": [
+        854,
+        1842
+      ],
+      "sha256": "3e694c5003d19e9253a27718c5b09c406ee65d6775b71cc5eaf54be970586494",
+      "kind": "generated-ui-removal-background",
+      "source_image": 4,
+      "source_asset": "visit-hongmen-mobile.webp",
+      "generated_source": "docs/integration/ui-clarity-20261018/sources/visit-hongmen-mobile-clean-v2.png",
+      "composition": "continuous landscape without page UI"
+    },
+    {
+      "file": "visit-hongmen-hud.webp",
+      "size": [
+        1211,
+        218
+      ],
+      "sha256": "255e0db2014e6c6a5380d4ec62416cd0bfd2eebb8bfb77fa732a058af94f1ee3",
+      "kind": "word-crop",
+      "source_image": 4,
+      "box": [
+        24,
+        710,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "visit-hongmen-mobile.webp",
+      "size": [
+        309,
+        665
+      ],
+      "sha256": "ff863cc1b2cea7dc7e689cb4d74f2ac43bd33f42652cbb6247308086a38c428a",
+      "kind": "word-crop",
+      "source_image": 4,
+      "box": [
+        1261,
+        204,
+        1570,
+        869
+      ]
+    },
+    {
+      "file": "visit-hongmen.webp",
+      "size": [
+        1211,
+        749
+      ],
+      "sha256": "13946dd766db69b58d4fd433e6fca045b4c8568634a48d2a670ac15abc15cfa5",
+      "kind": "word-crop",
+      "source_image": 4,
+      "box": [
+        24,
+        179,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "welcome-art-desktop.webp",
+      "size": [
+        1211,
+        810
+      ],
+      "sha256": "c369af875a2dfa05034caeba878508f46281b55c26a9ce57c4aa3af948af4b26",
+      "kind": "derived-backdrop",
+      "source_image": 1,
+      "generated_source": "docs/integration/ui-clarity-20261018/sources/welcome-cleared-desktop.png",
+      "patches": [
+        [
+          322,
+          314,
+          858,
+          414
+        ],
+        [
+          358,
+          425,
+          816,
+          463
+        ],
+        [
+          417,
+          496,
+          755,
+          583
+        ],
+        [
+          461,
+          587,
+          710,
+          657
+        ]
+      ],
+      "feather_radius": 2
+    },
+    {
+      "file": "welcome-art-expanded.webp",
+      "size": [
+        520,
+        767
+      ],
+      "sha256": "acc97054f6dfc66b8b08ce504780e10a0300ef156369790d43a2491a2290a617",
+      "kind": "expanded-backdrop",
+      "source_asset": "welcome-art-mobile.webp",
+      "generated_source": "docs/integration/ui-clarity-20261018/sources/welcome-expanded-mobile.png",
+      "canvas": [
+        520,
+        767
+      ],
+      "original_offset": [
+        105,
+        0
+      ],
+      "edge_blend": 32,
+      "preserved_original_core": [
+        137,
+        0,
+        382,
+        767
+      ]
+    },
+    {
+      "file": "welcome-art-mobile.webp",
+      "size": [
+        309,
+        767
+      ],
+      "sha256": "8d07a2f331d2569d78772e325f98d9e9e56e1a5b73523373b0d59fe3b1f5e129",
+      "kind": "derived-backdrop",
+      "source_image": 1,
+      "generated_source": "docs/integration/ui-clarity-20261018/sources/welcome-cleared-mobile.png",
+      "patches": [
+        [
+          15,
+          217,
+          292,
+          277
+        ],
+        [
+          7,
+          278,
+          303,
+          309
+        ],
+        [
+          30,
+          329,
+          270,
+          402
+        ],
+        [
+          48,
+          401,
+          253,
+          456
+        ]
+      ],
+      "feather_radius": 2
+    },
+    {
+      "file": "welcome-desktop.webp",
+      "size": [
+        1211,
+        810
+      ],
+      "sha256": "19c378712b0edf12e14f1a99ffae2154271d77ab313ad2e14cf120fead8afae8",
+      "kind": "word-crop",
+      "source_image": 1,
+      "box": [
+        24,
+        118,
+        1235,
+        928
+      ]
+    },
+    {
+      "file": "welcome-mobile.webp",
+      "size": [
+        309,
+        767
+      ],
+      "sha256": "bc7e68b254527764aa7f042a858e0dfd3d5f4038a75468f5e146829c0f0546cf",
+      "kind": "word-crop",
+      "source_image": 1,
+      "box": [
+        1261,
+        160,
+        1570,
+        927
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "checks": [
+    {
+      "width": 309,
+      "height": 767,
+      "dpr": 2,
+      "fontLoaded": true,
+      "nativeText": true,
+      "sourceAspectAndFullCanvas": true
+    },
+    {
+      "width": 532,
+      "height": 752,
+      "dpr": 2,
+      "fontLoaded": true,
+      "nativeText": true,
+      "sourceAspectAndFullCanvas": true
+    },
+    {
+      "width": 1211,
+      "height": 810,
+      "dpr": 2,
+      "fontLoaded": true,
+      "nativeText": true,
+      "sourceAspectAndFullCanvas": true
+    },
+    {
+      "width": 1900,
+      "height": 900,
+      "dpr": 2,
+      "fontLoaded": true,
+      "nativeText": true,
+      "sourceAspectAndFullCanvas": true
+    }
+  ],
+  "errors": []
+}

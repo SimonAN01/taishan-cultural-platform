@@ -1,0 +1,34 @@
+name: Complete system startup
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  startup:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - run: npm test
+      - name: Start the full application (Windows uses the double-click launcher)
+        run: node tests/startup-smoke.mjs
+      - name: Backend regression tests
+        working-directory: taishan
+        shell: bash
+        run: |
+          if [ "$RUNNER_OS" = Windows ]; then PYTHON=.venv/Scripts/python.exe; else PYTHON=.venv/bin/python; fi
+          "$PYTHON" -m unittest discover -s tests -v

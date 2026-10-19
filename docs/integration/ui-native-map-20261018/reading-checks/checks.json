@@ -1,0 +1,46 @@
+{
+  "checks": [
+    {
+      "width": 320,
+      "height": 568,
+      "historyNaturalFlow": true,
+      "historyEntryRestored": true,
+      "mapPadClearsControls": true,
+      "streetKeyboardAfterButton": true,
+      "spatialKeyboardAfterButton": true,
+      "modifierKeysPreserved": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "historyNaturalFlow": true,
+      "historyEntryRestored": true,
+      "mapPadClearsControls": true,
+      "streetKeyboardAfterButton": true,
+      "spatialKeyboardAfterButton": true,
+      "modifierKeysPreserved": true
+    },
+    {
+      "width": 1024,
+      "height": 600,
+      "historyNaturalFlow": true,
+      "historyEntryRestored": true,
+      "mapPadClearsControls": true,
+      "streetKeyboardAfterButton": true,
+      "spatialKeyboardAfterButton": true,
+      "modifierKeysPreserved": true
+    },
+    {
+      "width": 1211,
+      "height": 810,
+      "historyNaturalFlow": true,
+      "historyEntryRestored": true,
+      "mapPadClearsControls": true,
+      "streetKeyboardAfterButton": true,
+      "spatialKeyboardAfterButton": true,
+      "modifierKeysPreserved": true
+    }
+  ],
+  "errors": [],
+  "scope": "Real catalog and rendering; no audio providers are invoked."
+}

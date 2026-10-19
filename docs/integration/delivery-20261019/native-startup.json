@@ -1,0 +1,9 @@
+{
+  "platform": "darwin",
+  "launcher": "scripts/run.mjs",
+  "checks": [
+    "all entrypoints redirect to the latest interface",
+    "built HTML, JavaScript, CSS, map and both 3D models are served",
+    "catalogue APIs work and legacy bundles return 410"
+  ]
+}

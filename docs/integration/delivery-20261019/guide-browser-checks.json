@@ -1,0 +1,62 @@
+{
+  "checks": [
+    {
+      "width": 320,
+      "height": 568,
+      "historyRestoresAnswers": true,
+      "duplicateAnswersPreserved": true,
+      "voiceDraftPreserved": true,
+      "explicitConfirmation": true,
+      "perQuestionContext": true,
+      "contextSwitchPreservesDraft": true,
+      "continuousThread": true,
+      "noScrollJump": true,
+      "albumPicker": true,
+      "cameraCaptureAndStop": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "historyRestoresAnswers": true,
+      "duplicateAnswersPreserved": true,
+      "voiceDraftPreserved": true,
+      "explicitConfirmation": true,
+      "perQuestionContext": true,
+      "contextSwitchPreservesDraft": true,
+      "continuousThread": true,
+      "noScrollJump": true,
+      "albumPicker": true,
+      "cameraCaptureAndStop": true
+    },
+    {
+      "width": 1024,
+      "height": 600,
+      "historyRestoresAnswers": true,
+      "duplicateAnswersPreserved": true,
+      "voiceDraftPreserved": true,
+      "explicitConfirmation": true,
+      "perQuestionContext": true,
+      "contextSwitchPreservesDraft": true,
+      "continuousThread": true,
+      "noScrollJump": true,
+      "albumPicker": true,
+      "cameraCaptureAndStop": true
+    },
+    {
+      "width": 1211,
+      "height": 810,
+      "historyRestoresAnswers": true,
+      "duplicateAnswersPreserved": true,
+      "voiceDraftPreserved": true,
+      "explicitConfirmation": true,
+      "perQuestionContext": true,
+      "contextSwitchPreservesDraft": true,
+      "continuousThread": true,
+      "noScrollJump": true,
+      "albumPicker": true,
+      "cameraCaptureAndStop": true
+    }
+  ],
+  "errors": [],
+  "scope": "Controlled chat/history responses, browser ASR test double and Chrome fake camera. Real GLB loads on desktop; no AI or media provider is called."
+}

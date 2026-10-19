@@ -1,0 +1,77 @@
+{
+  "checks": [
+    {
+      "width": 320,
+      "height": 568,
+      "allSpots": 19,
+      "fullArtUncropped": true,
+      "directoryLastOpens": "houshiwu",
+      "hudNoOverlap": true,
+      "reducedMotion": true
+    },
+    {
+      "width": 309,
+      "height": 767,
+      "allSpots": 19,
+      "fullArtUncropped": true,
+      "directoryLastOpens": "houshiwu",
+      "hudNoOverlap": true,
+      "reducedMotion": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "allSpots": 19,
+      "fullArtUncropped": true,
+      "directoryLastOpens": "houshiwu",
+      "hudNoOverlap": true,
+      "reducedMotion": true
+    },
+    {
+      "width": 508,
+      "height": 752,
+      "allSpots": 19,
+      "fullArtUncropped": true,
+      "directoryLastOpens": "houshiwu",
+      "hudNoOverlap": true,
+      "reducedMotion": true
+    },
+    {
+      "width": 1024,
+      "height": 600,
+      "allSpots": 19,
+      "fullArtUncropped": true,
+      "directoryLastOpens": "houshiwu",
+      "hudNoOverlap": true,
+      "reducedMotion": true
+    },
+    {
+      "width": 1211,
+      "height": 810,
+      "allSpots": 19,
+      "fullArtUncropped": true,
+      "directoryLastOpens": "houshiwu",
+      "hudNoOverlap": true,
+      "reducedMotion": true
+    },
+    {
+      "width": 1900,
+      "height": 1080,
+      "allSpots": 19,
+      "fullArtUncropped": true,
+      "directoryLastOpens": "houshiwu",
+      "hudNoOverlap": true,
+      "reducedMotion": true
+    },
+    {
+      "allDirectoryEntriesOpen": 19,
+      "completedJourneyGoal": "yuhuang cultural detail"
+    },
+    {
+      "delayedCatalogueAutoUpdates": true,
+      "failedCatalogueDoesNotInventEntries": true,
+      "reloadRecovery": true
+    }
+  ],
+  "errors": []
+}
