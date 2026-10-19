@@ -29,13 +29,13 @@ from .speech import synthesize, synthesize_poem, AVAILABLE as TTS_AVAILABLE, VOI
 
 ROOT=Path(__file__).resolve().parent.parent
 IMMERSIVE_DIR=Path(os.getenv('IMMERSIVE_FRONTEND_DIR',str(ROOT.parent/'dist')))
-CAT=json.loads((ROOT/'data/catalog.json').read_text())
+CAT=json.loads((ROOT/'data/catalog.json').read_text(encoding='utf-8'))
 # Poetry pages and retrieval share one authoritative set of annotations.
 for poem in CAT['poems']:
     key='k-poem' if poem['id']=='wangyue' else 'k-poem-'+poem['id']
     for document in CAT['knowledge']:
         if document['id']==key:document['content']=poem['original_text']+'\n'+poem['interpretation']+'\n'+'\n'.join(a['line']+' '+a['meaning'] for a in poem['annotations'])
-SCENES={scene['id']:scene for scene in json.loads((ROOT/'data/scenes.json').read_text())}
+SCENES={scene['id']:scene for scene in json.loads((ROOT/'data/scenes.json').read_text(encoding='utf-8'))}
 CAT['scenes']=list(SCENES.values())
 for scene in SCENES.values():
     for point in scene['points']:
@@ -404,12 +404,12 @@ async def poem_narration(poem_id:str):
             try:
                 data,cues=await synthesize_poem(poem['original_text'].splitlines())
                 audio.with_suffix('.tmp').write_bytes(data);audio.with_suffix('.tmp').replace(audio)
-                metadata.with_suffix('.json.tmp').write_text(json.dumps({'cues':cues},ensure_ascii=False));metadata.with_suffix('.json.tmp').replace(metadata)
+                metadata.with_suffix('.json.tmp').write_text(json.dumps({'cues':cues},ensure_ascii=False),encoding='utf-8');metadata.with_suffix('.json.tmp').replace(metadata)
                 TTS_STATUS.update(state='verified',checked_at=int(time.time()))
             except Exception:
                 TTS_STATUS.update(state='unavailable',checked_at=int(time.time()))
                 raise HTTPException(503,'诗词朗诵暂不可用，请重试；仍可逐句阅读') from None
-    return json.loads(metadata.read_text()) | {'audio_url':f'/api/poems/{poem_id}/audio?v={version}','timing':'provider_word_boundary','voice':TTS_VOICE}
+    return json.loads(metadata.read_text(encoding='utf-8')) | {'audio_url':f'/api/poems/{poem_id}/audio?v={version}','timing':'provider_word_boundary','voice':TTS_VOICE}
 
 @app.get('/api/poems/{poem_id}/audio')
 def poem_audio(poem_id:str,v:str=''):
